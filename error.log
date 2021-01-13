@@ -1,0 +1,30 @@
+Url : http://localhost/mautic2163/api/contacts/new
+Method : POST
+Code : 201
+Message : Created
+Time: January 12, 2021  6:20 am
+------------------------------------
+Url : http://localhost/mautic2163/api/contacts/new
+Method : POST
+Code : 201
+Message : Created
+Time: January 12, 2021  7:07 am
+------------------------------------
+Url : http://localhost/mautic2163/api/contacts/new
+Method : POST
+Code : 200
+Message : OK
+Time: January 12, 2021  7:28 am
+------------------------------------
+Url : http://localhost/mautic2163/api/contacts/new
+Method : POST
+Code : 200
+Message : OK
+Time: January 12, 2021  9:33 am
+------------------------------------
+Url : http://localhost/mautic2163/api/contacts/new
+Method : POST
+Code : 200
+Message : OK
+Time: January 12, 2021  11:44 am
+------------------------------------
