@@ -1,6 +1,6 @@
 <?php
 
-class MWB_M4WP_Mautic_Api{
+class MWB_M4WP_Mautic_Api_Base{
     
     //mautic base url
     private $base_url ;
@@ -25,10 +25,9 @@ class MWB_M4WP_Mautic_Api{
     */
     public function __construct ( $base_url, $user_name, $password ){
         
-        $this->base_url = $base_url. 'api/' ; 
+        $this->base_url  = $base_url. 'api/' ; 
         $this->user_name = $user_name ; 
-        $this->password = $password ; 
-        
+        $this->password  = $password ; 
     }
     
     /**

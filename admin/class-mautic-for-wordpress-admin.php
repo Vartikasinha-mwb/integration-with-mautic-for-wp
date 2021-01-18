@@ -143,9 +143,9 @@ class Mautic_For_Wordpress_Admin {
 	* @return bool 
 	*/
 	public function create_registered_user( $user_id ){
+		
 		// gather user data
 		$user = get_userdata( $user_id );
-		
 		// check if user exist
 		if ( ! $user instanceof WP_User ) {
 			return false;
@@ -153,7 +153,7 @@ class Mautic_For_Wordpress_Admin {
 		//get mapped user data
 		$data = $this->get_mapped_properties( $user );
 		//create contact in mautic
-		return $this->create_contact( $data, $user_id );
+		return MWB_M4WP_Mautic_Api::create_contact( $data, $user_id );
 	}
 	
 	/**
@@ -171,8 +171,16 @@ class Mautic_For_Wordpress_Admin {
 		}
 		//get mapped user data
 		$data = $this->get_mapped_properties( $user );
-		//create contact in mautic
-		return $this->create_contact( $data, $user_id );
+		$data[ 'tags' ] = array( 'wpuser' ) ;  
+		$data[ 'points' ] = 100 ; 
+		$contact =  MWB_M4WP_Mautic_Api::create_contact( $data );
+		if(isset( $contact['contact'] )){
+			$contact_id = $contact['contact']['id'];
+		}
+		if($contact_id > 0 ){
+			MWB_M4WP_Mautic_Api::add_contact_to_segment($contact_id , 2) ; 
+		}
+		return $contact ; 
 	}
 	
 	/**
@@ -199,37 +207,9 @@ class Mautic_For_Wordpress_Admin {
 		return $data ; 
 	}
 	
-	/**
-	* Create or update contact in mautic.
-	* @param array $data Contact data.
-	* @param int $user_id WP user id.
-	* @return bool
-	*/
-	public function create_contact( $data, $user_id ){
-		
-		$endpoint = '/contacts/new' ; 
-		$mautic_api = $this->get_mautic_api();
-		if( !$mautic_api ) {
-			return ;
-		}
-		$mautic_api->post( $endpoint , $data ) ;
-		
+	public function get_assigned_tags(){
+		$tags = get_option( 'mwb_m4wp_registration_tags' , array( 'wp new' ) ) ; 
+		return $tags;
 	}
-	
-	/**
-	* Get mautic api class instance
-	*/
-	public function get_mautic_api(){
-		
-		//@todo get details wp options
-		$base_url = get_option( "mwb_m4wp_baseurl", "http://localhost/mautic2163/" ) ; 
-		$username = get_option( "mwb_m4wp_username", "mohitp" ) ;
-		$password = get_option( "mwb_m4wp_password", "password" ) ; 
-		if( !empty( $base_url ) && !empty( $username ) && !empty( $password ) ){
-			return  new MWB_M4WP_Mautic_Api( $base_url, $username, $password ) ;
-		}
-		return false ; 
-		
-	}
-	
+
 }

@@ -125,7 +125,12 @@ class Mautic_For_Wordpress {
 		/**
 		 * The class responsible for defining all functionalities related to mautic api 
 		*/
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/api/class-mautic-for-wordpress-mautic-api.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/api/class-mautic-for-wordpress-mautic-api-base.php';
+		
+		/**
+		 * The class responsible for defining all functionalities related to mautic api 
+		*/
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-mautic-for-wordpress-mautic-api.php';
 		
 		$this->loader = new Mautic_For_Wordpress_Loader();
 
@@ -185,7 +190,7 @@ class Mautic_For_Wordpress {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-
+		//hook tracking script
 		$this->loader->add_action( 'init', $plugin_public,  'add_tracking_script' ) ; 
 	}
 

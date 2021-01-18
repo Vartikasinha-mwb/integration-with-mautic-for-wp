@@ -106,7 +106,7 @@ class Mautic_For_Wordpress_Public {
 	public function add_tracking_script(){
 		
 		$script_location = get_option( "mwb_m4wp_script_location", "head" ) ;
-		add_action( "wp_{$script_location}", array( $this, "add_mautic_tracking_script" ) ) ;
+		//add_action( "wp_{$script_location}", array( $this, "add_mautic_tracking_script" ) ) ;
 	}
 	
 	/**
@@ -115,7 +115,7 @@ class Mautic_For_Wordpress_Public {
 	*/
 	public function add_mautic_tracking_script(){
 		
-		$base_url = get_option( "mwb_m4wp_baseurl", "http://89b8a42a65a5.ngrok.io/mautic2163" ) ; 
+		$base_url = get_option( "mwb_m4wp_baseurl", "http://b545c90350b6.ngrok.io/mautic2163" ) ; 
 		$script_url = $base_url . '/mtc.js' ; 
 		$user_data = $this->get_tracking_data();
 		?>
