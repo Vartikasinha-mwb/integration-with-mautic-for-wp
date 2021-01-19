@@ -280,3 +280,44 @@ Code : 200
 Message : OK
 Time: January 18, 2021  1:09 pm
 ------------------------------------
+Code : 200
+Message : test
+Time: January 19, 2021  10:00 am
+------------------------------------
+Url : 
+Method : POST
+Code : 404
+Message : Not Found
+Time: January 19, 2021  11:01 am
+------------------------------------
+Url : http://localhost/mautic2163oauth/v2/token
+Method : POST
+Code : 404
+Message : Not Found
+Time: January 19, 2021  11:02 am
+------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 400
+Message : Bad Request
+Error : The authorization code has expired
+Time: January 19, 2021  11:03 am
+------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 200
+Message : OK
+Time: January 19, 2021  11:03 am
+------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 200
+Message : OK
+Time: January 19, 2021  12:36 pm
+------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 200
+Message : OK
+Time: January 19, 2021  12:40 pm
+------------------------------------

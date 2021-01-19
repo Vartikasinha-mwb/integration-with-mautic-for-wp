@@ -211,5 +211,47 @@ class Mautic_For_Wordpress_Admin {
 		$tags = get_option( 'mwb_m4wp_registration_tags' , array( 'wp new' ) ) ; 
 		return $tags;
 	}
+	
+	public function get_oauth_code(){
+		
+		if(isset($_GET['m4wp'])){
+			
+			$client_id = '1_1a5y0bvvunwg8wwwc4s4o4ooo8kwc8gg8c840owoccw4w4o8wc' ; 
+			$client_secret = '65o9w2j9a3okw8g4kosgs8wkggsswwocs0w0k4wssg4w4c8o8o' ; 
+			$redirct_url = 'http://localhost/wp551/wp-admin/admin.php' ; 
+			$mautic_url = 'http://localhost/mautic2163/oauth/v2/authorize' ; 
+			$data = array(
+				'client_id' => $client_id,
+				'grant_type' => 'authorization_code',
+				'redirect_uri' => $redirct_url,
+				'response_type' => 'code',
+				'state' => wp_create_nonce( 'm4wp_nonce' )
+			);
+			$auth_url = add_query_arg( $data, $mautic_url ) ; 
+			wp_redirect( $auth_url ) ; 
+		}
 
+		if(isset($_GET['state']) && isset($_GET['code'])){
+			if(wp_verify_nonce($_GET['state'], 'm4wp_nonce' )){
+				$code = $_GET['code'] ; 
+				$client_id = '1_1a5y0bvvunwg8wwwc4s4o4ooo8kwc8gg8c840owoccw4w4o8wc' ; 
+				$client_secret = '65o9w2j9a3okw8g4kosgs8wkggsswwocs0w0k4wssg4w4c8o8o' ; 
+				$redirct_url = 'http://localhost/wp551/wp-admin/admin.php' ; 
+				$mautic_url = 'http://localhost/mautic2163/' ; 
+				
+				$data = array(
+					'client_id' => $client_id,
+					'client_secret' => $client_secret,
+					'grant_type' => 'authorization_code',
+					'redirect_uri' => $redirct_url,
+					'code' => $code,
+				);
+
+				$api_instance = MWB_M4WP_Mautic_Api_Base_V2::get_instance(); 
+				$response =  $api_instance->get_oauth_token( $mautic_url, $data );
+				$api_instance->save_token_data($response);
+			}
+		}
+	}
+	
 }

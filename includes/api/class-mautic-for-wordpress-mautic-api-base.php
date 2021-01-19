@@ -148,7 +148,7 @@ class MWB_M4WP_Mautic_Api_Base{
      * @param string $message Response message.
      * @param array  $data Reponse data.
     */
-    public function create_error_log( $code , $message , $data ){
+    public function create_error_log( $code , $message , $data = array() ){
         $file = MWB_M4WP_PLUGIN_PATH.'/error.log' ; 
         $log =  "Url : ". $this->last_request[ 'url' ] . PHP_EOL ;
         $log .= "Method : ". $this->last_request[ 'method' ] . PHP_EOL ; 

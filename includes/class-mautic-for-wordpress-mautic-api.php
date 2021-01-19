@@ -27,13 +27,38 @@ class MWB_M4WP_Mautic_Api  {
         if( ! empty( self::$mautic_api ) ){
             return self::$mautic_api ; 
         }
-        $base_url = get_option( "mwb_m4wp_baseurl", "http://localhost/mautic2163/" ) ; 
-        $username = get_option( "mwb_m4wp_username", "mohitp" ) ;
-        $password = get_option( "mwb_m4wp_password", "password" ) ; 
-        if( !empty( $base_url ) && !empty( $username ) && !empty( $password ) ){
-            self::$mautic_api = new MWB_M4WP_Mautic_Api_Base( $base_url, $username, $password ) ;
-            return self::$mautic_api ;
+        
+        $authentication_type = 'oauth2' ; //basic , oauth2 
+        if( 'oauth2' == $authentication_type ){
+            $api_instance = MWB_M4WP_Mautic_Api_Base_V2::get_instance(); 
+            if( !($api_keys = $api_instance->have_valid_api_keys()) ){
+                return '1';
+            }
+            if( !$api_instance->have_active_access_token()){
+                $refresh_token =  $api_instance->get_refresh_token();
+                if(!$refresh_token){
+                    return '2' ;
+                }
+                $api_keys['refresh_token'] = $refresh_token ;
+                $redirct_url = 'http://localhost/wp551/wp-admin/admin.php' ; 
+				$mautic_url = 'http://localhost/mautic2163/' ; 
+                $api_keys['redirect_uri'] = $redirct_url ; 
+                $api_keys['grant_type'] = 'refresh_token';
+                $data =  $api_instance->renew_access_token($mautic_url, $api_keys ) ;
+                $api_instance->save_token_data( $data );
+            }
+            self::$mautic_api = $api_instance ; 
+            return $api_instance;
+        }else{
+            $base_url = get_option( "mwb_m4wp_baseurl", "http://localhost/mautic2163/" ) ; 
+            $username = get_option( "mwb_m4wp_username", "mohitp" ) ;
+            $password = get_option( "mwb_m4wp_password", "password" ) ; 
+            if( !empty( $base_url ) && !empty( $username ) && !empty( $password ) ){
+                self::$mautic_api = new MWB_M4WP_Mautic_Api_Base( $base_url, $username, $password ) ;
+                return self::$mautic_api ;
+            }
         }
+        
         return false ; 
     }
     
@@ -60,9 +85,9 @@ class MWB_M4WP_Mautic_Api  {
         }
         return $mautic_api->post( $endpoint ) ;
     }
-
+    
     /**
-     * Get mautic forms
+    * Get mautic forms
     */
     public static function get_forms(){
         $endpoint = '/forms' ; 
@@ -72,9 +97,9 @@ class MWB_M4WP_Mautic_Api  {
         }
         return $mautic_api->get( $endpoint ) ;
     }
-
+    
     /**
-     * Get all widgets
+    * Get all widgets
     */
     public static function get_widgets(){
         $endpoint = '/data' ; 
@@ -84,9 +109,9 @@ class MWB_M4WP_Mautic_Api  {
         }
         return $mautic_api->get( $endpoint ) ;
     }
-
+    
     /**
-     * Get widget data
+    * Get widget data
     */
     public static function get_widget_data( $widget_name, $data ){
         $endpoint = "/data/$widget_name" ; 
@@ -96,9 +121,9 @@ class MWB_M4WP_Mautic_Api  {
         }
         return $mautic_api->get( $endpoint, $data ) ;
     }
-
+    
     /**
-     * Get tags
+    * Get tags
     */
     public static function get_tags( ){
         $endpoint = "/tags" ; 
@@ -108,9 +133,9 @@ class MWB_M4WP_Mautic_Api  {
         }
         return $mautic_api->get( $endpoint ) ;
     }
-
+    
     /**
-     * Add points to contact
+    * Add points to contact
     */
     public static function add_points( $contact_id , $points ){
         $endpoint = "/contacts/$contact_id/points/plus/$points" ; 
@@ -120,4 +145,6 @@ class MWB_M4WP_Mautic_Api  {
         }
         return $mautic_api->post( $endpoint ) ;
     }
+    
+    
 }

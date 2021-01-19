@@ -130,6 +130,11 @@ class Mautic_For_Wordpress {
 		/**
 		 * The class responsible for defining all functionalities related to mautic api 
 		*/
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/api/class-mautic-for-wordpress-api-base-v2.php';		
+
+		/**
+		 * The class responsible for defining all functionalities related to mautic api 
+		*/
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-mautic-for-wordpress-mautic-api.php';
 		
 		$this->loader = new Mautic_For_Wordpress_Loader();
@@ -175,6 +180,8 @@ class Mautic_For_Wordpress {
 		
 		//update user in mautic
 		$this->loader->add_action( 'profile_update', $plugin_admin, 'update_registered_user', 99, 2 );
+
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'get_oauth_code' ) ; 
 	}
 
 	/**
