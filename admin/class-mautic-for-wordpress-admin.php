@@ -213,7 +213,7 @@ class Mautic_For_Wordpress_Admin {
 	}
 	
 	public function get_oauth_code(){
-		
+
 		if(isset($_GET['m4wp'])){
 			
 			$client_id = '1_1a5y0bvvunwg8wwwc4s4o4ooo8kwc8gg8c840owoccw4w4o8wc' ; 
@@ -229,10 +229,13 @@ class Mautic_For_Wordpress_Admin {
 			);
 			$auth_url = add_query_arg( $data, $mautic_url ) ; 
 			wp_redirect( $auth_url ) ; 
+
 		}
 
-		if(isset($_GET['state']) && isset($_GET['code'])){
+		if( isset( $_GET['state'] ) && isset( $_GET['code'] ) ){
+
 			if(wp_verify_nonce($_GET['state'], 'm4wp_nonce' )){
+				
 				$code = $_GET['code'] ; 
 				$client_id = '1_1a5y0bvvunwg8wwwc4s4o4ooo8kwc8gg8c840owoccw4w4o8wc' ; 
 				$client_secret = '65o9w2j9a3okw8g4kosgs8wkggsswwocs0w0k4wssg4w4c8o8o' ; 
@@ -253,5 +256,4 @@ class Mautic_For_Wordpress_Admin {
 			}
 		}
 	}
-	
 }

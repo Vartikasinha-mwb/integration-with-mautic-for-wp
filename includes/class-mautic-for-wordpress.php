@@ -121,21 +121,23 @@ class Mautic_For_Wordpress {
 		 * side of the site.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-mautic-for-wordpress-public.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/api/class-api.php';
+		/**
+		 * The class responsible for defining all functionalities related to mautic api 
+		*/
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/api/class-basic-auth.php';
 		
 		/**
 		 * The class responsible for defining all functionalities related to mautic api 
 		*/
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/api/class-mautic-for-wordpress-mautic-api-base.php';
-		
-		/**
-		 * The class responsible for defining all functionalities related to mautic api 
-		*/
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/api/class-mautic-for-wordpress-api-base-v2.php';		
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/api/class-oauth2.php';		
 
 		/**
 		 * The class responsible for defining all functionalities related to mautic api 
 		*/
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-mautic-for-wordpress-mautic-api.php';
+
+		
 		
 		$this->loader = new Mautic_For_Wordpress_Loader();
 
