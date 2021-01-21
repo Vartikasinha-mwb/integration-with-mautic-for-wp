@@ -546,3 +546,52 @@ Code : 200
 Message : OK
 Time: January 20, 2021  11:40 am
 ------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=01/31/2021&dateFrom=01/01/2021&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: January 21, 2021  10:09 am
+------------------------------------
+Url : http://localhost/mautic2163/api/self
+Method : GET
+Code : 404
+Message : Not Found
+Error : Looks like I encountered an error (error #404). If I do it again, please report me to the system administrator!
+Time: January 21, 2021  10:44 am
+------------------------------------
+Url : http://localhost/mautic2163/api/users/self
+Method : GET
+Code : 200
+Message : OK
+Time: January 21, 2021  10:51 am
+------------------------------------
+Url : http://localhost/mautic2163/api/users/self
+Method : GET
+Code : 200
+Message : OK
+Time: January 21, 2021  10:53 am
+------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 200
+Message : OK
+Time: January 21, 2021  11:18 am
+------------------------------------
+Url : http://localhost/mautic2163/api/users/self
+Method : GET
+Code : 200
+Message : OK
+Time: January 21, 2021  11:18 am
+------------------------------------
+Url : http://localhost/mautic2163/api/users/self
+Method : GET
+Code : 200
+Message : OK
+Time: January 21, 2021  11:30 am
+------------------------------------
+Url : http://localhost/mautic2163/api/users/self
+Method : GET
+Code : 200
+Message : OK
+Time: January 21, 2021  11:31 am
+------------------------------------

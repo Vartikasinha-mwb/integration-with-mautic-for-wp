@@ -78,6 +78,7 @@ class Mautic_For_Wordpress {
 		$this->set_locale();
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
+		$this->define_ajax_hooks();
 
 	}
 
@@ -115,6 +116,11 @@ class Mautic_For_Wordpress {
 		 * The class responsible for defining all actions that occur in the admin area.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'admin/class-mautic-for-wordpress-admin.php';
+
+		/**
+		 * The class responsible for defining all actions that occur via ajax.
+		 */
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-mautic-for-wordpress-ajax.php';
 
 		/**
 		 * The class responsible for defining all actions that occur in the public-facing
@@ -201,6 +207,12 @@ class Mautic_For_Wordpress {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 		//hook tracking script
 		$this->loader->add_action( 'init', $plugin_public,  'add_tracking_script' ) ; 
+	}
+
+	private function define_ajax_hooks(){
+		
+		$plugin_ajax = new Mautic_For_Wordpress_Ajax();
+		$this->loader->add_action( 'wp_ajax_mwb_m4wp_test_api_connection', $plugin_ajax,  'test_api_connection' ) ; 
 	}
 
 	/**

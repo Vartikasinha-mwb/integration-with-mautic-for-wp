@@ -16,8 +16,8 @@ class Oauth2 extends Api_Base {
 		return self::$_instance;
     }
 
-    public function set_base_url(){
-        $this->base_url = 'http://localhost/mautic2163/';
+    public function set_base_url($base_url){
+        $this->base_url = $base_url;
     }
     public function set_access_token(){
         $token_data = get_option( 'mwb_m4wp_token_data', array());
@@ -33,16 +33,13 @@ class Oauth2 extends Api_Base {
     }
 
     public function have_valid_api_keys(){
-        $client_id = '1_1a5y0bvvunwg8wwwc4s4o4ooo8kwc8gg8c840owoccw4w4o8wc' ; 
-        $client_secret = '65o9w2j9a3okw8g4kosgs8wkggsswwocs0w0k4wssg4w4c8o8o' ;
-        $credentials = array(
-            'client_id' => $client_id,
-            'client_secret' => $client_secret,
-        );
-        return $credentials;
-        $credentials = get_option( 'mwb_m4wp_api_keys', array() );
-        if( isset( $credentials['client_id'] ) && isset( $credentials['client_secret'] ) ){
-            return $credentials;
+        $credentials = get_option( 'mwb_m4wp_auth_details' , array() ) ; 
+        if( isset( $credentials['client_id'] ) && '' != $credentials['client_id'] && 
+        isset( $credentials['client_secret'] ) && '' != $credentials['client_secret']  ){
+            return array( 
+                'client_id' =>  $credentials['client_id'] ,
+                'client_secret' => $credentials['client_secret']
+            );
         }
         return false;
     }

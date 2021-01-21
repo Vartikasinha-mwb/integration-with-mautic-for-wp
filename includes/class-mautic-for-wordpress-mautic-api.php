@@ -10,13 +10,23 @@ class MWB_M4WP_Mautic_Api  {
     * @return bool
     */
     public static function create_contact( $data ){
-        $endpoint = '/contacts/new' ; 
+        $endpoint = 'api/contacts/new' ; 
         $mautic_api = self::get_mautic_api();
-        $headers = $mautic_api->get_auth_header();
         if( !$mautic_api ) {
             return ;
         }
+        $headers = $mautic_api->get_auth_header();
         return $mautic_api->post( $endpoint , $data, $headers ) ;
+    }
+
+    public static function get_self_user(){
+        $endpoint = 'api/users/self' ; 
+        $mautic_api = self::get_mautic_api();
+        if( !$mautic_api ) {
+            return false ;
+        }
+        $headers = $mautic_api->get_auth_header();
+        return $mautic_api->get( $endpoint , array() , $headers ) ;
     }
     
     /**
@@ -28,34 +38,38 @@ class MWB_M4WP_Mautic_Api  {
         if( ! empty( self::$mautic_api ) ){
             return self::$mautic_api ; 
         }
-        $authentication_type = 'oauth2' ; //basic , oauth2 
+        //$authentication_type = 'oauth2' ; //basic , oauth2 
+        $authentication_type = get_option('mwb_m4wp_auth_type' , 'basic') ;     
+        $base_url = get_option( 'mwb_m4wp_base_url', '' );
+        if('' == $base_url){
+            return false ; 
+        }
+
         if( 'oauth2' == $authentication_type ){
             $api_instance = Oauth2::get_instance(); 
             if( !($api_keys = $api_instance->have_valid_api_keys()) ){
-                return '1';
+                return false;
             }
-            $api_instance->set_base_url();
+            $api_instance->set_base_url( $base_url );
             if( !$api_instance->have_active_access_token()){
                 $refresh_token =  $api_instance->get_refresh_token();
                 if(!$refresh_token){
-                    return '2' ;
+                    return false;
                 }
                 $api_keys['refresh_token'] = $refresh_token ;
-                $redirct_url = 'http://localhost/wp551/wp-admin/admin.php' ; 
-				$mautic_url = 'http://localhost/mautic2163/' ; 
+                $redirct_url = admin_url('admin.php') ; 
                 $api_keys['redirect_uri'] = $redirct_url ; 
                 $api_keys['grant_type'] = 'refresh_token';
-                $data =  $api_instance->renew_access_token($mautic_url, $api_keys ) ;
+                $data =  $api_instance->renew_access_token( $base_url, $api_keys ) ;
                 $api_instance->save_token_data( $data );
             }
             $api_instance->set_access_token();
             self::$mautic_api = $api_instance ; 
             return $api_instance ;
         }else{
-             
-            $base_url = 'http://localhost/mautic2163/' ; 
-            $username = get_option( "mwb_m4wp_username", "mohitp" ) ;
-            $password = get_option( "mwb_m4wp_password", "password" ) ; 
+            $credentials = get_option( 'mwb_m4wp_auth_details', array() );
+            $username = isset($credentials['username']) ? $credentials['username'] : '' ; 
+            $password = isset($credentials['password']) ? $credentials['password'] : '' ; 
             if( !empty( $base_url ) && !empty( $username ) && !empty( $password ) ){
                 self::$mautic_api = new Basic_Auth( $base_url, $username, $password ) ;
                 return self::$mautic_api ;
@@ -119,10 +133,10 @@ class MWB_M4WP_Mautic_Api  {
     public static function get_widget_data( $widget_name, $data ){
         $endpoint = "api/data/$widget_name" ; 
         $mautic_api = self::get_mautic_api();
-        $headers = $mautic_api->get_auth_header();
         if( !$mautic_api ) {
             return ;
         }
+        $headers = $mautic_api->get_auth_header();
         return $mautic_api->get( $endpoint, $data, $headers ) ;
     }
     
@@ -135,7 +149,8 @@ class MWB_M4WP_Mautic_Api  {
         if( !$mautic_api ) {
             return ;
         }
-        return $mautic_api->get( $endpoint ) ;
+        $headers = $mautic_api->get_auth_header();
+        return $mautic_api->get( $endpoint , array() , $headers ) ;
     }
     
     /**
@@ -147,6 +162,7 @@ class MWB_M4WP_Mautic_Api  {
         if( !$mautic_api ) {
             return ;
         }
-        return $mautic_api->post( $endpoint ) ;
+        $headers = $mautic_api->get_auth_header();
+        return $mautic_api->post( $endpoint , array(), $headers ) ;
     }
 }
