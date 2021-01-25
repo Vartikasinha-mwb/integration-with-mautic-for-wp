@@ -16,8 +16,8 @@ class Oauth2 extends Api_Base {
 		return self::$_instance;
     }
 
-    public function set_base_url($base_url){
-        $this->base_url = $base_url;
+    public function is_authorized( ){
+        return get_option( 'mwb_m4wp_oauth2_success', false );
     }
     public function set_access_token(){
         $token_data = get_option( 'mwb_m4wp_token_data', array());
@@ -25,6 +25,7 @@ class Oauth2 extends Api_Base {
     }
 
     public function have_active_access_token(){
+        return false;
         $token_data = get_option( 'mwb_m4wp_token_data', array()); 
         if(isset($token_data['expires_in']) && $token_data['expires_in'] > time()){
             return true;
@@ -63,13 +64,13 @@ class Oauth2 extends Api_Base {
 		}
 	}
 
-    public function get_oauth_token( $url, $data ){
-        $endpoint = '/oauth/v2/token' ;
+    public function get_oauth_token( $data ){
+        $endpoint = 'oauth/v2/token' ;
         return $this->post($endpoint, $data); 
     }
 
-    public function renew_access_token($url, $data ){
-        $endpoint = '/oauth/v2/token' ;
+    public function renew_access_token( $data ){
+        $endpoint = 'oauth/v2/token' ;
         return $this->post($endpoint, $data); 
     }
 
@@ -82,5 +83,9 @@ class Oauth2 extends Api_Base {
             'Authorization' => sprintf( 'Bearer %s',  $this->acess_token ), 
         );   
         return $headers;
+    }
+
+    public function set_base_url( $base_url ){
+        $this->base_url = $base_url;
     }
 }

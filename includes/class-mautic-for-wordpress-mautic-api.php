@@ -22,9 +22,6 @@ class MWB_M4WP_Mautic_Api  {
     public static function get_self_user(){
         $endpoint = 'api/users/self' ; 
         $mautic_api = self::get_mautic_api();
-        if( !$mautic_api ) {
-            return false ;
-        }
         $headers = $mautic_api->get_auth_header();
         return $mautic_api->get( $endpoint , array() , $headers ) ;
     }
@@ -42,26 +39,42 @@ class MWB_M4WP_Mautic_Api  {
         $authentication_type = get_option('mwb_m4wp_auth_type' , 'basic') ;     
         $base_url = get_option( 'mwb_m4wp_base_url', '' );
         if('' == $base_url){
-            return false ; 
+            throw new Mautic_Api_Exception( 'Missing base url' , 001 );
+            //return false ; 
         }
 
         if( 'oauth2' == $authentication_type ){
             $api_instance = Oauth2::get_instance(); 
-            if( !($api_keys = $api_instance->have_valid_api_keys()) ){
-                return false;
+            if(!$api_instance->is_authorized()){
+                throw new Mautic_Api_Exception( 'Unauthorized' , 004 );
+                if( !($api_keys = $api_instance->have_valid_api_keys()) ){
+                    throw new Mautic_Api_Exception( 'Missing api credentials' , 002 );
+                    //return false;
+                }
             }
             $api_instance->set_base_url( $base_url );
             if( !$api_instance->have_active_access_token()){
+                if( !($api_keys = $api_instance->have_valid_api_keys()) ){
+                    throw new Mautic_Api_Exception( 'Missing api credentials' , 002 );
+                    //return false;
+                }
                 $refresh_token =  $api_instance->get_refresh_token();
                 if(!$refresh_token){
-                    return false;
+                    throw new Mautic_Api_Exception( 'Missing refresh token' , 003 );
+                    //return false;
                 }
                 $api_keys['refresh_token'] = $refresh_token ;
                 $redirct_url = admin_url('admin.php') ; 
                 $api_keys['redirect_uri'] = $redirct_url ; 
                 $api_keys['grant_type'] = 'refresh_token';
-                $data =  $api_instance->renew_access_token( $base_url, $api_keys ) ;
-                $api_instance->save_token_data( $data );
+                $data =  $api_instance->renew_access_token( $api_keys ) ;
+                if($data){
+					$api_instance->save_token_data($response);
+					update_option('mwb_m4wp_oauth2_success' , true);
+				}else{
+                    update_option('mwb_m4wp_oauth2_success' , false);
+                    throw new Mautic_Api_Exception( 'Something went wrong' , 003 );
+				}
             }
             $api_instance->set_access_token();
             self::$mautic_api = $api_instance ; 
@@ -73,6 +86,8 @@ class MWB_M4WP_Mautic_Api  {
             if( !empty( $base_url ) && !empty( $username ) && !empty( $password ) ){
                 self::$mautic_api = new Basic_Auth( $base_url, $username, $password ) ;
                 return self::$mautic_api ;
+            }else{
+                throw new Mautic_Api_Exception( 'Missing Api Details' , 006 );
             }
         }
         

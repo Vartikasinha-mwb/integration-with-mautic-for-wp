@@ -128,6 +128,7 @@ class Mautic_For_Wordpress {
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'public/class-mautic-for-wordpress-public.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/api/class-api.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/api/class-mautic-exception.php';
 		/**
 		 * The class responsible for defining all functionalities related to mautic api 
 		*/

@@ -46,6 +46,7 @@
     if(isset($_POST['action']) && $_POST['action'] == 'mwb_m4wp_save' ){
         $type = $_POST['authentication_type'] ;
         $baseurl = $_POST['baseurl'];
+        $baseurl = rtrim($baseurl , '/');
         $credentials = array();
         $credentials['client_id'] = $_POST['client_id'] ; 
         $credentials['client_secret'] = $_POST['client_secret'] ;
@@ -112,4 +113,5 @@
         <button type="submit" class="button">Save</button>
     </form>
     <button type="button" class="button" id="mwb-fwpro-test-connection">Test Connection</button>
+    <a class="button" href="<?php echo  wp_nonce_url( admin_url('/?m4wp=1') , 'm4wp_auth_nonce' , 'm4wp_auth_nonce' )  ?>">Authorize App</a>
 </div>

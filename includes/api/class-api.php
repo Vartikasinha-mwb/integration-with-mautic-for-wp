@@ -97,7 +97,7 @@ class Api_Base {
         
         $this->reset_request_data();
         $method = strtoupper( trim( $method ) );
-        $url    = $this->base_url . ltrim( $endpoint, '/' );
+        $url    = $this->base_url .'/'. $endpoint;
         $headers = array_merge( $headers, $this->get_headers() );
         $args   = array(
             'method'    => $method,
