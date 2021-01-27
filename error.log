@@ -1,51 +1,170 @@
 Url : http://localhost/mautic2163/oauth/v2/token
 Method : POST
-Code : 400
-Message : Bad Request
-Error : Client id was not found in the headers or body
-Time: January 25, 2021  12:28 pm
-------------------------------------
-Url : http://localhost/mautic2163/api/users/self
-Method : GET
 Code : 200
 Message : OK
-Time: January 25, 2021  12:28 pm
-------------------------------------
-Url : http://localhost/mautic2163/oauth/v2/token
-Method : POST
-Code : 400
-Message : Bad Request
-Error : Client id was not found in the headers or body
-Time: January 25, 2021  12:30 pm
-------------------------------------
-Url : http://localhost/mautic2163/api/users/self
-Method : GET
-Code : 200
-Message : OK
-Time: January 25, 2021  12:30 pm
-------------------------------------
-Url : http://localhost/mautic2163/oauth/v2/token
-Method : POST
-Code : 400
-Message : Bad Request
-Error : Client id was not found in the headers or body
-Time: January 25, 2021  12:32 pm
-------------------------------------
-Url : http://localhost/mautic2163/api/users/self
-Method : GET
-Code : 200
-Message : OK
-Time: January 25, 2021  12:32 pm
+Time: January 27, 2021  11:24 am
+Response: {"headers":{},"body":"{\"access_token\":\"NzdmNzUyNzhmM2E4ZjA5NjdiNDBiYTgyYjI0MDgxOTQ2MzM1MTM3ZGExNjhkMzA0YzYyOGVjYjNhNzdjYTIwNw\",\"expires_in\":3600,\"token_type\":\"bearer\",\"scope\":null,\"refresh_token\":\"MmE0YjE3YmJjN2FkMTg3NWQwOGFiZDE5ZTc2MjExMzExYWRmNjZkZTM5OTUwNDljYjQ1NjI0ODkyNGNmMjA1Yw\"}","response":{"code":200,"message":"OK"},"cookies":[],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
 ------------------------------------
 Url : http://localhost/mautic2163/oauth/v2/token
 Method : POST
 Code : 200
 Message : OK
-Time: January 25, 2021  12:33 pm
+Time: January 27, 2021  11:26 am
+Response: {"headers":{},"body":"{\"access_token\":\"N2I2NjY3OGEyMTJlOTFlZTdhODEwODQyYTVjNmFlMTI0NTA0Yzk3Y2U5MTdhMWU4ZWQ2NmJmYWE4MmQ3YzMxMA\",\"expires_in\":3600,\"token_type\":\"bearer\",\"scope\":null,\"refresh_token\":\"YmZjOWUxZmM0OTYxZjI1YjBlMTM0MjEzNGZmODEyMGI5N2U2ZTYyMGQ3NmM1ODI2MjQyNjZlMjIyNDI4ZmVmOQ\"}","response":{"code":200,"message":"OK"},"cookies":[],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 200
+Message : OK
+Time: January 27, 2021  11:30 am
+Response: {"headers":{},"body":"{\"access_token\":\"MjQ4OTQyMjhlNTk3NmIxNzM3YjQ5NDQ5YTJhYjU5NjliZTczMWYzZWUyODgzYmNkZjc1MjU5YjIxMDgzNmJlNw\",\"expires_in\":3600,\"token_type\":\"bearer\",\"scope\":null,\"refresh_token\":\"MzExNTkxMzA2Njk4ZDYxODdlYjQyYTE0YTM0YmIzZmFjZTQwZTZjYTc4YTJjZjNiZGQ1MWM1ZDcxZDk0MzQzNw\"}","response":{"code":200,"message":"OK"},"cookies":[],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
 ------------------------------------
 Url : http://localhost/mautic2163/api/users/self
 Method : GET
 Code : 200
 Message : OK
-Time: January 25, 2021  12:33 pm
+Time: January 27, 2021  11:30 am
+Response: {"headers":{},"body":"{\n    \"isPublished\": true,\n    \"id\": 1,\n    \"username\": \"mohitp\",\n    \"firstName\": \"Mohit\",\n    \"lastName\": \"Pandey\",\n    \"email\": \"mohitpandey@makewebbetter.com\",\n    \"role\": {\n        \"isPublished\": true,\n        \"id\": 1,\n        \"name\": \"Administrator\",\n        \"description\": \"Full system access\",\n        \"isAdmin\": true\n    },\n    \"timezone\": \"\",\n    \"locale\": \"\",\n    \"lastLogin\": \"2021-01-25T10:13:17+00:00\",\n    \"lastActive\": \"2021-01-25T14:48:18+00:00\",\n    \"onlineStatus\": \"away\"\n}","response":{"code":200,"message":"OK"},"cookies":[{"name":"f19c4df49c6894afc0f3c0a14c99967c","value":"jq8s00uevdgqbe1kkctetac3ft","expires":null,"path":"\/","domain":"localhost","host_only":true}],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 400
+Message : Bad Request
+Error : Invalid refresh token
+Time: January 27, 2021  11:35 am
+Response: {"headers":{},"body":"{\"errors\":[{\"message\":\"Invalid refresh token\",\"code\":400,\"type\":\"invalid_grant\"}],\"error\":\"invalid_grant\",\"error_description\":\"Invalid refresh token (`error` and `error_description` are deprecated as of 2.6.0 and will be removed in 3.0. Use the `errors` array instead.)\"}","response":{"code":400,"message":"Bad Request"},"cookies":[],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+------------------------------------
+Url : http://localhost/mautic2163/api/users/self
+Method : GET
+Code : 200
+Message : OK
+Time: January 27, 2021  11:35 am
+Response: {"headers":{},"body":"{\n    \"isPublished\": true,\n    \"id\": 1,\n    \"username\": \"mohitp\",\n    \"firstName\": \"Mohit\",\n    \"lastName\": \"Pandey\",\n    \"email\": \"mohitpandey@makewebbetter.com\",\n    \"role\": {\n        \"isPublished\": true,\n        \"id\": 1,\n        \"name\": \"Administrator\",\n        \"description\": \"Full system access\",\n        \"isAdmin\": true\n    },\n    \"timezone\": \"\",\n    \"locale\": \"\",\n    \"lastLogin\": \"2021-01-25T10:13:17+00:00\",\n    \"lastActive\": \"2021-01-27T11:30:06+00:00\",\n    \"onlineStatus\": \"away\"\n}","response":{"code":200,"message":"OK"},"cookies":[{"name":"f19c4df49c6894afc0f3c0a14c99967c","value":"ago24n740oln2s6750ak7fkt7v","expires":null,"path":"\/","domain":"localhost","host_only":true}],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 400
+Message : Bad Request
+Error : Invalid refresh token
+Time: January 27, 2021  11:38 am
+Response: {"headers":{},"body":"{\"errors\":[{\"message\":\"Invalid refresh token\",\"code\":400,\"type\":\"invalid_grant\"}],\"error\":\"invalid_grant\",\"error_description\":\"Invalid refresh token (`error` and `error_description` are deprecated as of 2.6.0 and will be removed in 3.0. Use the `errors` array instead.)\"}","response":{"code":400,"message":"Bad Request"},"cookies":[],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+------------------------------------
+Url : http://localhost/mautic2163/api/users/self
+Method : GET
+Code : 200
+Message : OK
+Time: January 27, 2021  11:38 am
+Response: {"headers":{},"body":"{\n    \"isPublished\": true,\n    \"id\": 1,\n    \"username\": \"mohitp\",\n    \"firstName\": \"Mohit\",\n    \"lastName\": \"Pandey\",\n    \"email\": \"mohitpandey@makewebbetter.com\",\n    \"role\": {\n        \"isPublished\": true,\n        \"id\": 1,\n        \"name\": \"Administrator\",\n        \"description\": \"Full system access\",\n        \"isAdmin\": true\n    },\n    \"timezone\": \"\",\n    \"locale\": \"\",\n    \"lastLogin\": \"2021-01-25T10:13:17+00:00\",\n    \"lastActive\": \"2021-01-27T11:35:17+00:00\",\n    \"onlineStatus\": \"away\"\n}","response":{"code":200,"message":"OK"},"cookies":[{"name":"f19c4df49c6894afc0f3c0a14c99967c","value":"df8c2gau1dpc6ldcc3cu1h6d1c","expires":null,"path":"\/","domain":"localhost","host_only":true}],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 200
+Message : OK
+Time: January 27, 2021  11:42 am
+Response: {"headers":{},"body":"{\"access_token\":\"NTNhYmQ2MTllODQyZTc0ZDMzOGI0MDMwODkyMTNlOTI2ODA2YTE2MTA5ODgyNDFmZDFlODMxMjhkNWRhZWY4MA\",\"expires_in\":3600,\"token_type\":\"bearer\",\"scope\":null,\"refresh_token\":\"ZDYzZDdkOWZjZDNiZmExMWE2NmVkNmFmMjE2NTIyNWZjM2M1YTI1OWFhMzJmYjExMjY4OTA4YjgzMGZhOTk0OA\"}","response":{"code":200,"message":"OK"},"cookies":[],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 200
+Message : OK
+Time: January 27, 2021  11:43 am
+Response: {"headers":{},"body":"{\"access_token\":\"MDQyM2MyOTdjZWQ0ZGY3Yzc0MDUwZmUwNzBlN2NkYjAxODUzZDJhZDIzMzRiNTE0NGY0ODYyNGY1Yjc5MTcwZA\",\"expires_in\":3600,\"token_type\":\"bearer\",\"scope\":null,\"refresh_token\":\"NzE5ZTlkNzM5MmM2ZDAxYzJjMzE0ZDhmYTUzOGY2ZjMwMzFkYTJmM2U0MWEwZTcxODJlNDQ4YjgxN2ZhOGFlZA\"}","response":{"code":200,"message":"OK"},"cookies":[],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+------------------------------------
+Url : http://localhost/mautic2163/api/users/self
+Method : GET
+Code : 200
+Message : OK
+Time: January 27, 2021  11:43 am
+Response: {"headers":{},"body":"{\n    \"isPublished\": true,\n    \"id\": 1,\n    \"username\": \"mohitp\",\n    \"firstName\": \"Mohit\",\n    \"lastName\": \"Pandey\",\n    \"email\": \"mohitpandey@makewebbetter.com\",\n    \"role\": {\n        \"isPublished\": true,\n        \"id\": 1,\n        \"name\": \"Administrator\",\n        \"description\": \"Full system access\",\n        \"isAdmin\": true\n    },\n    \"timezone\": \"\",\n    \"locale\": \"\",\n    \"lastLogin\": \"2021-01-25T10:13:17+00:00\",\n    \"lastActive\": \"2021-01-27T11:38:01+00:00\",\n    \"onlineStatus\": \"away\"\n}","response":{"code":200,"message":"OK"},"cookies":[{"name":"f19c4df49c6894afc0f3c0a14c99967c","value":"isn4jtbodaqfp29nbsv19vtcs5","expires":null,"path":"\/","domain":"localhost","host_only":true}],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 200
+Message : OK
+Time: January 27, 2021  11:51 am
+Response: {"headers":{},"body":"{\"access_token\":\"MzA5MDYwNTFmZTAzYjRiMjllMGM4ZjhmZGEwODkzOGY4ZWUwNWZkMmI0NDVmZTM4ZWZlMzc3Yjg1Zjg1ZDk4ZQ\",\"expires_in\":3600,\"token_type\":\"bearer\",\"scope\":null,\"refresh_token\":\"MTllMzlkY2EzOTlmMGM3NjQyNGEyNDMxZDRlMDRkZDc4YzRmYWIwMGY0MTgwMTdhZjQ5ZjFlNjJhNDA0N2ExOA\"}","response":{"code":200,"message":"OK"},"cookies":[],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+------------------------------------
+Url : http://localhost/mautic2163/api/users/self
+Method : GET
+Code : 200
+Message : OK
+Time: January 27, 2021  11:51 am
+Response: {"headers":{},"body":"{\n    \"isPublished\": true,\n    \"id\": 1,\n    \"username\": \"mohitp\",\n    \"firstName\": \"Mohit\",\n    \"lastName\": \"Pandey\",\n    \"email\": \"mohitpandey@makewebbetter.com\",\n    \"role\": {\n        \"isPublished\": true,\n        \"id\": 1,\n        \"name\": \"Administrator\",\n        \"description\": \"Full system access\",\n        \"isAdmin\": true\n    },\n    \"timezone\": \"\",\n    \"locale\": \"\",\n    \"lastLogin\": \"2021-01-25T10:13:17+00:00\",\n    \"lastActive\": \"2021-01-27T11:43:09+00:00\",\n    \"onlineStatus\": \"away\"\n}","response":{"code":200,"message":"OK"},"cookies":[{"name":"f19c4df49c6894afc0f3c0a14c99967c","value":"eq25evv02c0jkg12hkumpvldh9","expires":null,"path":"\/","domain":"localhost","host_only":true}],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 200
+Message : OK
+Time: January 27, 2021  11:59 am
+Response: {"headers":{},"body":"{\"access_token\":\"Njk2N2Y1ZjYwNzA0OWRhN2E0ZmIxMTYxZGZkNTc0NTI3OWQ1M2I2NGU1NmFiZWRjNjNkNTk2NTBhOTdiZDNiNg\",\"expires_in\":3600,\"token_type\":\"bearer\",\"scope\":null,\"refresh_token\":\"YWMzNjRmMTk3NGUyZmEyMTE2MjU5MGZlYWJhMmYyNjI0ZjQwZjQ5YzU4M2JhYzIzNGQ5MmRhNWMyYmYxOTdjMA\"}","response":{"code":200,"message":"OK"},"cookies":[],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+------------------------------------
+Url : http://localhost/mautic2163/api/users/self
+Method : GET
+Code : 200
+Message : OK
+Time: January 27, 2021  11:59 am
+Response: {"headers":{},"body":"{\n    \"isPublished\": true,\n    \"id\": 1,\n    \"username\": \"mohitp\",\n    \"firstName\": \"Mohit\",\n    \"lastName\": \"Pandey\",\n    \"email\": \"mohitpandey@makewebbetter.com\",\n    \"role\": {\n        \"isPublished\": true,\n        \"id\": 1,\n        \"name\": \"Administrator\",\n        \"description\": \"Full system access\",\n        \"isAdmin\": true\n    },\n    \"timezone\": \"\",\n    \"locale\": \"\",\n    \"lastLogin\": \"2021-01-25T10:13:17+00:00\",\n    \"lastActive\": \"2021-01-27T11:51:41+00:00\",\n    \"onlineStatus\": \"away\"\n}","response":{"code":200,"message":"OK"},"cookies":[{"name":"f19c4df49c6894afc0f3c0a14c99967c","value":"vog6rt3t5qj7klrom6fvqsvtbm","expires":null,"path":"\/","domain":"localhost","host_only":true}],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 200
+Message : OK
+Time: January 27, 2021  12:38 pm
+Response: {"headers":{},"body":"{\"access_token\":\"NGFlMjJiZGM1NjJjYmUyZWRiZGE2ODJkOTBmMmEzMTU1MWMwNzg0MTRiZjhlNDM0NTcxYmZhNWM2MTVkNGE4OQ\",\"expires_in\":3600,\"token_type\":\"bearer\",\"scope\":null,\"refresh_token\":\"ZjEwNWNmYmFhYzI5YTA4MmIxZGM2NzIxNjAxMjhiYTFhMDhjNjU4NmQ1MDc1NzI4YmRmNGJjNjk4NmU3NTM1Nw\"}","response":{"code":200,"message":"OK"},"cookies":[],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+------------------------------------
+Url : http://localhost/mautic2163/api/users/self
+Method : GET
+Code : 200
+Message : OK
+Time: January 27, 2021  12:38 pm
+Response: {"headers":{},"body":"{\n    \"isPublished\": true,\n    \"id\": 1,\n    \"username\": \"mohitp\",\n    \"firstName\": \"Mohit\",\n    \"lastName\": \"Pandey\",\n    \"email\": \"mohitpandey@makewebbetter.com\",\n    \"role\": {\n        \"isPublished\": true,\n        \"id\": 1,\n        \"name\": \"Administrator\",\n        \"description\": \"Full system access\",\n        \"isAdmin\": true\n    },\n    \"timezone\": \"\",\n    \"locale\": \"\",\n    \"lastLogin\": \"2021-01-25T10:13:17+00:00\",\n    \"lastActive\": \"2021-01-27T11:59:09+00:00\",\n    \"onlineStatus\": \"away\"\n}","response":{"code":200,"message":"OK"},"cookies":[{"name":"f19c4df49c6894afc0f3c0a14c99967c","value":"9nt07mnji8nfuaf8riu746bcju","expires":null,"path":"\/","domain":"localhost","host_only":true}],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+------------------------------------
+Url : http://localhost/mautic2163/api/users/self
+Method : GET
+Code : 200
+Message : OK
+Time: January 27, 2021  12:38 pm
+Response: {"headers":{},"body":"{\n    \"isPublished\": true,\n    \"id\": 1,\n    \"username\": \"mohitp\",\n    \"firstName\": \"Mohit\",\n    \"lastName\": \"Pandey\",\n    \"email\": \"mohitpandey@makewebbetter.com\",\n    \"role\": {\n        \"isPublished\": true,\n        \"id\": 1,\n        \"name\": \"Administrator\",\n        \"description\": \"Full system access\",\n        \"isAdmin\": true\n    },\n    \"timezone\": \"\",\n    \"locale\": \"\",\n    \"lastLogin\": \"2021-01-25T10:13:17+00:00\",\n    \"lastActive\": \"2021-01-27T12:38:19+00:00\",\n    \"onlineStatus\": \"away\"\n}","response":{"code":200,"message":"OK"},"cookies":[{"name":"f19c4df49c6894afc0f3c0a14c99967c","value":"s73nsljj4m3ko7cp6vtsfpmu21","expires":null,"path":"\/","domain":"localhost","host_only":true}],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 200
+Message : OK
+Time: January 27, 2021  12:42 pm
+Response: {"headers":{},"body":"{\"access_token\":\"ZTQ0YWMxN2Q2MjRlZjkwODMyNzZmYjg0YWY3OGE5NDcwNDNkMTIzMjJjZDQxY2JjY2ZkZGZmODJiYTUzNGU4MA\",\"expires_in\":3600,\"token_type\":\"bearer\",\"scope\":null,\"refresh_token\":\"NjAyMDk1NTM2MGU3NGVlNWY0OWQwZGM3MGEzNmMzNzM1MmVlMWI4YmNkNzc5YzViYTU2MzMxMTllOWUxYmYyZA\"}","response":{"code":200,"message":"OK"},"cookies":[],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+------------------------------------
+Url : http://localhost/mautic2163/api/users/self
+Method : GET
+Code : 200
+Message : OK
+Time: January 27, 2021  12:42 pm
+Response: {"headers":{},"body":"{\n    \"isPublished\": true,\n    \"id\": 1,\n    \"username\": \"mohitp\",\n    \"firstName\": \"Mohit\",\n    \"lastName\": \"Pandey\",\n    \"email\": \"mohitpandey@makewebbetter.com\",\n    \"role\": {\n        \"isPublished\": true,\n        \"id\": 1,\n        \"name\": \"Administrator\",\n        \"description\": \"Full system access\",\n        \"isAdmin\": true\n    },\n    \"timezone\": \"\",\n    \"locale\": \"\",\n    \"lastLogin\": \"2021-01-25T10:13:17+00:00\",\n    \"lastActive\": \"2021-01-27T12:38:19+00:00\",\n    \"onlineStatus\": \"away\"\n}","response":{"code":200,"message":"OK"},"cookies":[{"name":"f19c4df49c6894afc0f3c0a14c99967c","value":"1tbl40356adjqgvn3cplpsr98v","expires":null,"path":"\/","domain":"localhost","host_only":true}],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 200
+Message : OK
+Time: January 27, 2021  1:51 pm
+Response: {"headers":{},"body":"{\"access_token\":\"MmE2NTEzMGEyMzkwOTk3ZTFkYTMzNjAyMWI4YTg1NTYzOTE5YzY2YzQyMzFhMTYzMzA2MTVhMTE4Yzg3OTI5Mw\",\"expires_in\":3600,\"token_type\":\"bearer\",\"scope\":null,\"refresh_token\":\"YzBhOGYzMDQ1MmFjNmMyOTBlODA0NzhkMjBjOTRmNjcxOTA5NmY0NGE4ZDA1NzAxNGZlNDU1NjlkZDUyMDZmZg\"}","response":{"code":200,"message":"OK"},"cookies":[],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+------------------------------------
+Url : http://localhost/mautic2163/api/users/self
+Method : GET
+Code : 200
+Message : OK
+Time: January 27, 2021  1:51 pm
+Response: {"headers":{},"body":"{\n    \"isPublished\": true,\n    \"id\": 1,\n    \"username\": \"mohitp\",\n    \"firstName\": \"Mohit\",\n    \"lastName\": \"Pandey\",\n    \"email\": \"mohitpandey@makewebbetter.com\",\n    \"role\": {\n        \"isPublished\": true,\n        \"id\": 1,\n        \"name\": \"Administrator\",\n        \"description\": \"Full system access\",\n        \"isAdmin\": true\n    },\n    \"timezone\": \"\",\n    \"locale\": \"\",\n    \"lastLogin\": \"2021-01-25T10:13:17+00:00\",\n    \"lastActive\": \"2021-01-27T12:42:52+00:00\",\n    \"onlineStatus\": \"away\"\n}","response":{"code":200,"message":"OK"},"cookies":[{"name":"f19c4df49c6894afc0f3c0a14c99967c","value":"947gdq2vhk1hrlu9mf70dlhkpr","expires":null,"path":"\/","domain":"localhost","host_only":true}],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 200
+Message : OK
+Time: January 27, 2021  2:28 pm
+Response: {"headers":{},"body":"{\"access_token\":\"NTRhZTNlZmU4YzNkMDQxYTNiMDQ5YjAxMWUwNjAzNjkwZDJhN2VhZDM3ZjZhM2NhZDRiNzNiYTQyODhlZjkxNQ\",\"expires_in\":3600,\"token_type\":\"bearer\",\"scope\":null,\"refresh_token\":\"YTdkNTA2NjRkOWRjYjJjMDNhMjNlNWJlYzZjMTkyYWZiN2QyMzkxOTE4MjA4MjIwOGFhODBmODZlZjE2ODY0MA\"}","response":{"code":200,"message":"OK"},"cookies":[],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+------------------------------------
+Url : http://localhost/mautic2163/api/users/self
+Method : GET
+Code : 200
+Message : OK
+Time: January 27, 2021  2:28 pm
+Response: {"headers":{},"body":"{\n    \"isPublished\": true,\n    \"id\": 1,\n    \"username\": \"mohitp\",\n    \"firstName\": \"Mohit\",\n    \"lastName\": \"Pandey\",\n    \"email\": \"mohitpandey@makewebbetter.com\",\n    \"role\": {\n        \"isPublished\": true,\n        \"id\": 1,\n        \"name\": \"Administrator\",\n        \"description\": \"Full system access\",\n        \"isAdmin\": true\n    },\n    \"timezone\": \"\",\n    \"locale\": \"\",\n    \"lastLogin\": \"2021-01-25T10:13:17+00:00\",\n    \"lastActive\": \"2021-01-27T13:51:19+00:00\",\n    \"onlineStatus\": \"away\"\n}","response":{"code":200,"message":"OK"},"cookies":[{"name":"f19c4df49c6894afc0f3c0a14c99967c","value":"90fu40p7fl6uds91rp1qrm46b7","expires":null,"path":"\/","domain":"localhost","host_only":true}],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
 ------------------------------------

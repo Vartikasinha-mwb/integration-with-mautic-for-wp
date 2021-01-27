@@ -3,8 +3,13 @@ jQuery(document).ready(function ($) {
 	$('#mwb-fwpro-test-connection').on('click' , function(e){
 		e.preventDefault();
 		var requestData = {'action' : 'mwb_m4wp_test_api_connection'}
-		$.post( ajaxUrl, requestData ).done(function(){
-			
+		$.post( ajaxUrl, requestData ).done(function( response ){
+			alert( response.msg )
 		});
+	})
+
+	$('#mwb-m4wp-auth-type').on('change', function(e){
+		$( '.mwb-m4wp-oauth-row' ).toggleClass( 'row-hide' );
+		$( '.mwb-m4wp-basic-row' ).toggleClass( 'row-hide' );
 	})
 });

@@ -2,3 +2,21 @@
  * All of the CSS for your admin-specific functionality should be
  * included in this file.
  */
+
+.mwb-m4wp-admin-wrap .row-hide{
+    display: none;
+}
+
+.span-connected {
+    padding: 10px 15px;
+    background: rgb(28, 187, 41);
+    color: #fff;
+    border-radius: 20px;
+}
+
+.span-disconnected {
+    padding: 10px 15px;
+    background: rgb(230, 46, 46);
+    color: #fff;
+    border-radius: 20px;
+}

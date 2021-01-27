@@ -43,6 +43,7 @@
     
     //http://localhost/wp551/wp-admin/?state=6aef0c3afa&code=YzM5YjgyNWNhNjhjNDY4MDA1NmExMWE4OTg4MjgzMzkwNjJhOTc2OGNhNjQ3YjMzYTMwZWU5MDQxMzcxMGQ3MA
     
+
     if(isset($_POST['action']) && $_POST['action'] == 'mwb_m4wp_save' ){
         $type = $_POST['authentication_type'] ;
         $baseurl = $_POST['baseurl'];
@@ -65,14 +66,33 @@
     $client_id = isset($credentials['client_id']) ? $credentials['client_id'] : '' ; 
     $client_secret = isset($credentials['client_secret']) ? $credentials['client_secret'] : '' ; 
     
+    $row_basic = 'row-hide' ; 
+    $row_oauth2 = 'row-hide' ; 
+    ($type == 'basic') ? ( $row_basic = '')  : ( $row_oauth2 = '') ;
+    
     ?>
-<div class="wrap">
+<div class="wrap mwb-m4wp-admin-wrap">
+    <div class="mwb-m4wp-admin-panel-head">
+        <h3><?php esc_html_e( 'Mautic WordPress Integration', 'mautic-for-wordpress' ) ?></h3>
+    </div>
     <form method="post">
         <table class="form-table">
             <tr>
+                <th>Status</th>
+                <td>
+                    <?php 
+                        if(get_option('mwb_m4wp_oauth2_success' , false)){
+                            echo '<span class="span-connected">Connected</span>' ; 
+                        }else{
+                            echo '<span class="span-disconnected">DisConnected</span>' ; 
+                        }
+                    ?>
+                </td>
+            </tr>
+            <tr>
                 <th>Type</th>
                 <td>
-                    <select name="authentication_type" >
+                    <select name="authentication_type" id="mwb-m4wp-auth-type">
                         <option value="basic" <?php selected('basic' , $type) ?>>Basic</option>
                         <option value="oauth2" <?php selected('oauth2' , $type) ?>>OAuth2</option>
                     </select>
@@ -84,28 +104,28 @@
                     <input type="text" value="<?php echo $baseurl ?>" name="baseurl" />
                 </td>
             </tr>
-            <tr>
+            <tr class="mwb-m4wp-oauth-row <?php echo $row_oauth2 ?>">
                 <th>Client id</th>
                 <td>
-                    <input type="text" value="<?php echo $client_id ?>" name="client_id" />
+                    <input type="password" value="<?php echo $client_id ?>" name="client_id" />
                 </td>
             </tr>
-            <tr>
+            <tr class="mwb-m4wp-oauth-row <?php echo $row_oauth2 ?>">
                 <th>Client Secret</th>
                 <td>
-                    <input type="text" value="<?php echo $client_secret ?>" name="client_secret" />
+                    <input type="password" value="<?php echo $client_secret ?>" name="client_secret" />
                 </td>
             </tr>
-            <tr>
+            <tr class="mwb-m4wp-basic-row <?php echo $row_basic ?>">
                 <th>Username</th>
                 <td>
                     <input type="text" value="<?php echo $username ?>" name="username" />
                 </td>
             </tr>
-            <tr>
+            <tr class="mwb-m4wp-basic-row <?php echo $row_basic ?>">
                 <th>Password</th>
                 <td>
-                    <input type="text" value="<?php echo $password ?>" name="password" />
+                    <input type="password" value="<?php echo $password ?>" name="password" />
                 </td>
             </tr>
         </table>
@@ -113,5 +133,7 @@
         <button type="submit" class="button">Save</button>
     </form>
     <button type="button" class="button" id="mwb-fwpro-test-connection">Test Connection</button>
-    <a class="button" href="<?php echo  wp_nonce_url( admin_url('/?m4wp=1') , 'm4wp_auth_nonce' , 'm4wp_auth_nonce' )  ?>">Authorize App</a>
+    <?php if(!get_option('mwb_m4wp_oauth2_success', false)) : ?>
+        <a class="button" href="<?php echo  wp_nonce_url( admin_url('/?m4wp=1') , 'm4wp_auth_nonce' , 'm4wp_auth_nonce' )  ?>">Authorize App</a>
+    <?php endif ; ?>
 </div>

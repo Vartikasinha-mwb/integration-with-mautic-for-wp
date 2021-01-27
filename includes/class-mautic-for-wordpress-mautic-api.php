@@ -69,7 +69,7 @@ class MWB_M4WP_Mautic_Api  {
                 $api_keys['grant_type'] = 'refresh_token';
                 $data =  $api_instance->renew_access_token( $api_keys ) ;
                 if($data){
-					$api_instance->save_token_data($response);
+					$api_instance->save_token_data( $data );
 					update_option('mwb_m4wp_oauth2_success' , true);
 				}else{
                     update_option('mwb_m4wp_oauth2_success' , false);

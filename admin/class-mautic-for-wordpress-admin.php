@@ -258,6 +258,7 @@ class Mautic_For_Wordpress_Admin {
 				}else{
 					update_option('mwb_m4wp_oauth2_success' , false);
 				}
+				wp_redirect( admin_url('admin.php?page=mautic-for-wordpress') ) ; 
 			}
 		}
 	}
