@@ -38,9 +38,9 @@ class Api_Base {
             foreach( $data[ 'errors' ] as $key => $value ){
                 $log .= "Error : " . $value['message'] . PHP_EOL ; 
             }
+            $log .= "Response: ".json_encode($this->last_response).PHP_EOL ; 
         } 
         $log .= "Time: ".current_time("F j, Y  g:i a").PHP_EOL ; 
-        $log .= "Response: ".json_encode($this->last_response).PHP_EOL ; 
         $log .= "------------------------------------".PHP_EOL ;  
         file_put_contents( $file , $log, FILE_APPEND ) ;
     }

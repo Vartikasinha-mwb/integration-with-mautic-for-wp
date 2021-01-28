@@ -208,6 +208,7 @@ class Mautic_For_Wordpress {
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
 		//hook tracking script
 		$this->loader->add_action( 'init', $plugin_public,  'add_tracking_script' ) ; 
+		$this->loader->add_action( 'init', $plugin_public,  'add_shortcodes' ) ; 
 	}
 
 	private function define_ajax_hooks(){

@@ -103,7 +103,8 @@ class MWB_M4WP_Mautic_Api  {
         if( !$mautic_api ) {
             return ;
         }
-        return $mautic_api->get( $endpoint ) ;
+        $headers = $mautic_api->get_auth_header();
+        return $mautic_api->get( $endpoint , array() , $headers ) ;
     }
     
     /**
@@ -115,7 +116,8 @@ class MWB_M4WP_Mautic_Api  {
         if( !$mautic_api ) {
             return ;
         }
-        return $mautic_api->post( $endpoint ) ;
+        $headers = $mautic_api->get_auth_header();
+        return $mautic_api->post( $endpoint , array() , $headers ) ;
     }
     
     /**
@@ -127,7 +129,8 @@ class MWB_M4WP_Mautic_Api  {
         if( !$mautic_api ) {
             return ;
         }
-        return $mautic_api->get( $endpoint ) ;
+        $headers = $mautic_api->get_auth_header();
+        return $mautic_api->get( $endpoint , array() , $headers ) ;
     }
     
     /**
@@ -139,7 +142,8 @@ class MWB_M4WP_Mautic_Api  {
         if( !$mautic_api ) {
             return ;
         }
-        return $mautic_api->get( $endpoint ) ;
+        $headers = $mautic_api->get_auth_header();
+        return $mautic_api->get( $endpoint , array() , $headers ) ;
     }
     
     /**
@@ -152,7 +156,7 @@ class MWB_M4WP_Mautic_Api  {
             return ;
         }
         $headers = $mautic_api->get_auth_header();
-        return $mautic_api->get( $endpoint, $data, $headers ) ;
+        return $mautic_api->get( $endpoint, array() , $headers ) ;
     }
     
     /**

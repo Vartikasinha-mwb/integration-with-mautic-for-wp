@@ -12,4 +12,10 @@ jQuery(document).ready(function ($) {
 		$( '.mwb-m4wp-oauth-row' ).toggleClass( 'row-hide' );
 		$( '.mwb-m4wp-basic-row' ).toggleClass( 'row-hide' );
 	})
+
+	$('.mwb-m4wp-form-view').on('click' , function(e){
+		e.preventDefault();
+		var html = $(this).attr('form-html');
+		$('#mwb-m4wp-form-html').html(html);
+	})
 });

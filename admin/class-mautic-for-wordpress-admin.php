@@ -116,6 +116,23 @@ class Mautic_For_Wordpress_Admin {
 			array( $this, 'include_admin_menu_display' ),
 			'dashicons-admin-plugins'
 		);
+
+		add_submenu_page( 
+			'mautic-for-wordpress' , 
+			__( 'Forms', 'mautic-for-wordpress' ),
+			__( 'Forms', 'mautic-for-wordpress' ),
+			'manage_options',
+			'mautic-forms',
+			array( $this, 'include_mautic_forms_display')
+		) ; 
+	}
+
+	/**
+	* Include admin forms view.
+	*/
+	public function include_mautic_forms_display(){
+		$file_path = 'admin/partials/mautic-for-wordpress-forms-display.php' ; 
+		$this->load_template( $file_path ) ; 
 	}
 	
 	/**

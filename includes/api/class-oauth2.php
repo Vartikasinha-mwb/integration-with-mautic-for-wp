@@ -25,11 +25,10 @@ class Oauth2 extends Api_Base {
     }
 
     public function have_active_access_token(){
-        return false;
         $token_data = get_option( 'mwb_m4wp_token_data', array()); 
         if(isset($token_data['expires_in']) && $token_data['expires_in'] > time()){
             return true;
-        }
+        } 
         return false;
     }
 

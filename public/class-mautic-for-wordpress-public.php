@@ -135,6 +135,18 @@ class Mautic_For_Wordpress_Public {
 		<?php
 		
 	}
+
+	public function add_form_shortcode( $attr = array()){
+		ob_start();
+        require MWB_M4WP_PLUGIN_PATH.'public/partials/forms.php';
+        $output = ob_get_contents();
+        ob_end_clean();
+        return $output;
+	}
+
+	public function add_shortcodes(){
+		add_shortcode( 'mwb_m4wp_form', array( $this, 'add_form_shortcode' ) );
+	}
 	
 	public function get_tracking_data(){
 		
