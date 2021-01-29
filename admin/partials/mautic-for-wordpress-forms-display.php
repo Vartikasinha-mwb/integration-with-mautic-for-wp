@@ -8,6 +8,7 @@ $forms = MWB_M4WP_Mautic_Api::get_forms();
     <div class="mwb-m4wp-admin-panel-head">
         <h3><?php esc_html_e( 'Mautic Forms', 'mautic-for-wordpress' ) ?></h3>
     </div>
+    <?php if ( $forms ) : ?>
     <table class="form-table">
         <thead>
             <th><?php esc_html_e('Form id' , 'mautic-for-wordpress') ?></th>
@@ -36,6 +37,7 @@ $forms = MWB_M4WP_Mautic_Api::get_forms();
             <?php endforeach ; ?>
         </tbody>
     </table>
+    <?php endif ; ?>
     <div id="mwb-m4wp-form-html">
     </div>
 </div>

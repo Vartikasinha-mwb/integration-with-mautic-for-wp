@@ -96,7 +96,13 @@ class Mautic_For_Wordpress_Admin {
 		* class.
 		*/
 		
-		wp_enqueue_script( 'mwb-fwpro-admin-script' , plugin_dir_url( __FILE__ ) . 'js/mautic-for-wordpress-admin.js', array( 'jquery' ), time(), false );
+		$current_screen = get_current_screen() ; 
+		if( isset( $current_screen ) && $current_screen->id ){
+			wp_enqueue_script( 'mwb-fwpro-chart-script' , plugin_dir_url( __FILE__ ) . 'chart/chart.js', array( 'jquery' ), '1.0.0', false );
+			wp_enqueue_style( 'mwb-fwpro-chart-style' , plugin_dir_url( __FILE__ ) . 'chart/chart.css' );
+		}
+
+		wp_enqueue_script( 'mwb-fwpro-admin-script' , plugin_dir_url( __FILE__ ) . 'js/mautic-for-wordpress-admin.js', array( 'jquery', 'mwb-fwpro-chart-script' ), time(), false );
 		$ajax_data = array(
 			'ajax_url' => admin_url('admin-ajax.php'),
 		);
@@ -119,12 +125,26 @@ class Mautic_For_Wordpress_Admin {
 
 		add_submenu_page( 
 			'mautic-for-wordpress' , 
+			__( 'Dashboard', 'mautic-for-wordpress' ),
+			__( 'Dashboard', 'mautic-for-wordpress' ),
+			'manage_options',
+			'mautic-dashboard',
+			array( $this, 'include_mautic_dashboard')
+		) ;
+
+		add_submenu_page( 
+			'mautic-for-wordpress' , 
 			__( 'Forms', 'mautic-for-wordpress' ),
 			__( 'Forms', 'mautic-for-wordpress' ),
 			'manage_options',
 			'mautic-forms',
 			array( $this, 'include_mautic_forms_display')
-		) ; 
+		) ;
+	}
+
+	public function include_mautic_dashboard(){
+		$file_path = 'admin/partials/mautic-for-wordpress-dashboard.php' ; 
+		$this->load_template( $file_path ) ; 
 	}
 
 	/**

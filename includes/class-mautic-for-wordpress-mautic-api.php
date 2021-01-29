@@ -125,12 +125,16 @@ class MWB_M4WP_Mautic_Api  {
     */
     public static function get_forms(){
         $endpoint = 'api/forms' ; 
-        $mautic_api = self::get_mautic_api();
-        if( !$mautic_api ) {
-            return ;
-        }
-        $headers = $mautic_api->get_auth_header();
-        return $mautic_api->get( $endpoint , array() , $headers ) ;
+        try{
+            $mautic_api = self::get_mautic_api();
+            $headers = $mautic_api->get_auth_header();
+            return $mautic_api->get( $endpoint , array() , $headers ) ;
+        }catch(Exception $e){
+           //print_r($e->getMessage()); 
+           //show notification
+           //log exception
+           return false;
+        } 
     }
     
     /**
@@ -138,25 +142,34 @@ class MWB_M4WP_Mautic_Api  {
     */
     public static function get_widgets(){
         $endpoint = 'api/data' ; 
-        $mautic_api = self::get_mautic_api();
-        if( !$mautic_api ) {
-            return ;
+        try{
+            $mautic_api = self::get_mautic_api();
+            $headers = $mautic_api->get_auth_header();
+            return $mautic_api->get( $endpoint , array() , $headers ) ;
+        }catch( Exception $e){
+            //print_r($e->getMessage()); 
+            //show notification
+            //log exception
+            return false;
         }
-        $headers = $mautic_api->get_auth_header();
-        return $mautic_api->get( $endpoint , array() , $headers ) ;
+        
     }
     
     /**
     * Get widget data
     */
     public static function get_widget_data( $widget_name, $data ){
-        $endpoint = "api/data/$widget_name" ; 
-        $mautic_api = self::get_mautic_api();
-        if( !$mautic_api ) {
-            return ;
+        $endpoint = "api/data/$widget_name" ;
+        try{
+            $mautic_api = self::get_mautic_api();
+            $headers = $mautic_api->get_auth_header();
+            return $mautic_api->get( $endpoint, $data , $headers ) ;
+        } catch ( Exception $e ){
+             //print_r($e->getMessage()); 
+            //show notification
+            //log exception
+            return false;
         }
-        $headers = $mautic_api->get_auth_header();
-        return $mautic_api->get( $endpoint, array() , $headers ) ;
     }
     
     /**

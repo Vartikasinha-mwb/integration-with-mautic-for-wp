@@ -1,108 +1,300 @@
-Url : http://localhost/mautic2163/api/forms
-Method : GET
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
 Code : 200
 Message : OK
-Time: January 28, 2021  10:57 am
+Time: January 29, 2021  7:38 am
 ------------------------------------
 Url : http://localhost/mautic2163/api/forms
 Method : GET
 Code : 200
 Message : OK
-Time: January 28, 2021  11:05 am
+Time: January 29, 2021  7:38 am
 ------------------------------------
 Url : http://localhost/mautic2163/api/forms
 Method : GET
 Code : 200
 Message : OK
-Time: January 28, 2021  11:10 am
+Time: January 29, 2021  7:41 am
 ------------------------------------
 Url : http://localhost/mautic2163/api/forms
 Method : GET
 Code : 200
 Message : OK
-Time: January 28, 2021  11:10 am
+Time: January 29, 2021  7:43 am
 ------------------------------------
 Url : http://localhost/mautic2163/api/forms
 Method : GET
 Code : 200
 Message : OK
-Time: January 28, 2021  11:13 am
+Time: January 29, 2021  7:43 am
 ------------------------------------
 Url : http://localhost/mautic2163/api/forms
 Method : GET
 Code : 200
 Message : OK
-Time: January 28, 2021  11:16 am
+Time: January 29, 2021  7:43 am
 ------------------------------------
 Url : http://localhost/mautic2163/api/forms
 Method : GET
 Code : 200
 Message : OK
-Time: January 28, 2021  11:17 am
+Time: January 29, 2021  7:43 am
 ------------------------------------
-Url : http://localhost/mautic2163/api/forms
+Url : http://localhost/mautic2163/api/data/created.leads.in.time
 Method : GET
 Code : 200
 Message : OK
-Time: January 28, 2021  11:18 am
-------------------------------------
-Url : http://localhost/mautic2163/api/forms
-Method : GET
-Code : 200
-Message : OK
-Time: January 28, 2021  11:18 am
-------------------------------------
-Url : http://localhost/mautic2163/api/forms
-Method : GET
-Code : 200
-Message : OK
-Time: January 28, 2021  11:22 am
-------------------------------------
-Url : http://localhost/mautic2163/api/forms
-Method : GET
-Code : 200
-Message : OK
-Time: January 28, 2021  11:22 am
-------------------------------------
-Url : http://localhost/mautic2163/api/forms
-Method : GET
-Code : 200
-Message : OK
-Time: January 28, 2021  11:22 am
-------------------------------------
-Url : http://localhost/mautic2163/api/forms
-Method : GET
-Code : 200
-Message : OK
-Time: January 28, 2021  11:25 am
-------------------------------------
-Url : http://localhost/mautic2163/api/forms
-Method : GET
-Code : 200
-Message : OK
-Time: January 28, 2021  11:26 am
-------------------------------------
-Url : http://localhost/mautic2163/api/forms
-Method : GET
-Code : 200
-Message : OK
-Time: January 28, 2021  11:31 am
-------------------------------------
-Url : http://localhost/mautic2163/api/forms
-Method : GET
-Code : 200
-Message : OK
-Time: January 28, 2021  11:34 am
+Time: January 29, 2021  8:01 am
 ------------------------------------
 Url : http://localhost/mautic2163/oauth/v2/token
 Method : POST
 Code : 200
 Message : OK
-Time: January 28, 2021  1:53 pm
+Time: January 29, 2021  8:59 am
 ------------------------------------
-Url : http://localhost/mautic2163/api/forms
+Url : http://localhost/mautic2163/api/data/created.leads.in.time
 Method : GET
 Code : 200
 Message : OK
-Time: January 28, 2021  1:53 pm
+Time: January 29, 2021  8:59 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  9:00 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  9:00 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  9:06 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  9:08 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-01-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  9:08 am
+------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 200
+Message : OK
+Time: January 29, 2021  11:20 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-01-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  11:20 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-01-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  11:31 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-01-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  11:32 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-01-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  11:34 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-01-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  11:35 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-01-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  12:09 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-01-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  12:13 pm
+------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 200
+Message : OK
+Time: January 29, 2021  12:26 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-01-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  12:26 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-01-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  12:28 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-01-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  12:28 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-01-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  12:29 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-01-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  12:29 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-01-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  12:30 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-01-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  12:30 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-01-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  12:31 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-01-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  12:31 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-01-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  12:32 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-01-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  12:33 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-01-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  12:33 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-01-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  12:34 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-01-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  12:36 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2021-01-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  12:36 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  12:36 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  12:36 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  12:40 pm
+------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 200
+Message : OK
+Time: January 29, 2021  1:26 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  1:26 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  1:29 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  1:29 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  1:32 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  1:32 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  1:32 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: January 29, 2021  1:32 pm
 ------------------------------------

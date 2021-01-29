@@ -18,4 +18,27 @@ jQuery(document).ready(function ($) {
 		var html = $(this).attr('form-html');
 		$('#mwb-m4wp-form-html').html(html);
 	})
+
+	if($('#created-leads-in-time').length > 0  ){
+		var chartdata = $('#created-leads-in-time').attr('data') ; 
+		chartdata = JSON.parse(chartdata)
+		var chartData = chartdata.chartData ; 
+		var ctx = document.getElementById('created-leads-in-time-chart');
+		var myChart = new Chart(ctx, {
+			type: 'line',
+			chartHeight:220,
+			data: chartData
+		});
+	}
+	if($('#page-hits-in-time').length > 0  ){
+		var chartdata = $('#page-hits-in-time').attr('data') ; 
+		chartdata = JSON.parse(chartdata)
+		var chartData = chartdata.chartData ; 
+		var ctx = document.getElementById('page-hits-in-time-chart');
+		var myChart = new Chart(ctx, {
+			type: 'line',
+			chartHeight:220,
+			data: chartData
+		});
+	}
 });
