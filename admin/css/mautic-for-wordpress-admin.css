@@ -24,3 +24,47 @@
 #mwb-m4wp-form-html {
 	background: #fff;
 }
+
+.mwb-m4wp-admin-widget-row {
+	position: relative;
+	margin-bottom: 10px;
+	background: #fff;
+}
+
+.mwb-m4wp-admin-widget-wrap{
+	padding: 30px;
+}
+
+.mwb-m4wp-admin-widget-head {
+	padding: 10px;
+	font-size: 16px;
+	font-weight: 600;
+	background: rgba(78,93,157,0.8);
+	color: #fff;
+}
+.mwb-m4wp-admin-widget-row.column-2 {
+	display: flex;
+}
+.mwb-m4wp-admin-widget-column{
+    width: 50%;;
+}
+
+.widget-table td, .widget-table th {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.widget-table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 14px;
+}
+
+.mwb-m4wp-admin-widget-column .mwb-m4wp-admin-widget-wrap{
+    padding: 0px;
+}
+
+.widget-table a{
+    text-decoration: none;
+}

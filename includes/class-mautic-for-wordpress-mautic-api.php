@@ -46,7 +46,7 @@ class MWB_M4WP_Mautic_Api  {
         if( 'oauth2' == $authentication_type ){
             $api_instance = Oauth2::get_instance(); 
             if(!$api_instance->is_authorized()){
-                throw new Mautic_Api_Exception( 'Unauthorized' , 004 );
+                //throw new Mautic_Api_Exception( 'Unauthorized' , 004 );
                 if( !($api_keys = $api_instance->have_valid_api_keys()) ){
                     throw new Mautic_Api_Exception( 'Missing api credentials' , 002 );
                     //return false;
@@ -64,7 +64,7 @@ class MWB_M4WP_Mautic_Api  {
                     //return false;
                 }
                 $api_keys['refresh_token'] = $refresh_token ;
-                $redirct_url = admin_url('admin.php') ; 
+                $redirct_url = admin_url() ; 
                 $api_keys['redirect_uri'] = $redirct_url ; 
                 $api_keys['grant_type'] = 'refresh_token';
                 $data =  $api_instance->renew_access_token( $api_keys ) ;

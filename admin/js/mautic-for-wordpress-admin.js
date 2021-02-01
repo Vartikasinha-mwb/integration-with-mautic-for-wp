@@ -26,8 +26,18 @@ jQuery(document).ready(function ($) {
 		var ctx = document.getElementById('created-leads-in-time-chart');
 		var myChart = new Chart(ctx, {
 			type: 'line',
-			chartHeight:220,
-			data: chartData
+			data: chartData,
+			options: {
+				lineTension : 0.2,
+				borderWidth: 1,
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
+				}
+			}
 		});
 	}
 	if($('#page-hits-in-time').length > 0  ){
@@ -37,8 +47,39 @@ jQuery(document).ready(function ($) {
 		var ctx = document.getElementById('page-hits-in-time-chart');
 		var myChart = new Chart(ctx, {
 			type: 'line',
-			chartHeight:220,
-			data: chartData
+			data: chartData,
+			options: {
+				lineTension : 0.2,
+				borderWidth: 1,
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
+				}
+			}
+		});
+	}
+	if($('#submissions-in-time').length > 0  ){
+		var chartdata = $('#submissions-in-time').attr('data') ; 
+		chartdata = JSON.parse(chartdata)
+		var chartData = chartdata.chartData ; 
+		var ctx = document.getElementById('submissions-in-time-chart');
+		var myChart = new Chart(ctx, {
+			type: 'line',
+			data: chartData,
+			options: {
+				lineTension : 0.2,
+				borderWidth: 1,
+				scales: {
+					yAxes: [{
+						ticks: {
+							beginAtZero: true
+						}
+					}]
+				}
+			}
 		});
 	}
 });
