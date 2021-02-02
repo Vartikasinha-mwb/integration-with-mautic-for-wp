@@ -1,5 +1,10 @@
 <?php
-$data = array( 'dateTo' => '2021-01-31' , 'dateFrom' => '2020-12-31', 'timeUnit' => 'd') ; 
+$date_range = get_option( 'mwb_m4wp_date_range' , array() ) ; 
+if(empty($date_range)){
+    $date_range = Mautic_For_Wordpress_Admin::get_default_date_range() ; 
+}
+$time_unit = Mautic_For_Wordpress_Admin::get_time_unit( $date_range );
+$data = array( 'dateTo' => $date_range['date_to'] , 'dateFrom' => $date_range['date_from'], 'timeUnit' => $time_unit) ; 
 $created_leads_in_time = MWB_M4WP_Mautic_Api::get_widget_data( 'created.leads.in.time' , $data );
 $page_hits_in_time = MWB_M4WP_Mautic_Api::get_widget_data( 'page.hits.in.time' , $data );
 $submissions_in_time = MWB_M4WP_Mautic_Api::get_widget_data( 'submissions.in.time' , $data );
@@ -9,6 +14,20 @@ $base_url = get_option( 'mwb_m4wp_base_url' , '' ) ;
 <div class="wrap">
     <div class="mwb-m4wp-admin-panel-head">
         <h3><?php esc_html_e( 'Dashboard', 'mautic-for-wordpress' ) ?></h3>
+    </div>
+    <div class="mwb-m4wp-admin-panel-date">
+        <form method="post">
+            <span>
+                <label for="mwb_m4wp_from_date"><?php esc_html_e('From' , 'mautic-for-wordpress') ?></label>
+                <input type="text" name="mwb_m4wp_from_date" class="mwb-m4wp-datepicker" value="<?php echo $date_range['date_from'] ?>" />
+            </span>
+            <span>
+                <label for="mwb_m4wp_from_date"><?php esc_html_e('To' , 'mautic-for-wordpress') ?></label>
+                <input type="text" name="mwb_m4wp_to_date" class="mwb-m4wp-datepicker" value="<?php echo $date_range['date_to'] ?>" />
+            </span>
+            <input type="hidden" name="action" value="mwb_m4wp_date_range" />
+            <button type="submit" class="button"><?php esc_html_e( 'Apply', 'mautic-for-wordpress' ) ?></button>
+        </form>
     </div>
     <div class="mwb-m4wp-admin-panel-main mwb-m4wp-admin-dashboard-panel">
         <?php if($created_leads_in_time) : ?>

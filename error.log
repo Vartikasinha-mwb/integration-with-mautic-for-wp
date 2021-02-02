@@ -1532,3 +1532,1875 @@ Code : 200
 Message : OK
 Time: February 1, 2021  1:47 pm
 ------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 200
+Message : OK
+Time: February 2, 2021  5:25 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  5:25 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  5:25 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  5:25 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  5:25 am
+------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 200
+Message : OK
+Time: February 2, 2021  8:11 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  8:11 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  8:11 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  8:11 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  8:11 am
+------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 200
+Message : OK
+Time: February 2, 2021  9:38 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  9:38 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  9:38 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  9:38 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  9:38 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  9:38 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  9:38 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  9:38 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  9:38 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  9:41 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  9:41 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  9:41 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  9:41 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  9:45 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  9:45 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  9:45 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  9:45 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  9:46 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  9:46 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  9:46 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  9:46 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:07 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:07 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:07 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:07 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:07 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:07 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:07 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:07 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:08 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:08 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:08 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:08 am
+------------------------------------
+Url : http://localhost/mautic2163/api/forms
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:10 am
+------------------------------------
+Url : http://localhost/mautic2163/api/forms
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:11 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:11 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:11 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:11 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:11 am
+------------------------------------
+Url : http://localhost/mautic2163/api/forms
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:12 am
+------------------------------------
+Url : http://localhost/mautic2163/api/forms
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:12 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:14 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:14 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:14 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:14 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:21 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:21 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:21 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:21 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:22 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:22 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:22 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:22 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:22 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:22 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:22 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:22 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:22 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:22 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:22 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:22 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:22 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:22 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:22 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:22 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:24 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:24 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:24 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:24 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:27 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:27 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:27 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:27 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:27 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:27 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:27 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:27 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:28 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:28 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:28 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:28 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:31 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:31 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:31 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:31 am
+------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 200
+Message : OK
+Time: February 2, 2021  10:42 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:42 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:42 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:42 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:42 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:43 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:43 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:43 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:43 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:56 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:56 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:56 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  10:56 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:04 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:04 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:04 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:04 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:04 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:04 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:04 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:04 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:06 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:06 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:06 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:06 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:07 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:07 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:07 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:07 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:07 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:07 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:07 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:07 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:08 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:08 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:08 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:08 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:08 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:08 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:08 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-31&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:08 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:14 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:14 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:14 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:14 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=w
+Method : GET
+Code : 400
+Message : Bad Request
+Error : Unit 'w' is not supported. Use one of these: s, i, H, d, W, m, Y
+Response: {"headers":{},"body":"{\n    \"errors\": [\n        {\n            \"code\": 400,\n            \"message\": \"Unit 'w' is not supported. Use one of these: s, i, H, d, W, m, Y\",\n            \"details\": []\n        }\n    ],\n    \"error\": {\n        \"message\": \"Unit 'w' is not supported. Use one of these: s, i, H, d, W, m, Y (`error` is deprecated as of 2.6.0 and will be removed in 3.0. Use the `errors` array instead.)\",\n        \"code\": 400,\n        \"details\": []\n    }\n}","response":{"code":400,"message":"Bad Request"},"cookies":[{"name":"f19c4df49c6894afc0f3c0a14c99967c","value":"cbmeabn1qh74t4un6ife0li0ct","expires":null,"path":"\/","domain":"localhost","host_only":true}],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+Req: {"method":"GET","headers":{"Authorization":"Bearer ZDg2N2Y2ZWMxNzg2ZTkxNWZmMjA2Yzg2MzQ2YjE5ZmFiNTY5ZmNiMjFkODJhOWY2MWNkNGU0ZmYzZTIxZDU5Mw","User-Agent":"MWB_M4WP\/1.0.0; WordPress\/5.6; http:\/\/localhost\/wp551","Accept-Language":"en-US,en;q=0.5"},"timeout":20,"sslverify":true,"url":"http:\/\/localhost\/mautic2163\/api\/data\/created.leads.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=w"}
+Time: February 2, 2021  11:16 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=w
+Method : GET
+Code : 400
+Message : Bad Request
+Error : Unit 'w' is not supported. Use one of these: s, i, H, d, W, m, Y
+Response: {"headers":{},"body":"{\n    \"errors\": [\n        {\n            \"code\": 400,\n            \"message\": \"Unit 'w' is not supported. Use one of these: s, i, H, d, W, m, Y\",\n            \"details\": []\n        }\n    ],\n    \"error\": {\n        \"message\": \"Unit 'w' is not supported. Use one of these: s, i, H, d, W, m, Y (`error` is deprecated as of 2.6.0 and will be removed in 3.0. Use the `errors` array instead.)\",\n        \"code\": 400,\n        \"details\": []\n    }\n}","response":{"code":400,"message":"Bad Request"},"cookies":[{"name":"f19c4df49c6894afc0f3c0a14c99967c","value":"03t2k6disnnj7ajs21ugo5u5i7","expires":null,"path":"\/","domain":"localhost","host_only":true}],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+Req: {"method":"GET","headers":{"Authorization":"Bearer ZDg2N2Y2ZWMxNzg2ZTkxNWZmMjA2Yzg2MzQ2YjE5ZmFiNTY5ZmNiMjFkODJhOWY2MWNkNGU0ZmYzZTIxZDU5Mw","User-Agent":"MWB_M4WP\/1.0.0; WordPress\/5.6; http:\/\/localhost\/wp551","Accept-Language":"en-US,en;q=0.5"},"timeout":20,"sslverify":true,"url":"http:\/\/localhost\/mautic2163\/api\/data\/page.hits.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=w"}
+Time: February 2, 2021  11:16 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=w
+Method : GET
+Code : 400
+Message : Bad Request
+Error : Unit 'w' is not supported. Use one of these: s, i, H, d, W, m, Y
+Response: {"headers":{},"body":"{\n    \"errors\": [\n        {\n            \"code\": 400,\n            \"message\": \"Unit 'w' is not supported. Use one of these: s, i, H, d, W, m, Y\",\n            \"details\": []\n        }\n    ],\n    \"error\": {\n        \"message\": \"Unit 'w' is not supported. Use one of these: s, i, H, d, W, m, Y (`error` is deprecated as of 2.6.0 and will be removed in 3.0. Use the `errors` array instead.)\",\n        \"code\": 400,\n        \"details\": []\n    }\n}","response":{"code":400,"message":"Bad Request"},"cookies":[{"name":"f19c4df49c6894afc0f3c0a14c99967c","value":"mhr7ehgdvq9mm3649nfsjpo81k","expires":null,"path":"\/","domain":"localhost","host_only":true}],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+Req: {"method":"GET","headers":{"Authorization":"Bearer ZDg2N2Y2ZWMxNzg2ZTkxNWZmMjA2Yzg2MzQ2YjE5ZmFiNTY5ZmNiMjFkODJhOWY2MWNkNGU0ZmYzZTIxZDU5Mw","User-Agent":"MWB_M4WP\/1.0.0; WordPress\/5.6; http:\/\/localhost\/wp551","Accept-Language":"en-US,en;q=0.5"},"timeout":20,"sslverify":true,"url":"http:\/\/localhost\/mautic2163\/api\/data\/submissions.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=w"}
+Time: February 2, 2021  11:16 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=w
+Method : GET
+Code : 400
+Message : Bad Request
+Error : Unit 'w' is not supported. Use one of these: s, i, H, d, W, m, Y
+Response: {"headers":{},"body":"{\n    \"errors\": [\n        {\n            \"code\": 400,\n            \"message\": \"Unit 'w' is not supported. Use one of these: s, i, H, d, W, m, Y\",\n            \"details\": []\n        }\n    ],\n    \"error\": {\n        \"message\": \"Unit 'w' is not supported. Use one of these: s, i, H, d, W, m, Y (`error` is deprecated as of 2.6.0 and will be removed in 3.0. Use the `errors` array instead.)\",\n        \"code\": 400,\n        \"details\": []\n    }\n}","response":{"code":400,"message":"Bad Request"},"cookies":[{"name":"f19c4df49c6894afc0f3c0a14c99967c","value":"vntno32kq9mds03c12n4ht0fhh","expires":null,"path":"\/","domain":"localhost","host_only":true}],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+Req: {"method":"GET","headers":{"Authorization":"Bearer ZDg2N2Y2ZWMxNzg2ZTkxNWZmMjA2Yzg2MzQ2YjE5ZmFiNTY5ZmNiMjFkODJhOWY2MWNkNGU0ZmYzZTIxZDU5Mw","User-Agent":"MWB_M4WP\/1.0.0; WordPress\/5.6; http:\/\/localhost\/wp551","Accept-Language":"en-US,en;q=0.5"},"timeout":20,"sslverify":true,"url":"http:\/\/localhost\/mautic2163\/api\/data\/top.lists?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=w"}
+Time: February 2, 2021  11:16 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:17 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:17 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:17 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:17 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:25 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:25 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:25 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:25 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:29 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:29 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:29 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:29 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:29 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:29 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:29 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:29 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:29 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:29 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:29 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:29 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:31 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:31 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:31 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:31 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-02&dateFrom=2021-01-02&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:32 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-02&dateFrom=2021-01-02&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:32 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-02&dateFrom=2021-01-02&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:32 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-02&dateFrom=2021-01-02&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:32 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:32 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:33 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:33 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:33 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:38 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:38 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:38 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:38 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:39 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:39 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:39 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:39 am
+------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 200
+Message : OK
+Time: February 2, 2021  11:47 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=week
+Method : GET
+Code : 400
+Message : Bad Request
+Error : Unit 'week' is not supported. Use one of these: s, i, H, d, W, m, Y
+Response: {"headers":{},"body":"{\n    \"errors\": [\n        {\n            \"code\": 400,\n            \"message\": \"Unit 'week' is not supported. Use one of these: s, i, H, d, W, m, Y\",\n            \"details\": []\n        }\n    ],\n    \"error\": {\n        \"message\": \"Unit 'week' is not supported. Use one of these: s, i, H, d, W, m, Y (`error` is deprecated as of 2.6.0 and will be removed in 3.0. Use the `errors` array instead.)\",\n        \"code\": 400,\n        \"details\": []\n    }\n}","response":{"code":400,"message":"Bad Request"},"cookies":[{"name":"f19c4df49c6894afc0f3c0a14c99967c","value":"3783gvcntncorpfncjn931kfk6","expires":null,"path":"\/","domain":"localhost","host_only":true}],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+Req: {"method":"GET","headers":{"Authorization":"Bearer Yzg3YWMxZmJiN2E5ODQ4OWRhOWM0NTc0YmM2YWZjMDJkMDgxZmNlNWJmMDNmMjg4OTU4YTczNGE4OGFhYjg3NQ","User-Agent":"MWB_M4WP\/1.0.0; WordPress\/5.6; http:\/\/localhost\/wp551","Accept-Language":"en-US,en;q=0.5"},"timeout":20,"sslverify":true,"url":"http:\/\/localhost\/mautic2163\/api\/data\/created.leads.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=week"}
+Time: February 2, 2021  11:47 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=week
+Method : GET
+Code : 400
+Message : Bad Request
+Error : Unit 'week' is not supported. Use one of these: s, i, H, d, W, m, Y
+Response: {"headers":{},"body":"{\n    \"errors\": [\n        {\n            \"code\": 400,\n            \"message\": \"Unit 'week' is not supported. Use one of these: s, i, H, d, W, m, Y\",\n            \"details\": []\n        }\n    ],\n    \"error\": {\n        \"message\": \"Unit 'week' is not supported. Use one of these: s, i, H, d, W, m, Y (`error` is deprecated as of 2.6.0 and will be removed in 3.0. Use the `errors` array instead.)\",\n        \"code\": 400,\n        \"details\": []\n    }\n}","response":{"code":400,"message":"Bad Request"},"cookies":[{"name":"f19c4df49c6894afc0f3c0a14c99967c","value":"snrii3ch7t1cn8r7hnijuenrtm","expires":null,"path":"\/","domain":"localhost","host_only":true}],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+Req: {"method":"GET","headers":{"Authorization":"Bearer Yzg3YWMxZmJiN2E5ODQ4OWRhOWM0NTc0YmM2YWZjMDJkMDgxZmNlNWJmMDNmMjg4OTU4YTczNGE4OGFhYjg3NQ","User-Agent":"MWB_M4WP\/1.0.0; WordPress\/5.6; http:\/\/localhost\/wp551","Accept-Language":"en-US,en;q=0.5"},"timeout":20,"sslverify":true,"url":"http:\/\/localhost\/mautic2163\/api\/data\/page.hits.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=week"}
+Time: February 2, 2021  11:47 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=week
+Method : GET
+Code : 400
+Message : Bad Request
+Error : Unit 'week' is not supported. Use one of these: s, i, H, d, W, m, Y
+Response: {"headers":{},"body":"{\n    \"errors\": [\n        {\n            \"code\": 400,\n            \"message\": \"Unit 'week' is not supported. Use one of these: s, i, H, d, W, m, Y\",\n            \"details\": []\n        }\n    ],\n    \"error\": {\n        \"message\": \"Unit 'week' is not supported. Use one of these: s, i, H, d, W, m, Y (`error` is deprecated as of 2.6.0 and will be removed in 3.0. Use the `errors` array instead.)\",\n        \"code\": 400,\n        \"details\": []\n    }\n}","response":{"code":400,"message":"Bad Request"},"cookies":[{"name":"f19c4df49c6894afc0f3c0a14c99967c","value":"e92s2as8h00o6iji3g4vdtdlru","expires":null,"path":"\/","domain":"localhost","host_only":true}],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+Req: {"method":"GET","headers":{"Authorization":"Bearer Yzg3YWMxZmJiN2E5ODQ4OWRhOWM0NTc0YmM2YWZjMDJkMDgxZmNlNWJmMDNmMjg4OTU4YTczNGE4OGFhYjg3NQ","User-Agent":"MWB_M4WP\/1.0.0; WordPress\/5.6; http:\/\/localhost\/wp551","Accept-Language":"en-US,en;q=0.5"},"timeout":20,"sslverify":true,"url":"http:\/\/localhost\/mautic2163\/api\/data\/submissions.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=week"}
+Time: February 2, 2021  11:47 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=week
+Method : GET
+Code : 400
+Message : Bad Request
+Error : Unit 'week' is not supported. Use one of these: s, i, H, d, W, m, Y
+Response: {"headers":{},"body":"{\n    \"errors\": [\n        {\n            \"code\": 400,\n            \"message\": \"Unit 'week' is not supported. Use one of these: s, i, H, d, W, m, Y\",\n            \"details\": []\n        }\n    ],\n    \"error\": {\n        \"message\": \"Unit 'week' is not supported. Use one of these: s, i, H, d, W, m, Y (`error` is deprecated as of 2.6.0 and will be removed in 3.0. Use the `errors` array instead.)\",\n        \"code\": 400,\n        \"details\": []\n    }\n}","response":{"code":400,"message":"Bad Request"},"cookies":[{"name":"f19c4df49c6894afc0f3c0a14c99967c","value":"dh7cv077o35g03h71kj5bq0qe8","expires":null,"path":"\/","domain":"localhost","host_only":true}],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+Req: {"method":"GET","headers":{"Authorization":"Bearer Yzg3YWMxZmJiN2E5ODQ4OWRhOWM0NTc0YmM2YWZjMDJkMDgxZmNlNWJmMDNmMjg4OTU4YTczNGE4OGFhYjg3NQ","User-Agent":"MWB_M4WP\/1.0.0; WordPress\/5.6; http:\/\/localhost\/wp551","Accept-Language":"en-US,en;q=0.5"},"timeout":20,"sslverify":true,"url":"http:\/\/localhost\/mautic2163\/api\/data\/top.lists?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=week"}
+Time: February 2, 2021  11:47 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=w
+Method : GET
+Code : 400
+Message : Bad Request
+Error : Unit 'w' is not supported. Use one of these: s, i, H, d, W, m, Y
+Response: {"headers":{},"body":"{\n    \"errors\": [\n        {\n            \"code\": 400,\n            \"message\": \"Unit 'w' is not supported. Use one of these: s, i, H, d, W, m, Y\",\n            \"details\": []\n        }\n    ],\n    \"error\": {\n        \"message\": \"Unit 'w' is not supported. Use one of these: s, i, H, d, W, m, Y (`error` is deprecated as of 2.6.0 and will be removed in 3.0. Use the `errors` array instead.)\",\n        \"code\": 400,\n        \"details\": []\n    }\n}","response":{"code":400,"message":"Bad Request"},"cookies":[{"name":"f19c4df49c6894afc0f3c0a14c99967c","value":"7j59hrbsaellnfnbb3enmkr02h","expires":null,"path":"\/","domain":"localhost","host_only":true}],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+Req: {"method":"GET","headers":{"Authorization":"Bearer Yzg3YWMxZmJiN2E5ODQ4OWRhOWM0NTc0YmM2YWZjMDJkMDgxZmNlNWJmMDNmMjg4OTU4YTczNGE4OGFhYjg3NQ","User-Agent":"MWB_M4WP\/1.0.0; WordPress\/5.6; http:\/\/localhost\/wp551","Accept-Language":"en-US,en;q=0.5"},"timeout":20,"sslverify":true,"url":"http:\/\/localhost\/mautic2163\/api\/data\/created.leads.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=w"}
+Time: February 2, 2021  11:47 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=w
+Method : GET
+Code : 400
+Message : Bad Request
+Error : Unit 'w' is not supported. Use one of these: s, i, H, d, W, m, Y
+Response: {"headers":{},"body":"{\n    \"errors\": [\n        {\n            \"code\": 400,\n            \"message\": \"Unit 'w' is not supported. Use one of these: s, i, H, d, W, m, Y\",\n            \"details\": []\n        }\n    ],\n    \"error\": {\n        \"message\": \"Unit 'w' is not supported. Use one of these: s, i, H, d, W, m, Y (`error` is deprecated as of 2.6.0 and will be removed in 3.0. Use the `errors` array instead.)\",\n        \"code\": 400,\n        \"details\": []\n    }\n}","response":{"code":400,"message":"Bad Request"},"cookies":[{"name":"f19c4df49c6894afc0f3c0a14c99967c","value":"cf92j2er9mpo2fc09hhkilkbd0","expires":null,"path":"\/","domain":"localhost","host_only":true}],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+Req: {"method":"GET","headers":{"Authorization":"Bearer Yzg3YWMxZmJiN2E5ODQ4OWRhOWM0NTc0YmM2YWZjMDJkMDgxZmNlNWJmMDNmMjg4OTU4YTczNGE4OGFhYjg3NQ","User-Agent":"MWB_M4WP\/1.0.0; WordPress\/5.6; http:\/\/localhost\/wp551","Accept-Language":"en-US,en;q=0.5"},"timeout":20,"sslverify":true,"url":"http:\/\/localhost\/mautic2163\/api\/data\/page.hits.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=w"}
+Time: February 2, 2021  11:47 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=w
+Method : GET
+Code : 400
+Message : Bad Request
+Error : Unit 'w' is not supported. Use one of these: s, i, H, d, W, m, Y
+Response: {"headers":{},"body":"{\n    \"errors\": [\n        {\n            \"code\": 400,\n            \"message\": \"Unit 'w' is not supported. Use one of these: s, i, H, d, W, m, Y\",\n            \"details\": []\n        }\n    ],\n    \"error\": {\n        \"message\": \"Unit 'w' is not supported. Use one of these: s, i, H, d, W, m, Y (`error` is deprecated as of 2.6.0 and will be removed in 3.0. Use the `errors` array instead.)\",\n        \"code\": 400,\n        \"details\": []\n    }\n}","response":{"code":400,"message":"Bad Request"},"cookies":[{"name":"f19c4df49c6894afc0f3c0a14c99967c","value":"mn3gli5broh8u0k9tu41jtsj7c","expires":null,"path":"\/","domain":"localhost","host_only":true}],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+Req: {"method":"GET","headers":{"Authorization":"Bearer Yzg3YWMxZmJiN2E5ODQ4OWRhOWM0NTc0YmM2YWZjMDJkMDgxZmNlNWJmMDNmMjg4OTU4YTczNGE4OGFhYjg3NQ","User-Agent":"MWB_M4WP\/1.0.0; WordPress\/5.6; http:\/\/localhost\/wp551","Accept-Language":"en-US,en;q=0.5"},"timeout":20,"sslverify":true,"url":"http:\/\/localhost\/mautic2163\/api\/data\/submissions.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=w"}
+Time: February 2, 2021  11:47 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=w
+Method : GET
+Code : 400
+Message : Bad Request
+Error : Unit 'w' is not supported. Use one of these: s, i, H, d, W, m, Y
+Response: {"headers":{},"body":"{\n    \"errors\": [\n        {\n            \"code\": 400,\n            \"message\": \"Unit 'w' is not supported. Use one of these: s, i, H, d, W, m, Y\",\n            \"details\": []\n        }\n    ],\n    \"error\": {\n        \"message\": \"Unit 'w' is not supported. Use one of these: s, i, H, d, W, m, Y (`error` is deprecated as of 2.6.0 and will be removed in 3.0. Use the `errors` array instead.)\",\n        \"code\": 400,\n        \"details\": []\n    }\n}","response":{"code":400,"message":"Bad Request"},"cookies":[{"name":"f19c4df49c6894afc0f3c0a14c99967c","value":"s1iembu6rc75i164f6acg2j24i","expires":null,"path":"\/","domain":"localhost","host_only":true}],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+Req: {"method":"GET","headers":{"Authorization":"Bearer Yzg3YWMxZmJiN2E5ODQ4OWRhOWM0NTc0YmM2YWZjMDJkMDgxZmNlNWJmMDNmMjg4OTU4YTczNGE4OGFhYjg3NQ","User-Agent":"MWB_M4WP\/1.0.0; WordPress\/5.6; http:\/\/localhost\/wp551","Accept-Language":"en-US,en;q=0.5"},"timeout":20,"sslverify":true,"url":"http:\/\/localhost\/mautic2163\/api\/data\/top.lists?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=w"}
+Time: February 2, 2021  11:47 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:48 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:48 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:48 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:48 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:48 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:48 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:48 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  11:48 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:01 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:01 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:01 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:01 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:11 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:11 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:11 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-28&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:11 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-01&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:11 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-01&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:11 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-01&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:11 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-01&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:11 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2020-12-31&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:13 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2020-12-31&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:13 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2020-12-31&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:13 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2020-12-31&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:13 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2020-12-31&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:13 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2020-12-31&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:13 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2020-12-31&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:13 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2020-12-31&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:13 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-01&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:13 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-01&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:13 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-01&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:13 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-01&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:13 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-01&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:13 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-01&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:13 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-01&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:13 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-01&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:13 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-04-10&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:18 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-04-10&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:18 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-04-10&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:18 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-04-10&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:18 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-01&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:18 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-01&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:18 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-01&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:18 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-01&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:18 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-01&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:18 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-01&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:18 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-01&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:18 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-01&dateFrom=2020-12-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:18 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:19 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:19 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:19 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2020-12-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:19 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:19 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:19 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:19 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:19 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:28 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:28 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:28 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:28 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:29 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:29 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:29 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:29 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:31 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:31 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:31 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:31 pm
+------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 200
+Message : OK
+Time: February 2, 2021  12:59 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:59 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:59 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:59 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  12:59 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:01 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:01 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:01 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:01 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:01 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:01 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:01 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:01 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:01 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:01 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:01 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:01 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:02 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:02 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:02 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:02 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:02 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:02 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:02 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:02 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:03 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:03 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:03 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:03 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:04 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:04 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:04 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:04 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:05 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:05 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:05 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:05 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:05 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:05 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:05 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:05 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:06 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:06 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:06 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-07&dateFrom=2020-12-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 2, 2021  1:06 pm
+------------------------------------

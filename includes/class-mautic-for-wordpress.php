@@ -191,6 +191,8 @@ class Mautic_For_Wordpress {
 		$this->loader->add_action( 'profile_update', $plugin_admin, 'update_registered_user', 99, 2 );
 
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'get_oauth_code' ) ; 
+
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'save_admin_settings' ) ; 
 	}
 
 	/**

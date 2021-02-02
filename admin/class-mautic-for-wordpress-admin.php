@@ -72,9 +72,14 @@ class Mautic_For_Wordpress_Admin {
 		* between the defined hooks and the functions defined in this
 		* class.
 		*/
+
+		$current_screen = get_current_screen() ; 
+		$screens = $this->get_plugin_screens();
 		
-		wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/mautic-for-wordpress-admin.css', array(), $this->version, 'all' );
-		
+		if( isset( $current_screen ) && in_array( $current_screen->id , $screens)  ){
+			wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/mautic-for-wordpress-admin.css', array(), $this->version, 'all' );
+			wp_enqueue_style( 'mwb-m4wp-jquery-ui', plugin_dir_url( __FILE__ ) . 'css/jquery-ui.min.css', array(), $this->version, 'all' );
+		}
 	}
 	
 	/**
@@ -97,16 +102,26 @@ class Mautic_For_Wordpress_Admin {
 		*/
 		
 		$current_screen = get_current_screen() ; 
-		if( isset( $current_screen ) && $current_screen->id ){
+		$screens = $this->get_plugin_screens();
+		if( isset( $current_screen ) && in_array( $current_screen->id , $screens)  ){
 			wp_enqueue_script( 'mwb-fwpro-chart-script' , plugin_dir_url( __FILE__ ) . 'chart/chart.js', array( 'jquery' ), '1.0.0', false );
 			wp_enqueue_style( 'mwb-fwpro-chart-style' , plugin_dir_url( __FILE__ ) . 'chart/chart.css' );
+			wp_enqueue_script( 'jquery-ui-datepicker' );;
 		}
 
-		wp_enqueue_script( 'mwb-fwpro-admin-script' , plugin_dir_url( __FILE__ ) . 'js/mautic-for-wordpress-admin.js', array( 'jquery', 'mwb-fwpro-chart-script' ), time(), false );
+		wp_enqueue_script( 'mwb-fwpro-admin-script' , plugin_dir_url( __FILE__ ) . 'js/mautic-for-wordpress-admin.js', array( 'jquery', 'mwb-fwpro-chart-script', 'jquery-ui-datepicker' ), time(), false );
 		$ajax_data = array(
 			'ajax_url' => admin_url('admin-ajax.php'),
 		);
 		wp_localize_script( 'mwb-fwpro-admin-script', 'ajax_data', $ajax_data);
+	}
+
+	public function get_plugin_screens(){
+		return array(
+			'mwb-mautic_page_mautic-dashboard',
+			'toplevel_page_mautic-for-wordpress',
+			'mwb-mautic_page_mautic-forms' 
+		);
 	}
 	
 	/**
@@ -250,6 +265,48 @@ class Mautic_For_Wordpress_Admin {
 	public function get_assigned_tags(){
 		$tags = get_option( 'mwb_m4wp_registration_tags' , array( 'wp new' ) ) ; 
 		return $tags;
+	}
+
+	public function get_time_unit( $date_range ){
+		$time_unit = 'm' ; 
+		$to = strtotime($date_range['date_to']) ;
+		$from = strtotime($date_range['date_from']) ;
+		$diff = $to - $from ; 
+		$days = $diff/(24*60*60) ; 
+		switch ($days) {
+			case ($days < 61) : 
+				$time_unit = 'd' ; 
+				break ; 
+			case ($days > 61 && $days < 91) : 
+				$time_unit = 'W' ; 
+				break ; 
+			case ($days > 91 && $days < 366) : 
+				$time_unit = 'm' ; 
+				break ; 
+			case ($days > 366) : 
+				$time_unit = 'Y' ; 
+				break ; 
+		}
+		return $time_unit ; 
+	}
+
+	public static function get_default_date_range(){
+		$date_to = date("Y-m-d") ; 
+		$date_from = date("Y-m-d",strtotime("-1 month")) ; 
+		return array(
+			'date_to' => $date_to,
+			'date_from' => $date_from
+		);
+	}
+
+	public function save_admin_settings(){
+		if( isset( $_POST['action'] ) && $_POST['action'] == 'mwb_m4wp_date_range' ){
+			$date_range = array(
+				'date_from' => $_POST['mwb_m4wp_from_date'] , 
+				'date_to' => $_POST['mwb_m4wp_to_date'] 
+			);
+			update_option( 'mwb_m4wp_date_range' , $date_range );
+		}
 	}
 	
 	public function get_oauth_code(){
