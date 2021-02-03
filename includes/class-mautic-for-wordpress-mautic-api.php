@@ -67,14 +67,7 @@ class MWB_M4WP_Mautic_Api  {
                 $redirct_url = admin_url() ; 
                 $api_keys['redirect_uri'] = $redirct_url ; 
                 $api_keys['grant_type'] = 'refresh_token';
-                $data =  $api_instance->renew_access_token( $api_keys ) ;
-                if($data){
-					$api_instance->save_token_data( $data );
-					update_option('mwb_m4wp_oauth2_success' , true);
-				}else{
-                    update_option('mwb_m4wp_oauth2_success' , false);
-                    throw new Mautic_Api_Exception( 'Something went wrong' , 003 );
-				}
+                $api_instance->renew_access_token( $api_keys ) ;
             }
             $api_instance->set_access_token();
             self::$mautic_api = $api_instance ; 
@@ -98,13 +91,16 @@ class MWB_M4WP_Mautic_Api  {
     * Get segments 
     */
     public static function get_segments(){
-        $endpoint = 'api/segments' ; 
-        $mautic_api = self::get_mautic_api();
-        if( !$mautic_api ) {
-            return ;
+
+        try{
+            $endpoint = 'api/segments' ; 
+            $mautic_api = self::get_mautic_api();
+            $headers = $mautic_api->get_auth_header();
+            return $mautic_api->get( $endpoint , array() , $headers ) ;
+        }catch(Exception $e){
+            return false;
         }
-        $headers = $mautic_api->get_auth_header();
-        return $mautic_api->get( $endpoint , array() , $headers ) ;
+        
     }
     
     /**

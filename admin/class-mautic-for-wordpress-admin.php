@@ -106,21 +106,21 @@ class Mautic_For_Wordpress_Admin {
 		if( isset( $current_screen ) && in_array( $current_screen->id , $screens)  ){
 			wp_enqueue_script( 'mwb-fwpro-chart-script' , plugin_dir_url( __FILE__ ) . 'chart/chart.js', array( 'jquery' ), '1.0.0', false );
 			wp_enqueue_style( 'mwb-fwpro-chart-style' , plugin_dir_url( __FILE__ ) . 'chart/chart.css' );
-			wp_enqueue_script( 'jquery-ui-datepicker' );;
+			wp_enqueue_script( 'jquery-ui-datepicker' );
+			wp_enqueue_script( 'mwb-fwpro-admin-script' , plugin_dir_url( __FILE__ ) . 'js/mautic-for-wordpress-admin.js', array( 'jquery', 'mwb-fwpro-chart-script', 'jquery-ui-datepicker' ), time(), false );
+			$ajax_data = array(
+				'ajax_url' => admin_url('admin-ajax.php'),
+			);
+			wp_localize_script( 'mwb-fwpro-admin-script', 'ajax_data', $ajax_data);
 		}
-
-		wp_enqueue_script( 'mwb-fwpro-admin-script' , plugin_dir_url( __FILE__ ) . 'js/mautic-for-wordpress-admin.js', array( 'jquery', 'mwb-fwpro-chart-script', 'jquery-ui-datepicker' ), time(), false );
-		$ajax_data = array(
-			'ajax_url' => admin_url('admin-ajax.php'),
-		);
-		wp_localize_script( 'mwb-fwpro-admin-script', 'ajax_data', $ajax_data);
 	}
 
 	public function get_plugin_screens(){
 		return array(
 			'mwb-mautic_page_mautic-dashboard',
 			'toplevel_page_mautic-for-wordpress',
-			'mwb-mautic_page_mautic-forms' 
+			'mwb-mautic_page_mautic-forms',
+			'mwb-mautic_page_integrations', 
 		);
 	}
 	
@@ -155,6 +155,20 @@ class Mautic_For_Wordpress_Admin {
 			'mautic-forms',
 			array( $this, 'include_mautic_forms_display')
 		) ;
+
+		add_submenu_page( 
+			'mautic-for-wordpress' , 
+			__( 'Integrations', 'mautic-for-wordpress' ),
+			__( 'Integrations', 'mautic-for-wordpress' ),
+			'manage_options',
+			'integrations',
+			array( $this, 'include_integrations_display')
+		) ;
+	}
+
+	public function include_integrations_display(){
+		$file_path = 'admin/partials/mautic-for-wordpress-integrations.php' ; 
+		$this->load_template( $file_path ) ; 
 	}
 
 	public function include_mautic_dashboard(){
@@ -307,8 +321,60 @@ class Mautic_For_Wordpress_Admin {
 			);
 			update_option( 'mwb_m4wp_date_range' , $date_range );
 		}
+
+		if( isset( $_POST['action'] ) && $_POST['action'] == 'mwb_m4wp_integration_save' ){
+			if(wp_verify_nonce( $_POST['_nonce'] , 'mwb_m4wp_integration_nonce' )){
+				// echo'<pre>';
+				// print_r($_POST);
+				// echo'</pre>';
+				// die;
+			}
+		}
+
+	}
+
+	public static function get_segment_options(){
+		
+		$segment_list = get_option( 'mwb_m4wp_segment_list' , array() ) ; 
+		if(!empty($segment_list)){
+			return $segment_list;
+		}
+		$segments =  MWB_M4WP_Mautic_Api::get_segments();
+		if(!$segments){
+			return array();
+		}
+		$options = array() ; 
+		if(isset($segments['lists']) && count($segments['lists']) > 0 ){
+			foreach( $segments['lists'] as $key => $segment ){
+				$options[] = array(
+					'id' => $segment['id'],
+					'name' => $segment['name']
+				);
+			}
+		}
+		update_option( 'mwb_m4wp_segment_list' , $options ) ; 
+		return $options ; 
 	}
 	
+	public static function get_integrations(){
+
+		$integrations = array(
+			array(
+				'id' => 'mwb_m4wp_registration',
+				'name' => __( 'Registration form' , 'mautic-for-wordpress' ),
+				'des' => __( 'Worpdress default registration form' , 'mautic-for-wordpress' ),
+				'status' => 'inactive',
+			),
+			array(
+				'id' => 'mwb_m4wp_comment',
+				'name' => __( 'Comment form' , 'mautic-for-wordpress' ),
+				'des' => __( 'Worpdress default Comment form' , 'mautic-for-wordpress' ),
+				'status' => 'inactive',
+			)
+		) ; 
+		return $integrations ; 
+	}
+
 	public function get_oauth_code(){
 
 		if(isset($_GET['m4wp']) && $_GET['m4wp'] == 1){

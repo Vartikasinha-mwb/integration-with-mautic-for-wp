@@ -70,7 +70,14 @@ class Oauth2 extends Api_Base {
 
     public function renew_access_token( $data ){
         $endpoint = 'oauth/v2/token' ;
-        return $this->post($endpoint, $data); 
+        $response =  $this->post($endpoint, $data); 
+        if(isset($response['errors'])){
+            update_option('mwb_m4wp_oauth2_success' , false);
+            throw new Mautic_Api_Exception( 'Something went wrong' , 003 );
+        }
+        $api_instance->save_token_data( $response );
+        update_option('mwb_m4wp_oauth2_success' , true);
+        return;
     }
 
     /**
