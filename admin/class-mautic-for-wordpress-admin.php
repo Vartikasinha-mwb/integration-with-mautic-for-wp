@@ -168,12 +168,12 @@ class Mautic_For_Wordpress_Admin {
 
 	public function include_integrations_display(){
 		$file_path = 'admin/partials/mautic-for-wordpress-integrations.php' ; 
-		$this->load_template( $file_path ) ; 
+		self::load_template( $file_path ) ; 
 	}
 
 	public function include_mautic_dashboard(){
 		$file_path = 'admin/partials/mautic-for-wordpress-dashboard.php' ; 
-		$this->load_template( $file_path ) ; 
+		self::load_template( $file_path ) ; 
 	}
 
 	/**
@@ -181,7 +181,7 @@ class Mautic_For_Wordpress_Admin {
 	*/
 	public function include_mautic_forms_display(){
 		$file_path = 'admin/partials/mautic-for-wordpress-forms-display.php' ; 
-		$this->load_template( $file_path ) ; 
+		self::load_template( $file_path ) ; 
 	}
 	
 	/**
@@ -189,7 +189,7 @@ class Mautic_For_Wordpress_Admin {
 	*/
 	public function include_admin_menu_display(){
 		$file_path = 'admin/partials/mautic-for-wordpress-admin-display.php' ; 
-		$this->load_template( $file_path ) ; 
+		self::load_template( $file_path ) ; 
 	}
 	
 	/**
@@ -197,12 +197,36 @@ class Mautic_For_Wordpress_Admin {
 	* @param string $file_path Relative path of file.
 	* @param array $params Array of extra params.
 	*/
-	public function load_template( $file_path, $params = array() ){
+	public static function load_template( $file_path, $params = array() ){
 		$file  = MWB_M4WP_PLUGIN_PATH.$file_path ; 
 		if( file_exists( $file) ){
 			include $file ; 
 		}else{
 			echo __( 'Something went wrong', 'mautic-for-wordpress' ) ;
+		}
+	}
+
+	public function may_be_sync_data($integration , $data){
+		$settings = get_option('mwb_m4wp_integration_settings' , array()); 
+		if(isset($settings[$integration])){
+			if($settings[$integration]['enable'] == 'yes'){
+				$tags_string = $settings[$integration]['add_tag'] ; 
+				$segment_id = $settings[$integration]['add_segment'] ;
+				$contact_id = 0 ;
+				if(!empty($tags_string)){
+					$tags = explode( ',' , $tags_string ) ; 
+					$data['tags'] = $tags ;
+				}
+				$contact =  MWB_M4WP_Mautic_Api::create_contact( $data );
+				if($segment_id != '-1' ){
+					if(isset( $contact['contact'] )){
+						$contact_id = $contact['contact']['id'];
+					}
+					if($contact_id > 0 ){
+						MWB_M4WP_Mautic_Api::add_contact_to_segment($contact_id , $segment_id) ; 
+					}
+				}
+			}
 		}
 	}
 	
@@ -222,7 +246,8 @@ class Mautic_For_Wordpress_Admin {
 		//get mapped user data
 		$data = $this->get_mapped_properties( $user );
 		//create contact in mautic
-		return MWB_M4WP_Mautic_Api::create_contact( $data, $user_id );
+		$this->may_be_sync_data( 'mwb_m4wp_registration' , $data ) ; 
+		
 	}
 	
 	/**
@@ -281,7 +306,7 @@ class Mautic_For_Wordpress_Admin {
 		return $tags;
 	}
 
-	public function get_time_unit( $date_range ){
+	public static function get_time_unit( $date_range ){
 		$time_unit = 'm' ; 
 		$to = strtotime($date_range['date_to']) ;
 		$from = strtotime($date_range['date_from']) ;
@@ -324,13 +349,20 @@ class Mautic_For_Wordpress_Admin {
 
 		if( isset( $_POST['action'] ) && $_POST['action'] == 'mwb_m4wp_integration_save' ){
 			if(wp_verify_nonce( $_POST['_nonce'] , 'mwb_m4wp_integration_nonce' )){
-				// echo'<pre>';
-				// print_r($_POST);
-				// echo'</pre>';
-				// die;
+				if(isset($_POST['integration']) && $_POST['integration'] != ''){
+					$integration = $_POST['integration'] ; 
+					$enable = isset($_POST['enable']) ? $_POST['enable'] : 'no' ; 
+					$implicit = isset($_POST['implicit']) ? $_POST['implicit'] : 'no' ; 
+					$checkbox_txt = isset($_POST['checkbox_txt']) ? $_POST['checkbox_txt'] : '' ; 
+					$precheck = isset($_POST['precheck']) ? $_POST['precheck'] : 'no' ; 
+					$add_segment = isset($_POST['add_segment']) ? $_POST['add_segment'] : '-1' ; 
+					$add_tag = isset($_POST['add_tag']) ? $_POST['add_tag'] : '' ;
+					$settings = get_option('mwb_m4wp_integration_settings' , array());
+					$settings[$integration] = compact('enable', 'implicit', 'checkbox_txt', 'precheck', 'add_segment', 'add_tag') ;
+					update_option('mwb_m4wp_integration_settings', $settings);
+				}
 			}
 		}
-
 	}
 
 	public static function get_segment_options(){
@@ -356,23 +388,42 @@ class Mautic_For_Wordpress_Admin {
 		return $options ; 
 	}
 	
-	public static function get_integrations(){
+	public static function get_integrations( $key = '' ){
 
 		$integrations = array(
-			array(
+
+			'mwb_m4wp_registration' => array(
 				'id' => 'mwb_m4wp_registration',
 				'name' => __( 'Registration form' , 'mautic-for-wordpress' ),
-				'des' => __( 'Worpdress default registration form' , 'mautic-for-wordpress' ),
+				'des' => __( 'Wordpress default registration form' , 'mautic-for-wordpress' ),
 				'status' => 'inactive',
 			),
-			array(
+			'mwb_m4wp_comment' => array(
 				'id' => 'mwb_m4wp_comment',
 				'name' => __( 'Comment form' , 'mautic-for-wordpress' ),
-				'des' => __( 'Worpdress default Comment form' , 'mautic-for-wordpress' ),
+				'des' => __( 'Wordpress default Comment form' , 'mautic-for-wordpress' ),
 				'status' => 'inactive',
 			)
 		) ; 
+		
+		if($key != '' && isset($integrations[ $key ])){
+			return $integrations[ $key ] ; 
+		}
+
 		return $integrations ; 
+	}
+
+	public function sync_commentor_data( $comment_id, $comment_approved = '' ){
+		// is this a spam comment?
+		if ( $comment_approved === 'spam' ) {
+			return false;
+		}
+		$comment = get_comment( $comment_id );
+		$data = array(
+			'email'    => $comment->comment_author_email,
+			'firstname' => $comment->comment_author,
+		);
+		$this->may_be_sync_data( 'mwb_m4wp_comment' , $data ) ; 
 	}
 
 	public function get_oauth_code(){

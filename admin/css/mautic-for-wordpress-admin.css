@@ -114,23 +114,20 @@ tr:nth-child(even){background-color: rgba(78, 93, 157, 0.19);}
     text-decoration: none;
 }
 
- /* The switch - the box around the slider */
- .mwb-m4wp-admin-table td.status .switch {
+.mwb-m4wp-admin-table td.status .switch {
     position: relative;
     display: inline-block;
     width: 60px;
     height: 34px;
-  }
-  
-  /* Hide default HTML checkbox */
-  .mwb-m4wp-admin-table td.status .switch input {
+}
+
+.mwb-m4wp-admin-table td.status .switch input {
     opacity: 0;
     width: 0;
     height: 0;
-  }
-  
-  /* The slider */
-  .mwb-m4wp-admin-table td.status .slider {
+}
+
+.mwb-m4wp-admin-table td.status .slider {
     position: absolute;
     cursor: pointer;
     top: 0;
@@ -140,9 +137,9 @@ tr:nth-child(even){background-color: rgba(78, 93, 157, 0.19);}
     background-color: #ccc;
     -webkit-transition: .4s;
     transition: .4s;
-  }
-  
-  .mwb-m4wp-admin-table td.status .slider:before {
+}
+
+.mwb-m4wp-admin-table td.status .slider:before {
     position: absolute;
     content: "";
     height: 26px;
@@ -152,34 +149,51 @@ tr:nth-child(even){background-color: rgba(78, 93, 157, 0.19);}
     background-color: white;
     -webkit-transition: .4s;
     transition: .4s;
-  }
-  
-  .mwb-m4wp-admin-table td.status input:checked + .slider {
+}
+
+.mwb-m4wp-admin-table td.status input:checked + .slider {
     background-color: #2FAC02;
-  }
-  
-  .mwb-m4wp-admin-table td.status input:focus + .slider {
+}
+
+.mwb-m4wp-admin-table td.status input:focus + .slider {
     box-shadow: 0 0 1px #2FAC02;
-  }
-  
-  .mwb-m4wp-admin-table td.status input:checked + .slider:before {
+}
+
+.mwb-m4wp-admin-table td.status input:checked + .slider:before {
     -webkit-transform: translateX(26px);
     -ms-transform: translateX(26px);
     transform: translateX(26px);
-  }
-  
-  /* Rounded sliders */
-  .mwb-m4wp-admin-table td.status .slider.round {
-    border-radius: 34px;
-  }
-  
-  .mwb-m4wp-admin-table td.status .slider.round:before {
-    border-radius: 50%;
-  } 
+}
 
+
+.mwb-m4wp-admin-table td.status .slider.round {
+    border-radius: 34px;
+}
+
+.mwb-m4wp-admin-table td.status .slider.round:before {
+    border-radius: 50%;
+} 
 
 .mwb-m4wp-admin-table .dashicons, .mwb-m4wp-admin-table .dashicons-before::before {
     width: 32px;
     height: 32px;
     font-size: 32px;
+}
+
+.mwb-m4wp-admin-form-wrap-title {
+	padding: 15px 10px;
+	font-size: 18px;
+	font-weight: 600;
+    background: rgba(78,93,157,0.8);
+	color: #fff;
+}
+
+.button.mwb-m4wp-admin-button {
+	min-width: 150px;
+	font-size: 16px;
+	height: 50px;
+}
+.mwb-m4wp-admin-button-wrap{
+    text-align: center;
+    margin-top: 10px;
 }

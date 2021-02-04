@@ -24,6 +24,17 @@ jQuery(document).ready(function ($) {
 		$('#mwb-m4wp-form-html').html(html);
 	})
 
+	$('.mwb-m4wp-enable-cb').on('change' , function(e){
+		var cb = $(this) ; 
+		var enable = cb.prop('checked') ? 'yes' : 'no' ; 
+		var integration = cb.closest('tr').attr('integration') ; 
+		var action = 'mwb_m4wp_enable_integration' ; 
+		var request = {enable , integration, action} ; 
+		$.post( ajaxUrl, request ).done(function( response ){
+			
+		});
+	})
+
 	if($('#created-leads-in-time').length > 0  ){
 		var chartdata = $('#created-leads-in-time').attr('data') ; 
 		chartdata = JSON.parse(chartdata)

@@ -75,7 +75,7 @@ class Oauth2 extends Api_Base {
             update_option('mwb_m4wp_oauth2_success' , false);
             throw new Mautic_Api_Exception( 'Something went wrong' , 003 );
         }
-        $api_instance->save_token_data( $response );
+        $this->save_token_data( $response );
         update_option('mwb_m4wp_oauth2_success' , true);
         return;
     }

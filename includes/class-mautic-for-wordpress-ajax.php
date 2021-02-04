@@ -15,4 +15,35 @@ class Mautic_For_Wordpress_Ajax {
         wp_send_json($response);
         wp_die();
     }
+
+    public function enable_integration(){
+        $response = array(
+            'success' => true,
+            'msg' => 'Success'
+        );
+        $enable = $_POST['enable'] ;
+        $integration = $_POST['integration'] ;
+        $settings = get_option('mwb_m4wp_integration_settings' , array());
+        if(isset($settings[$integration])){
+            $settings[$integration]['enable'] = $enable ; 
+        }else{
+            $settings[$integration] = $this->get_integration_default_settings();
+            $settings[$integration]['enable'] = $enable ; 
+        }
+        update_option( 'mwb_m4wp_integration_settings', $settings ) ;
+        wp_send_json($response);
+        wp_die();
+    }
+
+    public function get_integration_default_settings(){
+        $settings = array(
+            'enable' => 'no',
+            'implicit' => 'no',
+            'checkbox_txt' => '',
+            'precheck' => 'no',
+            'add_segment' => '-1',
+            'add_tag' => '',
+        );
+        return $settings ; 
+    }
 }

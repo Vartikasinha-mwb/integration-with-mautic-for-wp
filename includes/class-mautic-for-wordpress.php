@@ -188,11 +188,13 @@ class Mautic_For_Wordpress {
 		$this->loader->add_action( 'user_register', $plugin_admin, 'create_registered_user', 99, 1 ) ; 
 		
 		//update user in mautic
-		$this->loader->add_action( 'profile_update', $plugin_admin, 'update_registered_user', 99, 2 );
+		//$this->loader->add_action( 'profile_update', $plugin_admin, 'update_registered_user', 99, 2 );
 
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'get_oauth_code' ) ; 
 
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'save_admin_settings' ) ; 
+
+		$this->loader->add_action( 'comment_post', $plugin_admin, 'sync_commentor_data' ) ;
 	}
 
 	/**
@@ -217,6 +219,8 @@ class Mautic_For_Wordpress {
 		
 		$plugin_ajax = new Mautic_For_Wordpress_Ajax();
 		$this->loader->add_action( 'wp_ajax_mwb_m4wp_test_api_connection', $plugin_ajax,  'test_api_connection' ) ; 
+		$this->loader->add_action( 'wp_ajax_mwb_m4wp_enable_integration', $plugin_ajax,  'enable_integration' ) ; 
+		
 	}
 
 	/**
