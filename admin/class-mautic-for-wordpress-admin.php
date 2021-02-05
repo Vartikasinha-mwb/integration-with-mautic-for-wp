@@ -206,7 +206,29 @@ class Mautic_For_Wordpress_Admin {
 		}
 	}
 
+	public function add_comment_form_checkbox( $comment_fields ){
+		$settings = get_option('mwb_m4wp_integration_settings' , array()); 
+		$integration = 'mwb_m4wp_comment' ;
+		if(isset($settings[$integration])){
+			if($settings[$integration]['implicit'] == 'no'){
+				$comment_fields[ 'mwb_m4wp_subscribe' ] = '<p class="comment-form-subscribe">'.
+				'<input id="mwb_m4wp_subscribe" name="mwb_m4wp_subscribe" type="checkbox" value="yes"/>'.
+				'<label for="mwb_m4wp_subscribe">' .$settings[$integration]['checkbox_txt'] . '</label></p>';
+			}
+		}
+		return $comment_fields ; 
+	}
+
 	public function may_be_sync_data($integration , $data){
+
+		$sync = false;
+		if( isset($_POST['mwb_m4wp_subscribe']) && $_POST['mwb_m4wp_subscribe'] == 'yes'){
+			$sync = true;
+		}
+		if(!$sync){
+			return ; 
+		}
+
 		$settings = get_option('mwb_m4wp_integration_settings' , array()); 
 		if(isset($settings[$integration])){
 			if($settings[$integration]['enable'] == 'yes'){
@@ -404,7 +426,7 @@ class Mautic_For_Wordpress_Admin {
 				'des' => __( 'Wordpress default Comment form' , 'mautic-for-wordpress' ),
 				'status' => 'inactive',
 			)
-		) ; 
+		) ;                                 
 		
 		if($key != '' && isset($integrations[ $key ])){
 			return $integrations[ $key ] ; 
@@ -424,6 +446,17 @@ class Mautic_For_Wordpress_Admin {
 			'firstname' => $comment->comment_author,
 		);
 		$this->may_be_sync_data( 'mwb_m4wp_comment' , $data ) ; 
+	}
+
+	public function add_checkbox(){
+		$settings = get_option('mwb_m4wp_integration_settings' , array()); 
+		$integration = 'mwb_m4wp_registration' ;
+		if(isset($settings[$integration])){
+			if($settings[$integration]['implicit'] == 'no'){
+				echo '<p><input type="checkbox" name="mwb_m4wp_subscribe" id="mwb_m4wp_subscribe" value="yes">' ;
+				echo '<label for="mwb_m4wp_subscribe">'.$settings[$integration]['checkbox_txt'].'</label></p>' ;
+			}
+		}
 	}
 
 	public function get_oauth_code(){

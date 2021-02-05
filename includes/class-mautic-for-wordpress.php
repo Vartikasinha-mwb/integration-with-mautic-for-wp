@@ -195,6 +195,12 @@ class Mautic_For_Wordpress {
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'save_admin_settings' ) ; 
 
 		$this->loader->add_action( 'comment_post', $plugin_admin, 'sync_commentor_data' ) ;
+		
+		$this->loader->add_action( 'register_form', $plugin_admin, 'add_checkbox' ) ;
+
+		//$this->loader->add_action( 'comment_form', $plugin_admin, 'add_checkbox' , 90 ) ;
+
+		$this->loader->add_filter( 'comment_form_fields', $plugin_admin, 'add_comment_form_checkbox' ) ; 
 	}
 
 	/**

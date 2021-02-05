@@ -319,3 +319,75 @@ Code : 200
 Message : OK
 Time: February 4, 2021  1:20 pm
 ------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 200
+Message : OK
+Time: February 5, 2021  11:40 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-07&dateFrom=2020-10-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 5, 2021  11:40 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-07&dateFrom=2020-10-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 5, 2021  11:40 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-07&dateFrom=2020-10-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 5, 2021  11:40 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-07&dateFrom=2020-10-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 5, 2021  11:40 am
+------------------------------------
+Url : http://localhost/mautic2163/api/contacts/new
+Method : POST
+Code : 201
+Message : Created
+Time: February 5, 2021  11:57 am
+------------------------------------
+Url : http://localhost/mautic2163/api/segments/1/contact/55/add
+Method : POST
+Code : 200
+Message : OK
+Time: February 5, 2021  11:57 am
+------------------------------------
+Url : http://localhost/mautic2163/api/contacts/new
+Method : POST
+Code : 201
+Message : Created
+Time: February 5, 2021  12:19 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/segments/1/contact/56/add
+Method : POST
+Code : 200
+Message : OK
+Time: February 5, 2021  12:19 pm
+------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 200
+Message : OK
+Time: February 5, 2021  12:47 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/contacts/new
+Method : POST
+Code : 201
+Message : Created
+Time: February 5, 2021  12:47 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/segments/1/contact/57/add
+Method : POST
+Code : 200
+Message : OK
+Time: February 5, 2021  12:47 pm
+------------------------------------
