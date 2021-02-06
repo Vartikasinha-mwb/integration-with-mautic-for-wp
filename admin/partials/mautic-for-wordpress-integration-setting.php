@@ -10,6 +10,7 @@ $checkbox_txt = isset($setting['checkbox_txt']) ? $setting['checkbox_txt'] : '' 
 $precheck = isset($setting['precheck']) ? $setting['precheck'] : 'no' ; 
 $add_segment = isset($setting['add_segment']) ? $setting['add_segment'] : '-1' ; 
 $add_tag = isset($setting['add_tag']) ? $setting['add_tag'] : '' ; 
+$hide_row = ($implicit == 'no') ? '' : 'row-hide' ; 
 ?>
 <div class="wrap">
     <div class="mwb-m4wp-admin-panel-head">
@@ -40,16 +41,16 @@ $add_tag = isset($setting['add_tag']) ? $setting['add_tag'] : '' ;
                 <tr>
                     <th><label for="implicit"><?php esc_html_e('Implicit' , 'mautic-for-wordpress' ) ?></label></th>
                     <td>
-                        <input type="radio" value="yes" name="implicit" <?php checked('yes', $implicit) ?>>
+                        <input class="mwb-m4wp-implicit-cb" type="radio" value="yes" name="implicit" <?php checked('yes', $implicit) ?>>
                         <label><?php esc_html_e( 'Yes', 'mautic-for-wordpress' ) ?></label>
-                        <input type="radio" value="no" name="implicit" <?php checked('no', $implicit) ?>>
+                        <input class="mwb-m4wp-implicit-cb" type="radio" value="no" name="implicit" <?php checked('no', $implicit) ?>>
                         <label><?php esc_html_e( 'No', 'mautic-for-wordpress' ) ?></label>
                         <p class="description">
                             <?php esc_html_e( 'Select "yes" if you want to subscribe people without asking them explicitly.', 'mautic-for-wordpress' ) ?>
                         </p>
                     </td>
                 </tr>
-                <tr>
+                <tr class="row-implicit <?php echo $hide_row ?>">
                     <th><label for="checkbox_txt"><?php esc_html_e('Checkbox Label Text' , 'mautic-for-wordpress' ) ?></label></th>
                     <td>
                         <input type="text" name="checkbox_txt" value="<?php echo $checkbox_txt ?>">
@@ -57,7 +58,7 @@ $add_tag = isset($setting['add_tag']) ? $setting['add_tag'] : '' ;
                         </p>
                     </td>
                 </tr>
-                <tr>
+                <tr class="row-implicit <?php echo $hide_row ?>">
                     <th><label for="precheck"><?php esc_html_e('Pre Check Checkbox' , 'mautic-for-wordpress' ) ?></label></th>
                     <td>
                         <input type="radio" value="yes" name="precheck" <?php checked('yes', $precheck) ?>>
@@ -105,3 +106,5 @@ $add_tag = isset($setting['add_tag']) ? $setting['add_tag'] : '' ;
     </div>
     </div>
 </div>
+
+

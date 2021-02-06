@@ -24,6 +24,10 @@ jQuery(document).ready(function ($) {
 		$('#mwb-m4wp-form-html').html(html);
 	})
 
+	$('.mwb-m4wp-implicit-cb').on('change' , function(e){
+		$('.row-implicit').toggleClass('row-hide');
+	})
+
 	$('.mwb-m4wp-enable-cb').on('change' , function(e){
 		var cb = $(this) ; 
 		var enable = cb.prop('checked') ? 'yes' : 'no' ; 

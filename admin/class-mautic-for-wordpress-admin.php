@@ -211,8 +211,10 @@ class Mautic_For_Wordpress_Admin {
 		$integration = 'mwb_m4wp_comment' ;
 		if(isset($settings[$integration])){
 			if($settings[$integration]['implicit'] == 'no'){
+				
+				$checked = ($settings[$integration]['precheck'] == 'yes') ? 'checked ' : '' ; 
 				$comment_fields[ 'mwb_m4wp_subscribe' ] = '<p class="comment-form-subscribe">'.
-				'<input id="mwb_m4wp_subscribe" name="mwb_m4wp_subscribe" type="checkbox" value="yes"/>'.
+				'<input id="mwb_m4wp_subscribe" name="mwb_m4wp_subscribe" type="checkbox" value="yes" '.$checked.' />'.
 				'<label for="mwb_m4wp_subscribe">' .$settings[$integration]['checkbox_txt'] . '</label></p>';
 			}
 		}
@@ -453,7 +455,8 @@ class Mautic_For_Wordpress_Admin {
 		$integration = 'mwb_m4wp_registration' ;
 		if(isset($settings[$integration])){
 			if($settings[$integration]['implicit'] == 'no'){
-				echo '<p><input type="checkbox" name="mwb_m4wp_subscribe" id="mwb_m4wp_subscribe" value="yes">' ;
+				$checked = ($settings[$integration]['precheck'] == 'yes') ? 'checked ' : '' ;
+				echo '<p><input '.$checked.' type="checkbox" name="mwb_m4wp_subscribe" id="mwb_m4wp_subscribe" value="yes">' ;
 				echo '<label for="mwb_m4wp_subscribe">'.$settings[$integration]['checkbox_txt'].'</label></p>' ;
 			}
 		}

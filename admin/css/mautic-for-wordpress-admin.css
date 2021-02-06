@@ -197,3 +197,7 @@ tr:nth-child(even){background-color: rgba(78, 93, 157, 0.19);}
     text-align: center;
     margin-top: 10px;
 }
+
+.row-implicit.row-hide {
+	display: none;
+}
