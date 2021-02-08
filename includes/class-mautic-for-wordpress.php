@@ -79,7 +79,7 @@ class Mautic_For_Wordpress {
 		$this->define_admin_hooks();
 		$this->define_public_hooks();
 		$this->define_ajax_hooks();
-
+		$this->load_integrations();
 	}
 
 	/**
@@ -144,10 +144,10 @@ class Mautic_For_Wordpress {
 		*/
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-mautic-for-wordpress-mautic-api.php';
 
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/integrations/class-mautic-for-wordpress-integration.php';
 		
-		
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-mautic-for-wordpress-integration-manager.php';
 		$this->loader = new Mautic_For_Wordpress_Loader();
-
 	}
 
 	/**
@@ -184,23 +184,10 @@ class Mautic_For_Wordpress {
 		//add plugins menu page.
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_admin_menu_page' ) ; 
 
-		//create registed user in mautic
-		$this->loader->add_action( 'user_register', $plugin_admin, 'create_registered_user', 99, 1 ) ; 
-		
-		//update user in mautic
-		//$this->loader->add_action( 'profile_update', $plugin_admin, 'update_registered_user', 99, 2 );
-
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'get_oauth_code' ) ; 
 
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'save_admin_settings' ) ; 
-
-		$this->loader->add_action( 'comment_post', $plugin_admin, 'sync_commentor_data' ) ;
 		
-		$this->loader->add_action( 'register_form', $plugin_admin, 'add_checkbox' ) ;
-
-		//$this->loader->add_action( 'comment_form', $plugin_admin, 'add_checkbox' , 90 ) ;
-
-		$this->loader->add_filter( 'comment_form_fields', $plugin_admin, 'add_comment_form_checkbox' ) ; 
 	}
 
 	/**
@@ -267,5 +254,9 @@ class Mautic_For_Wordpress {
 	 */
 	public function get_version() {
 		return $this->version;
+	}
+
+	public function load_integrations(){
+		Mautic_For_Wordpress_Integration_Manager::initialize_active_integrations();
 	}
 }

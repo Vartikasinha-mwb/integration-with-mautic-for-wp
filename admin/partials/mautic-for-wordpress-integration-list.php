@@ -1,6 +1,5 @@
 <?php
-$integrations = Mautic_For_Wordpress_Admin::get_integrations() ; 
-$settings = get_option('mwb_m4wp_integration_settings' , array()); 
+$integrations = Mautic_For_Wordpress_Integration_Manager::get_integrations() ; 
 ?>
 <div class="wrap">
     <div class="mwb-m4wp-admin-panel-head">
@@ -17,22 +16,21 @@ $settings = get_option('mwb_m4wp_integration_settings' , array());
                 </tr>
             </thead>
             <tbody>
-                <?php foreach($integrations as $key => $integration) : 
-                    
-                    $setting = isset($settings[$key]) ? $settings[$key] : array() ;
-                    $enable = isset($setting['enable']) ? $setting['enable'] : 'no' ; 
+                <?php foreach($integrations as $key => $details) : 
+                    $integration = Mautic_For_Wordpress_Integration_Manager::get_integration( $details ) ;
+                    if(!$integration) continue;
                     ?>
                 <tr integration="<?php echo $key ?>">
-                    <td class="name"><?php echo $integration['name'] ; ?></td>
-                    <td class="des"><?php echo $integration['des'] ; ?></td>
+                    <td class="name"><?php echo $integration->get_name() ; ?></td>
+                    <td class="des"><?php echo $integration->get_description() ; ?></td>
                     <td class="status">
                         <label class="switch">
-                            <input type="checkbox" <?php checked( $enable , 'yes' ) ?> class="mwb-m4wp-enable-cb">
+                            <input type="checkbox" <?php checked( $integration->is_enabled() , true ) ?> class="mwb-m4wp-enable-cb">
                             <span class="slider round"></span>
                         </label>
                     </td>
                     <td class="setting">
-                        <a href="?page=integrations&id=<?php echo $integration['id'] ?>">
+                        <a href="?page=integrations&id=<?php echo $integration->get_id()?>">
                             <span class="dashicons dashicons-admin-generic"></span>
                         </a>
                     </td>

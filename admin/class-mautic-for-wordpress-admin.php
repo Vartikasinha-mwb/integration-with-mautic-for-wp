@@ -206,129 +206,6 @@ class Mautic_For_Wordpress_Admin {
 		}
 	}
 
-	public function add_comment_form_checkbox( $comment_fields ){
-		$settings = get_option('mwb_m4wp_integration_settings' , array()); 
-		$integration = 'mwb_m4wp_comment' ;
-		if(isset($settings[$integration])){
-			if($settings[$integration]['implicit'] == 'no'){
-				
-				$checked = ($settings[$integration]['precheck'] == 'yes') ? 'checked ' : '' ; 
-				$comment_fields[ 'mwb_m4wp_subscribe' ] = '<p class="comment-form-subscribe">'.
-				'<input id="mwb_m4wp_subscribe" name="mwb_m4wp_subscribe" type="checkbox" value="yes" '.$checked.' />'.
-				'<label for="mwb_m4wp_subscribe">' .$settings[$integration]['checkbox_txt'] . '</label></p>';
-			}
-		}
-		return $comment_fields ; 
-	}
-
-	public function may_be_sync_data($integration , $data){
-
-		$sync = false;
-		if( isset($_POST['mwb_m4wp_subscribe']) && $_POST['mwb_m4wp_subscribe'] == 'yes'){
-			$sync = true;
-		}
-		if(!$sync){
-			return ; 
-		}
-
-		$settings = get_option('mwb_m4wp_integration_settings' , array()); 
-		if(isset($settings[$integration])){
-			if($settings[$integration]['enable'] == 'yes'){
-				$tags_string = $settings[$integration]['add_tag'] ; 
-				$segment_id = $settings[$integration]['add_segment'] ;
-				$contact_id = 0 ;
-				if(!empty($tags_string)){
-					$tags = explode( ',' , $tags_string ) ; 
-					$data['tags'] = $tags ;
-				}
-				$contact =  MWB_M4WP_Mautic_Api::create_contact( $data );
-				if($segment_id != '-1' ){
-					if(isset( $contact['contact'] )){
-						$contact_id = $contact['contact']['id'];
-					}
-					if($contact_id > 0 ){
-						MWB_M4WP_Mautic_Api::add_contact_to_segment($contact_id , $segment_id) ; 
-					}
-				}
-			}
-		}
-	}
-	
-	/**
-	* Capture registerd user data and create mautic contact
-	* @param int $user_id User id.
-	* @return bool 
-	*/
-	public function create_registered_user( $user_id ){
-		
-		// gather user data
-		$user = get_userdata( $user_id );
-		// check if user exist
-		if ( ! $user instanceof WP_User ) {
-			return false;
-		}
-		//get mapped user data
-		$data = $this->get_mapped_properties( $user );
-		//create contact in mautic
-		$this->may_be_sync_data( 'mwb_m4wp_registration' , $data ) ; 
-		
-	}
-	
-	/**
-	* Update user data in mautic
-	* @param int $user_id Used id of updated user.
-	* @param WP_User $old_user_data old user data.
-	*/
-	public function update_registered_user( $user_id , $old_user_data ){
-		// gather user data
-		$user = get_userdata( $user_id );
-		
-		// check if user exist
-		if ( ! $user instanceof WP_User ) {
-			return false;
-		}
-		//get mapped user data
-		$data = $this->get_mapped_properties( $user );
-		$data[ 'tags' ] = array( 'wpuser' ) ;  
-		$data[ 'points' ] = 100 ; 
-		$contact =  MWB_M4WP_Mautic_Api::create_contact( $data );
-		if(isset( $contact['contact'] )){
-			$contact_id = $contact['contact']['id'];
-		}
-		if($contact_id > 0 ){
-			MWB_M4WP_Mautic_Api::add_contact_to_segment($contact_id , 2) ; 
-		}
-		return $contact ; 
-	}
-	
-	/**
-	* Get mapped properties.
-	* @param WP_User $user Instance of wp_user
-	* @return array 
-	*/
-	public function get_mapped_properties( $user ){
-		
-		// initialize firstname as username
-		$data = array(
-			'email' => $user->user_email,
-			'firstname'  => $user->user_login,
-		);
-		
-		if ( '' !== $user->first_name ) {
-			$data['firstname']  = $user->first_name;
-		}
-		
-		if ( '' !== $user->last_name ) {
-			$data['lastname'] = $user->last_name;
-		}
-		
-		return $data ; 
-	}
-	
-	public function get_assigned_tags(){
-		$tags = get_option( 'mwb_m4wp_registration_tags' , array( 'wp new' ) ) ; 
-		return $tags;
-	}
 
 	public static function get_time_unit( $date_range ){
 		$time_unit = 'm' ; 
@@ -363,6 +240,7 @@ class Mautic_For_Wordpress_Admin {
 	}
 
 	public function save_admin_settings(){
+		
 		if( isset( $_POST['action'] ) && $_POST['action'] == 'mwb_m4wp_date_range' ){
 			$date_range = array(
 				'date_from' => $_POST['mwb_m4wp_from_date'] , 
@@ -410,56 +288,6 @@ class Mautic_For_Wordpress_Admin {
 		}
 		update_option( 'mwb_m4wp_segment_list' , $options ) ; 
 		return $options ; 
-	}
-	
-	public static function get_integrations( $key = '' ){
-
-		$integrations = array(
-
-			'mwb_m4wp_registration' => array(
-				'id' => 'mwb_m4wp_registration',
-				'name' => __( 'Registration form' , 'mautic-for-wordpress' ),
-				'des' => __( 'Wordpress default registration form' , 'mautic-for-wordpress' ),
-				'status' => 'inactive',
-			),
-			'mwb_m4wp_comment' => array(
-				'id' => 'mwb_m4wp_comment',
-				'name' => __( 'Comment form' , 'mautic-for-wordpress' ),
-				'des' => __( 'Wordpress default Comment form' , 'mautic-for-wordpress' ),
-				'status' => 'inactive',
-			)
-		) ;                                 
-		
-		if($key != '' && isset($integrations[ $key ])){
-			return $integrations[ $key ] ; 
-		}
-
-		return $integrations ; 
-	}
-
-	public function sync_commentor_data( $comment_id, $comment_approved = '' ){
-		// is this a spam comment?
-		if ( $comment_approved === 'spam' ) {
-			return false;
-		}
-		$comment = get_comment( $comment_id );
-		$data = array(
-			'email'    => $comment->comment_author_email,
-			'firstname' => $comment->comment_author,
-		);
-		$this->may_be_sync_data( 'mwb_m4wp_comment' , $data ) ; 
-	}
-
-	public function add_checkbox(){
-		$settings = get_option('mwb_m4wp_integration_settings' , array()); 
-		$integration = 'mwb_m4wp_registration' ;
-		if(isset($settings[$integration])){
-			if($settings[$integration]['implicit'] == 'no'){
-				$checked = ($settings[$integration]['precheck'] == 'yes') ? 'checked ' : '' ;
-				echo '<p><input '.$checked.' type="checkbox" name="mwb_m4wp_subscribe" id="mwb_m4wp_subscribe" value="yes">' ;
-				echo '<label for="mwb_m4wp_subscribe">'.$settings[$integration]['checkbox_txt'].'</label></p>' ;
-			}
-		}
 	}
 
 	public function get_oauth_code(){

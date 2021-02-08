@@ -481,3 +481,165 @@ Code : 200
 Message : OK
 Time: February 6, 2021  8:00 am
 ------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 0
+Message : 
+Time: February 8, 2021  12:18 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-07&dateFrom=2020-10-01&timeUnit=m
+Method : GET
+Code : 401
+Message : Unauthorized
+Error : The access token provided has expired.
+Response: {"headers":{},"body":"{\"errors\":[{\"message\":\"The access token provided has expired.\",\"code\":401,\"type\":\"invalid_grant\"}],\"error\":\"invalid_grant\",\"error_description\":\"The access token provided has expired. (`error` and `error_description` are deprecated as of 2.6.0 and will be removed in 3.0. Use the `errors` array instead.)\"}","response":{"code":401,"message":"Unauthorized"},"cookies":[],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+Req: {"method":"GET","headers":{"Authorization":"Bearer OWVlZTNlMDA3YmYwMDEzNDY1NDdiNjM4YzA0NTQ5MzQ2YTEyYTgwNjExNTFiYmI1NWMzZTJhZmI4YTk4MDIyMw","User-Agent":"MWB_M4WP\/1.0.0; WordPress\/5.6.1; http:\/\/localhost\/wp551","Accept-Language":"en-US,en;q=0.5"},"timeout":20,"sslverify":true,"url":"http:\/\/localhost\/mautic2163\/api\/data\/created.leads.in.time?dateTo=2021-02-07&dateFrom=2020-10-01&timeUnit=m"}
+Time: February 8, 2021  12:18 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-07&dateFrom=2020-10-01&timeUnit=m
+Method : GET
+Code : 401
+Message : Unauthorized
+Error : The access token provided has expired.
+Response: {"headers":{},"body":"{\"errors\":[{\"message\":\"The access token provided has expired.\",\"code\":401,\"type\":\"invalid_grant\"}],\"error\":\"invalid_grant\",\"error_description\":\"The access token provided has expired. (`error` and `error_description` are deprecated as of 2.6.0 and will be removed in 3.0. Use the `errors` array instead.)\"}","response":{"code":401,"message":"Unauthorized"},"cookies":[],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+Req: {"method":"GET","headers":{"Authorization":"Bearer OWVlZTNlMDA3YmYwMDEzNDY1NDdiNjM4YzA0NTQ5MzQ2YTEyYTgwNjExNTFiYmI1NWMzZTJhZmI4YTk4MDIyMw","User-Agent":"MWB_M4WP\/1.0.0; WordPress\/5.6.1; http:\/\/localhost\/wp551","Accept-Language":"en-US,en;q=0.5"},"timeout":20,"sslverify":true,"url":"http:\/\/localhost\/mautic2163\/api\/data\/page.hits.in.time?dateTo=2021-02-07&dateFrom=2020-10-01&timeUnit=m"}
+Time: February 8, 2021  12:18 pm
+------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 200
+Message : OK
+Time: February 8, 2021  12:18 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-07&dateFrom=2020-10-01&timeUnit=m
+Method : GET
+Code : 401
+Message : Unauthorized
+Error : The access token provided has expired.
+Response: {"headers":{},"body":"{\"errors\":[{\"message\":\"The access token provided has expired.\",\"code\":401,\"type\":\"invalid_grant\"}],\"error\":\"invalid_grant\",\"error_description\":\"The access token provided has expired. (`error` and `error_description` are deprecated as of 2.6.0 and will be removed in 3.0. Use the `errors` array instead.)\"}","response":{"code":401,"message":"Unauthorized"},"cookies":[],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+Req: {"method":"GET","headers":{"Authorization":"Bearer OWVlZTNlMDA3YmYwMDEzNDY1NDdiNjM4YzA0NTQ5MzQ2YTEyYTgwNjExNTFiYmI1NWMzZTJhZmI4YTk4MDIyMw","User-Agent":"MWB_M4WP\/1.0.0; WordPress\/5.6.1; http:\/\/localhost\/wp551","Accept-Language":"en-US,en;q=0.5"},"timeout":20,"sslverify":true,"url":"http:\/\/localhost\/mautic2163\/api\/data\/submissions.in.time?dateTo=2021-02-07&dateFrom=2020-10-01&timeUnit=m"}
+Time: February 8, 2021  12:18 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-07&dateFrom=2020-10-01&timeUnit=m
+Method : GET
+Code : 401
+Message : Unauthorized
+Error : The access token provided has expired.
+Response: {"headers":{},"body":"{\"errors\":[{\"message\":\"The access token provided has expired.\",\"code\":401,\"type\":\"invalid_grant\"}],\"error\":\"invalid_grant\",\"error_description\":\"The access token provided has expired. (`error` and `error_description` are deprecated as of 2.6.0 and will be removed in 3.0. Use the `errors` array instead.)\"}","response":{"code":401,"message":"Unauthorized"},"cookies":[],"filename":null,"http_response":{"data":null,"headers":null,"status":null}}
+Req: {"method":"GET","headers":{"Authorization":"Bearer OWVlZTNlMDA3YmYwMDEzNDY1NDdiNjM4YzA0NTQ5MzQ2YTEyYTgwNjExNTFiYmI1NWMzZTJhZmI4YTk4MDIyMw","User-Agent":"MWB_M4WP\/1.0.0; WordPress\/5.6.1; http:\/\/localhost\/wp551","Accept-Language":"en-US,en;q=0.5"},"timeout":20,"sslverify":true,"url":"http:\/\/localhost\/mautic2163\/api\/data\/top.lists?dateTo=2021-02-07&dateFrom=2020-10-01&timeUnit=m"}
+Time: February 8, 2021  12:18 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/users/self
+Method : GET
+Code : 200
+Message : OK
+Time: February 8, 2021  12:18 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-07&dateFrom=2020-10-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 8, 2021  12:18 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-07&dateFrom=2020-10-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 8, 2021  12:18 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-07&dateFrom=2020-10-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 8, 2021  12:18 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-07&dateFrom=2020-10-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 8, 2021  12:18 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/contacts/new
+Method : POST
+Code : 201
+Message : Created
+Time: February 8, 2021  12:19 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/segments/1/contact/58/add
+Method : POST
+Code : 200
+Message : OK
+Time: February 8, 2021  12:19 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/contacts/new
+Method : POST
+Code : 201
+Message : Created
+Time: February 8, 2021  12:21 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/segments/1/contact/59/add
+Method : POST
+Code : 200
+Message : OK
+Time: February 8, 2021  12:21 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/contacts/new
+Method : POST
+Code : 201
+Message : Created
+Time: February 8, 2021  12:25 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/segments/1/contact/60/add
+Method : POST
+Code : 200
+Message : OK
+Time: February 8, 2021  12:25 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-07&dateFrom=2020-10-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 8, 2021  12:40 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-07&dateFrom=2020-10-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 8, 2021  12:40 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-07&dateFrom=2020-10-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 8, 2021  12:40 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-07&dateFrom=2020-10-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 8, 2021  12:40 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-02-07&dateFrom=2020-10-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 8, 2021  12:41 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-02-07&dateFrom=2020-10-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 8, 2021  12:41 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-02-07&dateFrom=2020-10-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 8, 2021  12:41 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-02-07&dateFrom=2020-10-01&timeUnit=m
+Method : GET
+Code : 200
+Message : OK
+Time: February 8, 2021  12:41 pm
+------------------------------------

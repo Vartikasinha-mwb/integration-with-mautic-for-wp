@@ -62,9 +62,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-mautic-for-wordpress.php';
  */
 function run_mautic_for_wordpress() {
 
+	mwb_m4wp_define_plugin_constants();
 	$plugin = new Mautic_For_Wordpress();
 	$plugin->run();
-	mwb_m4wp_define_plugin_constants();
+	
 
 }
 run_mautic_for_wordpress();

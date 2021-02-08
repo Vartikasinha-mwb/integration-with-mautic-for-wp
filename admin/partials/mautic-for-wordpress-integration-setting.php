@@ -1,16 +1,14 @@
 <?php
 $segment_list = Mautic_For_Wordpress_Admin::get_segment_options();
-$integation = Mautic_For_Wordpress_Admin::get_integrations( $_GET['id'] ) ;
-
-$settings = get_option('mwb_m4wp_integration_settings' , array()); 
-$setting = isset($settings[$_GET['id']]) ? $settings[$_GET['id']] : array();
-$enable = isset($setting['enable']) ? $setting['enable'] : 'no' ; 
-$implicit = isset($setting['implicit']) ? $setting['implicit'] : 'no' ; 
-$checkbox_txt = isset($setting['checkbox_txt']) ? $setting['checkbox_txt'] : '' ; 
-$precheck = isset($setting['precheck']) ? $setting['precheck'] : 'no' ; 
-$add_segment = isset($setting['add_segment']) ? $setting['add_segment'] : '-1' ; 
-$add_tag = isset($setting['add_tag']) ? $setting['add_tag'] : '' ; 
-$hide_row = ($implicit == 'no') ? '' : 'row-hide' ; 
+$integation_details = Mautic_For_Wordpress_Integration_Manager::get_integrations($_GET['id']) ; 
+$integation = Mautic_For_Wordpress_Integration_Manager::get_integration( $integation_details ) ;
+$enable = $integation->is_enabled() ; 
+$implicit = $integation->is_implicit() ; 
+$checkbox_txt = $integation->get_option( 'checkbox_txt' ) ;
+$precheck = $integation->is_checkbox_precheck() ;
+$add_segment = $integation->get_option( 'add_segment' ) ;
+$add_tag = $integation->get_option( 'add_tag' )  ; 
+$hide_row = $implicit ? 'row-hide' : '' ; 
 ?>
 <div class="wrap">
     <div class="mwb-m4wp-admin-panel-head">
@@ -21,7 +19,7 @@ $hide_row = ($implicit == 'no') ? '' : 'row-hide' ;
         <a href="?page=integrations"><?php esc_html_e('Back' , 'mautic-for-wordpress') ?></a>
     </div>
     <div class="mwb-m4wp-admin-form-wrap-title">
-        <?php echo $integation['name'] ?>
+        <?php echo $integation->get_name() ?>
     </div>
     <div class="mwb-m4wp-admin-form-wrap mwb-m4wp-admin-integration-form-wrap">
         <form action="" method="post">
@@ -29,9 +27,9 @@ $hide_row = ($implicit == 'no') ? '' : 'row-hide' ;
                 <tr>
                     <th><label for="enable"><?php esc_html_e('Enable' , 'mautic-for-wordpress' ) ?></label></th>
                     <td>
-                        <input type="radio" value="yes" name="enable" <?php checked('yes', $enable) ?>>
+                        <input type="radio" value="yes" name="enable" <?php checked( true, $enable) ?>>
                         <label><?php esc_html_e( 'Yes', 'mautic-for-wordpress' ) ?></label>
-                        <input type="radio" value="no" name="enable" <?php checked('no', $enable) ?>>
+                        <input type="radio" value="no" name="enable" <?php checked( false , $enable) ?>>
                         <label><?php esc_html_e( 'No', 'mautic-for-wordpress' ) ?></label>
                         <p class="description">
                             <?php esc_html_e( 'Select "yes" to enable the integration. ', 'mautic-for-wordpress' ) ?>
@@ -41,9 +39,9 @@ $hide_row = ($implicit == 'no') ? '' : 'row-hide' ;
                 <tr>
                     <th><label for="implicit"><?php esc_html_e('Implicit' , 'mautic-for-wordpress' ) ?></label></th>
                     <td>
-                        <input class="mwb-m4wp-implicit-cb" type="radio" value="yes" name="implicit" <?php checked('yes', $implicit) ?>>
+                        <input class="mwb-m4wp-implicit-cb" type="radio" value="yes" name="implicit" <?php checked( true, $implicit) ?>>
                         <label><?php esc_html_e( 'Yes', 'mautic-for-wordpress' ) ?></label>
-                        <input class="mwb-m4wp-implicit-cb" type="radio" value="no" name="implicit" <?php checked('no', $implicit) ?>>
+                        <input class="mwb-m4wp-implicit-cb" type="radio" value="no" name="implicit" <?php checked( false , $implicit) ?>>
                         <label><?php esc_html_e( 'No', 'mautic-for-wordpress' ) ?></label>
                         <p class="description">
                             <?php esc_html_e( 'Select "yes" if you want to subscribe people without asking them explicitly.', 'mautic-for-wordpress' ) ?>
@@ -61,9 +59,9 @@ $hide_row = ($implicit == 'no') ? '' : 'row-hide' ;
                 <tr class="row-implicit <?php echo $hide_row ?>">
                     <th><label for="precheck"><?php esc_html_e('Pre Check Checkbox' , 'mautic-for-wordpress' ) ?></label></th>
                     <td>
-                        <input type="radio" value="yes" name="precheck" <?php checked('yes', $precheck) ?>>
+                        <input type="radio" value="yes" name="precheck" <?php checked( true , $precheck) ?>>
                         <label><?php esc_html_e( 'Yes', 'mautic-for-wordpress' ) ?></label>
-                        <input type="radio" value="no" name="precheck" <?php checked('no', $precheck) ?>>
+                        <input type="radio" value="no" name="precheck" <?php checked( false , $precheck) ?>>
                         <label><?php esc_html_e( 'No', 'mautic-for-wordpress' ) ?></label>
                         <p class="description">
                             <?php esc_html_e( 'Select "yes" if you want to check the checkbox by default.', 'mautic-for-wordpress' ) ?>
@@ -76,7 +74,7 @@ $hide_row = ($implicit == 'no') ? '' : 'row-hide' ;
                         <select name="add_segment">
                             <option value="-1"><?php esc_html_e('--Select--', 'mautic-for-wordpress') ?></option>
                             <?php foreach($segment_list as $key => $segment) : ?>
-                                <option value="<?php echo $segment['id'] ?>" <?php selected( $key , $add_segment ) ?>>
+                                <option value="<?php echo $segment['id'] ?>" <?php selected( $segment['id'] , $add_segment ) ?>>
                                     <?php echo $segment['name'] ?>
                                 </option>
                             <?php endforeach ; ?>
@@ -97,7 +95,7 @@ $hide_row = ($implicit == 'no') ? '' : 'row-hide' ;
                 </tr>
             </table>
             <input type="hidden" name="_nonce" value="<?php echo wp_create_nonce('mwb_m4wp_integration_nonce') ?>" />
-            <input type="hidden" name="integration" value="<?php echo $_GET['id'] ?>" />
+            <input type="hidden" name="integration" value="<?php echo $integation->get_id() ?>" />
             <input type="hidden" name="action" value="mwb_m4wp_integration_save" />
             <div class="mwb-m4wp-admin-button-wrap">
                 <button class="button mwb-m4wp-admin-button" type="submit"><?php esc_html_e('Save' , 'mautic-for-wordpress') ?></button>
