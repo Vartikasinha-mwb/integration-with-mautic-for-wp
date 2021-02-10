@@ -3,7 +3,6 @@
 class Mautic_For_Wordpress_Settings_Helper{
     
     public function get_forms( $refresh = false ){
-        
         if(!$refresh && get_transient('mwb_m4wp_forms')){
             return get_transient('mwb_m4wp_forms') ; 
         }

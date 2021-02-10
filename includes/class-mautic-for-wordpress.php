@@ -263,4 +263,5 @@ class Mautic_For_Wordpress {
 	public function load_integrations(){
 		Mautic_For_Wordpress_Integration_Manager::initialize_active_integrations();
 	}
+
 }

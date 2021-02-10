@@ -1,6 +1,6 @@
 <?php
 $helper = new Mautic_For_Wordpress_Settings_Helper();
-$forms = $helper->get_forms();
+$forms = $helper->get_forms(true);
 $base_url = get_option( 'mwb_m4wp_base_url') ; 
 ?>
 <div class="wrap">
@@ -19,9 +19,7 @@ $base_url = get_option( 'mwb_m4wp_base_url') ;
         </thead>
         <tbody>
             <?php foreach($forms['forms'] as $key => $form) : 
-                
                 $form_link = $base_url.'/s/forms/view/'.$form['id']   ; 
-                
                 ?>
                 <tr class="<?php  echo ($form['isPublished']) ?  'row-active' :  'row-inactive' ?>">
                     <td><?php echo $form['id'] ?></td>

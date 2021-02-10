@@ -18,7 +18,18 @@ class Api_Base {
         $message = wp_remote_retrieve_response_message( $response );
         $body    = wp_remote_retrieve_body( $response );
         $data    = json_decode( $body , ARRAY_A ); 
+
         $this->create_error_log( $code , $message , $data ) ;
+
+        if( $code == 403 && $message == "Forbidden") {
+            throw new Mautic_Api_Exception( $message , $code );
+        }
+
+        if($code == 0){
+            $message = "Something went wrong, Please check your credentials" ; 
+            throw new Mautic_Api_Exception( $message , $code );
+        }
+
         return $data ; 
     }
     

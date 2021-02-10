@@ -2,6 +2,10 @@
 class Mautic_For_Wordpress_Integration_Manager{
 
     public static function initialize_active_integrations(){
+		
+		if( !self::get_connection_status() ){
+			return ;
+		}
 		$integrations = self::get_integrations();
 		foreach( $integrations as $key => $details ){
 			$integration = self::get_integration( $details );
@@ -53,5 +57,9 @@ class Mautic_For_Wordpress_Integration_Manager{
 		}
 
 		return $integrations ; 
+	}
+
+	public static function get_connection_status(){
+		return get_option('mwb_m4wp_connection_status' , false);
 	}
 }

@@ -269,7 +269,20 @@ class Mautic_For_Wordpress_Admin {
 
 	public function get_oauth_code(){
 
-		if(isset($_GET['m4wp']) && $_GET['m4wp'] == 1){
+		if(isset($_GET['m4wp_reset']) && $_GET['m4wp_reset'] == 1){
+			if(!wp_verify_nonce($_GET['m4wp_auth_nonce'] , 'm4wp_auth_nonce')){
+				wp_die('nonce not verified');
+			}
+			update_option( 'mwb_m4wp_base_url' , '') ;
+			update_option( 'mwb_m4wp_auth_details' , array() ) ;  
+			update_option( 'mwb_m4wp_oauth2_success' , false);
+			update_option( 'mwb_m4wp_connection_status' , false);
+			update_option( 'mwb_m4wp_auth_type', '') ;
+			wp_redirect( admin_url('admin.php?page=mautic-for-wordpress') ) ;
+		}
+		
+		if(isset($_GET['m4wp_auth']) && $_GET['m4wp_auth'] == 1){
+			
 			if(!wp_verify_nonce($_GET['m4wp_auth_nonce'] , 'm4wp_auth_nonce')){
 				wp_die('nonce not verified');
 			}
@@ -307,8 +320,10 @@ class Mautic_For_Wordpress_Admin {
 				if($response){
 					$api_instance->save_token_data($response);
 					update_option('mwb_m4wp_oauth2_success' , true);
+					update_option( 'mwb_m4wp_connection_status' , true);
 				}else{
 					update_option('mwb_m4wp_oauth2_success' , false);
+					update_option( 'mwb_m4wp_connection_status' , false);
 				}
 				wp_redirect( admin_url('admin.php?page=mautic-for-wordpress') ) ; 
 			}

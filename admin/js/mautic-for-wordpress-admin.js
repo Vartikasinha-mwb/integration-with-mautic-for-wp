@@ -1,6 +1,25 @@
 var ajaxUrl = ajax_data.ajax_url ; 
 jQuery(document).ready(function ($) {
 	
+	$('#mwb-m4wp-save-btn').on('click', function(e){
+		
+		if($('#input-baseurl').val() == ''){
+			alert('Please enter all details') ;
+		}
+		var type = $('#mwb-m4wp-auth-type').val();
+		if(type == 'basic'){
+			if($('#input-password').val() == '' || $('#input-username').val() == ''){
+				e.preventDefault();
+				alert('Please enter all details') ;
+			}
+		}else{
+			if($('#input-id').val() == '' || $('#input-secret').val() == ''){
+				e.preventDefault();
+				alert('Please enter all details') ;
+			}
+		}
+	})
+
 	$('.mwb-m4wp-datepicker').datepicker({
 		dateFormat: "yy-mm-dd"
 	});

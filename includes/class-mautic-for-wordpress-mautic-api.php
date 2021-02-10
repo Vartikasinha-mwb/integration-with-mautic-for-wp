@@ -20,10 +20,25 @@ class MWB_M4WP_Mautic_Api  {
     }
 
     public static function get_self_user(){
-        $endpoint = 'api/users/self' ; 
-        $mautic_api = self::get_mautic_api();
-        $headers = $mautic_api->get_auth_header();
-        return $mautic_api->get( $endpoint , array() , $headers ) ;
+        $response = array(
+            'success' => false,
+            'user' => '',
+            'msg' => '',
+        );
+        try{
+            $endpoint = 'api/users/self' ; 
+            $mautic_api = self::get_mautic_api();
+            $headers = $mautic_api->get_auth_header();
+            $user_data = $mautic_api->get( $endpoint , array() , $headers ) ; 
+            update_option('mwb_m4wp_connection_status' , true) ; 
+            $response['success'] = true  ;
+            $response['user'] = isset($user_data['email'])  ? $user_data['email'] : '' ;
+            $response['msg'] = 'Success' ; 
+        }catch(Exception $e){
+            update_option('mwb_m4wp_connection_status' , false) ; 
+            $response['msg'] = $e->getMessage();
+        }
+        return $response ;
     }
     
     /**
