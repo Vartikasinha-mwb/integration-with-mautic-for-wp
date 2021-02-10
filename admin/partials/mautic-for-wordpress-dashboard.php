@@ -1,14 +1,15 @@
 <?php
+$helper = new Mautic_For_Wordpress_Settings_Helper();
 $date_range = get_option( 'mwb_m4wp_date_range' , array() ) ; 
 if(empty($date_range)){
     $date_range = Mautic_For_Wordpress_Admin::get_default_date_range() ; 
 }
 $time_unit = Mautic_For_Wordpress_Admin::get_time_unit( $date_range );
 $data = array( 'dateTo' => $date_range['date_to'] , 'dateFrom' => $date_range['date_from'], 'timeUnit' => $time_unit) ; 
-$created_leads_in_time = MWB_M4WP_Mautic_Api::get_widget_data( 'created.leads.in.time' , $data );
-$page_hits_in_time = MWB_M4WP_Mautic_Api::get_widget_data( 'page.hits.in.time' , $data );
-$submissions_in_time = MWB_M4WP_Mautic_Api::get_widget_data( 'submissions.in.time' , $data );
-$top_lists = MWB_M4WP_Mautic_Api::get_widget_data( 'top.lists' , $data );
+$created_leads_in_time = $helper->get_widget_data('created.leads.in.time' , $data  ) ;
+$page_hits_in_time = $helper->get_widget_data( 'page.hits.in.time' , $data );
+$submissions_in_time =  $helper->get_widget_data( 'submissions.in.time' , $data  );
+$top_lists =  $helper->get_widget_data( 'top.lists' , $data );
 $base_url = get_option( 'mwb_m4wp_base_url' , '' ) ; 
 ?>
 <div class="wrap">
@@ -27,6 +28,7 @@ $base_url = get_option( 'mwb_m4wp_base_url' , '' ) ;
             </span>
             <input type="hidden" name="action" value="mwb_m4wp_date_range" />
             <button type="submit" class="button"><?php esc_html_e( 'Apply', 'mautic-for-wordpress' ) ?></button>
+            <?php echo $helper->get_refresh_button_html( "dashboard" ) ?>
         </form>
     </div>
     <div class="mwb-m4wp-admin-panel-main mwb-m4wp-admin-dashboard-panel">

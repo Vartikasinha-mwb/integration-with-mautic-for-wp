@@ -147,6 +147,8 @@ class Mautic_For_Wordpress {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/integrations/class-mautic-for-wordpress-integration.php';
 		
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-mautic-for-wordpress-integration-manager.php';
+		
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-mautic-for-wordpress-settings-helper.php';
 		$this->loader = new Mautic_For_Wordpress_Loader();
 	}
 
@@ -212,7 +214,9 @@ class Mautic_For_Wordpress {
 		
 		$plugin_ajax = new Mautic_For_Wordpress_Ajax();
 		$this->loader->add_action( 'wp_ajax_mwb_m4wp_test_api_connection', $plugin_ajax,  'test_api_connection' ) ; 
-		$this->loader->add_action( 'wp_ajax_mwb_m4wp_enable_integration', $plugin_ajax,  'enable_integration' ) ; 
+		$this->loader->add_action( 'wp_ajax_mwb_m4wp_enable_integration', $plugin_ajax,  'enable_integration' ) ;
+		$this->loader->add_action( 'wp_ajax_mwb_m4wp_refresh', $plugin_ajax,  'refresh_data' ) ; 
+		
 		
 	}
 

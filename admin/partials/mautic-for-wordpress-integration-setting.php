@@ -1,5 +1,6 @@
 <?php
-$segment_list = Mautic_For_Wordpress_Admin::get_segment_options();
+$helper = new Mautic_For_Wordpress_Settings_Helper();
+$segment_list = $helper->get_segment_options();
 $integation_details = Mautic_For_Wordpress_Integration_Manager::get_integrations($_GET['id']) ; 
 $integation = Mautic_For_Wordpress_Integration_Manager::get_integration( $integation_details ) ;
 $enable = $integation->is_enabled() ; 
@@ -71,7 +72,7 @@ $hide_row = $implicit ? 'row-hide' : '' ;
                 <tr>
                     <th><label for="add_segment"><?php esc_html_e('Segment' , 'mautic-for-wordpress' ) ?></label></th>
                     <td>
-                        <select name="add_segment">
+                        <select name="add_segment" id="mwb-m4wp-segment-select">
                             <option value="-1"><?php esc_html_e('--Select--', 'mautic-for-wordpress') ?></option>
                             <?php foreach($segment_list as $key => $segment) : ?>
                                 <option value="<?php echo $segment['id'] ?>" <?php selected( $segment['id'] , $add_segment ) ?>>
@@ -79,6 +80,7 @@ $hide_row = $implicit ? 'row-hide' : '' ;
                                 </option>
                             <?php endforeach ; ?>
                         </select>
+                        <?php echo $helper->get_refresh_button_html( "segments" ) ?>
                         <p class="description">
                             <?php esc_html_e( 'Select segment in which the contact should be added.', 'mautic-for-wordpress' ) ?>
                         </p>
@@ -104,5 +106,4 @@ $hide_row = $implicit ? 'row-hide' : '' ;
     </div>
     </div>
 </div>
-
 

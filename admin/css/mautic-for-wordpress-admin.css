@@ -201,3 +201,7 @@ tr:nth-child(even){background-color: rgba(78, 93, 157, 0.19);}
 .row-implicit.row-hide {
 	display: none;
 }
+
+.form-table .row-inactive {
+	opacity: 0.5;
+}

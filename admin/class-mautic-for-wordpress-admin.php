@@ -267,29 +267,6 @@ class Mautic_For_Wordpress_Admin {
 		}
 	}
 
-	public static function get_segment_options(){
-		
-		$segment_list = get_option( 'mwb_m4wp_segment_list' , array() ) ; 
-		if(!empty($segment_list)){
-			return $segment_list;
-		}
-		$segments =  MWB_M4WP_Mautic_Api::get_segments();
-		if(!$segments){
-			return array();
-		}
-		$options = array() ; 
-		if(isset($segments['lists']) && count($segments['lists']) > 0 ){
-			foreach( $segments['lists'] as $key => $segment ){
-				$options[] = array(
-					'id' => $segment['id'],
-					'name' => $segment['name']
-				);
-			}
-		}
-		update_option( 'mwb_m4wp_segment_list' , $options ) ; 
-		return $options ; 
-	}
-
 	public function get_oauth_code(){
 
 		if(isset($_GET['m4wp']) && $_GET['m4wp'] == 1){
