@@ -1,168 +1,66 @@
-Url : localhost/mautic4/api/users/self
-Method : GET
-Code : 0
-Message : 
-Time: February 10, 2021  11:45 am
-------------------------------------
-Url : localhost/mautic4/api/users/self
-Method : GET
-Code : 0
-Message : 
-Time: February 10, 2021  11:46 am
-------------------------------------
-Url : localhost/mautic4/api/users/self
-Method : GET
-Code : 0
-Message : 
-Time: February 10, 2021  11:46 am
-------------------------------------
-Url : localhost/mautic4/api/users/self
-Method : GET
-Code : 0
-Message : 
-Time: February 10, 2021  11:47 am
-------------------------------------
-Url : localhost/mautic4/api/users/self
-Method : GET
-Code : 0
-Message : 
-Time: February 10, 2021  11:47 am
-------------------------------------
-Url : localhost/mautic4/api/users/self
-Method : GET
-Code : 0
-Message : 
-Time: February 10, 2021  11:48 am
-------------------------------------
-Url : localhost/mautic4/api/users/self
-Method : GET
-Code : 0
-Message : 
-Time: February 10, 2021  11:49 am
-------------------------------------
-Url : localhost/mautic4/api/users/self
-Method : GET
-Code : 0
-Message : 
-Time: February 10, 2021  11:49 am
-------------------------------------
-Url : localhost/mautic4/api/users/self
-Method : GET
-Code : 0
-Message : 
-Time: February 10, 2021  11:53 am
-------------------------------------
-Url : localhost/mautic4/api/users/self
-Method : GET
-Code : 0
-Message : 
-Time: February 10, 2021  11:54 am
-------------------------------------
-Url : http://localhost/mautic2163/api/users/self
-Method : GET
-Code : 200
-Message : OK
-Time: February 10, 2021  11:55 am
-------------------------------------
-Url : http://localhost/mautic2163/api/users/self
-Method : GET
-Code : 200
-Message : OK
-Time: February 10, 2021  11:56 am
-------------------------------------
-Url : http://localhost/mautic2163/api/users/self
-Method : GET
-Code : 200
-Message : OK
-Time: February 10, 2021  12:58 pm
-------------------------------------
-Url : http://localhost/mautic2163/api/users/self
-Method : GET
-Code : 200
-Message : OK
-Time: February 10, 2021  12:59 pm
-------------------------------------
-Url : http://localhost/mautic2163/api/users/self
-Method : GET
-Code : 200
-Message : OK
-Time: February 10, 2021  12:59 pm
-------------------------------------
-Url : http://localhost/mautic2163/api/users/self
-Method : GET
-Code : 200
-Message : OK
-Time: February 10, 2021  1:06 pm
-------------------------------------
-Url : http://localhost/mautic2163/api/users/self
-Method : GET
-Code : 200
-Message : OK
-Time: February 10, 2021  1:11 pm
-------------------------------------
-Url : http://localhost/mautic2163/api/users/self
-Method : GET
-Code : 200
-Message : OK
-Time: February 10, 2021  1:44 pm
-------------------------------------
-Url : http://localhost/mautic2163/api/users/self
-Method : GET
-Code : 200
-Message : OK
-Time: February 10, 2021  1:45 pm
-------------------------------------
-Url : http://localhost/mautic2163/api/users/self
-Method : GET
-Code : 200
-Message : OK
-Time: February 10, 2021  1:45 pm
-------------------------------------
-Url : http://localhost/mautic2163/api/users/self
-Method : GET
-Code : 200
-Message : OK
-Time: February 10, 2021  1:49 pm
-------------------------------------
-Url : dasddasd/oauth/v2/token
+Url : https://localhost/mautic2163/oauth/v2/token
 Method : POST
 Code : 0
 Message : 
-Time: February 10, 2021  2:06 pm
+Time: February 11, 2021  10:00 am
 ------------------------------------
-Url : dasddasd/oauth/v2/token
+Url : https://localhost/mautic2163/oauth/v2/token
 Method : POST
 Code : 0
 Message : 
-Time: February 10, 2021  2:18 pm
+Time: February 11, 2021  10:00 am
+------------------------------------
+Url : https://localhost/mautic2163/oauth/v2/token
+Method : POST
+Code : 0
+Message : 
+Time: February 11, 2021  10:00 am
 ------------------------------------
 Url : http://localhost/mautic2163/oauth/v2/token
 Method : POST
 Code : 200
 Message : OK
-Time: February 10, 2021  2:25 pm
+Time: February 11, 2021  10:00 am
 ------------------------------------
 Url : http://localhost/mautic2163/api/users/self
 Method : GET
 Code : 200
 Message : OK
-Time: February 10, 2021  2:25 pm
+Time: February 11, 2021  10:00 am
 ------------------------------------
 Url : http://localhost/mautic2163/api/users/self
 Method : GET
 Code : 200
 Message : OK
-Time: February 10, 2021  2:26 pm
+Time: February 11, 2021  10:00 am
 ------------------------------------
-Url : http://localhost/mautic2163/oauth/v2/token
-Method : POST
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-03-04&dateFrom=2021-01-01&timeUnit=W
+Method : GET
 Code : 200
 Message : OK
-Time: February 10, 2021  3:01 pm
+Time: February 11, 2021  10:00 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-03-04&dateFrom=2021-01-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 11, 2021  10:00 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-03-04&dateFrom=2021-01-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 11, 2021  10:00 am
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-03-04&dateFrom=2021-01-01&timeUnit=W
+Method : GET
+Code : 200
+Message : OK
+Time: February 11, 2021  10:00 am
 ------------------------------------
 Url : http://localhost/mautic2163/api/users/self
 Method : GET
 Code : 200
 Message : OK
-Time: February 10, 2021  3:01 pm
+Time: February 11, 2021  10:12 am
 ------------------------------------

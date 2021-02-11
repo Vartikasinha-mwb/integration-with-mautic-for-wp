@@ -25,6 +25,10 @@ class Api_Base {
             throw new Mautic_Api_Exception( $message , $code );
         }
 
+        if( $code == 401 ){
+            throw new Mautic_Api_Exception( $message , $code );
+        }
+
         if($code == 0){
             $message = "Something went wrong, Please check your credentials" ; 
             throw new Mautic_Api_Exception( $message , $code );

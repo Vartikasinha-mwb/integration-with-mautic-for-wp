@@ -10,6 +10,7 @@ $created_leads_in_time = $helper->get_widget_data('created.leads.in.time' , $dat
 $page_hits_in_time = $helper->get_widget_data( 'page.hits.in.time' , $data );
 $submissions_in_time =  $helper->get_widget_data( 'submissions.in.time' , $data  );
 $top_lists =  $helper->get_widget_data( 'top.lists' , $data );
+$most_sent_emails = $helper->get_widget_data( 'most.sent.emails', $data ); 
 $base_url = get_option( 'mwb_m4wp_base_url' , '' ) ; 
 ?>
 <div class="wrap">
@@ -37,9 +38,15 @@ $base_url = get_option( 'mwb_m4wp_base_url' , '' ) ;
             <div class="mwb-m4wp-admin-widget-head">
                 <?php esc_html_e( 'Created Leads In Time', 'mautic-for-wordpress' ) ;?>
             </div>
+            <?php if( isset($created_leads_in_time['data']) && !empty($created_leads_in_time['data']) ) : ?>
             <div id="created-leads-in-time" class="mwb-m4wp-admin-widget-wrap" data="<?php echo htmlspecialchars( json_encode($created_leads_in_time['data']) )  ?>">
                 <canvas id="created-leads-in-time-chart" style="width: 100%; height: 300px;"></canvas>
             </div>
+            <?php else : ?>
+            <div class="widget-now-data-wrap">
+                <p><?php esc_html_e('No data available', 'mautic-for-wordpress') ?></p>
+            </div>
+            <?php endif ;?>
         </div>
         <?php endif ;?>
         <?php if($page_hits_in_time) : ?>
@@ -47,9 +54,15 @@ $base_url = get_option( 'mwb_m4wp_base_url' , '' ) ;
             <div class="mwb-m4wp-admin-widget-head">
             <?php esc_html_e( 'Page Hits In Time', 'mautic-for-wordpress' ) ;?>
             </div>
+            <?php if( isset($page_hits_in_time['data']) && !empty($page_hits_in_time['data']) ) : ?>
             <div id="page-hits-in-time" class="mwb-m4wp-admin-widget-wrap" data="<?php echo htmlspecialchars( json_encode($page_hits_in_time['data']) )  ?>">
                 <canvas id="page-hits-in-time-chart" style="width: 100%; height: 300px;"></canvas>
             </div>
+            <?php else : ?>
+            <div class="widget-now-data-wrap">
+                <p><?php esc_html_e('No data available', 'mautic-for-wordpress') ?></p>
+            </div>
+            <?php endif ;?>
         </div>
         <?php endif ;?>
         <?php if($submissions_in_time) : ?>
@@ -57,18 +70,26 @@ $base_url = get_option( 'mwb_m4wp_base_url' , '' ) ;
             <div class="mwb-m4wp-admin-widget-head">
                 <?php esc_html_e( 'Form Submissions In Time', 'mautic-for-wordpress' ) ;?>
             </div>
+            <?php if( isset($submissions_in_time['data']) && !empty($submissions_in_time['data']) ) : ?>
             <div id="submissions-in-time" class="mwb-m4wp-admin-widget-wrap" data="<?php echo htmlspecialchars( json_encode($submissions_in_time['data']) )  ?>">
                 <canvas id="submissions-in-time-chart" style="width: 100%; height: 300px;"></canvas>
             </div>
+            <?php else : ?>
+            <div class="widget-now-data-wrap">
+                <p><?php esc_html_e('No data available', 'mautic-for-wordpress') ?></p>
+            </div>
+            <?php endif ;?>
         </div>
         <?php endif ;?>
-        <?php if($top_lists) : ?>
+        
         <div class="mwb-m4wp-admin-widget-row column-2">
+        <?php if($top_lists) : ?>
             <div class="mwb-m4wp-admin-widget-column">
                 <div class="mwb-m4wp-admin-widget-head">
                     <?php esc_html_e( 'Top Segments', 'mautic-for-wordpress' ) ;?>
                 </div>
                 <div id="top-lists" class="mwb-m4wp-admin-widget-wrap" data="<?php echo htmlspecialchars( json_encode($top_lists['data']) )  ?>">
+                    <?php if(count($top_lists['data']['bodyItems'])>0) : ?>
                     <table id="top-lists-table" class="widget-table">
                         <tr><th><?php esc_html_e('Segments') ?></th><th><?php esc_html_e('Contacts') ?></th></tr>
                         <?php foreach ($top_lists['data']['bodyItems'] as $key => $list) : ?>
@@ -78,25 +99,39 @@ $base_url = get_option( 'mwb_m4wp_base_url' , '' ) ;
                             </tr>
                         <?php endforeach ; ?>
                     </table>
+                    <?php else : ?>
+                    <div class="widget-now-data-wrap">
+                        <p><?php esc_html_e('No data available', 'mautic-for-wordpress') ?></p>
+                    </div>
+                    <?php endif ;?>
                 </div>
             </div>
+        <?php endif ;?>
+        <?php if($most_sent_emails) : ?>
             <div class="mwb-m4wp-admin-widget-column">
                 <div class="mwb-m4wp-admin-widget-head">
-                    <?php esc_html_e( 'Top Segments', 'mautic-for-wordpress' ) ;?>
+                    <?php esc_html_e( 'Most Sent Emails', 'mautic-for-wordpress' ) ;?>
                 </div>
                 <div id="top-lists" class="mwb-m4wp-admin-widget-wrap" data="<?php echo htmlspecialchars( json_encode($top_lists['data']) )  ?>">
+                    <?php if (count($most_sent_emails['data']['bodyItems']) > 0 ) : ?>
                     <table id="top-lists-table" class="widget-table">
                         <tr><th><?php esc_html_e('Segments') ?></th><th><?php esc_html_e('Contacts') ?></th></tr>
-                        <?php foreach ($top_lists['data']['bodyItems'] as $key => $list) : ?>
+                        <?php foreach ($most_sent_emails['data']['bodyItems'] as $key => $list) : ?>
                             <tr>
                                 <td><a target="_blank" href="<?php echo $base_url.$list[0]['link'] ?>"><?php echo $list[0]['value'] ?></a></td>
                                 <td><a target="_blank" href="<?php echo $base_url.$list[1]['link'] ?>"><?php echo $list[1]['value'] ?></a></td>
                             </tr>
                         <?php endforeach ; ?>
                     </table>
+                    <?php else : ?>
+                    <div class="widget-now-data-wrap">
+                        <p><?php esc_html_e('No data available', 'mautic-for-wordpress') ?></p>
+                    </div>
+                    <?php endif ;?>
                 </div>
             </div>
         </div>
-        <?php endif ;?>
+        <?php endif ;?>                    
+        
     </div>
 </div>

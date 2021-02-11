@@ -149,6 +149,21 @@ class Mautic_For_Wordpress {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-mautic-for-wordpress-integration-manager.php';
 		
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-mautic-for-wordpress-settings-helper.php';
+		
+		/**
+		 * The class responsible for the Onboarding functionality.
+		 */
+		if ( ! class_exists( 'Makewebbetter_Onboarding_Helper' ) ) {
+
+			require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-makewebbetter-onboarding-helper.php';
+		}
+
+		if ( class_exists( 'Makewebbetter_Onboarding_Helper' ) ) {
+
+			$this->onboard = new Makewebbetter_Onboarding_Helper();
+		}
+		
+		
 		$this->loader = new Mautic_For_Wordpress_Loader();
 	}
 
@@ -188,7 +203,13 @@ class Mautic_For_Wordpress {
 
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'get_oauth_code' ) ; 
 
-		$this->loader->add_action( 'admin_init', $plugin_admin, 'save_admin_settings' ) ; 
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'save_admin_settings' ) ;
+		
+		// Include Upsell screen for Onboarding pop-up.
+		$this->loader->add_filter( 'mwb_helper_valid_frontend_screens', $plugin_admin, 'add_mwb_frontend_screens' );
+
+		// Include Upsell plugin for Deactivation pop-up.
+		$this->loader->add_filter( 'mwb_deactivation_supported_slug', $plugin_admin, 'add_mwb_deactivation_screens' );
 		
 	}
 

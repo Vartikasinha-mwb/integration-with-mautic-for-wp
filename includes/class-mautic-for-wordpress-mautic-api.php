@@ -36,6 +36,7 @@ class MWB_M4WP_Mautic_Api  {
             $response['msg'] = 'Success' ; 
         }catch(Exception $e){
             update_option('mwb_m4wp_connection_status' , false) ; 
+            update_option('mwb_m4wp_oauth2_success' , false) ;
             $response['msg'] = $e->getMessage();
         }
         return $response ;

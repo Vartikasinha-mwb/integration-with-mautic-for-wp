@@ -80,6 +80,7 @@ function mwb_m4wp_define_plugin_constants(){
 		'MWB_M4WP_PLUGIN_URL' =>  plugin_dir_url( __FILE__ ),
 	) ; 
 	array_walk( $constants , 'mwb_m4wp_define_constant' );
+	define( 'ONBOARD_PLUGIN_NAME', 'Mautic For Wordpress' );
 }
 
 /**

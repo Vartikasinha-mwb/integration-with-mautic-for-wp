@@ -316,17 +316,45 @@ class Mautic_For_Wordpress_Admin {
 				);
 				$api_instance = Oauth2::get_instance(); 
 				$api_instance->base_url = $baseurl ; 
-				$response =  $api_instance->get_oauth_token( $data );
-				if($response){
+				try{
+					$response =  $api_instance->get_oauth_token( $data );
 					$api_instance->save_token_data($response);
 					update_option('mwb_m4wp_oauth2_success' , true);
 					update_option( 'mwb_m4wp_connection_status' , true);
-				}else{
+				}catch(Exception $e){
 					update_option('mwb_m4wp_oauth2_success' , false);
 					update_option( 'mwb_m4wp_connection_status' , false);
 				}
 				wp_redirect( admin_url('admin.php?page=mautic-for-wordpress') ) ; 
 			}
 		}
+	}
+
+	/**
+	 * Include Plugin screen for Onboarding pop-up.
+	 *
+	 * @since    1.0.0
+	 */
+	public function add_mwb_frontend_screens( $valid_screens = array() ) {
+
+		if ( is_array( $valid_screens ) ) {
+			// Push your screen here.
+			array_push( $valid_screens, 'toplevel_page_mautic-for-wordpress' );
+		}
+		return $valid_screens;
+	}
+
+	/**
+	 * Include Upsell plugin for Deactivation pop-up.
+	 *
+	 * @since    3.0.0
+	 */
+	public function add_mwb_deactivation_screens( $valid_screens = array() ) {
+
+		if ( is_array( $valid_screens ) ) {
+			// Push your screen here.
+			array_push( $valid_screens, 'mautic-for-wordpress' );
+		}
+		return $valid_screens;
 	}
 }
