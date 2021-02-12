@@ -1,66 +1,12 @@
-Url : https://localhost/mautic2163/oauth/v2/token
-Method : POST
-Code : 0
-Message : 
-Time: February 11, 2021  10:00 am
-------------------------------------
-Url : https://localhost/mautic2163/oauth/v2/token
-Method : POST
-Code : 0
-Message : 
-Time: February 11, 2021  10:00 am
-------------------------------------
-Url : https://localhost/mautic2163/oauth/v2/token
-Method : POST
-Code : 0
-Message : 
-Time: February 11, 2021  10:00 am
-------------------------------------
-Url : http://localhost/mautic2163/oauth/v2/token
-Method : POST
-Code : 200
-Message : OK
-Time: February 11, 2021  10:00 am
-------------------------------------
-Url : http://localhost/mautic2163/api/users/self
+Url : http://localhost/mautic2163/api/forms
 Method : GET
 Code : 200
 Message : OK
-Time: February 11, 2021  10:00 am
+Time: February 12, 2021  9:20 am
 ------------------------------------
-Url : http://localhost/mautic2163/api/users/self
+Url : http://localhost/mautic2163/api/forms
 Method : GET
 Code : 200
 Message : OK
-Time: February 11, 2021  10:00 am
-------------------------------------
-Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-03-04&dateFrom=2021-01-01&timeUnit=W
-Method : GET
-Code : 200
-Message : OK
-Time: February 11, 2021  10:00 am
-------------------------------------
-Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-03-04&dateFrom=2021-01-01&timeUnit=W
-Method : GET
-Code : 200
-Message : OK
-Time: February 11, 2021  10:00 am
-------------------------------------
-Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-03-04&dateFrom=2021-01-01&timeUnit=W
-Method : GET
-Code : 200
-Message : OK
-Time: February 11, 2021  10:00 am
-------------------------------------
-Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-03-04&dateFrom=2021-01-01&timeUnit=W
-Method : GET
-Code : 200
-Message : OK
-Time: February 11, 2021  10:00 am
-------------------------------------
-Url : http://localhost/mautic2163/api/users/self
-Method : GET
-Code : 200
-Message : OK
-Time: February 11, 2021  10:12 am
+Time: February 12, 2021  9:20 am
 ------------------------------------

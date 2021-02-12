@@ -791,7 +791,6 @@ class Makewebbetter_Onboarding_Helper {
 	public function add_mwb_additional_validation( $result = true ) {
 
 		if ( ! empty( $_GET['tab'] ) && 'settings' !== $_GET['tab'] ) {
-
 			$result = false;
 		}
 
