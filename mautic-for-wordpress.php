@@ -1,10 +1,10 @@
 <?php
 /**
+ * Plugin main file.
  *
- *
- * @link              https://makewebbetter.com/
- * @since             1.0.0
- * @package           Mautic_For_Wordpress
+ * @link    https://makewebbetter.com/
+ * @since   1.0.0
+ * @package Mautic_For_Wordpress
  *
  * @wordpress-plugin
  * Plugin Name:       Mautic For WordPress
@@ -29,7 +29,7 @@ if ( ! defined( 'WPINC' ) ) {
  * This action is documented in includes/class-mautic-for-wordpress-activator.php
  */
 function activate_mautic_for_wordpress() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-mautic-for-wordpress-activator.php';
+	include_once plugin_dir_path( __FILE__ ) . 'includes/class-mautic-for-wordpress-activator.php';
 	Mautic_For_Wordpress_Activator::activate();
 }
 
@@ -38,7 +38,7 @@ function activate_mautic_for_wordpress() {
  * This action is documented in includes/class-mautic-for-wordpress-deactivator.php
  */
 function deactivate_mautic_for_wordpress() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-mautic-for-wordpress-deactivator.php';
+	include_once plugin_dir_path( __FILE__ ) . 'includes/class-mautic-for-wordpress-deactivator.php';
 	Mautic_For_Wordpress_Deactivator::deactivate();
 }
 
@@ -58,36 +58,39 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-mautic-for-wordpress.php';
  * then kicking off the plugin from this point in the file does
  * not affect the page life cycle.
  *
- * @since    1.0.0
+ * @since 1.0.0
  */
 function run_mautic_for_wordpress() {
-
 	mwb_m4wp_define_plugin_constants();
 	$plugin = new Mautic_For_Wordpress();
 	$plugin->run();
-	
-
 }
 run_mautic_for_wordpress();
 
 /**
  * Define plugin constants.
+ *
+ * @since 1.0.0
  */
-function mwb_m4wp_define_plugin_constants(){
+function mwb_m4wp_define_plugin_constants() {
 	$constants = array(
-		'MWB_M4WP_VERSION' => '1.0.0',
-		'MWB_M4WP_PLUGIN_PATH' =>  plugin_dir_path( __FILE__ ),
-		'MWB_M4WP_PLUGIN_URL' =>  plugin_dir_url( __FILE__ ),
-	) ; 
-	array_walk( $constants , 'mwb_m4wp_define_constant' );
+		'MWB_M4WP_VERSION'     => '1.0.0',
+		'MWB_M4WP_PLUGIN_PATH' => plugin_dir_path( __FILE__ ),
+		'MWB_M4WP_PLUGIN_URL'  => plugin_dir_url( __FILE__ ),
+	);
+	array_walk( $constants, 'mwb_m4wp_define_constant' );
 	define( 'ONBOARD_PLUGIN_NAME', 'Mautic For Wordpress' );
 }
 
 /**
- * Check and define singal constant 
-*/
-function mwb_m4wp_define_constant( $value, $key ){
-	if( !defined( $key ) ){
+ * Check and define single constant.
+ *
+ * @since 1.0.0
+ * @param string $value constant value.
+ * @param string $key constant key.
+ */
+function mwb_m4wp_define_constant( $value, $key ) {
+	if ( ! defined( $key ) ) {
 		define( $key, $value );
 	}
 }

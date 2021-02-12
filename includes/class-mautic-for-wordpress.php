@@ -130,26 +130,26 @@ class Mautic_For_Wordpress {
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/api/class-api.php';
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/api/class-mautic-exception.php';
 		/**
-		 * The class responsible for defining all functionalities related to mautic api 
+		 * The class responsible for defining all functionalities related to mautic api
 		*/
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/api/class-basic-auth.php';
-		
-		/**
-		 * The class responsible for defining all functionalities related to mautic api 
-		*/
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/api/class-oauth2.php';		
 
 		/**
-		 * The class responsible for defining all functionalities related to mautic api 
+		 * The class responsible for defining all functionalities related to mautic api
+		*/
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/api/class-oauth2.php';
+
+		/**
+		 * The class responsible for defining all functionalities related to mautic api
 		*/
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-mautic-for-wordpress-mautic-api.php';
 
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/integrations/class-mautic-for-wordpress-integration.php';
-		
+
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-mautic-for-wordpress-integration-manager.php';
-		
+
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-mautic-for-wordpress-settings-helper.php';
-		
+
 		/**
 		 * The class responsible for the Onboarding functionality.
 		 */
@@ -162,8 +162,7 @@ class Mautic_For_Wordpress {
 
 			$this->onboard = new Makewebbetter_Onboarding_Helper();
 		}
-		
-		
+
 		$this->loader = new Mautic_For_Wordpress_Loader();
 	}
 
@@ -198,19 +197,19 @@ class Mautic_For_Wordpress {
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_styles' );
 		$this->loader->add_action( 'admin_enqueue_scripts', $plugin_admin, 'enqueue_scripts' );
 
-		//add plugins menu page.
-		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_admin_menu_page' ) ; 
+		// add plugins menu page.
+		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_admin_menu_page' );
 
-		$this->loader->add_action( 'admin_init', $plugin_admin, 'get_oauth_code' ) ; 
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'get_oauth_code' );
 
-		$this->loader->add_action( 'admin_init', $plugin_admin, 'save_admin_settings' ) ;
-		
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'save_admin_settings' );
+
 		// Include Upsell screen for Onboarding pop-up.
 		$this->loader->add_filter( 'mwb_helper_valid_frontend_screens', $plugin_admin, 'add_mwb_frontend_screens' );
 
 		// Include Upsell plugin for Deactivation pop-up.
 		$this->loader->add_filter( 'mwb_deactivation_supported_slug', $plugin_admin, 'add_mwb_deactivation_screens' );
-		
+
 	}
 
 	/**
@@ -226,19 +225,18 @@ class Mautic_For_Wordpress {
 
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_styles' );
 		$this->loader->add_action( 'wp_enqueue_scripts', $plugin_public, 'enqueue_scripts' );
-		//hook tracking script
-		$this->loader->add_action( 'init', $plugin_public,  'add_tracking_script' ) ; 
-		$this->loader->add_action( 'init', $plugin_public,  'add_shortcodes' ) ; 
+		// hook tracking script
+		$this->loader->add_action( 'init', $plugin_public, 'add_tracking_script' );
+		$this->loader->add_action( 'init', $plugin_public, 'add_shortcodes' );
 	}
 
-	private function define_ajax_hooks(){
-		
+	private function define_ajax_hooks() {
+
 		$plugin_ajax = new Mautic_For_Wordpress_Ajax();
-		$this->loader->add_action( 'wp_ajax_mwb_m4wp_test_api_connection', $plugin_ajax,  'test_api_connection' ) ; 
-		$this->loader->add_action( 'wp_ajax_mwb_m4wp_enable_integration', $plugin_ajax,  'enable_integration' ) ;
-		$this->loader->add_action( 'wp_ajax_mwb_m4wp_refresh', $plugin_ajax,  'refresh_data' ) ; 
-		
-		
+		$this->loader->add_action( 'wp_ajax_mwb_m4wp_test_api_connection', $plugin_ajax, 'test_api_connection' );
+		$this->loader->add_action( 'wp_ajax_mwb_m4wp_enable_integration', $plugin_ajax, 'enable_integration' );
+		$this->loader->add_action( 'wp_ajax_mwb_m4wp_refresh', $plugin_ajax, 'refresh_data' );
+
 	}
 
 	/**
@@ -280,8 +278,8 @@ class Mautic_For_Wordpress {
 	public function get_version() {
 		return $this->version;
 	}
-
-	public function load_integrations(){
+	
+	public function load_integrations() {
 		Mautic_For_Wordpress_Integration_Manager::initialize_active_integrations();
 	}
 
