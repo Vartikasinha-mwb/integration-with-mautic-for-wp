@@ -63,8 +63,12 @@ jQuery(document).ready(function ($) {
 		var row = $(this).closest('tr');
 		if(row.hasClass('row-active')){
 			var id = $(this).attr('form_id') ; 
-			var ele = document.getElementById("form-input-"+id);
-			copy_text(ele) ; 
+			var element = document.getElementById("form-input-"+id);
+			element.select();
+			element.setSelectionRange(0, 99999)
+			document.execCommand("copy");
+			console.log(element.value)
+			alert("Copied");
 		}
 	});
 
@@ -161,9 +165,5 @@ jQuery(document).ready(function ($) {
 
 
 function copy_text( element ){
-	element.select();
-	element.setSelectionRange(0, 99999)
-	document.execCommand("copy");
-	console.log(element.value)
-	alert("Copied");
+	
 }

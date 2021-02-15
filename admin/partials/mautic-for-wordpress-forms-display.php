@@ -30,7 +30,7 @@ $base_url = get_option( 'mwb_m4wp_base_url') ;
                         ?>
                     </td>
                     <td>
-                        <input disabled type="text" id="form-input-<?php echo $form['id'] ?>"  value="<?php echo '[mwb_m4wp_form id='.$form['id'].']' ?>"> 
+                        <input  type="text" id="form-input-<?php echo $form['id'] ?>"  value="<?php echo '[mwb_m4wp_form id='.$form['id'].']' ?>"> 
                         <a href="#" class="mwb-m4wp-form-code" form_id="<?php echo $form['id'] ?>">
                             <span class="dashicons dashicons-editor-paste-text"></span>
                         </a>
