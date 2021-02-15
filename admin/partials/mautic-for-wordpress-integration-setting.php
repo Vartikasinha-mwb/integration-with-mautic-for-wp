@@ -54,6 +54,7 @@ $hide_row = $implicit ? 'row-hide' : '' ;
                     <td>
                         <input type="text" name="checkbox_txt" value="<?php echo $checkbox_txt ?>">
                         <p class="description">
+                            <?php esc_html_e( 'Checkbox label to be shown next to checkbox.', 'mautic-for-wordpress') ; ?>
                         </p>
                     </td>
                 </tr>

@@ -11,7 +11,7 @@ $page_hits_in_time = $helper->get_widget_data( 'page.hits.in.time' , $data );
 $submissions_in_time =  $helper->get_widget_data( 'submissions.in.time' , $data  );
 $top_lists =  $helper->get_widget_data( 'top.lists' , $data );
 $most_sent_emails = $helper->get_widget_data( 'most.sent.emails', $data ); 
-$base_url = get_option( 'mwb_m4wp_base_url' , '' ) ; 
+$base_url = Mautic_For_Wordpress_Admin::get_mautic_base_url() ;
 ?>
 <div class="wrap">
     <div class="mwb-m4wp-admin-panel-head">
@@ -92,10 +92,10 @@ $base_url = get_option( 'mwb_m4wp_base_url' , '' ) ;
                     <?php if(count($top_lists['data']['bodyItems'])>0) : ?>
                     <table id="top-lists-table" class="widget-table">
                         <tr><th><?php esc_html_e('Segments') ?></th><th><?php esc_html_e('Contacts') ?></th></tr>
-                        <?php foreach ($top_lists['data']['bodyItems'] as $key => $list) : ?>
+                        <?php foreach ($top_lists['data']['bodyItems'] as $key => $list):?>
                             <tr>
-                                <td><a target="_blank" href="<?php echo $base_url.$list[0]['link'] ?>"><?php echo $list[0]['value'] ?></a></td>
-                                <td><a target="_blank" href="<?php echo $base_url.$list[1]['link'] ?>"><?php echo $list[1]['value'] ?></a></td>
+                                <td><a target="_blank" href="<?php echo $helper->get_item_link($list[0]['link'], $base_url) ;  ?>"><?php echo $list[0]['value'] ?></a></td>
+                                <td><a target="_blank" href="<?php echo $helper->get_item_link($list[1]['link'], $base_url) ?>"><?php echo $list[1]['value'] ?></a></td>
                             </tr>
                         <?php endforeach ; ?>
                     </table>
@@ -118,8 +118,8 @@ $base_url = get_option( 'mwb_m4wp_base_url' , '' ) ;
                         <tr><th><?php esc_html_e('Segments') ?></th><th><?php esc_html_e('Contacts') ?></th></tr>
                         <?php foreach ($most_sent_emails['data']['bodyItems'] as $key => $list) : ?>
                             <tr>
-                                <td><a target="_blank" href="<?php echo $base_url.$list[0]['link'] ?>"><?php echo $list[0]['value'] ?></a></td>
-                                <td><a target="_blank" href="<?php echo $base_url.$list[1]['link'] ?>"><?php echo $list[1]['value'] ?></a></td>
+                                <td><a target="_blank" href="<?php echo $helper->get_item_link($list[0]['link'], $base_url) ?>"><?php echo $list[0]['value'] ?></a></td>
+                                <td><a target="_blank" href="<?php echo $helper->get_item_link($list[1]['link'], $base_url) ?>"><?php echo $list[1]['value'] ?></a></td>
                             </tr>
                         <?php endforeach ; ?>
                     </table>

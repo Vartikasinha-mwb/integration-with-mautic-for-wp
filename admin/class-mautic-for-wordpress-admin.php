@@ -357,4 +357,13 @@ class Mautic_For_Wordpress_Admin {
 		}
 		return $valid_screens;
 	}
+
+	public static function get_mautic_base_url(){
+		$baseurl = get_option( 'mwb_m4wp_base_url' , '' ) ;
+		if(!empty($baseurl)){
+			$baseurl  = rtrim( $baseurl, "/" ) ;
+			$baseurl = $baseurl.'/' ; 
+		} 
+		return $baseurl; 
+	}
 }

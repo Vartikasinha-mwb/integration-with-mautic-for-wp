@@ -33,6 +33,10 @@ class Mautic_For_Wordpress_Settings_Helper {
 			return array();
 		}
 		$options = array();
+		$options[] = array(
+			'id' => '-1',
+			'name' => __('--Select--', 'mautic-for-wordpress')
+		) ; 
 		if ( isset( $segments['lists'] ) && count( $segments['lists'] ) > 0 ) {
 			foreach ( $segments['lists'] as $key => $segment ) {
 				if ( $segment['isPublished'] ) {
@@ -52,5 +56,16 @@ class Mautic_For_Wordpress_Settings_Helper {
             <span class="dashicons dashicons-update-alt"></span>
         </a>';
 		return $html;
+	}
+
+	public function get_item_link($temp_link , $base_url) {
+		$link = $temp_link ; 
+		if(strpos( $temp_link , 's' ) !== false ){
+			$link_arr = explode( $temp_link , 's' ) ; 
+			if(isset($link_arr[1])){
+				$link = $base_url.$link_arr[1] ; 
+			}
+		}
+		return $link ; 
 	}
 }

@@ -100,42 +100,6 @@ class Mautic_For_Wordpress_Public {
 		
 	}
 	
-	/**
-	* Hook mautic tracking script.
-	*/
-	public function add_tracking_script(){
-		
-		$script_location = get_option( "mwb_m4wp_script_location", "head" ) ;
-		//add_action( "wp_{$script_location}", array( $this, "add_mautic_tracking_script" ) ) ;
-	}
-	
-	/**
-	* Add mautic tracking code.
-	* @todo add gdpr stuff
-	*/
-	public function add_mautic_tracking_script(){
-		
-		$base_url = get_option( "mwb_m4wp_baseurl", "http://b545c90350b6.ngrok.io/mautic2163" ) ; 
-		$script_url = $base_url . '/mtc.js' ; 
-		$user_data = $this->get_tracking_data();
-		?>
-		<script type="text/javascript">
-		<?php
-		if ( ! empty( $base_url ) ) :
-			?>
-			(function(w,d,t,u,n,a,m){w['MauticTrackingObject']=n;
-				w[n]=w[n]||function(){(w[n].q=w[n].q||[]).push(arguments)},a=d.createElement(t),
-				m=d.getElementsByTagName(t)[0];a.async=1;a.src=u;m.parentNode.insertBefore(a,m)
-			})(window,document,'script','<?php echo esc_url( $script_url ); ?>','mt');
-			mt('send', 'pageview'<?php echo count( $user_data ) > 0 ? ', ' . wp_json_encode( $user_data ) : ''; ?>);
-			<?php
-		endif;
-		?>
-		</script>
-		<?php
-		
-	}
-
 	public function add_form_shortcode( $attr = array()){
 		ob_start();
         require MWB_M4WP_PLUGIN_PATH.'public/partials/forms.php';
@@ -148,32 +112,5 @@ class Mautic_For_Wordpress_Public {
 		add_shortcode( 'mwb_m4wp_form', array( $this, 'add_form_shortcode' ) );
 	}
 	
-	public function get_tracking_data(){
-		
-		global $wp;
-		$tracking_data = array();
-		// $current_url = add_query_arg( $wp->query_string, '', home_url( $wp->request ) );
-		
-		// $tracking_data['language']   = get_locale();
-		// $tracking_data['page_url']   = $current_url;
-		// $tracking_data['page_title'] = function_exists( 'wp_get_document_title' )
-		// ? wp_get_document_title()
-		// : wp_title( '&raquo;', false );
-		// $tracking_data['referrer']   = function_exists( 'wp_get_raw_referer' )
-		// ? wp_get_raw_referer()
-		// : null;
-		// if ( false === $tracking_data['referrer'] ) {
-		// 	$tracking_data['referrer'] = $current_url;
-		// }
-		
-		$track_user_data = get_option( 'mwb_m4wp_track_user_data', 'yes' ) ; 
-		if( is_user_logged_in() && 'yes' == $track_user_data ){
-			$user = wp_get_current_user();
-			if( $user ){
-				$tracking_data['email'] = $user->user_email ; 
-			}
-		}
-		return $tracking_data ; 
-	}
 	
 }

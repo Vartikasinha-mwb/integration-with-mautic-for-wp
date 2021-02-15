@@ -1,14 +1,15 @@
 <?php
 $helper = new Mautic_For_Wordpress_Settings_Helper();
 $forms = $helper->get_forms(true);
-$base_url = get_option( 'mwb_m4wp_base_url') ; 
+$base_url = Mautic_For_Wordpress_Admin::get_mautic_base_url() ;
+$form_url = $base_url.'s/forms' ;  
 ?>
 <div class="wrap">
     <div class="mwb-m4wp-admin-panel-head">
         <h3><?php esc_html_e( 'Mautic Forms', 'mautic-for-wordpress' ) ?></h3>
         <?php echo $helper->get_refresh_button_html("forms"); ?>
     </div>
-    <?php if ( $forms ) : ?>
+    <?php if ( $forms && ( count($forms['forms']) > 0 ) ) : ?>
     <table class="form-table">
         <thead>
             <th><?php esc_html_e('Form id' , 'mautic-for-wordpress') ?></th>
@@ -47,7 +48,12 @@ $base_url = get_option( 'mwb_m4wp_base_url') ;
             <?php endforeach ; ?>
         </tbody>
     </table>
-    <?php endif ; ?>
+    <?php else : ?>
+    <div class="mwb-m4wp-no-form-wrap">
+        <p><?php esc_html_e('No forms available. Please create form in your mautic account', 'mautic-for-wordpress') ?></p>
+        <p> <a class="button m4" href="<?php echo $form_url ?>"><?php esc_html_e('Goto Mautic Forms' , 'mautic-for-wordpress') ;  ?></a>  </p>
+    </div>
+    <?php endif; ?>
     <div id="mwb-m4wp-form-html">
     </div>
 </div>
