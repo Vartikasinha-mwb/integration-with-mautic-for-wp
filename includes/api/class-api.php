@@ -22,11 +22,7 @@ class Api_Base {
 
 		$this->create_error_log( $code, $message, $data );
 
-		if ( $code == 403 && $message == 'Forbidden' ) {
-			throw new Mautic_Api_Exception( $message, $code );
-		}
-
-		if ( $code == 401 ) {
+		if ( in_array( $code, array( 400, 401, 402, 403, 404 )) ) {
 			throw new Mautic_Api_Exception( $message, $code );
 		}
 

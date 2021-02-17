@@ -15,7 +15,9 @@
 
     $user = '' ; 
     if(isset($_POST['action']) && $_POST['action'] == 'mwb_m4wp_save' ){
-        
+        if(wp_verify_nonce( $_POST['_nonce'] , '_nonce' )){ 
+            
+        }
         $type = $_POST['authentication_type'] ;
         $baseurl = $_POST['baseurl'];
         $baseurl = rtrim($baseurl , '/');
@@ -56,7 +58,6 @@
     </div>
 
     <div class="mwb-m4wp-admin-panel-main">
-
     <?php
     $connected = get_option('mwb_m4wp_connection_status' , false) ; 
     if($connected){

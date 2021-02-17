@@ -121,6 +121,7 @@ class Mautic_For_Wordpress_Admin {
 			'toplevel_page_mautic-for-wordpress',
 			'mwb-mautic_page_mautic-forms',
 			'mwb-mautic_page_integrations', 
+			'mwb-mautic_page_settings',
 		);
 	}
 	
@@ -164,6 +165,20 @@ class Mautic_For_Wordpress_Admin {
 			'integrations',
 			array( $this, 'include_integrations_display')
 		) ;
+		
+		add_submenu_page( 
+			'mautic-for-wordpress' , 
+			__( 'Settings', 'mautic-for-wordpress' ),
+			__( 'Settings', 'mautic-for-wordpress' ),
+			'manage_options',
+			'settings',
+			array( $this, 'include_settings_display')
+		) ;
+	}
+
+	public function include_settings_display(){
+		$file_path = 'admin/partials/mautic-for-wordpress-settings.php' ; 
+		self::load_template( $file_path ) ; 
 	}
 
 	public function include_integrations_display(){
@@ -240,6 +255,15 @@ class Mautic_For_Wordpress_Admin {
 	}
 
 	public function save_admin_settings(){
+		
+		if( isset( $_POST['action'] ) && $_POST['action'] == 'mwb_m4wp_setting_save' ){
+			if(wp_verify_nonce( $_POST['_nonce'] , '_nonce' )){
+				$enable = isset($_POST['mwb_m4wp_tracking_enable']) ? $_POST['mwb_m4wp_tracking_enable'] : 'no' ;
+				$location = isset($_POST['mwb_m4wp_script_location']) ? $_POST['mwb_m4wp_script_location'] : 'footer' ; 
+				update_option( 'mwb_m4wp_script_location' , $location ) ; 
+				update_option( 'mwb_m4wp_tracking_enable' , $enable ) ;
+			}
+		}
 		
 		if( isset( $_POST['action'] ) && $_POST['action'] == 'mwb_m4wp_date_range' ){
 			$date_range = array(

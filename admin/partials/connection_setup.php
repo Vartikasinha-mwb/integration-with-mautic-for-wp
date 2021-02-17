@@ -58,6 +58,7 @@
             </tr>
         </table>
         <input type="hidden" name="action" value="mwb_m4wp_save" />
+        <input type="hidden" name="_nonce" value="<?php echo wp_create_nonce('_nonce') ?>" />
         <button id="mwb-m4wp-save-btn" type="submit" class="button"><?php esc_html_e('Save' , 'mautic-for-wordpress') ?></button>
     </form>
     <?php if(!empty($credentials)): ?>

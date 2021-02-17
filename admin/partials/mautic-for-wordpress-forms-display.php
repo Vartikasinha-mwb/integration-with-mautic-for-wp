@@ -31,7 +31,7 @@ $form_url = $base_url.'s/forms' ;
                         ?>
                     </td>
                     <td>
-                        <input  type="text" id="form-input-<?php echo $form['id'] ?>"  value="<?php echo '[mwb_m4wp_form id='.$form['id'].']' ?>"> 
+                        <input readonly type="text" id="form-input-<?php echo $form['id'] ?>"  value="<?php echo '[mwb_m4wp_form id='.$form['id'].']' ?>"> 
                         <a href="#" class="mwb-m4wp-form-code" form_id="<?php echo $form['id'] ?>">
                             <span class="dashicons dashicons-editor-paste-text"></span>
                         </a>
@@ -51,7 +51,7 @@ $form_url = $base_url.'s/forms' ;
     <?php else : ?>
     <div class="mwb-m4wp-no-form-wrap">
         <p><?php esc_html_e('No forms available. Please create form in your mautic account', 'mautic-for-wordpress') ?></p>
-        <p> <a class="button m4" href="<?php echo $form_url ?>"><?php esc_html_e('Goto Mautic Forms' , 'mautic-for-wordpress') ;  ?></a>  </p>
+        <p> <a class="button" href="<?php echo $form_url ?>"><?php esc_html_e('Goto Mautic Forms' , 'mautic-for-wordpress') ;  ?></a>  </p>
     </div>
     <?php endif; ?>
     <div id="mwb-m4wp-form-html">
