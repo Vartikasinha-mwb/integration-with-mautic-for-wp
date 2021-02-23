@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Provide a admin area view for the plugin
  *
@@ -11,11 +10,12 @@
  * @package    Makewebbetter_Onboarding
  * @subpackage Makewebbetter_Onboarding/admin/onboarding
  */
+
 ?>
 <?php
 
 	global $pagenow;
-if ( empty( $pagenow ) || 'plugins.php' != $pagenow ) {
+if ( empty( $pagenow ) || 'plugins.php' !== $pagenow ) {
 	return false;
 }
 

@@ -1,13 +1,12 @@
 <?php
-
 /**
  * Fired during plugin deactivation
  *
  * @link       https://makewebbetter.com/
  * @since      1.0.0
  *
- * @package    Mautic_For_Wordpress
- * @subpackage Mautic_For_Wordpress/includes
+ * @package    Makewebbetter_Mautic_For_Wordpress
+ * @subpackage Makewebbetter_Mautic_For_Wordpress/includes
  */
 
 /**
@@ -16,11 +15,11 @@
  * This class defines all code necessary to run during the plugin's deactivation.
  *
  * @since      1.0.0
- * @package    Mautic_For_Wordpress
- * @subpackage Mautic_For_Wordpress/includes
+ * @package    Makewebbetter_Mautic_For_Wordpress
+ * @subpackage Makewebbetter_Mautic_For_Wordpress/includes
  * @author     MakeWebBetter <webmaster@makewebbetter.com>
  */
-class Mautic_For_Wordpress_Deactivator {
+class MWB_Mautic_For_WP_Deactivator {
 
 	/**
 	 * Short Description. (use period)

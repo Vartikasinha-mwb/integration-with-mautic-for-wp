@@ -1,11 +1,37 @@
 <?php
+/**
+ * The Description of basic authentication here.
+ *
+ * @link       https://makewebbetter.com
+ * @since      3.0.0
+ *
+ * @package     woo_one_click_upsell_funnel
+ * @subpackage  woo_one_click_upsell_funnel/includes
+ */
 
+/**
+ * The Onboarding-specific functionality of the plugin admin side.
+ *
+ * @package     woo_one_click_upsell_funnel
+ * @subpackage  woo_one_click_upsell_funnel/includes
+ * @author      makewebbetter <webmaster@makewebbetter.com>
+ */
 class Basic_Auth extends Api_Base {
 
-	// mautic user_name
+	// mautic user_name.
+	/**
+	 * User Name variable
+	 *
+	 * @var string $user_name
+	 */
 	private $user_name;
 
-	// mautic password
+	// mautic password.
+	/**
+	 * Password variable
+	 *
+	 * @var string $password
+	 */
 	private $password;
 
 	/**

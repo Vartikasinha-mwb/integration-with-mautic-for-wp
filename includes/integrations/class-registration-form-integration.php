@@ -1,4 +1,21 @@
 <?php
+/**
+ * Registration form integration.
+ *
+ * @link       https://makewebbetter.com
+ * @since      3.0.0
+ *
+ * @package     woo_one_click_upsell_funnel
+ * @subpackage  woo_one_click_upsell_funnel/includes
+ */
+
+/**
+ * The Onboarding-specific functionality of the plugin admin side.
+ *
+ * @package     woo_one_click_upsell_funnel
+ * @subpackage  woo_one_click_upsell_funnel/includes
+ * @author      makewebbetter <webmaster@makewebbetter.com>
+ */
 class Registration_Form_Integration extends Mautic_For_Wordpress_Integration {
 	public $name        = 'Registration Form';
 	public $description = 'WordPress default registration form';

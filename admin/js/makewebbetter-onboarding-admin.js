@@ -1,5 +1,7 @@
 jQuery(document).ready( function($) {
 
+	console.log(mwb_onboarding);
+
 	/*if device is mobile*/
 	if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
 	    jQuery('body').addClass( 'mobile-device' );
@@ -115,6 +117,7 @@ jQuery(document).ready( function($) {
 
 	/* Apply deactivate in all the MWB plugins. */
 	function add_deactivate_slugs_callback( all_slugs ) {
+		
 		
 		for ( var i = all_slugs.length - 1; i >= 0; i-- ) {
 

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Fired when the plugin is uninstalled.
  *
@@ -22,7 +21,7 @@
  * @link       https://makewebbetter.com/
  * @since      1.0.0
  *
- * @package    Mautic_For_Wordpress
+ * @package    Makewebbetter_Mautic_For_Wordpress
  */
 
 // If uninstall not called from WordPress, then exit.

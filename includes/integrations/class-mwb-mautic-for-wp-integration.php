@@ -122,13 +122,13 @@ abstract class Mautic_For_Wordpress_Integration {
 			$tags         = explode( ',', $tags_string );
 			$data['tags'] = $tags;
 		}
-		$contact = MWB_M4WP_Mautic_Api::create_contact( $data );
+		$contact = MWB_Mautic_For_WP_Api::create_contact( $data );
 		if ( $segment_id != '-1' ) {
 			if ( isset( $contact['contact'] ) ) {
 				$contact_id = $contact['contact']['id'];
 			}
 			if ( $contact_id > 0 ) {
-				MWB_M4WP_Mautic_Api::add_contact_to_segment( $contact_id, $segment_id );
+				MWB_Mautic_For_WP_Api::add_contact_to_segment( $contact_id, $segment_id );
 			}
 		}
 	}

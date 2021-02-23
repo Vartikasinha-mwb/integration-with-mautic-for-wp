@@ -1,0 +1,473 @@
+<?php
+/**
+ * The admin-specific functionality of the plugin.
+ *
+ * @link       https://makewebbetter.com/
+ * @since      1.0.0
+ *
+ * @package    MWB_Mautic_For_WP
+ * @subpackage MWB_Mautic_For_WP/admin
+ */
+
+/**
+ * The admin-specific functionality of the plugin.
+ *
+ * Defines the plugin name, version, and two examples hooks for how to
+ * enqueue the admin-specific stylesheet and JavaScript.
+ *
+ * @package    MWB_Mautic_For_WP
+ * @subpackage MWB_Mautic_For_WP/admin
+ * @author     MakeWebBetter <webmaster@makewebbetter.com>
+ */
+class MWB_Mautic_For_WP_Admin {
+
+	/**
+	 * The ID of this plugin.
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 * @var      string    $plugin_name    The ID of this plugin.
+	 */
+	private $plugin_name;
+
+	/**
+	 * The version of this plugin.
+	 *
+	 * @since    1.0.0
+	 * @access   private
+	 * @var      string    $version    The current version of this plugin.
+	 */
+	private $version;
+
+	/**
+	 * Initialize the class and set its properties.
+	 *
+	 * @since    1.0.0
+	 * @param      string $plugin_name       The name of this plugin.
+	 * @param      string $version    The version of this plugin.
+	 */
+	public function __construct( $plugin_name, $version ) {
+
+		$this->plugin_name = $plugin_name;
+		$this->version     = $version;
+
+	}
+
+	/**
+	 * Register the stylesheets for the admin area.
+	 *
+	 * @since    1.0.0
+	 */
+	public function enqueue_styles() {
+
+		/**
+		 * This function is provided for demonstration purposes only.
+		 *
+		 * An instance of this class should be passed to the run() function
+		 * defined in MWB_Mautic_For_WP_Loader as all of the hooks are defined
+		 * in that particular class.
+		 *
+		 * The MWB_Mautic_For_WP_Loader will then create the relationship
+		 * between the defined hooks and the functions defined in this
+		 * class.
+		 */
+		$current_screen = get_current_screen();
+		$screens        = $this->get_plugin_screens();
+		if ( isset( $current_screen ) && in_array( $current_screen->id, $screens, true ) ) {
+			//wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/mwb-mautic-for-wp-admin.css', array(), $this->version, 'all' );
+			wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/makewebbetter-onboarding-admin.css', array(), $this->version, 'all' );
+			wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/select2.min.css', array(), $this->version, 'all' );
+			wp_enqueue_style( 'mwb-mautic-for-wp-jquery-ui', plugin_dir_url( __FILE__ ) . 'css/jquery-ui.min.css', array(), $this->version, 'all' );
+			wp_enqueue_style( 'mwb-mautic-for-wp-admin-style', plugin_dir_url( __FILE__ ) . 'css/style.css', array(), $this->version, 'all' );
+		}
+
+	}
+
+	/**
+	 * Register the JavaScript for the admin area.
+	 *
+	 * @since    1.0.0
+	 */
+	public function enqueue_scripts() {
+
+		/**
+		 * This function is provided for demonstration purposes only.
+		 *
+		 * An instance of this class should be passed to the run() function
+		 * defined in MWB_Mautic_For_WP_Loader as all of the hooks are defined
+		 * in that particular class.
+		 *
+		 * The MWB_Mautic_For_WP_Loader will then create the relationship
+		 * between the defined hooks and the functions defined in this
+		 * class.
+		 */
+		$current_screen = get_current_screen();
+		$screens        = $this->get_plugin_screens();
+		if ( isset( $current_screen ) && in_array( $current_screen->id, $screens, true ) ) {
+			wp_enqueue_script( 'mwb-mautic-for-wp-chart-script', plugin_dir_url( __FILE__ ) . 'chart/chart.js', array( 'jquery' ), '1.0.0', false );
+			wp_enqueue_style( 'mwb-mautic-for-wp-chart-style', plugin_dir_url( __FILE__ ) . 'chart/chart.css', array(), '1.0.0' );
+			wp_enqueue_script( 'jquery-ui-datepicker' );
+			wp_enqueue_script( 'mwb-mautic-for-wp-admin-script', plugin_dir_url( __FILE__ ) . 'js/mwb-mautic-for-wp-admin.js', array( 'jquery', 'jquery-ui-datepicker', 'mwb-mautic-for-wp-chart-script' ), $this->version, false );
+			$ajax_data = array(
+				'ajax_url' => admin_url( 'admin-ajax.php' ),
+			);
+			wp_localize_script( 'mwb-mautic-for-wp-admin-script', 'ajax_data', $ajax_data );
+		}
+
+	}
+
+	/**
+	 * Get_plugin_screens function
+	 *
+	 * @return array
+	 */
+	public function get_plugin_screens() {
+		return array(
+			'toplevel_page_mwb-mautic-for-wp2',
+		);
+	}
+
+	/**
+	 * Add_admin_menu_page function
+	 */
+	public function add_admin_menu_page() {
+
+		// add_menu_page(
+		// 	__( 'MWB Mautic Settings', 'mwb-mautic-for-wp' ),
+		// 	__( 'Mautic Integration', 'mwb-mautic-for-wp' ),
+		// 	'manage_options',
+		// 	'mwb-mautic-for-wp',
+		// 	array( $this, 'include_admin_menu_display' ),
+		// 	'dashicons-admin-plugins'
+		// );
+
+		add_menu_page(
+			__( 'MWB Mautic Settings', 'mwb-mautic-for-wp' ),
+			__( 'Mautic Integration2', 'mwb-mautic-for-wp' ),
+			'manage_options',
+			'mwb-mautic-for-wp2',
+			array( $this, 'include_admin_menu_display2' ),
+			'dashicons-admin-plugins'
+		);
+
+		add_submenu_page(
+			'mwb-mautic-for-wp',
+			__( 'Dashboard', 'mwb-mautic-for-wp' ),
+			__( 'Dashboard', 'mwb-mautic-for-wp' ),
+			'manage_options',
+			'mautic-dashboard',
+			array( $this, 'include_mautic_dashboard' )
+		);
+
+		add_submenu_page(
+			'mwb-mautic-for-wp',
+			__( 'Forms', 'mwb-mautic-for-wp' ),
+			__( 'Forms', 'mwb-mautic-for-wp' ),
+			'manage_options',
+			'mautic-forms',
+			array( $this, 'include_mautic_forms_display' )
+		);
+
+		add_submenu_page(
+			'mwb-mautic-for-wp',
+			__( 'Integrations', 'mwb-mautic-for-wp' ),
+			__( 'Integrations', 'mwb-mautic-for-wp' ),
+			'manage_options',
+			'integrations',
+			array( $this, 'include_integrations_display' )
+		);
+
+		add_submenu_page(
+			'mwb-mautic-for-wp',
+			__( 'Settings', 'mwb-mautic-for-wp' ),
+			__( 'Settings', 'mwb-mautic-for-wp' ),
+			'manage_options',
+			'settings',
+			array( $this, 'include_settings_display' )
+		);
+	}
+
+	/**
+	 * Include_settings_display function
+	 */
+	public function include_admin_menu_display2() {
+		$file_path = 'admin/partials/mwb-mautic-for-wp-admin-display2.php';
+		self::load_template( $file_path );
+	}
+
+	/**
+	 * Include_settings_display function
+	 */
+	public function include_settings_display() {
+		$file_path = 'admin/partials/mwb-mautic-for-wp-settings.php';
+		self::load_template( $file_path );
+	}
+	/**
+	 * Include_integrations_display function
+	 */
+	public function include_integrations_display() {
+		$file_path = 'admin/partials/mwb-mautic-for-wp-integrations.php';
+		self::load_template( $file_path );
+	}
+
+	/**
+	 * Include_mautic_dashboard function
+	 */
+	public function include_mautic_dashboard() {
+		$file_path = 'admin/partials/mwb-mautic-for-wp-dashboard.php';
+		self::load_template( $file_path );
+	}
+
+	/**
+	 * Include admin forms view.
+	 */
+	public function include_mautic_forms_display() {
+		$file_path = 'admin/partials/mwb-mautic-for-wp-forms-display.php';
+		self::load_template( $file_path );
+	}
+
+	/**
+	 * Include admin menu view.
+	 */
+	public function include_admin_menu_display() {
+		$file_path = 'admin/partials/mwb-mautic-for-wp-admin-display.php';
+		self::load_template( $file_path );
+	}
+
+	/**
+	 * Check and include admin view file
+	 *
+	 * @param string $file_path Relative path of file.
+	 * @param array  $params Array of extra params.
+	 */
+	public static function load_template( $file_path, $params = array() ) {
+		$file  = MWB_MAUTIC_FOR_WP_PATH . $file_path;
+		if ( file_exists( $file ) ) {
+			include $file;
+		} else {
+			esc_attr_e( 'Something went wrong', 'mwb-mautic-for-wp' );
+		}
+	}
+
+	/**
+	 * Check and include admin view file
+	 *
+	 * @param string $date_range Define the range of date.
+	 */
+	public static function get_time_unit( $date_range ) {
+		$time_unit = 'm';
+		$to        = strtotime( $date_range['date_to'] );
+		$from      = strtotime( $date_range['date_from'] );
+		$diff      = $to - $from;
+		$days      = $diff / ( 24 * 60 * 60 );
+		switch ( $days ) {
+			case ( $days < 61 ):
+				$time_unit = 'd';
+				break;
+			case ( $days > 61 && $days < 91 ):
+				$time_unit = 'W';
+				break;
+			case ( $days > 91 && $days < 366 ):
+				$time_unit = 'm';
+				break;
+			case ( $days > 366 ):
+				$time_unit = 'Y';
+				break;
+		}
+		return $time_unit;
+	}
+
+	/**
+	 * Check and include admin view file
+	 *
+	 * @return date
+	 */
+	public static function get_default_date_range() {
+		$date_to   = gmdate( 'Y-m-d' );
+		$date_from = gmdate( 'Y-m-d', strtotime( '-1 month' ) );
+		return array(
+			'date_to'   => $date_to,
+			'date_from' => $date_from,
+		);
+	}
+
+	/**
+	 * Save_admin_settings function
+	 */
+	public function save_admin_settings() {
+
+		if ( isset( $_POST['action'] ) && 'mwb_m4wp_save' === $_POST['action'] ) { // phpcs:ignore WordPress.Security.NonceVerification
+
+			if ( wp_verify_nonce( isset( $_POST['_nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['_nonce'] ) ) : '', '_nonce' ) ) {
+
+				$auth_type                	  = sanitize_text_field( wp_unslash( isset( $_POST['authentication_type'] ) ) ) ? sanitize_text_field( wp_unslash( $_POST['authentication_type'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification
+				$baseurl                      = sanitize_text_field( wp_unslash( isset( $_POST['baseurl'] ) ) ) ? sanitize_text_field( wp_unslash( $_POST['baseurl'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification
+				$baseurl                      = rtrim( $baseurl, '/' );
+				$credentials                  = array();
+				$credentials['client_id']     = sanitize_text_field( wp_unslash( isset( $_POST['client_id'] ) ) ) ? sanitize_text_field( wp_unslash( $_POST['client_id'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification
+				$credentials['client_secret'] = sanitize_text_field( wp_unslash( isset( $_POST['client_secret'] ) ) ) ? sanitize_text_field( wp_unslash( $_POST['client_secret'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification
+				$credentials['username']      = sanitize_text_field( wp_unslash( isset( $_POST['username'] ) ) ) ? sanitize_text_field( wp_unslash( $_POST['username'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification
+				$credentials['password']      = sanitize_text_field( wp_unslash( isset( $_POST['password'] ) ) ) ? sanitize_text_field( wp_unslash( $_POST['password'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification
+				update_option( 'mwb_m4wp_auth_details', $credentials );
+				update_option( 'mwb_m4wp_auth_type', $auth_type );
+				update_option( 'mwb_m4wp_base_url', $baseurl );
+
+				if ( 'basic' === $auth_type ) {
+					$user = MWB_Mautic_For_WP_Api::get_self_user();
+					wp_cache_set( 'mwb_m4wp_user_data', $user );
+				}
+			}
+		}
+		
+		if ( 'mwb_m4wp_setting_save' === ( isset( $_POST['action'] ) ? sanitize_text_field( wp_unslash( $_POST['action'] ) ) : '' ) && isset( $_POST['action'] ) && sanitize_text_field( wp_unslash( $_POST['action'] ) ) ) {
+
+			if ( wp_verify_nonce( isset( $_POST['_nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['_nonce'] ) ) : '', '_nonce' ) ) {
+
+				$enable   = isset( $_POST['mwb_m4wp_tracking_enable'] ) ? sanitize_text_field( wp_unslash( $_POST['mwb_m4wp_tracking_enable'] ) ) : 'no';
+				$location = isset( $_POST['mwb_m4wp_script_location'] ) ? sanitize_text_field( wp_unslash( $_POST['mwb_m4wp_script_location'] ) ) : 'footer';
+				$base_url = isset( $_POST['mwb_m4wp_base_url'] ) ? sanitize_text_field( wp_unslash( $_POST['mwb_m4wp_base_url'] ) ) : 'ss';
+				update_option( 'mwb_m4wp_script_location', $location );
+				update_option( 'mwb_m4wp_tracking_enable', $enable );
+				update_option( 'mwb_m4wp_base_url', $base_url );
+			
+			}
+		}
+
+		if ( 'mwb_m4wp_date_range' === ( isset( $_POST['action'] ) ? sanitize_text_field( wp_unslash( $_POST['action'] ) ) : '' ) && sanitize_text_field( wp_unslash( $_POST['action'] ) ) ) {
+			$date_range = array(
+				'date_from' => sanitize_text_field( wp_unslash( isset( $_POST['mwb_m4wp_from_date'] ) ) ) ? sanitize_text_field( wp_unslash( $_POST['mwb_m4wp_from_date'] ) ) : '',
+				'date_to'   => sanitize_text_field( wp_unslash( isset( $_POST['mwb_m4wp_to_date'] ) ) ) ? sanitize_text_field( wp_unslash( $_POST['mwb_m4wp_to_date'] ) ) : '',
+			);
+			update_option( 'mwb_m4wp_date_range', $date_range );
+		}
+
+		if ( 'mwb_m4wp_integration_save' === ( isset( $_POST['action'] ) ? sanitize_text_field( wp_unslash( $_POST['action'] ) ) : '' ) && sanitize_text_field( wp_unslash( $_POST['action'] ) ) ) {
+			if ( wp_verify_nonce( isset( $_POST['_nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['_nonce'] ) ) : '', 'mwb_m4wp_integration_nonce' ) ) {
+				if ( isset( $_POST['integration'] ) && '' !== $_POST['integration'] ) {
+					$integration              = isset( $_POST['integration'] ) ? sanitize_text_field( wp_unslash( $_POST['integration'] ) ) : '';
+					$enable                   = isset( $_POST['enable'] ) ? sanitize_text_field( wp_unslash( $_POST['enable'] ) ) : 'no';
+					$implicit                 = isset( $_POST['implicit'] ) ? sanitize_text_field( wp_unslash( $_POST['implicit'] ) ) : 'no';
+					$checkbox_txt             = isset( $_POST['checkbox_txt'] ) ? sanitize_text_field( wp_unslash( $_POST['checkbox_txt'] ) ) : '';
+					$precheck                 = isset( $_POST['precheck'] ) ? sanitize_text_field( wp_unslash( $_POST['precheck'] ) ) : 'no';
+					$add_segment              = isset( $_POST['add_segment'] ) ? sanitize_text_field( wp_unslash( $_POST['add_segment'] ) ) : '-1';
+					$add_tag                  = isset( $_POST['add_tag'] ) ? sanitize_text_field( wp_unslash( $_POST['add_tag'] ) ) : '';
+					$settings                 = get_option( 'mwb_m4wp_integration_settings', array() );
+					$settings[ $integration ] = compact( 'enable', 'implicit', 'checkbox_txt', 'precheck', 'add_segment', 'add_tag' );
+					update_option( 'mwb_m4wp_integration_settings', $settings );
+				}
+			}
+		}
+	}
+
+	/**
+	 * Get_oauth_code function
+	 */
+	public function get_oauth_code() {
+
+		if ( isset( $_GET['m4wp_reset'] ) && 1 === (int) $_GET['m4wp_reset'] ) {
+			if ( ! wp_verify_nonce( isset( $_GET['m4wp_auth_nonce'] ) ? sanitize_text_field( wp_unslash( $_GET['m4wp_auth_nonce'] ) ) : '', 'm4wp_auth_nonce' ) ) {
+				wp_die( 'nonce not verified' );
+			}
+			update_option( 'mwb_m4wp_base_url', '' );
+			update_option( 'mwb_m4wp_auth_details', array() );
+			update_option( 'mwb_m4wp_oauth2_success', false );
+			update_option( 'mwb_m4wp_connection_status', false );
+			update_option( 'mwb_m4wp_auth_type', '' );
+			wp_safe_redirect( admin_url( 'admin.php?page=mwb-mautic-for-wp2' ) );
+		}
+
+		if ( isset( $_GET['m4wp_auth'] ) && 1 === (int) $_GET['m4wp_auth'] ) {
+
+			if ( ! wp_verify_nonce( isset( $_GET['m4wp_auth_nonce'] ) ? sanitize_text_field( wp_unslash( $_GET['m4wp_auth_nonce'] ) ) : '', 'm4wp_auth_nonce' ) ) {
+				wp_die( 'nonce not verified' );
+			}
+			$baseurl     = self::get_mautic_base_url();
+			$credentials = get_option( 'mwb_m4wp_auth_details', array() );
+			$mautic_url  = $baseurl . 'oauth/v2/authorize';
+			$redirct_url = admin_url();
+			$data        = array(
+				'client_id'     => $credentials['client_id'],
+				'grant_type'    => 'authorization_code',
+				'redirect_uri'  => $redirct_url,
+				'response_type' => 'code',
+				'state'         => wp_create_nonce( 'm4wp_nonce' ),
+			);
+			$auth_url    = add_query_arg( $data, $mautic_url );
+			wp_safe_redirect( $auth_url );
+		}
+
+		if ( isset( $_GET['state'] ) && isset( $_GET['code'] ) ) {
+			if ( wp_verify_nonce( isset( $_GET['state'] ) ? sanitize_text_field( wp_unslash( $_GET['state'] ) ) : '', 'm4wp_nonce' ) ) {
+				$code                   = sanitize_text_field( wp_unslash( $_GET['code'] ) );
+				$baseurl                = get_option( 'mwb_m4wp_base_url', '' );
+				$credentials            = get_option( 'mwb_m4wp_auth_details', array() );
+				$redirct_url            = admin_url();
+				$data                   = array(
+					'client_id'     => $credentials['client_id'],
+					'client_secret' => $credentials['client_secret'],
+					'grant_type'    => 'authorization_code',
+					'redirect_uri'  => $redirct_url,
+					'code'          => $code,
+				);
+				$api_instance           = Oauth2::get_instance();
+				$api_instance->base_url = $baseurl;
+				try {
+					$response = $api_instance->get_oauth_token( $data );
+					$api_instance->save_token_data( $response );
+					update_option( 'mwb_m4wp_oauth2_success', true );
+					update_option( 'mwb_m4wp_connection_status', true );
+				} catch ( Exception $e ) {
+					update_option( 'mwb_m4wp_oauth2_success', false );
+					update_option( 'mwb_m4wp_connection_status', false );
+				}
+				wp_safe_redirect( admin_url( 'admin.php?page=mwb-mautic-for-wp2' ) );
+			}
+		}
+	}
+
+	/**
+	 * Include Plugin screen for Onboarding pop-up.
+	 *
+	 * @param array $valid_screens Valid screens written.
+	 * @since    1.0.0
+	 */
+	public function add_mwb_frontend_screens( $valid_screens = array() ) {
+
+		if ( is_array( $valid_screens ) ) {
+			// Push your screen here.
+			array_push( $valid_screens, 'toplevel_page_mwb-mautic-for-wp' );
+		}
+		return $valid_screens;
+	}
+
+	/**
+	 * Include plugin for Deactivation pop-up.
+	 *
+	 * @param array $valid_screens Valid screens written.
+	 * @since    1.0.0
+	 */
+	public function add_mwb_deactivation_screens( $valid_screens = array() ) {
+
+		if ( is_array( $valid_screens ) ) {
+			// Push your screen here.
+			array_push( $valid_screens, 'mwb-mautic-for-wp' );
+		}
+		return $valid_screens;
+	}
+
+	/**
+	 * Get base url of your mautic instance.
+	 *
+	 * @since    1.0.0
+	 */
+	public static function get_mautic_base_url() {
+
+		$baseurl = get_option( 'mwb_m4wp_base_url', '' );
+
+		if ( ! empty( $baseurl ) ) {
+			$baseurl = rtrim( $baseurl, '/' );
+			$baseurl = $baseurl . '/';
+		}
+		return $baseurl;
+	}
+}
