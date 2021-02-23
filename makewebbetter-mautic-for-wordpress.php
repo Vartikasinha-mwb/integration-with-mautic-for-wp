@@ -2,7 +2,6 @@
 /**
  * The plugin bootstrap file
  *
- *
  * @link              https://makewebbetter.com/
  * @since             1.0.0
  * @package           Makewebbetter_Mautic_For_Wordpress
@@ -51,6 +50,32 @@ register_deactivation_hook( __FILE__, 'deactivate_mwb_mautic_for_wp' );
  * admin-specific hooks, and public-facing site hooks.
  */
 require plugin_dir_path( __FILE__ ) . 'includes/class-mwb-mautic-for-wp.php';
+
+/**
+ * Add settings links in plugin listing.
+ */
+add_filter( 'plugin_action_links', 'mwb_mautic_admin_settings', 10, 5 );
+
+/**
+ * Add settings link in plugin listing.
+ *
+ * @since    1.0.0
+ * @param array  $actions actions.
+ * @param string $plugin_file plugin file path.
+ */
+function mwb_mautic_admin_settings( $actions, $plugin_file ) {
+	static $plugin;
+	if ( ! isset( $plugin ) ) {
+		$plugin = plugin_basename( __FILE__ );
+	}
+	if ( $plugin === $plugin_file ) {
+		$settings = array(
+			'settings' => '<a href="' . admin_url( 'admin.php?page=mwb-mautic-for-wp' ) . '">' . __( 'Settings', 'mauwoo' ) . '</a>',
+		);
+		$actions  = array_merge( $settings, $actions );
+	}
+	return $actions;
+}
 
 /**
  * Begins execution of the plugin.
