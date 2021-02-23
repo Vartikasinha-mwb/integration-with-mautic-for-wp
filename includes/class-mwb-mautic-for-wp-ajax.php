@@ -102,8 +102,8 @@ class MWB_Mautic_For_WP_Ajax {
 				$helper->get_widget_data( 'page.hits.in.time', $data, true );
 				$helper->get_widget_data( 'submissions.in.time', $data, true );
 				$helper->get_widget_data( 'top.lists', $data, true );
+				$helper->get_widget_data( 'top.creators', $data, true );
 				break;
-
 			case 'segments':
 				$segment_list = $helper->get_segment_options( true );
 				break;

@@ -27,7 +27,7 @@ $hide_row           = $implicit ? 'row-hide' : '';
 <div class="wrap">
 	<div class="mwb-m4wp-admin-panel-main mwb-m4wp-admin-integration-panel">
 		<div class="mwb-m4wp-admin-form-wrap-title">
-		<a href="?page=mwb-mautic-for-wp2&tab=integration"><span class="dashicons dashicons-arrow-left-alt mwb-arrow-left"></span></a>
+		<a href="?page=mwb-mautic-for-wp&tab=integration"><span class="dashicons dashicons-arrow-left-alt mwb-arrow-left"></span></a>
 		<h2><?php echo esc_attr($integation->get_name()); ?></h2>
 		</div>
 		<div class="mwb-m4wp-admin-form-wrap mwb-m4wp-admin-integration-form-wrap">
@@ -82,18 +82,13 @@ $hide_row           = $implicit ? 'row-hide' : '';
 						<th><label for="add_segment"><?php esc_html_e('Segment', 'makewebbetter-mautic-for-wordpress'); ?></label></th>
 						<td>
 							<select name="add_segment" id="mwb-m4wp-segment-select">
-								<!-- <option value="-1"><?php // esc_html_e( '--Select--', 'makewebbetter-mautic-for-wordpress' ) . 
-														?></option> -->
 								<?php foreach ($segment_list as $key => $segment) : ?>
 									<option value="<?php echo $segment['id']; ?>" <?php selected(esc_attr($segment['id']), esc_attr($add_segment)); ?>>
 										<?php echo esc_attr($segment['name']); ?>
 									</option>
 								<?php endforeach; ?>
 							</select>
-							
-								<?php echo $helper->get_refresh_button_html('segments'); ?>
-							
-						
+								<?php echo $helper->get_refresh_button_html( 'segments' ); ?>
 							<p class="description">
 								<?php esc_html_e('Select segment in which the contact should be added.', 'makewebbetter-mautic-for-wordpress'); ?>
 							</p>

@@ -74,9 +74,8 @@ class MWB_Mautic_For_WP_Admin {
 		$current_screen = get_current_screen();
 		$screens        = $this->get_plugin_screens();
 		if ( isset( $current_screen ) && in_array( $current_screen->id, $screens, true ) ) {
-			//wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/mwb-mautic-for-wp-admin.css', array(), $this->version, 'all' );
-			wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/makewebbetter-onboarding-admin.css', array(), $this->version, 'all' );
-			wp_enqueue_style( $this->plugin_name, plugin_dir_url( __FILE__ ) . 'css/select2.min.css', array(), $this->version, 'all' );
+			wp_enqueue_style( 'mwb-mautic-for-wp-onboarding-style', plugin_dir_url( __FILE__ ) . 'css/makewebbetter-onboarding-admin.css', array(), $this->version, 'all' );
+			wp_enqueue_style( 'mwb-mautic-for-wp-select2-style', plugin_dir_url( __FILE__ ) . 'css/select2.min.css', array(), $this->version, 'all' );
 			wp_enqueue_style( 'mwb-mautic-for-wp-jquery-ui', plugin_dir_url( __FILE__ ) . 'css/jquery-ui.min.css', array(), $this->version, 'all' );
 			wp_enqueue_style( 'mwb-mautic-for-wp-admin-style', plugin_dir_url( __FILE__ ) . 'css/style.css', array(), $this->version, 'all' );
 		}
@@ -123,7 +122,7 @@ class MWB_Mautic_For_WP_Admin {
 	 */
 	public function get_plugin_screens() {
 		return array(
-			'toplevel_page_mwb-mautic-for-wp2',
+			'toplevel_page_mwb-mautic-for-wp',
 		);
 	}
 
@@ -131,103 +130,18 @@ class MWB_Mautic_For_WP_Admin {
 	 * Add_admin_menu_page function
 	 */
 	public function add_admin_menu_page() {
-
-		// add_menu_page(
-		// 	__( 'MWB Mautic Settings', 'mwb-mautic-for-wp' ),
-		// 	__( 'Mautic Integration', 'mwb-mautic-for-wp' ),
-		// 	'manage_options',
-		// 	'mwb-mautic-for-wp',
-		// 	array( $this, 'include_admin_menu_display' ),
-		// 	'dashicons-admin-plugins'
-		// );
-
 		add_menu_page(
 			__( 'MWB Mautic Settings', 'mwb-mautic-for-wp' ),
-			__( 'Mautic Integration2', 'mwb-mautic-for-wp' ),
+			__( 'Mautic Integration', 'mwb-mautic-for-wp' ),
 			'manage_options',
-			'mwb-mautic-for-wp2',
-			array( $this, 'include_admin_menu_display2' ),
+			'mwb-mautic-for-wp',
+			array( $this, 'include_admin_menu_display' ),
 			'dashicons-admin-plugins'
 		);
-
-		add_submenu_page(
-			'mwb-mautic-for-wp',
-			__( 'Dashboard', 'mwb-mautic-for-wp' ),
-			__( 'Dashboard', 'mwb-mautic-for-wp' ),
-			'manage_options',
-			'mautic-dashboard',
-			array( $this, 'include_mautic_dashboard' )
-		);
-
-		add_submenu_page(
-			'mwb-mautic-for-wp',
-			__( 'Forms', 'mwb-mautic-for-wp' ),
-			__( 'Forms', 'mwb-mautic-for-wp' ),
-			'manage_options',
-			'mautic-forms',
-			array( $this, 'include_mautic_forms_display' )
-		);
-
-		add_submenu_page(
-			'mwb-mautic-for-wp',
-			__( 'Integrations', 'mwb-mautic-for-wp' ),
-			__( 'Integrations', 'mwb-mautic-for-wp' ),
-			'manage_options',
-			'integrations',
-			array( $this, 'include_integrations_display' )
-		);
-
-		add_submenu_page(
-			'mwb-mautic-for-wp',
-			__( 'Settings', 'mwb-mautic-for-wp' ),
-			__( 'Settings', 'mwb-mautic-for-wp' ),
-			'manage_options',
-			'settings',
-			array( $this, 'include_settings_display' )
-		);
 	}
 
 	/**
 	 * Include_settings_display function
-	 */
-	public function include_admin_menu_display2() {
-		$file_path = 'admin/partials/mwb-mautic-for-wp-admin-display2.php';
-		self::load_template( $file_path );
-	}
-
-	/**
-	 * Include_settings_display function
-	 */
-	public function include_settings_display() {
-		$file_path = 'admin/partials/mwb-mautic-for-wp-settings.php';
-		self::load_template( $file_path );
-	}
-	/**
-	 * Include_integrations_display function
-	 */
-	public function include_integrations_display() {
-		$file_path = 'admin/partials/mwb-mautic-for-wp-integrations.php';
-		self::load_template( $file_path );
-	}
-
-	/**
-	 * Include_mautic_dashboard function
-	 */
-	public function include_mautic_dashboard() {
-		$file_path = 'admin/partials/mwb-mautic-for-wp-dashboard.php';
-		self::load_template( $file_path );
-	}
-
-	/**
-	 * Include admin forms view.
-	 */
-	public function include_mautic_forms_display() {
-		$file_path = 'admin/partials/mwb-mautic-for-wp-forms-display.php';
-		self::load_template( $file_path );
-	}
-
-	/**
-	 * Include admin menu view.
 	 */
 	public function include_admin_menu_display() {
 		$file_path = 'admin/partials/mwb-mautic-for-wp-admin-display.php';
@@ -373,11 +287,10 @@ class MWB_Mautic_For_WP_Admin {
 			update_option( 'mwb_m4wp_oauth2_success', false );
 			update_option( 'mwb_m4wp_connection_status', false );
 			update_option( 'mwb_m4wp_auth_type', '' );
-			wp_safe_redirect( admin_url( 'admin.php?page=mwb-mautic-for-wp2' ) );
+			wp_safe_redirect( admin_url( 'admin.php?page=mwb-mautic-for-wp' ) );
 		}
 
 		if ( isset( $_GET['m4wp_auth'] ) && 1 === (int) $_GET['m4wp_auth'] ) {
-
 			if ( ! wp_verify_nonce( isset( $_GET['m4wp_auth_nonce'] ) ? sanitize_text_field( wp_unslash( $_GET['m4wp_auth_nonce'] ) ) : '', 'm4wp_auth_nonce' ) ) {
 				wp_die( 'nonce not verified' );
 			}
@@ -420,7 +333,7 @@ class MWB_Mautic_For_WP_Admin {
 					update_option( 'mwb_m4wp_oauth2_success', false );
 					update_option( 'mwb_m4wp_connection_status', false );
 				}
-				wp_safe_redirect( admin_url( 'admin.php?page=mwb-mautic-for-wp2' ) );
+				wp_safe_redirect( admin_url( 'admin.php?page=mwb-mautic-for-wp' ) );
 			}
 		}
 	}

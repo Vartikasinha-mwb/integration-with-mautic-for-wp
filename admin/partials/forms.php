@@ -17,8 +17,13 @@ $forms    = $helper->get_forms();
 $base_url = MWB_Mautic_For_WP_Admin::get_mautic_base_url();
 ?>
 
-<div>
-	<?php if ($forms) : ?>
+<div class="mwb-m4wp-form-table-wrap">
+	<?php if ( $forms ) : ?>
+		<div class="mwb-m4wp-form-table-head">
+			<a class="mwb-btn mwb-btn-secondary mwb-m4wp-form-refresh">
+			<?php esc_html_e( 'Refresh', 'makewebbetter-mautic-for-wp' ); ?>
+			</a>
+		</div>
 		<table class="form-table mwb-form-stripped-table mwb-table">
 			<thead>
 				<th><?php esc_html_e('Form id', 'makewebbetter-mautic-for-wordpress'); ?></th>

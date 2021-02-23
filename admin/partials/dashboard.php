@@ -13,21 +13,21 @@
  */
 
 $helper     = MWB_Mautic_For_WP_Settings_Helper::get_instance();
-$date_range = get_option('mwb_m4wp_date_range', array());
-if (empty($date_range)) {
+$date_range = get_option( 'mwb_m4wp_date_range', array() );
+if ( empty( $date_range ) ) {
 	$date_range = MWB_Mautic_For_WP_Admin::get_default_date_range();
 }
-$time_unit             = MWB_Mautic_For_WP_Admin::get_time_unit($date_range);
+$time_unit             = MWB_Mautic_For_WP_Admin::get_time_unit( $date_range );
 $data                  = array(
 	'dateTo'   => $date_range['date_to'],
 	'dateFrom' => $date_range['date_from'],
 	'timeUnit' => $time_unit,
 );
-$created_leads_in_time = $helper->get_widget_data('created.leads.in.time', $data);
-$page_hits_in_time     = $helper->get_widget_data('page.hits.in.time', $data);
-$submissions_in_time   = $helper->get_widget_data('submissions.in.time', $data);
-$top_lists             = $helper->get_widget_data('top.lists', $data);
-$top_creators          = $helper->get_widget_data('top.creators', $data);
+$created_leads_in_time = $helper->get_widget_data( 'created.leads.in.time', $data );
+$page_hits_in_time     = $helper->get_widget_data( 'page.hits.in.time', $data );
+$submissions_in_time   = $helper->get_widget_data( 'submissions.in.time', $data );
+$top_lists             = $helper->get_widget_data( 'top.lists', $data );
+$top_creators          = $helper->get_widget_data( 'top.creators', $data );
 $base_url              = MWB_Mautic_For_WP_Admin::get_mautic_base_url();
 ?>
 
@@ -36,22 +36,22 @@ $base_url              = MWB_Mautic_For_WP_Admin::get_mautic_base_url();
 		<div class="mwb-m4wp-admin-panel-date">
 			<form method="post">
 				<span>
-					<label for="mwb_m4wp_from_date"><?php esc_html_e('From', 'makewebbetter-mautic-for-wordpress'); ?></label>
-					<input type="text" name="mwb_m4wp_from_date" class="mwb-m4wp-datepicker" value="<?php echo esc_attr($date_range['date_from']); ?>" />
+					<label for="mwb_m4wp_from_date"><?php esc_html_e( 'From', 'makewebbetter-mautic-for-wordpress' ); ?></label>
+					<input type="text" name="mwb_m4wp_from_date" class="mwb-m4wp-datepicker" value="<?php echo esc_attr( $date_range['date_from'] ); ?>" />
 				</span>
 				<span>
-					<label for="mwb_m4wp_from_date"><?php esc_html_e('To', 'makewebbetter-mautic-for-wordpress'); ?></label>
-					<input type="text" name="mwb_m4wp_to_date" class="mwb-m4wp-datepicker" value="<?php echo esc_attr($date_range['date_to']); ?>" />
+					<label for="mwb_m4wp_from_date"><?php esc_html_e( 'To', 'makewebbetter-mautic-for-wordpress' ); ?></label>
+					<input type="text" name="mwb_m4wp_to_date" class="mwb-m4wp-datepicker" value="<?php echo esc_attr( $date_range['date_to'] ); ?>" />
 				</span>
 				<input type="hidden" name="action" value="mwb_m4wp_date_range" />
-				<button type="submit" class="mwb-btn mwb-btn-secondary mwb-save-btn"><?php esc_html_e('Apply', 'makewebbetter-mautic-for-wordpress'); ?></button>
-				<?php echo $helper->get_refresh_button_html('dashboard'); ?>
+				<button type="submit" class="mwb-btn mwb-btn-secondary mwb-save-btn"><?php esc_html_e( 'Apply', 'makewebbetter-mautic-for-wordpress' ); ?></button>
+				<?php echo $helper->get_refresh_button_html( 'dashboard' ); ?>
 			</form>
 		</div>
 	</div>
 </div>
 
-<?php if ($created_leads_in_time) : ?>
+<?php if ( $created_leads_in_time ) : ?>
 	<div class="mwb-col-wrap">
 		<div class="table-responsive">
 			<div class="mwb-m4wp-admin-widget-row">

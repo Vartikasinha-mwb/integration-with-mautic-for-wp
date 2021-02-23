@@ -1,5 +1,27 @@
 var ajaxUrl = ajax_data.ajax_url;
 jQuery(document).ready(function($) {
+    
+    $('.mwb-dashicons-visibility').on('click', function(e){
+        var icon = $(this) ; 
+        var input = icon.closest('td').find('input') ; 
+        if(input.attr('type') == 'password'){
+            input.attr('type' , 'text') ;
+        }else{
+            input.attr('type' , 'password') ;
+        }
+    })
+
+    $('.mwb-m4wp-form-refresh').on('click', function(e){
+        e.preventDefault();
+        var page = 'forms';
+        var action = 'mwb_m4wp_refresh';
+        $(this).html('<span class="dashicons dashicons-update-alt mwb-refresh-icon--rotation"></span>');
+        $('.mwb-refresh-icon').addClass('mwb-refresh-icon--rotation');
+        $.post(ajaxUrl, { page, action }).done(function(response) {
+            location.reload()
+        })        
+    })
+    
     //shivjs
     $('.mwb-switch-checkbox').on('click', function() {
         $(this).toggleClass('mwb-switch-checkbox--move');
@@ -88,6 +110,7 @@ jQuery(document).ready(function($) {
         var action = 'mwb_m4wp_refresh';
         var select = $('#mwb-m4wp-segment-select');
         var selected = select.val();
+        $('.mwb-refresh-icon').addClass('mwb-refresh-icon--rotation');
         $.post(ajaxUrl, { page, action }).done(function(response) {
             if (page != "segments") {
                 location.reload();
@@ -96,6 +119,7 @@ jQuery(document).ready(function($) {
             var segmentList = response_obj.segment_list;
             var options = getSegmentOptionHtml(segmentList, selected);
             select.html(options);
+            $('.mwb-refresh-icon').removeClass('mwb-refresh-icon--rotation');
         })
     })
 
@@ -180,7 +204,6 @@ jQuery(document).ready(function($) {
         });
     }
 });
-
 
 function copy_text(element) {
     element.select();

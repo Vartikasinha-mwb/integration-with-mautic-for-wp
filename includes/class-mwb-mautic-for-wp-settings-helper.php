@@ -66,13 +66,15 @@ class MWB_Mautic_For_WP_Settings_Helper {
 		return $created_leads_in_time;
 	}
 	
-	public static function get_instance(){
-		
+	/**
+	 * Get instance.
+	 *
+	 * @since 1.0.0
+	 */
+	public static function get_instance() {
 		if ( is_null( self::$_instance ) ) {
-
 			self::$_instance = new self();
 		}
-
 		return self::$_instance;
 	}
 
@@ -144,6 +146,11 @@ class MWB_Mautic_For_WP_Settings_Helper {
 		return $link ; 
 	}
 
+	/**
+	 * Get admin panel tabs.
+	 *
+	 * @since 1.0.0
+	 */
 	public function get_settings_tab() {
 		$tabs = array( 
 			array(
@@ -172,35 +179,51 @@ class MWB_Mautic_For_WP_Settings_Helper {
 				'dependency' => '',
 			),
 		);
-		return $tabs ;
+		return $tabs;
 	}
 
+	/**
+	 * Checks if mautic api is connected.
+	 *
+	 * @since 1.0.0
+	 */
 	public function is_connection_setup(){
 		return get_option( 'mwb_m4wp_connection_status', false );
 	}
 
+	/**
+	 * Get mautic link for widget item.
+	 *	
+	 * @since 1.0.0
+	 * @param string $selected selected tab.
+	 */
 	public function get_settings_tab_html( $selected = "connection" ){
 
 		$tabs = $this->get_settings_tab();
-		$tabs_html = '' ; 
+		$tabs_html = ''; 
 
 		foreach ($tabs as $key => $tab) {
-
 			$callback = $tab['dependency']; 
-
-			if( !empty( $callback ) && !$this->$callback() ){
-				continue ; 
+			if ( ! empty( $callback ) && ! $this->$callback() ) {
+				continue; 
 			}
 			$active = ( $tab['id'] === $selected ) ? 'active' : '' ; 
-		 	$tabs_html .= '<li><a href="?page=mwb-mautic-for-wp2&tab='. $tab['id'] .'" class="mwb-link '. $active .'">'. $tab['name'] .'</a></li>'; 
+		 	$tabs_html .= '<li><a href="?page=mwb-mautic-for-wp&tab='. $tab['id'] .'" class="mwb-link '. $active .'">'. $tab['name'] .'</a></li>'; 
 		} 
 
-		return $tabs_html ; 
+		return $tabs_html; 
 	}
 
-	public  function load_admin_template( $file_name, $params = array() ) {
+	/**
+	 * Load admin template.
+	 *
+	 * @since 1.0.0
+	 * @param string $file_name name of file.
+	 * @param array  $params    extra params.
+	 */
+	public function load_admin_template( $file_name, $params = array() ) {
 
-		$file  = MWB_MAUTIC_FOR_WP_PATH . 'admin/partials2/' .$file_name. '.php';
+		$file  = MWB_MAUTIC_FOR_WP_PATH . 'admin/partials/' . $file_name . '.php';
 		
 		if ( file_exists( $file ) ) {
 
@@ -214,6 +237,11 @@ class MWB_Mautic_For_WP_Settings_Helper {
 
 	}
 
+	/**
+	 * Get plugin version text.
+	 *
+	 * @since 1.0.0
+	 */
 	public function get_plugin_version_txt() {
 		$version = '';
 		if ( defined( 'MWB_MAUTIC_FOR_WP_VERSION' ) ) {

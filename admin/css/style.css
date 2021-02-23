@@ -650,6 +650,13 @@ input.mwb-switch-checkbox.mwb-switch-checkbox--move {
     color: #ffffff;
 }
 
+.mwb-m4wp-form-table-head {
+	float: right;
+}
+
+.mwb-btn-secondary:hover{
+    color: #fff;
+}
 
 /* integration settings page css end */
 

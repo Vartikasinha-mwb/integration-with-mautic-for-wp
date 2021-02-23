@@ -16,6 +16,9 @@ $helper   = MWB_Mautic_For_WP_Settings_Helper::get_instance();
 $location = get_option('mwb_m4wp_script_location', 'footer');
 $enable   = get_option('mwb_m4wp_tracking_enable', 'no');
 $base_url = get_option('mwb_m4wp_base_url', '');
+$checked  = ( $enable == 'yes' ); 
+$class_checked = $checked ? 'mwb-switch-checkbox--move' : ''; 
+
 ?>
 <div class="mwb-m4wp-admin-panel-main">
 	<div class="setting-table-wrap mwb-m4wp-admin-table">
@@ -25,7 +28,7 @@ $base_url = get_option('mwb_m4wp_base_url', '');
 					<th><?php esc_html_e('Enable Mautic Tracking', 'makewebbetter-mautic-for-wordpress'); ?></th>
 					<td class="tracking">
 						<label class="switch">
-							<input type="checkbox" class="mwb-switch-checkbox" name="mwb_m4wp_tracking_enable" value="yes" <?php echo checked('yes', $enable); ?>>
+							<input type="checkbox" class="mwb-switch-checkbox <?php echo $class_checked ?> " name="mwb_m4wp_tracking_enable" value="yes" <?php echo checked( $checked, true ); ?>>
 							<span class="slider round"></span>
 						</label>
 					</td>
