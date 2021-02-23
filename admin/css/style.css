@@ -658,6 +658,10 @@ input.mwb-switch-checkbox.mwb-switch-checkbox--move {
     color: #fff;
 }
 
+.mwb-section input[type="password"] {
+    padding-right: 50px;
+}
+
 /* integration settings page css end */
 
 @media only screen and (max-width:768px) {
