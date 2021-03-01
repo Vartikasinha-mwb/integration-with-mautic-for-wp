@@ -109,12 +109,19 @@ abstract class Mautic_For_Wordpress_Integration {
 	public function may_be_sync_data( $data ) {
 
 		$sync = false;
-		if ( isset( $_POST['mwb_m4wp_subscribe'] ) && $_POST['mwb_m4wp_subscribe'] == 'yes' ) {
+
+		if ( !$this->is_implicit() ) {
+			if ( isset( $_POST['mwb_m4wp_subscribe'] ) && $_POST['mwb_m4wp_subscribe'] == 'yes' ) {
+				$sync = true;
+			}
+		} else {
 			$sync = true;
 		}
+
 		if ( ! $sync ) {
 			return;
 		}
+
 		$tags_string = $this->get_option( 'add_tag' );
 		$segment_id  = $this->get_option( 'add_segment' );
 		$contact_id  = 0;

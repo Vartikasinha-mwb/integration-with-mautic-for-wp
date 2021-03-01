@@ -338,7 +338,10 @@ input.mwb-switch-checkbox.mwb-switch-checkbox--move {
 .mwb-m4wp-form-view:focus,
 .mwb-m4wp-form-edit:hover,
 .mwb-m4wp-form-edit:focus,
-.connection-detail-wrap a:hover {
+.mwb-auth-btn:hover,
+.mwb-auth-btn:focus,
+.connection-detail-wrap a:hover ,
+.connection-detail-wrap a:focus {
     color: #ffffff;
 }
 
@@ -386,7 +389,9 @@ input.mwb-switch-checkbox.mwb-switch-checkbox--move {
 .mwb-form-code {
     position: relative;
 }
-
+.mwb-save-btn-wrap{
+    display: flex;
+}
 
 /* common css end */
 
@@ -412,11 +417,15 @@ input.mwb-switch-checkbox.mwb-switch-checkbox--move {
     position: relative;
 }
 
-.mwb-save-btn {
+.mwb-save-btn,.mwb-auth-btn {
     max-width: 160px;
     padding: 16px;
     width: 100%;
 }
+.mwb-auth-btn{
+    margin-left: 10px;
+}
+
 
 .mwb-trailing-icon .dashicons {
     color: #9f9f9f;
@@ -660,6 +669,18 @@ input.mwb-switch-checkbox.mwb-switch-checkbox--move {
 
 .mwb-section input[type="password"] {
     padding-right: 50px;
+}
+
+.mwb-notification-bar {
+	padding: 10px 20px;
+	margin-bottom: 8px;
+	font-size: 14px;
+	border-left: 5px solid #1A3365;;
+}
+
+.dashicons.dashicons-no.mwb-notification-close {
+	float: right;
+    cursor: pointer;
 }
 
 /* integration settings page css end */

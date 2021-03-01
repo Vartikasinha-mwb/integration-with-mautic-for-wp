@@ -37,6 +37,7 @@ class Registration_Form_Integration extends Mautic_For_Wordpress_Integration {
 	public function sync_registered_user( $user_id ) {
 		// gather user data
 		$user = get_userdata( $user_id );
+		
 		// check if user exist
 		if ( ! $user instanceof WP_User ) {
 			return false;
@@ -44,6 +45,7 @@ class Registration_Form_Integration extends Mautic_For_Wordpress_Integration {
 		// get mapped user data
 		$data = $this->get_mapped_properties( $user );
 		// create contact in mautic
+		
 		$this->may_be_sync_data( $data );
 	}
 

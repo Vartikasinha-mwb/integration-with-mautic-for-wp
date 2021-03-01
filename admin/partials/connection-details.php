@@ -46,6 +46,9 @@ $auth_type = ('basic' === $auth_type) ? __('Basic', 'mautic-for-wordress') : __(
 				<a class="mwb-btn mwb-btn-primary mwb-save-btn" href="<?php echo esc_attr(wp_nonce_url(admin_url('/?m4wp_reset=1'), 'm4wp_auth_nonce', 'm4wp_auth_nonce')); ?>">
 					<?php esc_html_e('Reset Connection', 'makewebbetter-mautic-for-wordpress'); ?>
 				</a>
+				<a id="mwb-fwpro-test-connection" class="mwb-btn mwb-btn-primary" href="<?php echo esc_attr(wp_nonce_url(admin_url('/?m4wp_reset=1'), 'm4wp_auth_nonce', 'm4wp_auth_nonce')); ?>">
+					<?php esc_html_e('Test Connection', 'makewebbetter-mautic-for-wordpress'); ?>
+				</a>
 			</td>
 		</tr>
 	</table>

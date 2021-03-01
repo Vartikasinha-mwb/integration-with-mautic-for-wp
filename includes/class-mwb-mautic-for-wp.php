@@ -291,6 +291,11 @@ class MWB_Mautic_For_WP {
 		return $this->version;
 	}
 
+	/**
+	 * Initializes the integrations.
+	 *
+	 * @since     1.0.0
+	 */
 	public function load_integrations() {
 		MWB_Mautic_For_WP_Integration_Manager::initialize_active_integrations();
 	}

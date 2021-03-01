@@ -9,7 +9,7 @@
  * @wordpress-plugin
  * Plugin Name:       Integration with Mautic for WordPress
  * Plugin URI:        https://makewebbetter.com/
- * Description:       Simple plugin to integrate your WordPress site with mautic marketing automation. Add tracking script, mautic forms to your site. Integrate your worpdress regirstration and comment form with mautic.
+ * Description:       Simple plugin to integrate your WordPress site with mautic marketing automation. Add tracking script, mautic forms to your site. Integrate your worpdress registration and comment form with mautic.
  * Version:           1.0.0
  * Author:            MakeWebBetter
  * Author URI:        https://makewebbetter.com/

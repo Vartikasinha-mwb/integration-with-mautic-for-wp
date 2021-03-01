@@ -131,8 +131,8 @@ class MWB_Mautic_For_WP_Admin {
 	 */
 	public function add_admin_menu_page() {
 		add_menu_page(
-			__( 'MWB Mautic Settings', 'mwb-mautic-for-wp' ),
-			__( 'Mautic Integration', 'mwb-mautic-for-wp' ),
+			__( 'MWB Mautic Settings', 'makewebbetter-mautic-for-wordpress' ),
+			__( 'Mautic Integration', 'makewebbetter-mautic-for-wordpress' ),
 			'manage_options',
 			'mwb-mautic-for-wp',
 			array( $this, 'include_admin_menu_display' ),
@@ -159,7 +159,7 @@ class MWB_Mautic_For_WP_Admin {
 		if ( file_exists( $file ) ) {
 			include $file;
 		} else {
-			esc_attr_e( 'Something went wrong', 'mwb-mautic-for-wp' );
+			esc_attr_e( 'Something went wrong', 'makewebbetter-mautic-for-wordpress' );
 		}
 	}
 
@@ -210,6 +210,8 @@ class MWB_Mautic_For_WP_Admin {
 	 */
 	public function save_admin_settings() {
 
+		$settings_notice = __( 'Settings Saved', 'makewebbetter-mautic-for-wordpress' );
+
 		if ( isset( $_POST['action'] ) && 'mwb_m4wp_save' === $_POST['action'] ) { // phpcs:ignore WordPress.Security.NonceVerification
 
 			if ( wp_verify_nonce( isset( $_POST['_nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['_nonce'] ) ) : '', '_nonce' ) ) {
@@ -229,10 +231,11 @@ class MWB_Mautic_For_WP_Admin {
 				if ( 'basic' === $auth_type ) {
 					$user = MWB_Mautic_For_WP_Api::get_self_user();
 					wp_cache_set( 'mwb_m4wp_user_data', $user );
+					wp_cache_set( 'mwb_m4wp_notice', $user['msg'] );
 				}
 			}
 		}
-		
+
 		if ( 'mwb_m4wp_setting_save' === ( isset( $_POST['action'] ) ? sanitize_text_field( wp_unslash( $_POST['action'] ) ) : '' ) && isset( $_POST['action'] ) && sanitize_text_field( wp_unslash( $_POST['action'] ) ) ) {
 
 			if ( wp_verify_nonce( isset( $_POST['_nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['_nonce'] ) ) : '', '_nonce' ) ) {
@@ -243,7 +246,7 @@ class MWB_Mautic_For_WP_Admin {
 				update_option( 'mwb_m4wp_script_location', $location );
 				update_option( 'mwb_m4wp_tracking_enable', $enable );
 				update_option( 'mwb_m4wp_base_url', $base_url );
-			
+				wp_cache_set( 'mwb_m4wp_notice', $settings_notice );
 			}
 		}
 
@@ -253,6 +256,7 @@ class MWB_Mautic_For_WP_Admin {
 				'date_to'   => sanitize_text_field( wp_unslash( isset( $_POST['mwb_m4wp_to_date'] ) ) ) ? sanitize_text_field( wp_unslash( $_POST['mwb_m4wp_to_date'] ) ) : '',
 			);
 			update_option( 'mwb_m4wp_date_range', $date_range );
+			wp_cache_set( 'mwb_m4wp_notice', $settings_notice );
 		}
 
 		if ( 'mwb_m4wp_integration_save' === ( isset( $_POST['action'] ) ? sanitize_text_field( wp_unslash( $_POST['action'] ) ) : '' ) && sanitize_text_field( wp_unslash( $_POST['action'] ) ) ) {
@@ -268,6 +272,7 @@ class MWB_Mautic_For_WP_Admin {
 					$settings                 = get_option( 'mwb_m4wp_integration_settings', array() );
 					$settings[ $integration ] = compact( 'enable', 'implicit', 'checkbox_txt', 'precheck', 'add_segment', 'add_tag' );
 					update_option( 'mwb_m4wp_integration_settings', $settings );
+					wp_cache_set( 'mwb_m4wp_notice', $settings_notice );
 				}
 			}
 		}

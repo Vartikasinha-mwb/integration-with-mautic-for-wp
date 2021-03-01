@@ -58,9 +58,13 @@ jQuery(document).ready(function($) {
 
     $('#mwb-fwpro-test-connection').on('click', function(e) {
         e.preventDefault();
+        var btn = $(this) ; 
+        var txt = btn.html();
+        btn.html('<span class="dashicons dashicons-update-alt mwb-refresh-icon--rotation"></span>');
         var requestData = { 'action': 'mwb_m4wp_test_api_connection' }
         $.post(ajaxUrl, requestData).done(function(response) {
             alert(response.msg)
+            btn.html(txt);
         });
     })
 
@@ -103,6 +107,11 @@ jQuery(document).ready(function($) {
             copy_text(ele);
         }
     });
+
+    $('.mwb-notification-close').on('click', function(e){
+        e.preventDefault();
+        $('.mwb-notification-bar').slideUp();
+    })
 
     $('.mwb-m4wp-refresh-btn').on('click', function(e) {
         e.preventDefault();

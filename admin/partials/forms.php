@@ -35,7 +35,7 @@ $base_url = MWB_Mautic_For_WP_Admin::get_mautic_base_url();
 			<tbody>
 				<?php
 				foreach ($forms['forms'] as $key => $form) :
-					$form_link = $base_url . '/s/forms/view/' . $form['id'];
+					$form_link = $base_url . 's/forms/view/' . $form['id'];
 				?>
 					<tr class="<?php echo ($form['isPublished']) ? 'row-active' : 'row-inactive'; ?>">
 						<td><?php echo esc_attr($form['id']); ?></td>
