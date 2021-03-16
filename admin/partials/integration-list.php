@@ -32,14 +32,14 @@ $integrations = MWB_Mautic_For_WP_Integration_Manager::get_integrations();
 					continue;
 				}
 				$checked = $integration->is_enabled();
-				$class_checked = $checked ? 'mwb-switch-checkbox--move' : ''; 
+				$class_checked = $checked ? 'mwb-switch-checkbox--move' : '';
 				?>
 				<tr integration="<?php echo esc_attr( $key ); ?>">
 					<td class="name"><?php echo esc_attr( $integration->get_name() ); ?></td>
 					<td class="des"><?php echo esc_attr( $integration->get_description() ); ?></td>
 					<td class="status">
 						<label class="switch">
-							<input type="checkbox" class="mwb-switch-checkbox mwb-m4wp-enable-cb <?php echo $class_checked ?>" <?php checked( $checked, true ); ?> >
+							<input type="checkbox" class="mwb-switch-checkbox mwb-m4wp-enable-cb <?php echo $class_checked; ?>" <?php checked( $checked, true ); ?> >
 							<span class="slider round"></span>
 						</label>
 					</td>

@@ -1,6 +1,17 @@
 var ajaxUrl = ajax_data.ajax_url;
+function showAuthRows($){
+    var type = $('#mwb-m4wp-auth-type').val();
+    if(type == 'basic'){
+        $('.mwb-m4wp-oauth-row').addClass('row-hide');
+        $('.mwb-m4wp-basic-row').removeClass('row-hide');
+    }else{
+        $('.mwb-m4wp-oauth-row').removeClass('row-hide');
+        $('.mwb-m4wp-basic-row').addClass('row-hide');
+    }
+}
 jQuery(document).ready(function($) {
     
+    showAuthRows($);
     $('.mwb-dashicons-visibility').on('click', function(e){
         var icon = $(this) ; 
         var input = icon.closest('td').find('input') ; 

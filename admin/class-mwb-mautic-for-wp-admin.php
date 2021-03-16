@@ -216,7 +216,7 @@ class MWB_Mautic_For_WP_Admin {
 
 			if ( wp_verify_nonce( isset( $_POST['_nonce'] ) ? sanitize_text_field( wp_unslash( $_POST['_nonce'] ) ) : '', '_nonce' ) ) {
 
-				$auth_type                	  = sanitize_text_field( wp_unslash( isset( $_POST['authentication_type'] ) ) ) ? sanitize_text_field( wp_unslash( $_POST['authentication_type'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification
+				$auth_type                    = sanitize_text_field( wp_unslash( isset( $_POST['authentication_type'] ) ) ) ? sanitize_text_field( wp_unslash( $_POST['authentication_type'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification
 				$baseurl                      = sanitize_text_field( wp_unslash( isset( $_POST['baseurl'] ) ) ) ? sanitize_text_field( wp_unslash( $_POST['baseurl'] ) ) : ''; // phpcs:ignore WordPress.Security.NonceVerification
 				$baseurl                      = rtrim( $baseurl, '/' );
 				$credentials                  = array();
@@ -339,6 +339,7 @@ class MWB_Mautic_For_WP_Admin {
 					update_option( 'mwb_m4wp_connection_status', false );
 				}
 				wp_safe_redirect( admin_url( 'admin.php?page=mwb-mautic-for-wp' ) );
+				exit();
 			}
 		}
 	}

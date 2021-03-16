@@ -26,38 +26,38 @@ $base_url = MWB_Mautic_For_WP_Admin::get_mautic_base_url();
 		</div>
 		<table class="form-table mwb-form-stripped-table mwb-table">
 			<thead>
-				<th><?php esc_html_e('Form id', 'makewebbetter-mautic-for-wordpress'); ?></th>
-				<th><?php esc_html_e('Form Name', 'makewebbetter-mautic-for-wordpress'); ?></th>
-				<th><?php esc_html_e('Status', 'makewebbetter-mautic-for-wordpress'); ?></th>
-				<th><?php esc_html_e('ShortCode', 'makewebbetter-mautic-for-wordpress'); ?></th>
-				<th class="mwb-heading-center"><?php esc_html_e('View', 'makewebbetter-mautic-for-wordpress'); ?></th>
+				<th><?php esc_html_e( 'Form id', 'makewebbetter-mautic-for-wordpress' ); ?></th>
+				<th><?php esc_html_e( 'Form Name', 'makewebbetter-mautic-for-wordpress' ); ?></th>
+				<th><?php esc_html_e( 'Status', 'makewebbetter-mautic-for-wordpress' ); ?></th>
+				<th><?php esc_html_e( 'ShortCode', 'makewebbetter-mautic-for-wordpress' ); ?></th>
+				<th class="mwb-heading-center"><?php esc_html_e( 'View', 'makewebbetter-mautic-for-wordpress' ); ?></th>
 			</thead>
 			<tbody>
 				<?php
-				foreach ($forms['forms'] as $key => $form) :
+				foreach ( $forms['forms'] as $key => $form ) :
 					$form_link = $base_url . 's/forms/view/' . $form['id'];
-				?>
-					<tr class="<?php echo ($form['isPublished']) ? 'row-active' : 'row-inactive'; ?>">
-						<td><?php echo esc_attr($form['id']); ?></td>
-						<td><?php echo esc_attr($form['name']); ?></td>
+					?>
+					<tr class="<?php echo ( $form['isPublished'] ) ? 'row-active' : 'row-inactive'; ?>">
+						<td><?php echo esc_attr( $form['id'] ); ?></td>
+						<td><?php echo esc_attr( $form['name'] ); ?></td>
 						<td>
 							<?php
-							echo ($form['isPublished']) ? 'Published' : 'Not Published';
+							echo ( $form['isPublished'] ) ? 'Published' : 'Not Published';
 							?>
 						</td>
 						<td class=" mwb-form-code">
-							<input readonly type="text" id="form-input-<?php echo esc_attr($form['id']); ?>" value="<?php echo esc_attr('[mwb_m4wp_form id=' . $form['id'] . ']'); ?>">
-							<a href="#" class="mwb-m4wp-form-code" form_id="<?php echo esc_attr($form['id']); ?>">
+							<input readonly type="text" id="form-input-<?php echo esc_attr( $form['id'] ); ?>" value="<?php echo esc_attr( '[mwb_m4wp_form id=' . $form['id'] . ']' ); ?>">
+							<a href="#" class="mwb-m4wp-form-code" form_id="<?php echo esc_attr( $form['id'] ); ?>">
 								<span class="dashicons dashicons-editor-paste-text mwb-paste-text-icon"></span>
 							</a>
 						</td>
 						<td>
-							<a class="mwb-m4wp-form-view mwb-btn mwb-btn-secondary" form-id="<?php echo esc_attr($form['id']); ?>" form-html="<?php echo esc_attr(htmlspecialchars($form['cachedHtml'])); ?>">
-								<?php esc_html_e('View', 'makewebbetter-mautic-for-wordpress'); ?>
+							<a class="mwb-m4wp-form-view mwb-btn mwb-btn-secondary" form-id="<?php echo esc_attr( $form['id'] ); ?>" form-html="<?php echo esc_attr( htmlspecialchars( $form['cachedHtml'] ) ); ?>">
+								<?php esc_html_e( 'View', 'makewebbetter-mautic-for-wordpress' ); ?>
 								<!-- <span class="dashicons dashicons-edit"></span> -->
 							</a>
-							<a class="mwb-m4wp-form-edit mwb-btn mwb-btn-secondary" href="<?php echo esc_attr($form_link); ?>" target="_blank">
-								<?php esc_html_e('Edit', 'makewebbetter-mautic-for-wordpress'); ?>
+							<a class="mwb-m4wp-form-edit mwb-btn mwb-btn-secondary" href="<?php echo esc_attr( $form_link ); ?>" target="_blank">
+								<?php esc_html_e( 'Edit', 'makewebbetter-mautic-for-wordpress' ); ?>
 							</a>
 						</td>
 					</tr>

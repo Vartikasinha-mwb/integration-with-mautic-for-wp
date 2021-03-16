@@ -33,10 +33,9 @@ class MWB_Mautic_For_WP_Settings_Helper {
 	 *
 	 * @since       3.0.0
 	 * @param bool $refresh              The attributes of this field.
-	 *
 	 */
-	
-	private static $_instance ; 
+
+	private static $_instance;
 
 	public function get_forms( $refresh = false ) {
 		if ( ! $refresh && get_transient( 'mwb_m4wp_forms' ) ) {
@@ -65,7 +64,7 @@ class MWB_Mautic_For_WP_Settings_Helper {
 		set_transient( $key, $created_leads_in_time, DAY_IN_SECONDS );
 		return $created_leads_in_time;
 	}
-	
+
 	/**
 	 * Get instance.
 	 *
@@ -135,15 +134,15 @@ class MWB_Mautic_For_WP_Settings_Helper {
 	 */
 	public function get_item_link( $temp_link, $base_url ) {
 
-		$link = $temp_link ; 
-		if( strpos( $temp_link , 's' ) !== false ){
-			$link_arr = explode( '/s/' , $temp_link) ; 
-			if( isset( $link_arr[1] ) ){
-				$link = $base_url. 's/' .$link_arr[1] ; 
+		$link = $temp_link;
+		if ( strpos( $temp_link, 's' ) !== false ) {
+			$link_arr = explode( '/s/', $temp_link );
+			if ( isset( $link_arr[1] ) ) {
+				$link = $base_url . 's/' . $link_arr[1];
 			}
 		}
 
-		return $link ; 
+		return $link;
 	}
 
 	/**
@@ -152,30 +151,30 @@ class MWB_Mautic_For_WP_Settings_Helper {
 	 * @since 1.0.0
 	 */
 	public function get_settings_tab() {
-		$tabs = array( 
+		$tabs = array(
 			array(
 				'id' => 'connection',
-				'name' => __("Connection" , "makewebbetter-mautic-for-wp"),
+				'name' => __( 'Connection', 'makewebbetter-mautic-for-wp' ),
 				'dependency' => '',
 			),
 			array(
 				'id' => 'dashboard',
-				'name' => __("Dashboard" , "makewebbetter-mautic-for-wp"),
+				'name' => __( 'Dashboard', 'makewebbetter-mautic-for-wp' ),
 				'dependency' => 'is_connection_setup',
 			),
 			array(
 				'id' => 'forms',
-				'name' => __("Mautic Forms" , "makewebbetter-mautic-for-wp"),
+				'name' => __( 'Mautic Forms', 'makewebbetter-mautic-for-wp' ),
 				'dependency' => 'is_connection_setup',
 			),
 			array(
 				'id' => 'integration',
-				'name' => __("Integrations" , "makewebbetter-mautic-for-wp"),
+				'name' => __( 'Integrations', 'makewebbetter-mautic-for-wp' ),
 				'dependency' => 'is_connection_setup',
 			),
 			array(
 				'id' => 'settings',
-				'name' => __("Settings" , "makewebbetter-mautic-for-wp"),
+				'name' => __( 'Settings', 'makewebbetter-mautic-for-wp' ),
 				'dependency' => '',
 			),
 		);
@@ -187,31 +186,31 @@ class MWB_Mautic_For_WP_Settings_Helper {
 	 *
 	 * @since 1.0.0
 	 */
-	public function is_connection_setup(){
+	public function is_connection_setup() {
 		return get_option( 'mwb_m4wp_connection_status', false );
 	}
 
 	/**
 	 * Get mautic link for widget item.
-	 *	
+	 *
 	 * @since 1.0.0
 	 * @param string $selected selected tab.
 	 */
-	public function get_settings_tab_html( $selected = "connection" ){
+	public function get_settings_tab_html( $selected = 'connection' ) {
 
 		$tabs = $this->get_settings_tab();
-		$tabs_html = ''; 
+		$tabs_html = '';
 
-		foreach ($tabs as $key => $tab) {
-			$callback = $tab['dependency']; 
+		foreach ( $tabs as $key => $tab ) {
+			$callback = $tab['dependency'];
 			if ( ! empty( $callback ) && ! $this->$callback() ) {
-				continue; 
+				continue;
 			}
-			$active = ( $tab['id'] === $selected ) ? 'active' : '' ; 
-		 	$tabs_html .= '<li><a href="?page=mwb-mautic-for-wp&tab='. $tab['id'] .'" class="mwb-link '. $active .'">'. $tab['name'] .'</a></li>'; 
-		} 
+			$active = ( $tab['id'] === $selected ) ? 'active' : '';
+			$tabs_html .= '<li><a href="?page=mwb-mautic-for-wp&tab=' . $tab['id'] . '" class="mwb-link ' . $active . '">' . $tab['name'] . '</a></li>';
+		}
 
-		return $tabs_html; 
+		return $tabs_html;
 	}
 
 	/**
@@ -224,7 +223,7 @@ class MWB_Mautic_For_WP_Settings_Helper {
 	public function load_admin_template( $file_name, $params = array() ) {
 
 		$file  = MWB_MAUTIC_FOR_WP_PATH . 'admin/partials/' . $file_name . '.php';
-		
+
 		if ( file_exists( $file ) ) {
 
 			include $file;

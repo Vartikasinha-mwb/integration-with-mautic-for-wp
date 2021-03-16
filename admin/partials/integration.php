@@ -11,12 +11,12 @@
  * @subpackage Makewebbetter_Mautic_For_Wordpress/admin/partials
  */
 
-$helper   = MWB_Mautic_For_WP_Settings_Helper::get_instance(); 
+$helper   = MWB_Mautic_For_WP_Settings_Helper::get_instance();
 
 if ( isset( $_GET['id'] ) && '' !== $_GET['id'] ) { // phpcs:ignore WordPress.Security.NonceVerification
-	$helper->load_admin_template('integration-settings') ;
+	$helper->load_admin_template( 'integration-settings' );
 
 } else {
-	
-	$helper->load_admin_template('integration-list') ;
+
+	$helper->load_admin_template( 'integration-list' );
 }

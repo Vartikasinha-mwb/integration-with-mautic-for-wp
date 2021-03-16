@@ -206,14 +206,14 @@ class MWB_Mautic_For_WP {
 		// add plugins menu page.
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_admin_menu_page' );
 
-		$this->loader->add_action( 'admin_init', $plugin_admin, 'get_oauth_code' );
+		$this->loader->add_action( 'admin_init', $plugin_admin, 'get_oauth_code', 8 );
 
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'save_admin_settings' );
 
-		// Include Upsell screen for Onboarding pop-up.
+		// Include screen for Onboarding pop-up.
 		$this->loader->add_filter( 'mwb_helper_valid_frontend_screens', $plugin_admin, 'add_mwb_frontend_screens' );
 
-		// Include Upsell plugin for Deactivation pop-up.
+		// Include plugin for Deactivation pop-up.
 		$this->loader->add_filter( 'mwb_deactivation_supported_slug', $plugin_admin, 'add_mwb_deactivation_screens' );
 
 	}

@@ -110,7 +110,7 @@ abstract class Mautic_For_Wordpress_Integration {
 
 		$sync = false;
 
-		if ( !$this->is_implicit() ) {
+		if ( ! $this->is_implicit() ) {
 			if ( isset( $_POST['mwb_m4wp_subscribe'] ) && $_POST['mwb_m4wp_subscribe'] == 'yes' ) {
 				$sync = true;
 			}

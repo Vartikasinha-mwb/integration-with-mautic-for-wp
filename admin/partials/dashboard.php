@@ -56,15 +56,15 @@ $base_url              = MWB_Mautic_For_WP_Admin::get_mautic_base_url();
 		<div class="table-responsive">
 			<div class="mwb-m4wp-admin-widget-row">
 				<div class="mwb-m4wp-admin-widget-head">
-					<h2><?php esc_html_e('Created Leads In Time', 'makewebbetter-mautic-for-wordpress'); ?></h2>
+					<h2><?php esc_html_e( 'Created Leads In Time', 'makewebbetter-mautic-for-wordpress' ); ?></h2>
 				</div>
-				<?php if (isset($created_leads_in_time['data']) && !empty($created_leads_in_time['data'])) : ?>
-					<div id="created-leads-in-time" class="mwb-m4wp-admin-widget-wrap" data="<?php echo esc_attr(htmlspecialchars(json_encode($created_leads_in_time['data']))); ?>">
+				<?php if ( isset( $created_leads_in_time['data'] ) && ! empty( $created_leads_in_time['data'] ) ) : ?>
+					<div id="created-leads-in-time" class="mwb-m4wp-admin-widget-wrap" data="<?php echo esc_attr( htmlspecialchars( json_encode( $created_leads_in_time['data'] ) ) ); ?>">
 						<canvas id="created-leads-in-time-chart" style="width: 100%; height: 300px;"></canvas>
 					</div>
 				<?php else : ?>
 					<div class="widget-now-data-wrap">
-						<p><?php esc_html_e('No data available', 'makewebbetter-mautic-for-wordpress'); ?></p>
+						<p><?php esc_html_e( 'No data available', 'makewebbetter-mautic-for-wordpress' ); ?></p>
 					</div>
 				<?php endif; ?>
 			</div>
@@ -72,20 +72,20 @@ $base_url              = MWB_Mautic_For_WP_Admin::get_mautic_base_url();
 		</div>
 	</div>
 <?php endif; ?>
-<?php if ($page_hits_in_time) : ?>
+<?php if ( $page_hits_in_time ) : ?>
 	<div class="mwb-col-wrap">
 		<div class="table-responsive">
 			<div class="mwb-m4wp-admin-widget-row">
 				<div class="mwb-m4wp-admin-widget-head">
-					<h2><?php esc_html_e('Page Hits In Time', 'makewebbetter-mautic-for-wordpress'); ?></h2>
+					<h2><?php esc_html_e( 'Page Hits In Time', 'makewebbetter-mautic-for-wordpress' ); ?></h2>
 				</div>
-				<?php if (isset($page_hits_in_time['data']) && !empty($page_hits_in_time['data'])) : ?>
-					<div id="page-hits-in-time" class="mwb-m4wp-admin-widget-wrap" data="<?php echo esc_attr(htmlspecialchars(json_encode($page_hits_in_time['data']))); ?>">
+				<?php if ( isset( $page_hits_in_time['data'] ) && ! empty( $page_hits_in_time['data'] ) ) : ?>
+					<div id="page-hits-in-time" class="mwb-m4wp-admin-widget-wrap" data="<?php echo esc_attr( htmlspecialchars( json_encode( $page_hits_in_time['data'] ) ) ); ?>">
 						<canvas id="page-hits-in-time-chart" style="width: 100%; height: 300px;"></canvas>
 					</div>
 				<?php else : ?>
 					<div class="widget-now-data-wrap">
-						<p><?php esc_html_e('No data available', 'makewebbetter-mautic-for-wordpress'); ?></p>
+						<p><?php esc_html_e( 'No data available', 'makewebbetter-mautic-for-wordpress' ); ?></p>
 					</div>
 				<?php endif; ?>
 			</div>
@@ -94,20 +94,20 @@ $base_url              = MWB_Mautic_For_WP_Admin::get_mautic_base_url();
 
 <?php endif; ?>
 
-<?php if ($submissions_in_time) : ?>
+<?php if ( $submissions_in_time ) : ?>
 	<div class="mwb-col-wrap">
 		<div class="table-responsive">
 			<div class="mwb-m4wp-admin-widget-row">
 				<div class="mwb-m4wp-admin-widget-head">
-					<h2><?php esc_html_e('Form Submissions In Time', 'makewebbetter-mautic-for-wordpress'); ?></h2>
+					<h2><?php esc_html_e( 'Form Submissions In Time', 'makewebbetter-mautic-for-wordpress' ); ?></h2>
 				</div>
-				<?php if (isset($submissions_in_time['data']) && !empty($submissions_in_time['data'])) : ?>
-					<div id="submissions-in-time" class="mwb-m4wp-admin-widget-wrap" data="<?php echo esc_attr(htmlspecialchars(json_encode($submissions_in_time['data']))); ?>">
+				<?php if ( isset( $submissions_in_time['data'] ) && ! empty( $submissions_in_time['data'] ) ) : ?>
+					<div id="submissions-in-time" class="mwb-m4wp-admin-widget-wrap" data="<?php echo esc_attr( htmlspecialchars( json_encode( $submissions_in_time['data'] ) ) ); ?>">
 						<canvas id="submissions-in-time-chart" style="width: 100%; height: 300px;"></canvas>
 					</div>
 				<?php else : ?>
 					<div class="widget-now-data-wrap">
-						<p><?php esc_html_e('No data available', 'makewebbetter-mautic-for-wordpress'); ?></p>
+						<p><?php esc_html_e( 'No data available', 'makewebbetter-mautic-for-wordpress' ); ?></p>
 					</div>
 				<?php endif; ?>
 			</div>
@@ -115,31 +115,31 @@ $base_url              = MWB_Mautic_For_WP_Admin::get_mautic_base_url();
 	</div>
 <?php endif; ?>
 <div class="mwb-dashboard-table-wrap">
-	<?php if (esc_attr($top_lists)) : ?>
+	<?php if ( esc_attr( $top_lists ) ) : ?>
 		<div class="mwb-col-wrap">
 			<div class="table-responsive">
 				<div class="mwb-m4wp-admin-widget-column">
 					<div class="mwb-m4wp-admin-widget-head">
-						<h2><?php esc_html_e('Top Segments', 'makewebbetter-mautic-for-wordpress'); ?></h2>
+						<h2><?php esc_html_e( 'Top Segments', 'makewebbetter-mautic-for-wordpress' ); ?></h2>
 					</div>
-					<div id="top-lists" class="mwb-m4wp-admin-widget-wrap" data="<?php echo esc_attr(htmlspecialchars(json_encode($top_lists['data']))); ?>">
-						<?php if (count($top_lists['data']['bodyItems']) > 0) : ?>
+					<div id="top-lists" class="mwb-m4wp-admin-widget-wrap" data="<?php echo esc_attr( htmlspecialchars( json_encode( $top_lists['data'] ) ) ); ?>">
+						<?php if ( count( $top_lists['data']['bodyItems'] ) > 0 ) : ?>
 							<table id="top-lists-table" class="widget-table mwb-table"  cellspacing=0>
 								<tr>
-									<th><?php esc_html_e('Segments'); ?></th>
-									<th><?php esc_html_e('Contacts'); ?></th>
+									<th><?php esc_html_e( 'Segments' ); ?></th>
+									<th><?php esc_html_e( 'Contacts' ); ?></th>
 								</tr>
-								<?php foreach ($top_lists['data']['bodyItems'] as $key => $list) : ?>
+								<?php foreach ( $top_lists['data']['bodyItems'] as $key => $list ) : ?>
 									<tr>
-										<td><a target="_blank" href="<?php echo esc_attr($base_url . $list[0]['link']); ?>"><?php echo esc_attr($list[0]['value']); ?></a></td>
-										<td><a target="_blank" href="<?php echo esc_attr($base_url . $list[1]['link']); ?>"><?php echo esc_attr($list[1]['value']); ?></a></td>
+										<td><a target="_blank" href="<?php echo esc_attr( $base_url . $list[0]['link'] ); ?>"><?php echo esc_attr( $list[0]['value'] ); ?></a></td>
+										<td><a target="_blank" href="<?php echo esc_attr( $base_url . $list[1]['link'] ); ?>"><?php echo esc_attr( $list[1]['value'] ); ?></a></td>
 									</tr>
 								<?php endforeach; ?>
 							</table>
 						<?php else : ?>
 							<div class="widget-now-data-wrap">
 								<p>
-									<?php esc_html_e('No data available', 'makewebbetter-mautic-for-wordpress'); ?>
+									<?php esc_html_e( 'No data available', 'makewebbetter-mautic-for-wordpress' ); ?>
 
 								</p>
 							</div>
@@ -149,31 +149,31 @@ $base_url              = MWB_Mautic_For_WP_Admin::get_mautic_base_url();
 			</div>
 		</div>
 	<?php endif; ?>
-	<?php if ($top_creators) : ?>
+	<?php if ( $top_creators ) : ?>
 		<div class="mwb-col-wrap">
 			<div class="table-responsive">
 				<div class="mwb-m4wp-admin-widget-column">
 					<div class="mwb-m4wp-admin-widget-head">
-						<h2><?php esc_html_e('Top Creators', 'makewebbetter-mautic-for-wordpress'); ?>
+						<h2><?php esc_html_e( 'Top Creators', 'makewebbetter-mautic-for-wordpress' ); ?>
 						</h2>
 					</div>
-					<div id="top-lists" class="mwb-m4wp-admin-widget-wrap" data="<?php echo esc_attr(htmlspecialchars(json_encode($top_lists['data']))); ?>">
-						<?php if (count($top_creators['data']['bodyItems']) > 0) : ?>
+					<div id="top-lists" class="mwb-m4wp-admin-widget-wrap" data="<?php echo esc_attr( htmlspecialchars( json_encode( $top_lists['data'] ) ) ); ?>">
+						<?php if ( count( $top_creators['data']['bodyItems'] ) > 0 ) : ?>
 							<table id="top-lists-table" class="widget-table" cellspacing=0>
 								<tr>
-									<th><?php esc_html_e('Creator', 'mautic-for-wordpress') ?></th>
-									<th><?php esc_html_e('Contacts', 'mautic-for-wordpress') ?></th>
+									<th><?php esc_html_e( 'Creator', 'mautic-for-wordpress' ); ?></th>
+									<th><?php esc_html_e( 'Contacts', 'mautic-for-wordpress' ); ?></th>
 								</tr>
-								<?php foreach ($top_creators['data']['bodyItems'] as $key => $list) : ?>
+								<?php foreach ( $top_creators['data']['bodyItems'] as $key => $list ) : ?>
 									<tr>
-										<td><a target="_blank" href="<?php echo $helper->get_item_link($list[0]['link'], $base_url) ?>"><?php echo $list[0]['value'] ?></a></td>
-										<td><?php echo $list[1]['value'] ?></td>
+										<td><a target="_blank" href="<?php echo $helper->get_item_link( $list[0]['link'], $base_url ); ?>"><?php echo $list[0]['value']; ?></a></td>
+										<td><?php echo $list[1]['value']; ?></td>
 									</tr>
 								<?php endforeach; ?>
 							</table>
 						<?php else : ?>
 							<div class="widget-now-data-wrap">
-								<p><?php esc_html_e('No data available', 'makewebbetter-mautic-for-wordpress'); ?></p>
+								<p><?php esc_html_e( 'No data available', 'makewebbetter-mautic-for-wordpress' ); ?></p>
 							</div>
 						<?php endif; ?>
 					</div>

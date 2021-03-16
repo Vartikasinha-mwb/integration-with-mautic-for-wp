@@ -1,0 +1,329 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Integration with Mautic for WordPress 1.0.0\n"
+"POT-Creation-Date: 2021-03-16 11:38+0530\n"
+"PO-Revision-Date: 2021-03-16 11:38+0530\n"
+"Last-Translator: \n"
+"Language-Team: MakeWebBetter\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;esc_html__;esc_html_e;esc_attr__;esc_attr_e;"
+"esc_url_raw;esc_url;esc_attr;esc_attr__\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: admin/class-mwb-mautic-for-wp-admin.php:134
+msgid "MWB Mautic Settings"
+msgstr ""
+
+#: admin/class-mwb-mautic-for-wp-admin.php:135
+msgid "Mautic Integration"
+msgstr ""
+
+#: admin/class-mwb-mautic-for-wp-admin.php:162
+msgid "Something went wrong"
+msgstr ""
+
+#: admin/class-mwb-mautic-for-wp-admin.php:213
+msgid "Settings Saved"
+msgstr ""
+
+#: admin/partials/connection-details.php:23
+#: admin/partials/connection-setup.php:52
+msgid "Basic"
+msgstr ""
+
+#: admin/partials/connection-details.php:23
+#: admin/partials/connection-setup.php:55
+msgid "OAuth2"
+msgstr ""
+
+#: admin/partials/connection-details.php:31
+#: admin/partials/connection-setup.php:34 admin/partials/forms.php:31
+#: admin/partials/integration-list.php:23
+msgid "Status"
+msgstr ""
+
+#: admin/partials/connection-details.php:37
+msgid "Authentication Type"
+msgstr ""
+
+#: admin/partials/connection-details.php:41
+msgid "Admin Email"
+msgstr ""
+
+#: admin/partials/connection-details.php:50
+msgid "Reset Connection"
+msgstr ""
+
+#: admin/partials/connection-details.php:53
+msgid "Test Connection"
+msgstr ""
+
+#: admin/partials/connection-setup.php:48
+msgid "Type"
+msgstr ""
+
+#: admin/partials/connection-setup.php:61 admin/partials/settings.php:37
+msgid "Mautic Url"
+msgstr ""
+
+#: admin/partials/connection-setup.php:67
+msgid "Client id"
+msgstr ""
+
+#: admin/partials/connection-setup.php:76
+msgid "Client Secret"
+msgstr ""
+
+#: admin/partials/connection-setup.php:86
+msgid "Username"
+msgstr ""
+
+#: admin/partials/connection-setup.php:92
+msgid "Password"
+msgstr ""
+
+#: admin/partials/connection-setup.php:108
+#: admin/partials/integration-settings.php:110 admin/partials/settings.php:56
+msgid "Save"
+msgstr ""
+
+#: admin/partials/connection-setup.php:112
+msgid "Authorize App"
+msgstr ""
+
+#: admin/partials/dashboard.php:39
+msgid "From"
+msgstr ""
+
+#: admin/partials/dashboard.php:43
+msgid "To"
+msgstr ""
+
+#: admin/partials/dashboard.php:47
+msgid "Apply"
+msgstr ""
+
+#: admin/partials/dashboard.php:59
+msgid "Created Leads In Time"
+msgstr ""
+
+#: admin/partials/dashboard.php:67 admin/partials/dashboard.php:88
+#: admin/partials/dashboard.php:110 admin/partials/dashboard.php:142
+#: admin/partials/dashboard.php:176
+msgid "No data available"
+msgstr ""
+
+#: admin/partials/dashboard.php:80
+msgid "Page Hits In Time"
+msgstr ""
+
+#: admin/partials/dashboard.php:102
+msgid "Form Submissions In Time"
+msgstr ""
+
+#: admin/partials/dashboard.php:123
+msgid "Top Segments"
+msgstr ""
+
+#: admin/partials/dashboard.php:129
+msgid "Segments"
+msgstr ""
+
+#: admin/partials/dashboard.php:130 admin/partials/dashboard.php:165
+msgid "Contacts"
+msgstr ""
+
+#: admin/partials/dashboard.php:157
+msgid "Top Creators"
+msgstr ""
+
+#: admin/partials/dashboard.php:164
+msgid "Creator"
+msgstr ""
+
+#: admin/partials/forms.php:24
+msgid "Refresh"
+msgstr ""
+
+#: admin/partials/forms.php:29
+msgid "Form id"
+msgstr ""
+
+#: admin/partials/forms.php:30
+msgid "Form Name"
+msgstr ""
+
+#: admin/partials/forms.php:32
+msgid "ShortCode"
+msgstr ""
+
+#: admin/partials/forms.php:33 admin/partials/forms.php:56
+msgid "View"
+msgstr ""
+
+#: admin/partials/forms.php:49
+msgid "[mwb_m4wp_form id="
+msgstr ""
+
+#: admin/partials/forms.php:60
+msgid "Edit"
+msgstr ""
+
+#: admin/partials/integration-list.php:21
+msgid "Name"
+msgstr ""
+
+#: admin/partials/integration-list.php:22
+msgid "Description"
+msgstr ""
+
+#: admin/partials/integration-list.php:24
+#: includes/class-mwb-mautic-for-wp-settings-helper.php:177
+#: makewebbetter-mautic-for-wordpress.php:73
+msgid "Settings"
+msgstr ""
+
+#: admin/partials/integration-settings.php:37
+msgid "Enable"
+msgstr ""
+
+#: admin/partials/integration-settings.php:40
+#: admin/partials/integration-settings.php:52
+#: admin/partials/integration-settings.php:73
+msgid "Yes"
+msgstr ""
+
+#: admin/partials/integration-settings.php:42
+#: admin/partials/integration-settings.php:54
+#: admin/partials/integration-settings.php:75
+msgid "No"
+msgstr ""
+
+#: admin/partials/integration-settings.php:44
+msgid "Select \"yes\" to enable the integration. "
+msgstr ""
+
+#: admin/partials/integration-settings.php:49
+msgid "Implicit"
+msgstr ""
+
+#: admin/partials/integration-settings.php:56
+msgid ""
+"Select \"yes\" if you want to subscribe people without asking them "
+"explicitly."
+msgstr ""
+
+#: admin/partials/integration-settings.php:61
+msgid "Checkbox Label Text"
+msgstr ""
+
+#: admin/partials/integration-settings.php:65
+msgid "Checkbox label to be shown next to checkbox."
+msgstr ""
+
+#: admin/partials/integration-settings.php:70
+msgid "Pre Check Checkbox"
+msgstr ""
+
+#: admin/partials/integration-settings.php:77
+msgid "Select \"yes\" if you want to check the checkbox by default."
+msgstr ""
+
+#: admin/partials/integration-settings.php:82
+msgid "Segment"
+msgstr ""
+
+#: admin/partials/integration-settings.php:93
+msgid "Select segment in which the contact should be added."
+msgstr ""
+
+#: admin/partials/integration-settings.php:98
+msgid "Tags"
+msgstr ""
+
+#: admin/partials/integration-settings.php:102
+msgid "Enter tags separated by commas to assign to contact."
+msgstr ""
+
+#: admin/partials/mwb-mautic-for-wp-admin-display.php:14
+msgid "Mautic WordPress Integration"
+msgstr ""
+
+#: admin/partials/mwb-mautic-for-wp-admin-display.php:17
+msgid "Support"
+msgstr ""
+
+#: admin/partials/settings.php:28
+msgid "Enable Mautic Tracking"
+msgstr ""
+
+#: admin/partials/settings.php:43
+msgid "Script Location"
+msgstr ""
+
+#: admin/partials/settings.php:46
+msgid "Head"
+msgstr ""
+
+#: admin/partials/settings.php:48
+msgid "Footer"
+msgstr ""
+
+#: extra-templates/makewebbetter-deactivation-template-display.php:34
+msgid "May we have a little info about why you are deactivating?"
+msgstr ""
+
+#: extra-templates/makewebbetter-deactivation-template-display.php:44
+msgid "Skip and Deactivate Now"
+msgstr ""
+
+#: extra-templates/makewebbetter-onboarding-template-display.php:44
+msgid "Skip For Now"
+msgstr ""
+
+#: includes/class-makewebbetter-onboarding-helper.php:347
+msgid "What industry defines your business?"
+msgstr ""
+
+#: includes/class-makewebbetter-onboarding-helper.php:382
+msgid "What is the best email address to contact you?"
+msgstr ""
+
+#: includes/class-makewebbetter-onboarding-helper.php:392
+msgid "What is your contact number?"
+msgstr ""
+
+#: includes/class-mwb-mautic-for-wp-settings-helper.php:98
+msgid "--Select--"
+msgstr ""
+
+#: includes/class-mwb-mautic-for-wp-settings-helper.php:157
+msgid "Connection"
+msgstr ""
+
+#: includes/class-mwb-mautic-for-wp-settings-helper.php:162
+msgid "Dashboard"
+msgstr ""
+
+#: includes/class-mwb-mautic-for-wp-settings-helper.php:167
+msgid "Mautic Forms"
+msgstr ""
+
+#: includes/class-mwb-mautic-for-wp-settings-helper.php:172
+msgid "Integrations"
+msgstr ""
+
+#: includes/class-mwb-mautic-for-wp-settings-helper.php:247
+msgid "Version"
+msgstr ""
+
+#: includes/integrations/class-mwb-mautic-for-wp-integration.php:57
+msgid "Sign me up for the newsletter"
+msgstr ""
