@@ -814,6 +814,10 @@ class Makewebbetter_Onboarding_Helper {
 			$result = false;
 		}
 
+		if ( ! empty( $_GET['page'] ) && 'mwb-mautic-for-wp' === $_GET['page'] ) { // phpcs:ignore WordPress.Security.NonceVerification
+			return true;
+		}
+
 		return $result;
 	}
 
