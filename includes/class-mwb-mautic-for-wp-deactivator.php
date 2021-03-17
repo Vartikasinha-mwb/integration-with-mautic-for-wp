@@ -5,8 +5,8 @@
  * @link       https://makewebbetter.com/
  * @since      1.0.0
  *
- * @package    Makewebbetter_Mautic_For_Wordpress
- * @subpackage Makewebbetter_Mautic_For_Wordpress/includes
+ * @package    MWB_Mautic_For_WP
+ * @subpackage MWB_Mautic_For_WP/includes
  */
 
 /**
@@ -15,8 +15,8 @@
  * This class defines all code necessary to run during the plugin's deactivation.
  *
  * @since      1.0.0
- * @package    Makewebbetter_Mautic_For_Wordpress
- * @subpackage Makewebbetter_Mautic_For_Wordpress/includes
+ * @package    MWB_Mautic_For_WP
+ * @subpackage MWB_Mautic_For_WP/includes
  * @author     MakeWebBetter <webmaster@makewebbetter.com>
  */
 class MWB_Mautic_For_WP_Deactivator {

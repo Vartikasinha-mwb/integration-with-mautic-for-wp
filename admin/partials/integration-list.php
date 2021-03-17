@@ -4,11 +4,11 @@
  *
  * This file is used to markup the admin-facing aspects of the plugin.
  *
- * @link       https://makewebbetter.com/
- * @since      1.0.0
+ * @link  https://makewebbetter.com/
+ * @since 1.0.0
  *
- * @package    Makewebbetter_Mautic_For_Wordpress
- * @subpackage Makewebbetter_Mautic_For_Wordpress/admin/partials
+ * @package    MWB_Mautic_For_WP
+ * @subpackage MWB_Mautic_For_WP/admin/partials
  */
 
 $integrations = MWB_Mautic_For_WP_Integration_Manager::get_integrations();
@@ -31,7 +31,7 @@ $integrations = MWB_Mautic_For_WP_Integration_Manager::get_integrations();
 				if ( ! $integration ) {
 					continue;
 				}
-				$checked = $integration->is_enabled();
+				$checked       = $integration->is_enabled();
 				$class_checked = $checked ? 'mwb-switch-checkbox--move' : '';
 				?>
 				<tr integration="<?php echo esc_attr( $key ); ?>">
@@ -39,7 +39,7 @@ $integrations = MWB_Mautic_For_WP_Integration_Manager::get_integrations();
 					<td class="des"><?php echo esc_attr( $integration->get_description() ); ?></td>
 					<td class="status">
 						<label class="switch">
-							<input type="checkbox" class="mwb-switch-checkbox mwb-m4wp-enable-cb <?php echo $class_checked; ?>" <?php checked( $checked, true ); ?> >
+							<input type="checkbox" class="mwb-switch-checkbox mwb-m4wp-enable-cb <?php echo esc_attr( $class_checked ); ?>" <?php checked( $checked, true ); ?> >
 							<span class="slider round"></span>
 						</label>
 					</td>

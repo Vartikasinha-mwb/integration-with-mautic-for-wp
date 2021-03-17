@@ -5,8 +5,8 @@
  * @link       https://makewebbetter.com/
  * @since      1.0.0
  *
- * @package    Mautic_For_WordPress
- * @subpackage Mautic_For_WordPress/includes
+ * @package    MWB_Mautic_For_WP
+ * @subpackage MWB_Mautic_For_WP/includes
  */
 
 /**

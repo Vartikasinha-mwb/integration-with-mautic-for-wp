@@ -8,8 +8,8 @@
  * @link       https://makewebbetter.com/
  * @since      1.0.0
  *
- * @package    Mautic_For_WordPress
- * @subpackage Mautic_For_WordPress/includes
+ * @package    MWB_Mautic_For_WP
+ * @subpackage MWB_Mautic_For_WP/includes
  */
 
 /**
@@ -19,8 +19,8 @@
  * so that it is ready for translation.
  *
  * @since      1.0.0
- * @package    Mautic_For_WordPress
- * @subpackage Mautic_For_WordPress/includes
+ * @package    MWB_Mautic_For_WP
+ * @subpackage MWB_Mautic_For_WP/includes
  * @author     MakeWebBetter <webmaster@makewebbetter.com>
  */
 class MWB_Mautic_For_WP_Integration_Manager {
@@ -54,7 +54,7 @@ class MWB_Mautic_For_WP_Integration_Manager {
 	 * @since    3.0.1
 	 */
 	public static function get_integration( $details ) {
-		extract( $details );
+		extract( $details ); //phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 		if ( empty( $class ) || empty( $path ) || empty( $id ) ) {
 			return false;
 		}

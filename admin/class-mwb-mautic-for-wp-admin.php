@@ -155,7 +155,7 @@ class MWB_Mautic_For_WP_Admin {
 	 * @param array  $params Array of extra params.
 	 */
 	public static function load_template( $file_path, $params = array() ) {
-		$file  = MWB_MAUTIC_FOR_WP_PATH . $file_path;
+		$file = MWB_MAUTIC_FOR_WP_PATH . $file_path;
 		if ( file_exists( $file ) ) {
 			include $file;
 		} else {

@@ -8,8 +8,8 @@
  * @link       https://makewebbetter.com/
  * @since      1.0.0
  *
- * @package    Makewebbetter_Mautic_For_Wordpress
- * @subpackage Makewebbetter_Mautic_For_Wordpress/includes
+ * @package    MWB_Mautic_For_WP
+ * @subpackage MWB_Mautic_For_WP/includes
  */
 
 /**
@@ -22,8 +22,8 @@
  * version of the plugin.
  *
  * @since      1.0.0
- * @package    Makewebbetter_Mautic_For_Wordpress
- * @subpackage Makewebbetter_Mautic_For_Wordpress/includes
+ * @package    MWB_Mautic_For_WP
+ * @subpackage MWB_Mautic_For_WP/includes
  * @author     MakeWebBetter <webmaster@makewebbetter.com>
  */
 class MWB_Mautic_For_WP {
@@ -132,8 +132,8 @@ class MWB_Mautic_For_WP {
 		 * The class responsible for defining all actions that occur in the public-facing
 		 * side of the site.
 		 */
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/api/class-api.php';
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/api/class-mautic-exception.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/api/class-api-base.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/api/class-mautic-api-exception.php';
 		/**
 		 * The class responsible for defining all functionalities related to mautic api
 		*/
@@ -147,9 +147,9 @@ class MWB_Mautic_For_WP {
 		/**
 		 * The class responsible for defining all functionalities related to mautic api
 		*/
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-mwb-mautic-for-wp-mautic-api.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-mwb-mautic-for-wp-api.php';
 
-		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/integrations/class-mwb-mautic-for-wp-integration.php';
+		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/integrations/class-mautic-for-wordpress-integration.php';
 
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/class-mwb-mautic-for-wp-integration-manager.php';
 
@@ -164,9 +164,7 @@ class MWB_Mautic_For_WP {
 		}
 
 		if ( class_exists( 'Makewebbetter_Onboarding_Helper' ) ) {
-
 			$onboard = new Makewebbetter_Onboarding_Helper();
-		
 		}
 
 		$this->loader = new MWB_Mautic_For_WP_Loader();

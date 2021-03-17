@@ -1,22 +1,21 @@
 <?php
-
 /**
  * Provide a admin area view for the plugin
  *
  * This file is used to markup the admin-facing aspects of the plugin.
  *
- * @link       https://makewebbetter.com/
- * @since      1.0.0
+ * @link  https://makewebbetter.com/
+ * @since 1.0.0
  *
- * @package    Makewebbetter_Mautic_For_Wordpress
- * @subpackage Makewebbetter_Mautic_For_Wordpress/admin/partials
+ * @package    MWB_Mautic_For_WP
+ * @subpackage MWB_Mautic_For_WP/admin/partials
  */
 
-$helper   = MWB_Mautic_For_WP_Settings_Helper::get_instance();
-$location = get_option( 'mwb_m4wp_script_location', 'footer' );
-$enable   = get_option( 'mwb_m4wp_tracking_enable', 'no' );
-$base_url = get_option( 'mwb_m4wp_base_url', '' );
-$checked  = ( $enable == 'yes' );
+$helper        = MWB_Mautic_For_WP_Settings_Helper::get_instance();
+$location      = get_option( 'mwb_m4wp_script_location', 'footer' );
+$enable        = get_option( 'mwb_m4wp_tracking_enable', 'no' );
+$base_url      = get_option( 'mwb_m4wp_base_url', '' );
+$checked       = ( 'yes' === $enable );
 $class_checked = $checked ? 'mwb-switch-checkbox--move' : '';
 
 ?>
@@ -28,7 +27,7 @@ $class_checked = $checked ? 'mwb-switch-checkbox--move' : '';
 					<th><?php esc_html_e( 'Enable Mautic Tracking', 'makewebbetter-mautic-for-wordpress' ); ?></th>
 					<td class="tracking">
 						<label class="switch">
-							<input type="checkbox" class="mwb-switch-checkbox <?php echo $class_checked; ?> " name="mwb_m4wp_tracking_enable" value="yes" <?php echo checked( $checked, true ); ?>>
+							<input type="checkbox" class="mwb-switch-checkbox <?php echo esc_attr( $class_checked ); ?> " name="mwb_m4wp_tracking_enable" value="yes" <?php echo checked( $checked, true ); ?>>
 							<span class="slider round"></span>
 						</label>
 					</td>
@@ -52,12 +51,11 @@ $class_checked = $checked ? 'mwb-switch-checkbox--move' : '';
 					<th></th>
 					<td>
 						<input type="hidden" name="action" value="mwb_m4wp_setting_save" />
-						<input type="hidden" name="_nonce" value="<?php echo wp_create_nonce( '_nonce' ); ?>" /><br>
+						<input type="hidden" name="_nonce" value="<?php echo esc_attr( wp_create_nonce( '_nonce' ) ); ?>" /><br>
 						<button id="mwb-m4wp-save-btn" class="mwb-btn mwb-btn-primary mwb-save-btn" type="submit" class="button"><?php esc_html_e( 'Save', 'makewebbetter-mautic-for-wordpress' ); ?></button>
 					</td>
 				</tr>
 			</table>
-
 		</form>
 	</div>
 </div>

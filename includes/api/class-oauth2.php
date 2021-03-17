@@ -5,15 +5,15 @@
  * @link       https://makewebbetter.com
  * @since      3.0.0
  *
- * @package     woo_one_click_upsell_funnel
- * @subpackage  woo_one_click_upsell_funnel/includes
+ * @package     MWB_Mautic_For_WP
+ * @subpackage  MWB_Mautic_For_WP/includes
  */
 
 /**
  * The Onboarding-specific functionality of the plugin admin side.
  *
- * @package     woo_one_click_upsell_funnel
- * @subpackage  woo_one_click_upsell_funnel/includes
+ * @package     MWB_Mautic_For_WP
+ * @subpackage  MWB_Mautic_For_WP/includes
  * @author      makewebbetter <webmaster@makewebbetter.com>
  */
 class Oauth2 extends Api_Base {
@@ -104,8 +104,8 @@ class Oauth2 extends Api_Base {
 	 */
 	public function have_valid_api_keys() {
 		$credentials = get_option( 'mwb_m4wp_auth_details', array() );
-		if ( isset( $credentials['client_id'] ) && '' != $credentials['client_id'] &&
-		isset( $credentials['client_secret'] ) && '' != $credentials['client_secret'] ) {
+		if ( isset( $credentials['client_id'] ) && '' !== $credentials['client_id'] &&
+		isset( $credentials['client_secret'] ) && '' !== $credentials['client_secret'] ) {
 			return array(
 				'client_id'     => $credentials['client_id'],
 				'client_secret' => $credentials['client_secret'],
@@ -158,7 +158,7 @@ class Oauth2 extends Api_Base {
 	 * Mautic_Api_Exception constructor.
 	 *
 	 * @param object $data Data.
-	 * @throws Exception Mautic_Api_Exception.
+	 * @throws Mautic_Api_Exception Mautic_Api_Exception.
 	 */
 	public function renew_access_token( $data ) {
 		$endpoint = 'oauth/v2/token';
@@ -169,7 +169,6 @@ class Oauth2 extends Api_Base {
 		}
 		$this->save_token_data( $response );
 		update_option( 'mwb_m4wp_oauth2_success', true );
-		return;
 	}
 
 	/**

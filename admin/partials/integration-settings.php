@@ -1,18 +1,17 @@
 <?php
-
 /**
  * Provide a admin area view for the plugin
  *
  * This file is used to markup the admin-facing aspects of the plugin.
  *
- * @link       https://makewebbetter.com/
- * @since      1.0.0
+ * @link  https://makewebbetter.com/
+ * @since 1.0.0
  *
- * @package    Makewebbetter_Mautic_For_Wordpress
- * @subpackage Makewebbetter_Mautic_For_Wordpress/admin/partials
+ * @package    MWB_Mautic_For_WP
+ * @subpackage MWB_Mautic_For_WP/admin/partials
  */
 
-$helper   = MWB_Mautic_For_WP_Settings_Helper::get_instance();
+$helper             = MWB_Mautic_For_WP_Settings_Helper::get_instance();
 $segment_list       = $helper->get_segment_options();
 $integation_details = MWB_Mautic_For_WP_Integration_Manager::get_integrations( isset( $_GET['id'] ) ? sanitize_text_field( wp_unslash( $_GET['id'] ) ) : '' ); // phpcs:ignore WordPress.Security.NonceVerification
 $integation         = MWB_Mautic_For_WP_Integration_Manager::get_integration( $integation_details );
@@ -83,12 +82,14 @@ $hide_row           = $implicit ? 'row-hide' : '';
 						<td>
 							<select name="add_segment" id="mwb-m4wp-segment-select">
 								<?php foreach ( $segment_list as $key => $segment ) : ?>
-									<option value="<?php echo $segment['id']; ?>" <?php selected( esc_attr( $segment['id'] ), esc_attr( $add_segment ) ); ?>>
-										<?php echo esc_attr( $segment['name'] ); ?>
+									<option value="<?php echo esc_attr( $segment['id'] ); ?>" <?php esc_attr( selected( $segment['id'], $add_segment ) ); ?>>
+									<?php echo esc_attr( $segment['name'] ); ?>
 									</option>
 								<?php endforeach; ?>
 							</select>
+								<?php // phpcs:disable ?>
 								<?php echo $helper->get_refresh_button_html( 'segments' ); ?>
+								<?php // phpcs:enable ?>
 							<p class="description">
 								<?php esc_html_e( 'Select segment in which the contact should be added.', 'makewebbetter-mautic-for-wordpress' ); ?>
 							</p>
@@ -114,8 +115,7 @@ $hide_row           = $implicit ? 'row-hide' : '';
 				</table>
 				<input type="hidden" name="_nonce" value="<?php echo esc_attr( wp_create_nonce( 'mwb_m4wp_integration_nonce' ) ); ?>" />
 				<input type="hidden" name="integration" value="<?php echo esc_attr( $integation->get_id() ); ?>" />
-				<input type="hidden" name="action" value="mwb_m4wp_integration_save" />
-				
+				<input type="hidden" name="action" value="mwb_m4wp_integration_save" />    
 			</form>
 		</div>
 	</div>

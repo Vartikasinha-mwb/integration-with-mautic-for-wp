@@ -5,8 +5,8 @@
  * @link       https://makewebbetter.com/
  * @since      1.0.0
  *
- * @package    Mautic_For_WordPress
- * @subpackage Mautic_For_WordPress/includes
+ * @package    MWB_Mautic_For_WP
+ * @subpackage MWB_Mautic_For_WP/includes
  */
 
 /**
@@ -16,8 +16,8 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Mautic_For_WordPress
- * @subpackage Mautic_For_WordPress/includes
+ * @package    MWB_Mautic_For_WP
+ * @subpackage MWB_Mautic_For_WP/includes
  * @author     MakeWebBetter <webmaster@makewebbetter.com>
  */
 class MWB_Mautic_For_WP_Api {
@@ -79,7 +79,7 @@ class MWB_Mautic_For_WP_Api {
 	 *
 	 * @since       3.0.0
 	 * @return mixed $response Respose is returned.
-	 * @throws Exception Mautic_Api_Exception.
+	 * @throws Mautic_Api_Exception Mautic_Api_Exception .
 	 */
 	public static function get_mautic_api() {
 
@@ -98,11 +98,9 @@ class MWB_Mautic_For_WP_Api {
 		if ( 'oauth2' === $authentication_type ) {
 			$api_instance = Oauth2::get_instance();
 			if ( ! $api_instance->is_authorized() ) {
-				// Throw new Mautic_Api_Exception( 'Unauthorized' , 004 ) .
 				if ( ! ( $api_instance->have_valid_api_keys() ) ) {
 					$api_keys = $api_instance->have_valid_api_keys();
 					throw new Mautic_Api_Exception( 'Missing api credentials', 002 );
-					// return false .
 				}
 			}
 			$api_instance->set_base_url( $base_url );

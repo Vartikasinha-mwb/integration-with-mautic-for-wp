@@ -1,15 +1,14 @@
 <?php
-
 /**
  * Provide a admin area view for the plugin
  *
  * This file is used to markup the admin-facing aspects of the plugin.
  *
- * @link       https://makewebbetter.com/
- * @since      1.0.0
+ * @link  https://makewebbetter.com/
+ * @since 1.0.0
  *
- * @package    Makewebbetter_Mautic_For_Wordpress
- * @subpackage Makewebbetter_Mautic_For_Wordpress/admin/partials
+ * @package    MWB_Mautic_For_WP
+ * @subpackage MWB_Mautic_For_WP/admin/partials
  */
 
 $helper   = MWB_Mautic_For_WP_Settings_Helper::get_instance();
@@ -21,7 +20,7 @@ $base_url = MWB_Mautic_For_WP_Admin::get_mautic_base_url();
 	<?php if ( $forms ) : ?>
 		<div class="mwb-m4wp-form-table-head">
 			<a class="mwb-btn mwb-btn-secondary mwb-m4wp-form-refresh">
-			<?php esc_html_e( 'Refresh', 'makewebbetter-mautic-for-wp' ); ?>
+		<?php esc_html_e( 'Refresh', 'makewebbetter-mautic-for-wp' ); ?>
 			</a>
 		</div>
 		<table class="form-table mwb-form-stripped-table mwb-table">
@@ -33,17 +32,17 @@ $base_url = MWB_Mautic_For_WP_Admin::get_mautic_base_url();
 				<th class="mwb-heading-center"><?php esc_html_e( 'View', 'makewebbetter-mautic-for-wordpress' ); ?></th>
 			</thead>
 			<tbody>
-				<?php
-				foreach ( $forms['forms'] as $key => $form ) :
-					$form_link = $base_url . 's/forms/view/' . $form['id'];
-					?>
+		<?php
+		foreach ( $forms['forms'] as $key => $form ) :
+			$form_link = $base_url . 's/forms/view/' . $form['id'];
+			?>
 					<tr class="<?php echo ( $form['isPublished'] ) ? 'row-active' : 'row-inactive'; ?>">
 						<td><?php echo esc_attr( $form['id'] ); ?></td>
 						<td><?php echo esc_attr( $form['name'] ); ?></td>
 						<td>
-							<?php
-							echo ( $form['isPublished'] ) ? 'Published' : 'Not Published';
-							?>
+			<?php
+			echo ( $form['isPublished'] ) ? 'Published' : 'Not Published';
+			?>
 						</td>
 						<td class=" mwb-form-code">
 							<input readonly type="text" id="form-input-<?php echo esc_attr( $form['id'] ); ?>" value="<?php echo esc_attr( '[mwb_m4wp_form id=' . $form['id'] . ']' ); ?>">
@@ -53,15 +52,15 @@ $base_url = MWB_Mautic_For_WP_Admin::get_mautic_base_url();
 						</td>
 						<td>
 							<a class="mwb-m4wp-form-view mwb-btn mwb-btn-secondary" form-id="<?php echo esc_attr( $form['id'] ); ?>" form-html="<?php echo esc_attr( htmlspecialchars( $form['cachedHtml'] ) ); ?>">
-								<?php esc_html_e( 'View', 'makewebbetter-mautic-for-wordpress' ); ?>
+			<?php esc_html_e( 'View', 'makewebbetter-mautic-for-wordpress' ); ?>
 								<!-- <span class="dashicons dashicons-edit"></span> -->
 							</a>
 							<a class="mwb-m4wp-form-edit mwb-btn mwb-btn-secondary" href="<?php echo esc_attr( $form_link ); ?>" target="_blank">
-								<?php esc_html_e( 'Edit', 'makewebbetter-mautic-for-wordpress' ); ?>
+			<?php esc_html_e( 'Edit', 'makewebbetter-mautic-for-wordpress' ); ?>
 							</a>
 						</td>
 					</tr>
-				<?php endforeach; ?>
+		<?php endforeach; ?>
 			</tbody>
 		</table>
 	<?php endif; ?>

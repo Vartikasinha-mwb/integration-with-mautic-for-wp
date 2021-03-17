@@ -5,15 +5,15 @@
  * @link       https://makewebbetter.com
  * @since      3.0.0
  *
- * @package     woo_one_click_upsell_funnel
- * @subpackage  woo_one_click_upsell_funnel/includes
+ * @package     MWB_Mautic_For_WP
+ * @subpackage  MWB_Mautic_For_WP/includes
  */
 
 /**
  * The Onboarding-specific functionality of the plugin admin side.
  *
- * @package     woo_one_click_upsell_funnel
- * @subpackage  woo_one_click_upsell_funnel/includes
+ * @package     MWB_Mautic_For_WP
+ * @subpackage  MWB_Mautic_For_WP/includes
  * @author      makewebbetter <webmaster@makewebbetter.com>
  */
 class Basic_Auth extends Api_Base {
@@ -54,9 +54,11 @@ class Basic_Auth extends Api_Base {
 	 * @return array
 	 */
 	public function get_auth_header() {
+		// phpcs:disable
 		$headers = array(
 			'Authorization' => sprintf( 'Basic %s', base64_encode( $this->user_name . ':' . $this->password ) ),
 		);
+		// phpcs:enable
 		return $headers;
 	}
 }

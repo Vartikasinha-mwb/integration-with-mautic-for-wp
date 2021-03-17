@@ -1,6 +1,20 @@
 <?php
-$helper  = MWB_Mautic_For_WP_Settings_Helper::get_instance();
-$current = isset( $_GET['tab'] ) ? $_GET['tab'] : 'connection';
+/**
+ * Provide a admin area view for the plugin
+ *
+ * This file is used to markup the admin-facing aspects of the plugin.
+ *
+ * @link  https://makewebbetter.com/
+ * @since 1.0.0
+ *
+ * @package    MWB_Mautic_For_WP
+ * @subpackage MWB_Mautic_For_WP/admin/partials
+ */
+
+$helper = MWB_Mautic_For_WP_Settings_Helper::get_instance();
+// phpcs:ignore WordPress.Security.NonceVerification
+$current = ! empty( $_GET['tab'] ) ? sanitize_text_field( wp_unslash( $_GET['tab'] ) ) : 'connection';
+// phpcs:ignore WordPress.Security.NonceVerification
 $notification = '';
 if ( wp_cache_get( 'mwb_m4wp_notice' ) ) {
 	$notification = wp_cache_get( 'mwb_m4wp_notice' );
@@ -16,7 +30,7 @@ if ( wp_cache_get( 'mwb_m4wp_notice' ) ) {
 			class="mwb-link"><?php esc_html_e( 'Support', 'makewebbetter-mautic-for-wordpress' ); ?></a>
 	</div>
 </header>
-<?php if ( $notification !== '' ) : ?>
+<?php if ( '' !== $notification ) : ?>
 <div class="mwb-notification-bar mwb-bg-white mwb-r-8">
 	<span class="mwb-notification-txt"><?php echo esc_html( $notification ); ?></span>
 	<span class="dashicons dashicons-no mwb-notification-close"></span>
@@ -26,7 +40,9 @@ if ( wp_cache_get( 'mwb_m4wp_notice' ) ) {
 	<nav class="mwb-navbar">
 		<ul class="mwb-navbar__items">
 			<?php
+			//phpcs:disable
 			echo $helper->get_settings_tab_html( $current );
+			//phpcs:enable
 			?>
 		</ul>
 	</nav>

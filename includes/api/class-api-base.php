@@ -5,15 +5,15 @@
  * @link       https://makewebbetter.com
  * @since      3.0.0
  *
- * @package     woo_one_click_upsell_funnel
- * @subpackage  woo_one_click_upsell_funnel/includes
+ * @package     MWB_Mautic_For_WP
+ * @subpackage  MWB_Mautic_For_WP/includes
  */
 
 /**
  * The Onboarding-specific functionality of the plugin admin side.
  *
- * @package     woo_one_click_upsell_funnel
- * @subpackage  woo_one_click_upsell_funnel/includes
+ * @package     MWB_Mautic_For_WP
+ * @subpackage  MWB_Mautic_For_WP/includes
  * @author      makewebbetter <webmaster@makewebbetter.com>
  */
 class Api_Base {
@@ -40,7 +40,7 @@ class Api_Base {
 	 * Parse response and get back the data
 	 *
 	 * @param array $response HTTP response.
-	 * @throws Exception Mautic_Api_Exception.
+	 * @throws Mautic_Api_Exception Mautic_Api_Exception.
 	 */
 	private function parse_response( $response ) {
 		if ( $response instanceof WP_Error ) {
@@ -88,12 +88,14 @@ class Api_Base {
 			foreach ( $data['errors'] as $key => $value ) {
 				$log .= 'Error : ' . $value['message'] . PHP_EOL;
 			}
-			$log .= 'Response: ' . json_encode( $this->last_response ) . PHP_EOL;
-			$log .= 'Req: ' . json_encode( $this->last_request ) . PHP_EOL;
+			$log .= 'Response: ' . wp_json_encode( $this->last_response ) . PHP_EOL;
+			$log .= 'Req: ' . wp_json_encode( $this->last_request ) . PHP_EOL;
 		}
 		$log .= 'Time: ' . current_time( 'F j, Y  g:i a' ) . PHP_EOL;
 		$log .= '------------------------------------' . PHP_EOL;
+		//phpcs:disable
 		file_put_contents( $file, $log, FILE_APPEND );
+		//phpcs:enable
 	}
 
 	/**
@@ -169,7 +171,7 @@ class Api_Base {
 				$url = add_query_arg( $data, $url );
 			} else {
 				$args['headers']['Content-Type'] = 'application/json';
-				$args['body']                    = json_encode( $data );
+				$args['body']                    = wp_json_encode( $data );
 			}
 		}
 		$args                = apply_filters( 'mwb_m4wp_http_request_args', $args, $url );

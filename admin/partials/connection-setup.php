@@ -1,15 +1,14 @@
 <?php
-
 /**
  * Provide a admin area view for the plugin
  *
  * This file is used to markup the admin-facing aspects of the plugin.
  *
- * @link       https://makewebbetter.com/
- * @since      1.0.0
+ * @link  https://makewebbetter.com/
+ * @since 1.0.0
  *
- * @package    Makewebbetter_Mautic_For_Wordpress
- * @subpackage Makewebbetter_Mautic_For_Wordpress/admin/partials
+ * @package    MWB_Mautic_For_WP
+ * @subpackage MWB_Mautic_For_WP/admin/partials
  */
 
 $credentials   = get_option( 'mwb_m4wp_auth_details', array() );
@@ -23,7 +22,11 @@ $client_secret = isset( $credentials['client_secret'] ) ? $credentials['client_s
 
 $row_basic  = 'row-hide';
 $row_oauth2 = 'row-hide';
-( 'basic' === $auth_type ) ? ( $row_basic = '' ) : ( $row_oauth2 = '' );
+if ( 'basic' === $auth_type ) {
+	$row_basic = '';
+} else {
+	$row_oauth2 = '';
+}
 ?>
 <div class="connection-form-wrap">
 	<form method="post">
@@ -85,7 +88,7 @@ $row_oauth2 = 'row-hide';
 					<p class="description">
 					<?php esc_html_e( 'Api redirect url', 'makewebbetter-mautic-for-wordpress' ); ?>
 						<br>
-						<?php echo esc_url( admin_url() );?>
+						<?php echo esc_url( admin_url() ); ?>
 					</p>
 				</td>
 			</tr>
@@ -110,7 +113,7 @@ $row_oauth2 = 'row-hide';
 				<td>
 					<div class="mwb-save-btn-wrap">
 						<input type="hidden" name="action" value="mwb_m4wp_save" />
-						<input type="hidden" name="_nonce" value="<?php echo wp_create_nonce( '_nonce' ); ?>" />
+						<input type="hidden" name="_nonce" value="<?php echo esc_attr( wp_create_nonce( '_nonce' ) ); ?>" />
 						<button id="mwb-m4wp-save-btn" type="submit"
 							class="mwb-btn mwb-btn-primary mwb-save-btn"><?php esc_html_e( 'Save', 'makewebbetter-mautic-for-wordpress' ); ?></button>
 						<?php if ( 'oauth2' === $auth_type && ! empty( $credentials ) ) : ?>

@@ -5,15 +5,15 @@
  * @link       https://makewebbetter.com
  * @since      3.0.0
  *
- * @package     Makewebbetter_Mautic_For_Wordpress
- * @subpackage  Makewebbetter_Mautic_For_Wordpress/includes
+ * @package     MWB_Mautic_For_WP
+ * @subpackage  MWB_Mautic_For_WP/includes
  */
 
 /**
  * The Onboarding-specific functionality of the plugin admin side.
  *
- * @package     Makewebbetter_Mautic_For_Wordpress
- * @subpackage  Makewebbetter_Mautic_For_Wordpress/includes
+ * @package     MWB_Mautic_For_WP
+ * @subpackage  MWB_Mautic_For_WP/includes
  * @author      makewebbetter <webmaster@makewebbetter.com>
  */
 
@@ -97,11 +97,11 @@ class Makewebbetter_Onboarding_Helper {
 
 		self::$store_name = get_bloginfo( 'name' );
 		self::$store_url  = home_url();
-		
+
 		if ( defined( 'ONBOARD_PLUGIN_NAME' ) ) {
 			self::$plugin_name = ONBOARD_PLUGIN_NAME;
 		}
-		
+
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'admin_footer', array( $this, 'add_onboarding_popup_screen' ) );
@@ -155,7 +155,7 @@ class Makewebbetter_Onboarding_Helper {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
-		
+
 		if ( $this->is_valid_page_screen() ) {
 
 			wp_enqueue_style( 'makewebbetter-onboarding-style', MWB_MAUTIC_FOR_WP_URL . 'admin/css/makewebbetter-onboarding-admin.css', array(), '3.0.0', 'all' );
@@ -212,7 +212,7 @@ class Makewebbetter_Onboarding_Helper {
 	 * @since    3.0.0
 	 */
 	public function add_onboarding_popup_screen() {
-		
+
 		if ( $this->is_valid_page_screen() && $this->can_show_onboarding_popup() ) {
 			require_once MWB_MAUTIC_FOR_WP_PATH . 'extra-templates/makewebbetter-onboarding-template-display.php';
 		}
