@@ -165,7 +165,8 @@ class MWB_Mautic_For_WP {
 
 		if ( class_exists( 'Makewebbetter_Onboarding_Helper' ) ) {
 
-			$this->onboard = new Makewebbetter_Onboarding_Helper();
+			$onboard = new Makewebbetter_Onboarding_Helper();
+		
 		}
 
 		$this->loader = new MWB_Mautic_For_WP_Loader();

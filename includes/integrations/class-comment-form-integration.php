@@ -1,6 +1,7 @@
 <?php
 
 class Comment_Form_Integration extends Mautic_For_Wordpress_Integration {
+	
 	public $name        = 'Comment Form';
 	public $description = 'WordPress default comment form';
 

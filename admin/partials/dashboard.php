@@ -161,8 +161,8 @@ $base_url              = MWB_Mautic_For_WP_Admin::get_mautic_base_url();
 						<?php if ( count( $top_creators['data']['bodyItems'] ) > 0 ) : ?>
 							<table id="top-lists-table" class="widget-table" cellspacing=0>
 								<tr>
-									<th><?php esc_html_e( 'Creator', 'mautic-for-wordpress' ); ?></th>
-									<th><?php esc_html_e( 'Contacts', 'mautic-for-wordpress' ); ?></th>
+									<th><?php esc_html_e( 'Creator', 'makewebbetter-mautic-for-wordpress' ); ?></th>
+									<th><?php esc_html_e( 'Contacts', 'makewebbetter-mautic-for-wordpress' ); ?></th>
 								</tr>
 								<?php foreach ( $top_creators['data']['bodyItems'] as $key => $list ) : ?>
 									<tr>

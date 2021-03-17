@@ -54,7 +54,7 @@ abstract class Mautic_For_Wordpress_Integration {
 		return array(
 			'enable'       => 'no',
 			'implicit'     => 'yes',
-			'checkbox_txt' => __( 'Sign me up for the newsletter', 'mautic-for-wordpress' ),
+			'checkbox_txt' => __( 'Sign me up for the newsletter', 'makewebbetter-mautic-for-wordpress' ),
 			'precheck'     => 'no',
 			'add_segment'  => '-1',
 			'add_tag'      => '',

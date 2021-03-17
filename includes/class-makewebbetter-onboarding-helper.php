@@ -5,17 +5,18 @@
  * @link       https://makewebbetter.com
  * @since      3.0.0
  *
- * @package     woo_one_click_upsell_funnel
- * @subpackage  woo_one_click_upsell_funnel/includes
+ * @package     Makewebbetter_Mautic_For_Wordpress
+ * @subpackage  Makewebbetter_Mautic_For_Wordpress/includes
  */
 
 /**
  * The Onboarding-specific functionality of the plugin admin side.
  *
- * @package     woo_one_click_upsell_funnel
- * @subpackage  woo_one_click_upsell_funnel/includes
+ * @package     Makewebbetter_Mautic_For_Wordpress
+ * @subpackage  Makewebbetter_Mautic_For_Wordpress/includes
  * @author      makewebbetter <webmaster@makewebbetter.com>
  */
+
 if ( class_exists( 'Makewebbetter_Onboarding_Helper' ) ) {
 	return;
 }
@@ -96,11 +97,11 @@ class Makewebbetter_Onboarding_Helper {
 
 		self::$store_name = get_bloginfo( 'name' );
 		self::$store_url  = home_url();
-
+		
 		if ( defined( 'ONBOARD_PLUGIN_NAME' ) ) {
 			self::$plugin_name = ONBOARD_PLUGIN_NAME;
 		}
-
+		
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'admin_footer', array( $this, 'add_onboarding_popup_screen' ) );
@@ -154,6 +155,7 @@ class Makewebbetter_Onboarding_Helper {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
+		
 		if ( $this->is_valid_page_screen() ) {
 
 			wp_enqueue_style( 'makewebbetter-onboarding-style', MWB_MAUTIC_FOR_WP_URL . 'admin/css/makewebbetter-onboarding-admin.css', array(), '3.0.0', 'all' );
@@ -210,7 +212,7 @@ class Makewebbetter_Onboarding_Helper {
 	 * @since    3.0.0
 	 */
 	public function add_onboarding_popup_screen() {
-
+		
 		if ( $this->is_valid_page_screen() && $this->can_show_onboarding_popup() ) {
 			require_once MWB_MAUTIC_FOR_WP_PATH . 'extra-templates/makewebbetter-onboarding-template-display.php';
 		}
@@ -325,26 +327,9 @@ class Makewebbetter_Onboarding_Helper {
 			 * Email field with label. ( auto filled with admin email )
 			 */
 
-			// rand() => array(
-			// 'id' => 'monthly-revenue',
-			// 'label' => esc_html__( 'What is your monthly revenue?', 'woo-one-click-upsell-funnel' ),
-			// 'type' => 'radio',
-			// 'name' => 'monthly_revenue_',
-			// 'value' => '',
-			// 'multiple' => 'no',
-			// 'required' => 'yes',
-			// 'extra-class' => '',
-			// 'options' => array(
-			// '0-500'         => $currency_symbol . '0-' . $currency_symbol . '500',
-			// '501-5000'          => $currency_symbol . '501-' . $currency_symbol . '5000',
-			// '5001-10000'        => $currency_symbol . '5001-' . $currency_symbol . '10000',
-			// '10000+'        => $currency_symbol . '10000+',
-			// ),
-			// ).
-
 			rand() => array(
 				'id'          => 'industry_type',
-				'label'       => esc_html__( 'What industry defines your business?', 'woo-one-click-upsell-funnel' ),
+				'label'       => esc_html__( 'What industry defines your business?', 'makewebbetter-mautic-for-wordpress' ),
 				'type'        => 'select',
 				'name'        => 'industry_type_',
 				'value'       => '',
@@ -379,7 +364,7 @@ class Makewebbetter_Onboarding_Helper {
 
 			rand() => array(
 				'id'          => 'onboard-email',
-				'label'       => esc_html__( 'What is the best email address to contact you?' ),
+				'label'       => esc_html__( 'What is the best email address to contact you?', 'makewebbetter-mautic-for-wordpress' ),
 				'type'        => 'email',
 				'name'        => 'email',
 				'value'       => $current_user_email,
@@ -389,7 +374,7 @@ class Makewebbetter_Onboarding_Helper {
 
 			rand() => array(
 				'id'          => 'onboard-number',
-				'label'       => esc_html__( 'What is your contact number?' ),
+				'label'       => esc_html__( 'What is your contact number?', 'makewebbetter-mautic-for-wordpress' ),
 				'type'        => 'text',
 				'name'        => 'phone',
 				'value'       => '',

@@ -18,11 +18,11 @@ $form_url = $base_url . '/form/generate.js?id=' . $form_id;
 <?php if ( '' !== $base_url && 0 !== $form_id ) : ?>
 <div id='mwb-m4wp-form-<?php echo esc_attr( $form_id ); ?>' class="mwb-m4wp-form-container">
 	<?php
-	//phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript 
+	//phpcs:disable  
 	?>
 <script type="text/javascript" src="<?php echo esc_attr( $form_url ); ?>"></script>
 	<?php
-	//phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript 
+	//phpcs:enable
 	?>
 <div>
 <?php endif;

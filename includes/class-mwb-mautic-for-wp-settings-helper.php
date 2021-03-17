@@ -154,27 +154,27 @@ class MWB_Mautic_For_WP_Settings_Helper {
 		$tabs = array(
 			array(
 				'id' => 'connection',
-				'name' => __( 'Connection', 'makewebbetter-mautic-for-wp' ),
+				'name' => __( 'Connection', 'makewebbetter-mautic-for-wordpress' ),
 				'dependency' => '',
 			),
 			array(
 				'id' => 'dashboard',
-				'name' => __( 'Dashboard', 'makewebbetter-mautic-for-wp' ),
+				'name' => __( 'Dashboard', 'makewebbetter-mautic-for-wordpress' ),
 				'dependency' => 'is_connection_setup',
 			),
 			array(
 				'id' => 'forms',
-				'name' => __( 'Mautic Forms', 'makewebbetter-mautic-for-wp' ),
+				'name' => __( 'Mautic Forms', 'makewebbetter-mautic-for-wordpress' ),
 				'dependency' => 'is_connection_setup',
 			),
 			array(
 				'id' => 'integration',
-				'name' => __( 'Integrations', 'makewebbetter-mautic-for-wp' ),
+				'name' => __( 'Integrations', 'makewebbetter-mautic-for-wordpress' ),
 				'dependency' => 'is_connection_setup',
 			),
 			array(
 				'id' => 'settings',
-				'name' => __( 'Settings', 'makewebbetter-mautic-for-wp' ),
+				'name' => __( 'Settings', 'makewebbetter-mautic-for-wordpress' ),
 				'dependency' => '',
 			),
 		);
@@ -244,7 +244,7 @@ class MWB_Mautic_For_WP_Settings_Helper {
 	public function get_plugin_version_txt() {
 		$version = '';
 		if ( defined( 'MWB_MAUTIC_FOR_WP_VERSION' ) ) {
-			$version = __( 'Version', 'makewebbetter-mautic-for-wp' ) . ' ' . MWB_MAUTIC_FOR_WP_VERSION;
+			$version = __( 'Version', 'makewebbetter-mautic-for-wordpress' ) . ' ' . MWB_MAUTIC_FOR_WP_VERSION;
 		}
 		return $version;
 	}

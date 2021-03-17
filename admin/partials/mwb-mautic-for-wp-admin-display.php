@@ -6,7 +6,6 @@ if ( wp_cache_get( 'mwb_m4wp_notice' ) ) {
 	$notification = wp_cache_get( 'mwb_m4wp_notice' );
 }
 
-
 ?>
 <header>
 	<div class="mwb-header-container mwb-bg-white mwb-r-8">
