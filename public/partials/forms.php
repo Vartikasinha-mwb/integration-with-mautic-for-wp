@@ -7,8 +7,8 @@
  * @link       https://makewebbetter.com/
  * @since      1.0.0
  *
- * @package    Makewebbetter_Mautic_For_Wordpress
- * @subpackage Makewebbetter_Mautic_For_Wordpress/public/partials
+ * @package    Wp_Mautic_Integration
+ * @subpackage Wp_Mautic_Integration/public/partials
  */
 
 $base_url = get_option( 'mwb_m4wp_base_url', '' );

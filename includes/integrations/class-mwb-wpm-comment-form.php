@@ -25,7 +25,7 @@ class Mwb_Wpm_Comment_Form extends Mwb_Wpm_Integration_Base {
 	 * @access   public
 	 * @var      string    $name    Name of the integration.
 	 */
-	public $name =  'Comment Form' ;
+	public $name = 'Comment Form';
 
 	/**
 	 * The description of this plugin.

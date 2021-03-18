@@ -1,5 +1,4 @@
 <?php
-
 /**
  * The file that defines the core plugin class
  *
@@ -132,7 +131,7 @@ class Wp_Mautic_Integration {
 		 * The class responsible for defining all actions that occur in the public-facing side of the site.
 		 */
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'includes/api/class-mwb-wpm-api-base.php';
-		
+
 		/**
 		 * The class responsible for defining all exception related to mautic api
 		*/
