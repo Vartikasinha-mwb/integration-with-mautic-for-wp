@@ -1,13 +1,12 @@
 <?php
-
 /**
  * Fired during plugin activation
  *
  * @link       https://makewebbetter.com/
  * @since      1.0.0
  *
- * @package    Mautic_For_Wordpress
- * @subpackage Mautic_For_Wordpress/includes
+ * @package    MWB_Mautic_For_WP
+ * @subpackage MWB_Mautic_For_WP/includes
  */
 
 /**
@@ -16,11 +15,11 @@
  * This class defines all code necessary to run during the plugin's activation.
  *
  * @since      1.0.0
- * @package    Mautic_For_Wordpress
- * @subpackage Mautic_For_Wordpress/includes
+ * @package    MWB_Mautic_For_WP
+ * @subpackage MWB_Mautic_For_WP/includes
  * @author     MakeWebBetter <webmaster@makewebbetter.com>
  */
-class Mautic_For_Wordpress_Activator {
+class MWB_Mautic_For_WP_Activator {
 
 	/**
 	 * Short Description. (use period)

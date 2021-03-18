@@ -5,17 +5,18 @@
  * @link       https://makewebbetter.com
  * @since      3.0.0
  *
- * @package     woo_one_click_upsell_funnel
- * @subpackage  woo_one_click_upsell_funnel/includes
+ * @package     MWB_Mautic_For_WP
+ * @subpackage  MWB_Mautic_For_WP/includes
  */
 
 /**
  * The Onboarding-specific functionality of the plugin admin side.
  *
- * @package     woo_one_click_upsell_funnel
- * @subpackage  woo_one_click_upsell_funnel/includes
+ * @package     MWB_Mautic_For_WP
+ * @subpackage  MWB_Mautic_For_WP/includes
  * @author      makewebbetter <webmaster@makewebbetter.com>
  */
+
 if ( class_exists( 'Makewebbetter_Onboarding_Helper' ) ) {
 	return;
 }
@@ -29,6 +30,7 @@ class Makewebbetter_Onboarding_Helper {
 	 * The single instance of the class.
 	 *
 	 * @since   3.0.0
+	 * @var instance
 	 */
 	protected static $_instance = null;
 
@@ -54,7 +56,13 @@ class Makewebbetter_Onboarding_Helper {
 	 * @since 3.0.0
 	 * @var string Form id.
 	 */
-	private static $onboarding_form_id   = 'd94dcb10-c9c1-4155-a9ad-35354f2c3b52';
+	private static $onboarding_form_id = 'd94dcb10-c9c1-4155-a9ad-35354f2c3b52';
+	/**
+	 * Form id of hubspot api.
+	 *
+	 * @since 3.0.0
+	 * @var string Deactivation Form id.
+	 */
 	private static $deactivation_form_id = '329ffc7a-0e8c-4e11-8b41-960815c31f8d';
 
 
@@ -62,9 +70,22 @@ class Makewebbetter_Onboarding_Helper {
 	 * Plugin Name.
 	 *
 	 * @since 3.0.0
+	 * @var plugin_name
 	 */
 	private static $plugin_name;
+	/**
+	 * Plugin Name.
+	 *
+	 * @since 3.0.0
+	 * @var store_name
+	 */
 	private static $store_name;
+	/**
+	 * Plugin Name.
+	 *
+	 * @since 3.0.0
+	 * @var store_url
+	 */
 	private static $store_url;
 
 	/**
@@ -98,13 +119,13 @@ class Makewebbetter_Onboarding_Helper {
 	}
 
 	/**
-	 * Main HubWooConnectionMananager Instance.
+	 * Main Makewebbetter_Onboarding_Helper Instance.
 	 *
-	 * Ensures only one instance of HubWooConnectionMananager is loaded or can be loaded.
+	 * Ensures only one instance of Makewebbetter_Onboarding_Helper is loaded or can be loaded.
 	 *
 	 * @since 3.0.0
 	 * @static
-	 * @return HubWooConnectionMananager - Main instance.
+	 * @return Makewebbetter_Onboarding_Helper - Main instance.
 	 */
 	public static function get_instance() {
 
@@ -134,12 +155,13 @@ class Makewebbetter_Onboarding_Helper {
 		 * between the defined hooks and the functions defined in this
 		 * class.
 		 */
+
 		if ( $this->is_valid_page_screen() ) {
 
-			wp_enqueue_style( 'makewebbetter-onboarding-style', MWB_M4WP_PLUGIN_URL . 'admin/css/makewebbetter-onboarding-admin.css', array(), '3.0.0', 'all' );
+			wp_enqueue_style( 'makewebbetter-onboarding-style', MWB_MAUTIC_FOR_WP_URL . 'admin/css/makewebbetter-onboarding-admin.css', array(), '3.0.0', 'all' );
 
-			// Uncomment Only when your plugin doesn't uses the Select2
-			wp_enqueue_style( 'makewebbetter-onboarding-select2-style', MWB_M4WP_PLUGIN_URL . 'admin/css/select2.min.css', array(), '3.0.0', 'all' );
+			// Uncomment Only when your plugin doesn't uses the Select2.
+			wp_enqueue_style( 'makewebbetter-onboarding-select2-style', MWB_MAUTIC_FOR_WP_URL . 'admin/css/select2.min.css', array(), '3.0.0', 'all' );
 		}
 	}
 
@@ -163,10 +185,11 @@ class Makewebbetter_Onboarding_Helper {
 		 */
 		if ( $this->is_valid_page_screen() ) {
 
-			wp_enqueue_script( 'makewebbetter-onboarding-scripts', MWB_M4WP_PLUGIN_URL . 'admin/js/makewebbetter-onboarding-admin.js', array( 'jquery' ), '1.0.0', true );
+			wp_enqueue_script( 'makewebbetter-onboarding-scripts', MWB_MAUTIC_FOR_WP_URL . 'admin/js/makewebbetter-onboarding-admin.js', array( 'jquery' ), '1.0.0', true );
 
 			global $pagenow;
 			$current_slug = ! empty( explode( '/', plugin_basename( __FILE__ ) ) ) ? explode( '/', plugin_basename( __FILE__ ) )[0] : '';
+			$plugin_slug  = 'integration-with-mautic-for-wordpress';
 			wp_localize_script(
 				'makewebbetter-onboarding-scripts',
 				'mwb_onboarding',
@@ -174,12 +197,12 @@ class Makewebbetter_Onboarding_Helper {
 					'ajaxurl'                => admin_url( 'admin-ajax.php' ),
 					'auth_nonce'             => wp_create_nonce( 'mwb_onboarding_nonce' ),
 					'current_screen'         => $pagenow,
-					'current_supported_slug' => apply_filters( 'mwb_deactivation_supported_slug', array( $current_slug ) ),
+					'current_supported_slug' => apply_filters( 'mwb_deactivation_supported_slug', array( $current_slug, $plugin_slug ) ),
 				)
 			);
 
-			// Uncomment Only when your plugin doesn't uses the Select2
-			wp_enqueue_script( 'makewebbetter-onboarding-select2-script', MWB_M4WP_PLUGIN_URL . 'admin/js/select2.min.js', array( 'jquery' ), '3.0.0', false );
+			// Uncomment Only when your plugin doesn't uses the Select2.
+			wp_enqueue_script( 'makewebbetter-onboarding-select2-script', MWB_MAUTIC_FOR_WP_URL . 'admin/js/select2.min.js', array( 'jquery' ), '3.0.0', false );
 		}
 	}
 
@@ -191,7 +214,7 @@ class Makewebbetter_Onboarding_Helper {
 	public function add_onboarding_popup_screen() {
 
 		if ( $this->is_valid_page_screen() && $this->can_show_onboarding_popup() ) {
-			require_once MWB_M4WP_PLUGIN_PATH . 'extra-templates/makewebbetter-onboarding-template-display.php';
+			require_once MWB_MAUTIC_FOR_WP_PATH . 'extra-templates/makewebbetter-onboarding-template-display.php';
 		}
 	}
 
@@ -204,8 +227,8 @@ class Makewebbetter_Onboarding_Helper {
 	public function add_deactivation_popup_screen() {
 
 		global $pagenow;
-		if ( ! empty( $pagenow ) && 'plugins.php' == $pagenow ) {
-			require_once MWB_M4WP_PLUGIN_PATH . 'extra-templates/makewebbetter-deactivation-template-display.php';
+		if ( ! empty( $pagenow ) && 'plugins.php' === $pagenow ) {
+			require_once MWB_MAUTIC_FOR_WP_PATH . 'extra-templates/makewebbetter-deactivation-template-display.php';
 		}
 	}
 
@@ -224,10 +247,10 @@ class Makewebbetter_Onboarding_Helper {
 
 		if ( ! empty( $screen->id ) ) {
 
-			$is_valid = in_array( $screen->id, apply_filters( 'mwb_helper_valid_frontend_screens', array() ) ) && $this->add_mwb_additional_validation();
+			$is_valid = in_array( $screen->id, apply_filters( 'mwb_helper_valid_frontend_screens', array() ), true ) && $this->add_mwb_additional_validation();
 		}
 
-		if ( empty( $is_valid ) && 'plugins.php' == $pagenow ) {
+		if ( empty( $is_valid ) && 'plugins.php' === $pagenow ) {
 			$is_valid = true;
 		}
 
@@ -244,7 +267,7 @@ class Makewebbetter_Onboarding_Helper {
 		$is_already_sent = get_option( 'onboarding-data-sent', false );
 
 		// Already submitted the data.
-		if ( ! empty( $is_already_sent ) && 'sent' == $is_already_sent ) {
+		if ( ! empty( $is_already_sent ) && 'sent' === $is_already_sent ) {
 			return false;
 		}
 
@@ -278,13 +301,13 @@ class Makewebbetter_Onboarding_Helper {
 			$current_user_email = $current_user->user_email ? $current_user->user_email : '';
 		}
 
-		$currency_symbol = '$'; 
-		if( class_exists( 'WC' ) ) {
+		if ( function_exists( 'get_woocommerce_currency_symbol' ) ) {
 			$currency_symbol = get_woocommerce_currency_symbol();
+		} else {
+			$currency_symbol = '$';
 		}
-
-		$store_name      = get_bloginfo( 'name ' );
-		$store_url       = get_home_url();
+		$store_name = get_bloginfo( 'name ' );
+		$store_url  = get_home_url();
 
 		/**
 		 * Do not repeat id index.
@@ -304,26 +327,9 @@ class Makewebbetter_Onboarding_Helper {
 			 * Email field with label. ( auto filled with admin email )
 			 */
 
-			// rand() => array(
-			// 'id' => 'monthly-revenue',
-			// 'label' => esc_html__( 'What is your monthly revenue?', 'woo-one-click-upsell-funnel' ),
-			// 'type' => 'radio',
-			// 'name' => 'monthly_revenue_',
-			// 'value' => '',
-			// 'multiple' => 'no',
-			// 'required' => 'yes',
-			// 'extra-class' => '',
-			// 'options' => array(
-			// '0-500'         => $currency_symbol . '0-' . $currency_symbol . '500',
-			// '501-5000'          => $currency_symbol . '501-' . $currency_symbol . '5000',
-			// '5001-10000'        => $currency_symbol . '5001-' . $currency_symbol . '10000',
-			// '10000+'        => $currency_symbol . '10000+',
-			// ),
-			// ),
-
 			rand() => array(
 				'id'          => 'industry_type',
-				'label'       => esc_html__( 'What industry defines your business?', 'woo-one-click-upsell-funnel' ),
+				'label'       => esc_html__( 'What industry defines your business?', 'makewebbetter-mautic-for-wordpress' ),
 				'type'        => 'select',
 				'name'        => 'industry_type_',
 				'value'       => '',
@@ -358,7 +364,7 @@ class Makewebbetter_Onboarding_Helper {
 
 			rand() => array(
 				'id'          => 'onboard-email',
-				'label'       => esc_html__( 'What is the best email address to contact you?' ),
+				'label'       => esc_html__( 'What is the best email address to contact you?', 'makewebbetter-mautic-for-wordpress' ),
 				'type'        => 'email',
 				'name'        => 'email',
 				'value'       => $current_user_email,
@@ -368,7 +374,7 @@ class Makewebbetter_Onboarding_Helper {
 
 			rand() => array(
 				'id'          => 'onboard-number',
-				'label'       => esc_html__( 'What is your contact number?' ),
+				'label'       => esc_html__( 'What is your contact number?', 'makewebbetter-mautic-for-wordpress' ),
 				'type'        => 'text',
 				'name'        => 'phone',
 				'value'       => '',
@@ -542,12 +548,12 @@ class Makewebbetter_Onboarding_Helper {
 		$class    = ! empty( $attr['extra-class'] ) ? $attr['extra-class'] : '';
 		$value    = ! empty( $attr['value'] ) ? $attr['value'] : '';
 		$options  = ! empty( $attr['options'] ) ? $attr['options'] : array();
-		$multiple = ! empty( $attr['multiple'] ) && 'yes' == $attr['multiple'] ? 'yes' : 'no';
+		$multiple = ! empty( $attr['multiple'] ) && 'yes' === $attr['multiple'] ? 'yes' : 'no';
 		$required = ! empty( $attr['required'] ) ? 'required="required"' : '';
 
 		$html = '';
 
-		if ( 'hidden' != $type ) : ?>
+		if ( 'hidden' !== $type ) : ?>
 			<div class ="mwb-customer-data-form-single-field">
 			<?php
 		endif;
@@ -562,7 +568,7 @@ class Makewebbetter_Onboarding_Helper {
 					<label class="on-boarding-label" for="<?php echo esc_attr( $id ); ?>"><?php echo esc_attr( $label ); ?></label>
 
 					<?php
-					$is_multiple = ! empty( $multiple ) && 'yes' != $multiple ? 'name = "' . $name . '"' : '';
+					$is_multiple = ! empty( $multiple ) && 'yes' !== $multiple ? 'name = "' . $name . '"' : '';
 
 					foreach ( $options as $option_value => $option_label ) :
 						?>
@@ -573,7 +579,7 @@ class Makewebbetter_Onboarding_Helper {
 					<?php endforeach; ?>
 
 					<?php
-				 endif;
+				endif;
 
 				break;
 
@@ -583,10 +589,10 @@ class Makewebbetter_Onboarding_Helper {
 					?>
 
 					<label class="on-boarding-label" for="<?php echo esc_attr( $id ); ?>'"><?php echo esc_attr( $label ); ?></label>
-					
+
 					<?php foreach ( $options as $option_id => $option_label ) : ?>
-						
-						   <div class="mwb-<?php echo esc_html( $base_class ); ?>-checkbox-wrapper">
+
+						<div class="mwb-<?php echo esc_html( $base_class ); ?>-checkbox-wrapper">
 						<input type="<?php echo esc_html( $type ); ?>" class="on-boarding-<?php echo esc_html( $type ); ?>-field <?php echo esc_html( $class ); ?>" value="<?php echo esc_html( $value ); ?>" id="<?php echo esc_html( $option_id ); ?>">
 						<label class="on-boarding-field-label" for="<?php echo esc_html( $option_id ); ?>"><?php echo esc_html( $option_label ); ?></label>
 						</div>
@@ -602,19 +608,19 @@ class Makewebbetter_Onboarding_Helper {
 				// If field requires multiple answers.
 				if ( ! empty( $options ) && is_array( $options ) ) {
 
-					$is_multiple = 'yes' == $multiple ? 'multiple' : '';
-					$select2     = ( 'yes' == $multiple && 'select' == $type ) || 'select2' == $type ? 'on-boarding-select2 ' : '';
+					$is_multiple = 'yes' === $multiple ? 'multiple' : '';
+					$select2     = ( 'yes' === $multiple && 'select' === $type ) || 'select2' === $type ? 'on-boarding-select2 ' : '';
 					?>
 
 					<label class="on-boarding-label"  for="<?php echo esc_attr( $id ); ?>"><?php echo esc_html( $label ); ?></label>
 					<select class="on-boarding-select-field <?php echo esc_html( $select2 ); ?> <?php echo esc_html( $class ); ?>" id="<?php echo esc_html( $id ); ?>" name="<?php echo esc_html( $name ); ?>[]" <?php echo esc_html( $required ); ?> <?php echo esc_html( $is_multiple ); ?>>
 
-						<?php if ( 'select' == $type ) : ?>	
+						<?php if ( 'select' === $type ) : ?>	
 							<option class="on-boarding-options" value=""><?php esc_html( 'Select Any One Option...', 'textdomain' ); ?></option>
 						<?php endif; ?>
 
 						<?php foreach ( $options as $option_value => $option_label ) : ?>	
-						
+
 							<option class="on-boarding-options" value="<?php echo esc_attr( $option_value ); ?>"><?php echo esc_html( $option_label ); ?></option>
 
 						<?php endforeach; ?>
@@ -655,7 +661,7 @@ class Makewebbetter_Onboarding_Helper {
 				<?php
 		}
 
-		if ( 'hidden' != $type ) :
+		if ( 'hidden' !== $type ) :
 			?>
 			</div>
 			<?php
@@ -680,7 +686,7 @@ class Makewebbetter_Onboarding_Helper {
 
 			foreach ( $form_data as $key => $input ) {
 
-				if ( 'show-counter' == $input->name ) {
+				if ( 'show-counter' === $input->name ) {
 					continue;
 				}
 
@@ -718,7 +724,7 @@ class Makewebbetter_Onboarding_Helper {
 				array_filter(
 					$formatted_data,
 					function( $item ) {
-						return isset( $item['name'] ) && 'plugin_deactivation_reason' == $item['name'];
+						return isset( $item['name'] ) && 'plugin_deactivation_reason' === $item['name'];
 					}
 				)
 			);
@@ -741,7 +747,7 @@ class Makewebbetter_Onboarding_Helper {
 			wp_die();
 		}
 
-		if ( ! empty( $action_type ) && 'onboarding' == $action_type ) {
+		if ( ! empty( $action_type ) && 'onboarding' === $action_type ) {
 			$get_skipped_timstamp = update_option( 'onboarding-data-sent', 'sent' );
 		}
 
@@ -804,8 +810,12 @@ class Makewebbetter_Onboarding_Helper {
 	 */
 	public function add_mwb_additional_validation( $result = true ) {
 
-		if ( ! empty( $_GET['tab'] ) && 'settings' !== $_GET['tab'] ) {
+		if ( ! empty( $_GET['tab'] ) && 'settings' !== $_GET['tab'] ) { // phpcs:ignore WordPress.Security.NonceVerification
 			$result = false;
+		}
+
+		if ( ! empty( $_GET['page'] ) && 'mwb-mautic-for-wp' === $_GET['page'] ) { // phpcs:ignore WordPress.Security.NonceVerification
+			return true;
 		}
 
 		return $result;
@@ -814,24 +824,30 @@ class Makewebbetter_Onboarding_Helper {
 	/**
 	 * Handle Hubspot form submission.
 	 *
-	 * @param      string $result       The result of this validation.
+	 * @param array  $submission      The submission of this validation.
+	 * @param string $action_type      The action_type of this validation.
 	 * @since    3.0.1
 	 */
-	protected function handle_form_submission_for_hubspot( $submission = false, $action_type = 'onboarding' ) {
+	protected function handle_form_submission_for_hubspot( $submission = array(), $action_type = 'onboarding' ) {
 
-		if ( 'onboarding' == $action_type ) {
-			array_push(
-				$submission,
-				array(
-					'name'  => 'currency',
-					'value' => get_woocommerce_currency(),
-				)
-			);
+		if ( 'onboarding' === $action_type ) {
+
+			if ( function_exists( 'get_woocommerce_currency' ) ) {
+
+				array_push(
+					$submission,
+					array(
+						'name'  => 'currency',
+						'value' => get_woocommerce_currency(),
+					)
+				);
+
+			}
 		}
 
 		$result = $this->hubwoo_submit_form( $submission, $action_type );
 
-		if ( true == $result['success'] ) {
+		if ( true === $result['success'] ) {
 			return true;
 		} else {
 			return false;
@@ -842,6 +858,8 @@ class Makewebbetter_Onboarding_Helper {
 	/**
 	 * Handle Hubspot GET api calls.
 	 *
+	 * @param string $endpoint The endpoint of this validation.
+	 * @param string $headers The headers of this validation.
 	 * @since    3.0.1
 	 */
 	private function hic_get( $endpoint, $headers ) {
@@ -871,6 +889,9 @@ class Makewebbetter_Onboarding_Helper {
 	/**
 	 * Handle Hubspot POST api calls.
 	 *
+	 * @param string $endpoint The endpoint of this validation.
+	 * @param string $post_params The post_params of this validation.
+	 * @param string $headers The headers of this validation.
 	 * @since    3.0.1
 	 */
 	private function hic_post( $endpoint, $post_params, $headers ) {
@@ -900,12 +921,13 @@ class Makewebbetter_Onboarding_Helper {
 	/**
 	 *  Hubwoo Onboarding Submission :: Get a form.
 	 *
-	 * @param           $form_id    form ID.
+	 * @param array  $form_data The post_params of this validation.
+	 * @param string $action_type The action_type of this validation.
 	 * @since       3.0.1
 	 */
 	protected function hubwoo_submit_form( $form_data = array(), $action_type = 'onboarding' ) {
 
-		if ( 'onboarding' == $action_type ) {
+		if ( 'onboarding' === $action_type ) {
 			$form_id = self::$onboarding_form_id;
 		} else {
 			$form_id = self::$deactivation_form_id;
@@ -930,7 +952,7 @@ class Makewebbetter_Onboarding_Helper {
 
 		$response = $this->hic_post( $url, $form_data, $headers );
 
-		if ( $response['status_code'] == 200 ) {
+		if ( 200 === $response['status_code'] ) {
 			$result            = json_decode( $response['response'], true );
 			$result['success'] = true;
 		} else {
@@ -942,8 +964,12 @@ class Makewebbetter_Onboarding_Helper {
 	}
 
 
-	// Function to get the client IP address
-	function get_client_ip() {
+	/**
+	 *  Hubwoo get_client_ip.
+	 *
+	 * @since       3.0.1
+	 */
+	public function get_client_ip() {
 		$ipaddress = '';
 		if ( getenv( 'HTTP_CLIENT_IP' ) ) {
 			$ipaddress = getenv( 'HTTP_CLIENT_IP' );

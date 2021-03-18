@@ -1,7 +1,32 @@
 <?php
+/**
+ * Written all the API's data, how they worked n all.
+ *
+ * @link       https://makewebbetter.com/
+ * @since      1.0.0
+ *
+ * @package    MWB_Mautic_For_WP
+ * @subpackage MWB_Mautic_For_WP/includes
+ */
 
-class MWB_M4WP_Mautic_Api {
+/**
+ * Register all actions and filters for the plugin.
+ *
+ * Maintain a list of all hooks that are registered throughout
+ * the plugin, and register them with the WordPress API. Call the
+ * run function to execute the list of actions and filters.
+ *
+ * @package    MWB_Mautic_For_WP
+ * @subpackage MWB_Mautic_For_WP/includes
+ * @author     MakeWebBetter <webmaster@makewebbetter.com>
+ */
+class MWB_Mautic_For_WP_Api {
 
+	/**
+	 * Mautic API
+	 *
+	 * @var [type]
+	 */
 	private static $mautic_api;
 
 	/**
@@ -20,6 +45,12 @@ class MWB_M4WP_Mautic_Api {
 		return $mautic_api->post( $endpoint, $data, $headers );
 	}
 
+	/**
+	 * Returns response.
+	 *
+	 * @since       3.0.0
+	 * @return mixed $response Respose is returned.
+	 */
 	public static function get_self_user() {
 		$response = array(
 			'success' => false,
@@ -44,7 +75,11 @@ class MWB_M4WP_Mautic_Api {
 	}
 
 	/**
-	 * Get mautic api class instance
+	 * Get_mautic_api.
+	 *
+	 * @since       3.0.0
+	 * @return mixed $response Respose is returned.
+	 * @throws Mautic_Api_Exception Mautic_Api_Exception .
 	 */
 	public static function get_mautic_api() {
 
@@ -52,33 +87,33 @@ class MWB_M4WP_Mautic_Api {
 		if ( ! empty( self::$mautic_api ) ) {
 			return self::$mautic_api;
 		}
-		// $authentication_type = 'oauth2' ; //basic , oauth2
+		// Authentication_type = 'oauth2' ; //basic , oauth2 .
 		$authentication_type = get_option( 'mwb_m4wp_auth_type', 'basic' );
 		$base_url            = get_option( 'mwb_m4wp_base_url', '' );
-		if ( '' == $base_url ) {
+		if ( '' === $base_url ) {
 			throw new Mautic_Api_Exception( 'Missing base url', 001 );
-			// return false ;
+			// return false .
 		}
 
-		if ( 'oauth2' == $authentication_type ) {
+		if ( 'oauth2' === $authentication_type ) {
 			$api_instance = Oauth2::get_instance();
 			if ( ! $api_instance->is_authorized() ) {
-				// throw new Mautic_Api_Exception( 'Unauthorized' , 004 );
-				if ( ! ( $api_keys = $api_instance->have_valid_api_keys() ) ) {
+				if ( ! ( $api_instance->have_valid_api_keys() ) ) {
+					$api_keys = $api_instance->have_valid_api_keys();
 					throw new Mautic_Api_Exception( 'Missing api credentials', 002 );
-					// return false;
 				}
 			}
 			$api_instance->set_base_url( $base_url );
 			if ( ! $api_instance->have_active_access_token() ) {
-				if ( ! ( $api_keys = $api_instance->have_valid_api_keys() ) ) {
+				if ( ! ( $api_instance->have_valid_api_keys() ) ) {
+					$api_keys = $api_instance->have_valid_api_keys();
 					throw new Mautic_Api_Exception( 'Missing api credentials', 002 );
-					// return false;
+					// return false .
 				}
 				$refresh_token = $api_instance->get_refresh_token();
 				if ( ! $refresh_token ) {
 					throw new Mautic_Api_Exception( 'Missing refresh token', 003 );
-					// return false;
+					// return false .
 				}
 				$api_keys['refresh_token'] = $refresh_token;
 				$redirct_url               = admin_url();
@@ -121,7 +156,11 @@ class MWB_M4WP_Mautic_Api {
 	}
 
 	/**
-	 * Add contact to a segment
+	 * Add contact to a segment.
+	 *
+	 * @param int $contact_id Contact data.
+	 * @param int $segment_id Segment data.
+	 * @return bool
 	 */
 	public static function add_contact_to_segment( $contact_id, $segment_id ) {
 		$endpoint   = "api/segments/$segment_id/contact/$contact_id/add";
@@ -145,7 +184,7 @@ class MWB_M4WP_Mautic_Api {
 		} catch ( Exception $e ) {
 			// print_r($e->getMessage());
 			// show notification
-			// log exception
+			// log exception.
 			return false;
 		}
 	}
@@ -162,14 +201,18 @@ class MWB_M4WP_Mautic_Api {
 		} catch ( Exception $e ) {
 			// print_r($e->getMessage());
 			// show notification
-			// log exception
+			// log exception.
 			return false;
 		}
 
 	}
 
 	/**
-	 * Get widget data
+	 * Get Widget data.
+	 *
+	 * @param int $widget_name Widget name.
+	 * @param int $data data.
+	 * @return bool
 	 */
 	public static function get_widget_data( $widget_name, $data ) {
 		$endpoint = "api/data/$widget_name";
@@ -178,9 +221,9 @@ class MWB_M4WP_Mautic_Api {
 			$headers    = $mautic_api->get_auth_header();
 			return $mautic_api->get( $endpoint, $data, $headers );
 		} catch ( Exception $e ) {
-			 // print_r($e->getMessage());
+			// print_r($e->getMessage());
 			// show notification
-			// log exception
+			// log exception.
 			return false;
 		}
 	}
@@ -199,7 +242,11 @@ class MWB_M4WP_Mautic_Api {
 	}
 
 	/**
-	 * Add points to contact
+	 * Add_points.
+	 *
+	 * @param int $contact_id Id of the contact.
+	 * @param int $points points.
+	 * @return bool
 	 */
 	public static function add_points( $contact_id, $points ) {
 		$endpoint   = "api/contacts/$contact_id/points/plus/$points";

@@ -1,67 +1,154 @@
 <?php
+/**
+ * Base integration class.
+ *
+ * @link       https://makewebbetter.com
+ * @since      3.0.0
+ *
+ * @package     MWB_Mautic_For_WP
+ * @subpackage  MWB_Mautic_For_WP/includes
+ */
 
-abstract class Mautic_For_Wordpress_Integration {
+/**
+ * The class responsible for integration functionality.
+ *
+ * @package     MWB_Mautic_For_WP
+ * @subpackage  MWB_Mautic_For_WP/includes
+ * @author      makewebbetter <webmaster@makewebbetter.com>
+ */
+abstract class Mautic_For_WordPress_Integration {
 
-	public $name        = '';
+	/**
+	 * Name of the integration.
+	 *
+	 * @since    1.0.0
+	 * @access   public
+	 * @var      string    $name    Name of the integration.
+	 */
+	public $name = '';
+
+	/**
+	 * Name of the integration.
+	 *
+	 * @since    1.0.0
+	 * @access   public
+	 * @var      string    $desciption    Name of the integration.
+	 */
 	public $description = '';
-	public $id          = '';
-	public $settings    = '';
 
+	/**
+	 * Id of the integration.
+	 *
+	 * @since    1.0.0
+	 * @access   public
+	 * @var      string    $id    Id of the integration.
+	 */
+	public $id = '';
+
+	/**
+	 * Settings of the integration.
+	 *
+	 * @since    1.0.0
+	 * @access   public
+	 * @var      string    $settings    Settings of the integration.
+	 */
+	public $settings = '';
+
+	/**
+	 * Constructor.
+	 *
+	 * @param string $id Id of the integration.
+	 * @param array  $settings Settings of the integration.
+	 */
 	public function __construct( $id, $settings = array() ) {
 		$this->id       = $id;
 		$this->settings = ! empty( $settings ) ? $settings : $this->get_default_settings();
 	}
 
-	// check if integration is enable
+	/**
+	 * Check if integration is enable.
+	 *
+	 * @return bool
+	 */
 	public function is_enabled() {
-		if ( isset( $this->settings['enable'] ) && $this->settings['enable'] == 'yes' ) {
+		if ( isset( $this->settings['enable'] ) && 'yes' === $this->settings['enable'] ) {
 			return true;
 		}
 		return false;
 	}
 
-	// check if integration is enable
+	/**
+	 * Check if integration is implicit.
+	 *
+	 * @return bool
+	 */
 	public function is_implicit() {
-		if ( isset( $this->settings['implicit'] ) && $this->settings['implicit'] == 'yes' ) {
+		if ( isset( $this->settings['implicit'] ) && 'yes' === $this->settings['implicit'] ) {
 			return true;
 		}
 		return false;
 	}
 
+	/**
+	 * Check if integration checkbox is precheck.
+	 *
+	 * @return bool
+	 */
 	public function is_checkbox_precheck() {
-		if ( isset( $this->settings['precheck'] ) && $this->settings['precheck'] == 'yes' ) {
+		if ( isset( $this->settings['precheck'] ) && 'yes' === $this->settings['precheck'] ) {
 			return true;
 		}
 		return false;
 	}
 
-	// get integration id
+	/**
+	 * Get id of integration.
+	 *
+	 * @return string $id Id of the integration.
+	 */
 	public function get_id() {
 		return $this->id;
 	}
 
-	// get integration name
+	/**
+	 * Get name of integration.
+	 *
+	 * @return string $name Name of the integration.
+	 */
 	public function get_name() {
 		return $this->name;
 	}
 
+	/**
+	 * Get description of integration.
+	 *
+	 * @return string $description description of the integration.
+	 */
 	public function get_description() {
 		return $this->description;
 	}
 
-	// get default settings for the integration
+	/**
+	 * Get default settings.
+	 *
+	 * @return array  settings.
+	 */
 	public function get_default_settings() {
 		return array(
 			'enable'       => 'no',
 			'implicit'     => 'yes',
-			'checkbox_txt' => __( 'Sign me up for the newsletter', 'mautic-for-wordpress' ),
+			'checkbox_txt' => __( 'Sign me up for the newsletter', 'makewebbetter-mautic-for-wordpress' ),
 			'precheck'     => 'no',
 			'add_segment'  => '-1',
 			'add_tag'      => '',
 		);
 	}
 
-	// get saved settings
+	/**
+	 * Get saved settings.
+	 *
+	 * @return array $settings settings.
+	 */
 	public function get_saved_settings() {
 		$settings = array();
 		foreach ( $this->get_default_settings() as $key => $value ) {
@@ -70,7 +157,12 @@ abstract class Mautic_For_Wordpress_Integration {
 		return $settings;
 	}
 
-	// get setting value
+	/**
+	 * Get saved setting option.
+	 *
+	 * @param string $key Key of the setting option.
+	 * @return string  $value Setting value.
+	 */
 	public function get_option( $key = '' ) {
 
 		if ( empty( $key ) ) {
@@ -81,40 +173,68 @@ abstract class Mautic_For_Wordpress_Integration {
 
 	}
 
-	// get implicit checkbox html
+	/**
+	 * Get Checkbox html.
+	 *
+	 * @return string  Checkbox html.
+	 */
 	public function get_checkbox_html() {
 		return '';
 	}
 
-	// add opt in checkbox
+	/**
+	 * Add optin checkbox.
+	 */
 	public function add_checkbox() {
 
 	}
 
-	// initialize integration
+	/**
+	 * Initialize hooks.
+	 */
 	public function initialize() {
 		$this->add_hooks();
 	}
 
-	// add hooks required for the integration
+	/**
+	 * Add hooks.
+	 */
 	public function add_hooks() {
 
 	}
 
-	// check dependencies for the integration here
+	/**
+	 * Check if it is active.
+	 *
+	 * @return bool
+	 */
 	public function is_active() {
 		return false;
 	}
 
+	/**
+	 * Sync data.
+	 *
+	 * @param array $data Data to be synced.
+	 */
 	public function may_be_sync_data( $data ) {
 
 		$sync = false;
-		if ( isset( $_POST['mwb_m4wp_subscribe'] ) && $_POST['mwb_m4wp_subscribe'] == 'yes' ) {
+
+		if ( ! $this->is_implicit() ) {
+			//phpcs:disable
+			if ( isset( $_POST['mwb_m4wp_subscribe'] ) && $_POST['mwb_m4wp_subscribe'] == 'yes' ) {
+				$sync = true;
+			}
+			//phpcs:enable
+		} else {
 			$sync = true;
 		}
+
 		if ( ! $sync ) {
 			return;
 		}
+
 		$tags_string = $this->get_option( 'add_tag' );
 		$segment_id  = $this->get_option( 'add_segment' );
 		$contact_id  = 0;
@@ -122,13 +242,13 @@ abstract class Mautic_For_Wordpress_Integration {
 			$tags         = explode( ',', $tags_string );
 			$data['tags'] = $tags;
 		}
-		$contact = MWB_M4WP_Mautic_Api::create_contact( $data );
-		if ( $segment_id != '-1' ) {
+		$contact = MWB_Mautic_For_WP_Api::create_contact( $data );
+		if ( '-1' !== $segment_id ) {
 			if ( isset( $contact['contact'] ) ) {
 				$contact_id = $contact['contact']['id'];
 			}
 			if ( $contact_id > 0 ) {
-				MWB_M4WP_Mautic_Api::add_contact_to_segment( $contact_id, $segment_id );
+				MWB_Mautic_For_WP_Api::add_contact_to_segment( $contact_id, $segment_id );
 			}
 		}
 	}

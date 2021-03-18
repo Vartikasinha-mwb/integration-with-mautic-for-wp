@@ -1,6 +1,35 @@
 <?php
-class Mautic_For_Wordpress_Integration_Manager {
+/**
+ * Manage the internationalization functionality
+ *
+ * Loads and defines the internationalization files for this plugin
+ * so that it is ready for translation.
+ *
+ * @link       https://makewebbetter.com/
+ * @since      1.0.0
+ *
+ * @package    MWB_Mautic_For_WP
+ * @subpackage MWB_Mautic_For_WP/includes
+ */
 
+/**
+ * Define the internationalization functionality.
+ *
+ * Loads and defines the internationalization files for this plugin
+ * so that it is ready for translation.
+ *
+ * @since      1.0.0
+ * @package    MWB_Mautic_For_WP
+ * @subpackage MWB_Mautic_For_WP/includes
+ * @author     MakeWebBetter <webmaster@makewebbetter.com>
+ */
+class MWB_Mautic_For_WP_Integration_Manager {
+
+	/**
+	 * Initialize_active_integrations.
+	 *
+	 * @since    1.0.0
+	 */
 	public static function initialize_active_integrations() {
 
 		if ( ! self::get_connection_status() ) {
@@ -18,12 +47,18 @@ class Mautic_For_Wordpress_Integration_Manager {
 		}
 	}
 
+	/**
+	 * Get_integration.
+	 *
+	 * @param array $details     Detail for integration.
+	 * @since    3.0.1
+	 */
 	public static function get_integration( $details ) {
-		extract( $details );
+		extract( $details ); //phpcs:ignore WordPress.PHP.DontExtract.extract_extract
 		if ( empty( $class ) || empty( $path ) || empty( $id ) ) {
 			return false;
 		}
-		$file_path = MWB_M4WP_PLUGIN_PATH . 'includes/integrations/' . $path;
+		$file_path = MWB_MAUTIC_FOR_WP_PATH . 'includes/integrations/' . $path;
 
 		$file_path = apply_filters( 'mwb_m4wp_integration_path', $file_path );
 
@@ -37,6 +72,12 @@ class Mautic_For_Wordpress_Integration_Manager {
 		return false;
 	}
 
+	/**
+	 * Get_integrations.
+	 *
+	 * @param array $key     Key for integration.
+	 * @since    1.0.0
+	 */
 	public static function get_integrations( $key = '' ) {
 
 		$integrations = array(
@@ -54,13 +95,18 @@ class Mautic_For_Wordpress_Integration_Manager {
 
 		$integrations = apply_filters( 'mwb_m4wp_available_integrations', $integrations );
 
-		if ( $key != '' && isset( $integrations[ $key ] ) ) {
+		if ( '' !== $key && isset( $integrations[ $key ] ) ) {
 			return $integrations[ $key ];
 		}
 
 		return $integrations;
 	}
 
+	/**
+	 * Initialize_active_integrations.
+	 *
+	 * @since    1.0.0
+	 */
 	public static function get_connection_status() {
 		return get_option( 'mwb_m4wp_connection_status', false );
 	}

@@ -1,17 +1,58 @@
 <?php
+/**
+ * Comment form integration.
+ *
+ * @link       https://makewebbetter.com
+ * @since      3.0.0
+ *
+ * @package     MWB_Mautic_For_WP
+ * @subpackage  MWB_Mautic_For_WP/includes
+ */
 
-class Comment_Form_Integration extends Mautic_For_Wordpress_Integration {
-	public $name        = 'Comment Form';
+/**
+ * The Comment form integration functionality.
+ *
+ * @package     MWB_Mautic_For_WP
+ * @subpackage  MWB_Mautic_For_WP/includes
+ * @author      makewebbetter <webmaster@makewebbetter.com>
+ */
+class Comment_Form_Integration extends Mautic_For_WordPress_Integration {
+
+	/**
+	 * The name of this plugin.
+	 *
+	 * @since    1.0.0
+	 * @access   public
+	 * @var      string    $name    Name of the integration.
+	 */
+	public $name = 'Comment Form';
+
+	/**
+	 * The description of this plugin.
+	 *
+	 * @since    1.0.0
+	 * @access   public
+	 * @var      string    $name    Name of the integration.
+	 */
 	public $description = 'WordPress default comment form';
 
+	/**
+	 * Add hooks related to integration.
+	 */
 	public function add_hooks() {
 		add_filter( 'comment_form_fields', array( $this, 'add_checkbox_field' ) );
 		add_action( 'comment_post', array( $this, 'sync_commentor_data' ) );
 	}
 
+	/**
+	 * Sync user.
+	 *
+	 * @param int    $comment_id Comment id.
+	 * @param string $comment_approved comment status.
+	 */
 	public function sync_commentor_data( $comment_id, $comment_approved = '' ) {
 		// is this a spam comment?
-		if ( $comment_approved === 'spam' ) {
+		if ( 'spam' === $comment_approved ) {
 			return false;
 		}
 		$comment = get_comment( $comment_id );
@@ -22,6 +63,11 @@ class Comment_Form_Integration extends Mautic_For_Wordpress_Integration {
 		$this->may_be_sync_data( $data );
 	}
 
+	/**
+	 * Add optin checkbox field.
+	 *
+	 * @param array $comment_fields Comment fields arary.
+	 */
 	public function add_checkbox_field( $comment_fields ) {
 		if ( ! $this->is_implicit() ) {
 			$checked                              = $this->is_checkbox_precheck() ? 'checked ' : '';
@@ -32,7 +78,11 @@ class Comment_Form_Integration extends Mautic_For_Wordpress_Integration {
 		return $comment_fields;
 	}
 
-	// check dependencies for the integration here
+	/**
+	 * Check if integration is active.
+	 *
+	 * @return bool.
+	 */
 	public function is_active() {
 		return true;
 	}

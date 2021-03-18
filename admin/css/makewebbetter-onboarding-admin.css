@@ -4,48 +4,48 @@
  */
  /* Button used to open the contact form - fixed at the bottom of the page */
  .mwb-on-boarding-form-submit {
- 	text-align: center;
+	text-align: center;
  }
  .mwb-on-boarding-wrapper-control {
- 	overflow: hidden;
+	overflow: hidden;
  }
  .mwb-on-boarding-submit {
- 	background-color: #7979f6;
- 	color: white;
- 	padding: 16px 20px;
- 	border: none;
- 	cursor: pointer;
- 	opacity: 0.8;
+	background-color: #7979f6;
+	color: white;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	opacity: 0.8;
  }
  /* Add styles to the form container */
  .mwb-on-boarding-wrapper {
- 	padding: 10px;
- 	background-color: white;
+	padding: 10px;
+	background-color: white;
  }
  /* Set a style for the submit/login button */
  .mwb-on-boarding-wrapper .btn {
- 	background-color: #4CAF50;
- 	color: white;
- 	padding: 16px 20px;
- 	border: none;
- 	cursor: pointer;
- 	width: 100%;
- 	margin-bottom:10px;
- 	opacity: 0.8;
+	background-color: #4CAF50;
+	color: white;
+	padding: 16px 20px;
+	border: none;
+	cursor: pointer;
+	width: 100%;
+	margin-bottom:10px;
+	opacity: 0.8;
  }
  .mwb-customer-data-form-single-field {
- 	background: #1fe2e2;
- 	margin: 10px;
- 	border-radius: 5px;
- 	padding: 6px;
+	background: #1fe2e2;
+	margin: 10px;
+	border-radius: 5px;
+	padding: 6px;
  }
  .on-boarding-label {
- 	color: red;
- 	font-size: 12px;
+	color: red;
+	font-size: 12px;
  }
  .on-boarding-field-label {
- 	color: green;
- 	font-size: 12px;
+	color: green;
+	font-size: 12px;
  }
 /*==========================================
 =            MWB POPUP FORM CSS            =
@@ -335,7 +335,7 @@ input#s2id_autogen1 {
 	.on-boarding-text-field {
 		width: 98%;
 	}
-} 
+}
 @media only screen and (max-width: 796px) {
 	.mwb-customer-data-form-single-field:nth-child(3) {
 		display: block;
@@ -361,9 +361,9 @@ input#s2id_autogen1 {
 		width: 99% !important;
 	}
   /* .mwb-on-boarding-wrapper-background.onboard-popup-show {
-    top: 2% !important;
-    transition: 0.5s linear all;
-    } */
+	top: 2% !important;
+	transition: 0.5s linear all;
+	} */
 }
 @media only screen and (max-width: 453px) {
 	.mwb-on-boarding-form-verify  {
@@ -409,4 +409,3 @@ input#s2id_autogen1 {
 	}
 }
 /*=====  End of MEDIA QUERIES  ======*/
-

@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Provide a admin area view for the plugin
  *
@@ -11,15 +10,14 @@
  * @package    Makewebbetter_Onboarding
  * @subpackage Makewebbetter_Onboarding/admin/onboarding
  */
-?>
-<?php
 
-	global $pagenow;
-if ( empty( $pagenow ) || 'plugins.php' != $pagenow ) {
+global $pagenow;
+if ( empty( $pagenow ) || 'plugins.php' !== $pagenow ) {
 	return false;
 }
 
-	$form_fields = apply_filters( 'mwb_deactivation_form_fields', array() );
+$form_fields = apply_filters( 'mwb_deactivation_form_fields', array() );
+
 ?>
 <?php if ( ! empty( $form_fields ) ) : ?>
 	<div class="mwb-onboarding-section">
@@ -31,7 +29,7 @@ if ( empty( $pagenow ) || 'plugins.php' != $pagenow ) {
 				</a>
 			</div>
 			<h3 class="mwb-on-boarding-heading"></h3>
-			<p class="mwb-on-boarding-desc"><?php esc_html_e( 'May we have a little info about why you are deactivating?', 'text-domain' ); ?></p>
+			<p class="mwb-on-boarding-desc"><?php esc_html_e( 'May we have a little info about why you are deactivating?', 'makewebbetter-mautic-for-wordpress' ); ?></p>
 			<form action="#" method="post" class="mwb-on-boarding-form">
 				<?php foreach ( $form_fields as $key => $field_attr ) : ?>
 					<?php $this->render_field_html( $field_attr, 'deactivating' ); ?>
@@ -41,7 +39,7 @@ if ( empty( $pagenow ) || 'plugins.php' != $pagenow ) {
 					<input type="submit" class="mwb-on-boarding-submit mwb-on-boarding-verify " value="Send Us">
 				</div>
 				<div class="mwb-on-boarding-form-no_thanks">
-					<a href="#" class="mwb-deactivation-no_thanks"><?php esc_html_e( 'Skip and Deactivate Now', 'woo-one-click-upsell-funnel' ); ?></a>
+					<a href="#" class="mwb-deactivation-no_thanks"><?php esc_html_e( 'Skip and Deactivate Now', 'makewebbetter-mautic-for-wordpress' ); ?></a>
 				</div>
 				</div>
 			</form>
