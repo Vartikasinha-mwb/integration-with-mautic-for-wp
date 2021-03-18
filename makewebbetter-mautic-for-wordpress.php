@@ -16,6 +16,7 @@
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
  * Text Domain:       makewebbetter-mautic-for-wordpress
+ * Tested up to:      5.6
  * Domain Path:       /languages
  */
 
@@ -71,7 +72,7 @@ function mwb_mautic_admin_settings( $actions, $plugin_file ) {
 	}
 	if ( $plugin === $plugin_file ) {
 		$settings = array(
-			'settings' => '<a href="' . admin_url( 'admin.php?page=mwb-mautic-for-wp' ) . '">' . __( 'Settings', 'mauwoo' ) . '</a>',
+			'settings' => '<a href="' . admin_url( 'admin.php?page=mwb-mautic-for-wp' ) . '">' . __( 'Settings', 'makewebbetter-mautic-for-wordpress' ) . '</a>',
 		);
 		$actions  = array_merge( $settings, $actions );
 	}
