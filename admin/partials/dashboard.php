@@ -117,7 +117,7 @@ $base_url              = MWB_Mautic_For_WP_Admin::get_mautic_base_url();
 	</div>
 <?php endif; ?>
 <div class="mwb-dashboard-table-wrap">
-	<?php if ( esc_attr( $top_lists ) ) : ?>
+	<?php if ( $top_lists ) : ?>
 		<div class="mwb-col-wrap">
 			<div class="table-responsive">
 				<div class="mwb-m4wp-admin-widget-column">
