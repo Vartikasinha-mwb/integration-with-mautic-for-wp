@@ -1,0 +1,711 @@
+/* custom css */
+
+#wpcontent {
+	padding: 15px;
+}
+
+.wp-admin {
+	background-color: #E5F4FE;
+}
+
+
+/* boilerplate css */
+
+*,
+*:before,
+*:after {
+	box-sizing: border-box;
+}
+
+a,
+a:hover,
+a:focus {
+	text-decoration: none;
+	box-shadow: none;
+}
+
+button:focus {
+	outline: none;
+	border: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+	margin: 0;
+}
+
+ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.mwb-link {
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 24px;
+	letter-spacing: 0.3px;
+	color: #3F4756;
+	display: inline-block;
+}
+
+.active {
+	color: #004EB6;
+	position: relative;
+}
+
+.active::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	border-bottom: 3px solid #004EB6;
+	border-radius: 2px;
+}
+
+.mwb-bg-white {
+	background-color: #ffffff;
+}
+
+.mwb-r-8 {
+	border-radius: 8px;
+}
+
+.mwb-header-container {
+	padding: 28px 32px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 8px;
+}
+
+.mwb-header-title {
+	font-style: normal;
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 24px;
+	letter-spacing: 0.3px;
+	color: #1A3365;
+	flex: 0 0 100%;
+	max-width: calc(100% - 100px);
+}
+
+.mwb-navbar {
+	padding: 0 32px;
+	border-bottom: 1px solid rgba(63, 71, 86, 0.25);
+}
+
+.mwb-navbar__items {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.mwb-navbar__items li {
+	margin-right: 32px;
+	margin-bottom: 0px;
+}
+
+.mwb-navbar__items li a {
+	padding: 18px 0;
+}
+
+.mwb-section {
+	padding: 28px 32px;
+	position: relative;
+}
+
+.mwb-form-group {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -15px 35px;
+}
+
+.mwb-form-group__label {
+	flex: 0 0 100%;
+	max-width: 200px;
+	padding: 0 15px;
+}
+
+.mwb-form-group__control {
+	flex: 0 0 100%;
+	max-width: calc(100% - 200px);
+	padding: 0 15px;
+}
+
+.mwb-form-label {
+	font-style: normal;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 24px;
+	letter-spacing: 0.3px;
+}
+
+.mwb-btn {
+	display: inline-block;
+	font-weight: bold;
+	line-height: 16px;
+	color: #ffffff;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	user-select: none;
+	background-color: transparent;
+	border: 1px solid transparent;
+	padding: 16px 32px;
+	font-size: 14px;
+	border-radius: 35px;
+	letter-spacing: 0.3px;
+	text-transform: capitalize;
+}
+
+.mwb-btn-primary {
+	color: #ffffff;
+	background-color: #004EB6;
+	border-color: #004EB6;
+}
+
+.mwb-btn-secondary {
+	color: #ffffff;
+	background-color: #004EB6;
+	border-color: #004EB6;
+	padding: 8px 16px;
+}
+
+.table-responsive {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+	background: #FFFFFF;
+	box-shadow: 0px 2px 5px rgb(63 71 86 / 10%);
+	border-radius: 8px;
+	padding: 16px;
+}
+
+.mwb-col-wrap {
+	margin-bottom: 35px;
+}
+
+.mwb-shadow-panel {
+	background: #FFFFFF;
+	box-shadow: 0px 2px 5px rgba(63, 71, 86, 0.1);
+	border-radius: 8px;
+	padding: 16px;
+}
+
+.content-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	margin: 0 -15px;
+}
+
+.content-wrap .content {
+	flex: 0 0 100%;
+	max-width: 70%;
+	padding: 0 15px;
+}
+
+.content-wrap .cta-wrap {
+	flex: 0 0 100%;
+	max-width: 30%;
+	padding: 0 15px;
+	text-align: right;
+}
+
+.row-hide {
+	display: none !important;
+}
+
+.mwb-version-txt {
+	float: right;
+	font-style: italic;
+	margin-top: 3px;
+}
+
+
+/* my css start */
+
+
+/* common css start */
+
+th.mwb-heading-center {
+	padding-left: 50px;
+}
+
+.mwb-m4wp-admin-table td.setting {
+	padding-left: 20px;
+}
+
+tr.row-inactive {
+	opacity: 0.5;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+
+.mwb-section input[type=radio] {
+	border-radius: 50%;
+}
+
+.mwb-section input[type=checkbox] {
+	border-radius: 4px;
+}
+
+.mwb-section input[type=radio],
+.mwb-section input[type=checkbox] {
+	border: 1px solid #7e8993;
+	background: #fff;
+	/* color: #555; */
+	clear: none;
+	cursor: pointer;
+	display: inline-block;
+	line-height: 0;
+	height: 1rem;
+	margin: -.25rem .25rem 0 0;
+	outline: 0;
+	padding: 0!important;
+	text-align: center;
+	vertical-align: middle;
+	width: 1rem;
+	max-width: 1rem;
+	min-width: 1rem;
+	-webkit-appearance: none;
+	box-shadow: inset 0 1px 2px rgb(0 0 0 / 10%);
+	transition: .05s border-color ease-in-out;
+}
+
+.mwb-section::after {
+	border-bottom: 1px solid rgba(63, 71, 86, 0.25);
+	bottom: 27px;
+	content: '';
+	height: 3px;
+	left: 0px;
+	position: absolute;
+	right: 0;
+}
+
+.mwb-m4wp-admin-integration-panel input[type=checkbox]:focus,
+.setting-table-wrap input[type=checkbox]:focus {
+	outline: none;
+}
+
+.switch {
+	width: 40px;
+	border-radius: 32px;
+	position: relative;
+	height: 16px;
+	background: #87C6F8;
+	display: block;
+}
+
+.mwb-m4wp-admin-integration-panel input[type="checkbox"],
+.setting-table-wrap input[type="checkbox"] {
+	border-radius: 50%;
+	border-radius: 50%;
+	border: 1px solid #ffffff;
+	box-shadow: 0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%);
+	box-sizing: border-box;
+	height: 22px;
+	left: 0px;
+	position: absolute;
+	top: 1px;
+	transition: 0.1s linear all;
+	min-width: 22px;
+	z-index: 1;
+}
+
+input.mwb-switch-checkbox.mwb-switch-checkbox--move {
+	transform: translateX(88%);
+	background: #2196f3;
+	border: none;
+}
+
+.mwb-m4wp-admin-integration-panel input[type=checkbox]::before,
+.setting-table-wrap input[type=checkbox]::before {
+	content: "";
+}
+
+.mwb-form-table a:hover,
+.mwb-m4wp-form-view:hover,
+.mwb-m4wp-form-view:focus,
+.mwb-m4wp-form-edit:hover,
+.mwb-m4wp-form-edit:focus,
+.mwb-auth-btn:hover,
+.mwb-auth-btn:focus,
+.connection-detail-wrap a:hover ,
+.connection-detail-wrap a:focus {
+	color: #ffffff;
+}
+
+.connection-form-wrap .mwb-form-table tr,
+.mwb-dashboard-table-wrap {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+}
+
+.mauticform_wrapper select,
+.mwb-form-table td select,
+.mwb-admin-table select,
+.mwb-form-html select {
+	max-width: 200px;
+	width: 100%;
+	padding: 8px 24px 8px 8px;
+}
+
+.mwb-m4wp-admin-table .mwb-admin-table-inputfield,
+.mauticform_wrapper input,
+.connection-form-wrap input,
+.mwb-admin-table input[type="text"] {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	width: 100%;
+	max-width: 250px;
+	border-radius: 4px;
+}
+
+.mauticform-button-wrapper .mauticform-button,
+.mwb-admin-table .mwb-m4wp-admin-button-wrap button {
+	background: #004EB6;
+	border-radius: 35px;
+	border-style: none;
+	color: #ffffff;
+	font-weight: bold;
+	max-width: 150px;
+	padding: 12px 15px;
+	width: 100%;
+}
+
+.mwb-m4wp-admin-panel-date .mwb-dashicon,
+.mwb-refresh-btn,
+.mwb-form-code {
+	position: relative;
+}
+.mwb-save-btn-wrap{
+	display: flex;
+}
+
+/* common css end */
+
+
+/* setup page css start */
+
+.span-disconnected {
+	color: #bb2124;
+	display: block;
+	font-size: 14px;
+	margin-bottom: 9px;
+}
+
+.connection-form-wrap .mwb-form-table th {
+	flex: 0 0 100%;
+	max-width: 200px;
+	padding: 10px 5px;
+}
+
+.mwb-form-table td {
+	flex: 0 0 100%;
+	max-width: 300px;
+	position: relative;
+}
+
+.mwb-save-btn,.mwb-auth-btn {
+	max-width: 160px;
+	padding: 16px;
+	width: 100%;
+}
+.mwb-auth-btn{
+	margin-left: 10px;
+}
+
+
+.mwb-trailing-icon .dashicons {
+	color: #9f9f9f;
+	cursor: pointer;
+	font-size: 25px;
+	position: absolute;
+	right: 20%;
+	top: 50%;
+	transform: translateY(calc(-50% - 6px));
+}
+
+
+/* setup page css end */
+
+
+/* setting page css start */
+
+.mwb-m4wp-admin-table .form-table input[type=radio] {
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+
+/* setting page css end */
+
+.mwb-m4wp-admin-panel-date input {
+	border-radius: 4px;
+	margin-bottom: 10px;
+	margin-right: 5px;
+	max-width: 250px;
+	padding-bottom: 9px;
+	padding-top: 9px;
+	width: 100%;
+}
+
+.mwb-m4wp-admin-panel-date label {
+	font-size: 16px;
+	margin-right: 5px;
+}
+
+
+/* dashboard page css start */
+
+.mwb-m4wp-admin-widget-head h2,
+.mwb-m4wp-admin-form-wrap-title h2 {
+	background-color: #f2f2f2;
+	padding: 10px 5px;
+}
+
+.mwb-refresh-icon {
+	left: 10px;
+	position: absolute;
+	top: 0px;
+}
+
+
+/* animation of reloder start*/
+
+@keyframes rotation {
+	0% {
+		transform: rotate(0deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
+
+
+/* animation of reloder end*/
+
+.mwb-refresh-icon--rotation {
+	animation: rotation linear 1s infinite;
+}
+
+.mwb-dashboard-table-wrap th,
+.mwb-dashboard-table-wrap td {
+	border-bottom: 1px solid rgba(63, 71, 86, 0.25);
+	padding: 10px 10px 10px 5px;
+	text-align: left;
+	width: 100%;
+}
+
+.mwb-dashboard-table-wrap .table-responsive {
+	box-shadow: none;
+}
+
+.mwb-dashboard-table-wrap .mwb-col-wrap {
+	flex: 0 0 100%;
+	max-width: 50%;
+}
+
+
+/* dashboard page css end */
+
+
+/* forms page css start */
+
+.mwb-form-stripped-table td {
+	padding: 15px 10px 15px 0;
+}
+
+.mwb-form-stripped-table tr:nth-child(even) {
+	background-color: #f2f2f2;
+}
+
+.mwb-paste-text-icon {
+	position: absolute;
+	top: 23px;
+	right: 30px;
+}
+
+.mwb-form-html label {
+	margin-bottom: 10px;
+}
+
+.mwb-form-html--popup {
+	position: fixed;
+	background: rgba(0, 0, 0, 0.5);
+	top: 0;
+	right: 0;
+	width: 100%;
+	margin: 0px auto;
+	bottom: 0;
+	z-index: 99;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.mwb-m4wp-form-head {
+	background: #9ED8DB;
+	border-radius: 8px 8px 0 0;
+	left: 0;
+	margin: 0px auto;
+	max-width: 600px;
+	padding: 20px 0;
+	position: absolute;
+	right: 0;
+	text-align: center;
+	top: 40px;
+	z-index: 1;
+	opacity: 0;
+}
+
+.mwb-preview-close {
+	position: relative;
+}
+
+.mwb-preview-close--icon {
+	cursor: pointer;
+	font-size: 30px;
+	position: absolute;
+	right: 10px;
+	top: -25px;
+	transform: rotate( 45deg);
+}
+
+
+/* mauticform innner form css start */
+
+.mwb-form-html--popup .mauticform_wrapper {
+	max-width: 600px;
+	margin: 10px auto;
+	background: #ffffff;
+	width: 100%;
+	padding: 20px 10px 10px 10px;
+	position: fixed;
+	border-radius: 8px;
+	overflow-y: auto;
+	top: 75px;
+	right: 0;
+	cursor: not-allowed;
+	left: 0;
+	height: calc(100vh - 105px);
+	bottom: 10px;
+}
+
+.mauticform-button-wrapper {
+	margin: 10px 0;
+}
+
+.mauticform_wrapper form {
+	pointer-events: none;
+}
+
+
+/* mauticform inner form css end */
+
+
+/* forms page css end */
+
+
+/* integration settings page css start */
+
+.mwb-m4wp-admin-form-wrap-title {
+	position: relative;
+}
+
+.mwb-arrow-left {
+	position: absolute;
+	left: -30px;
+	top: 10px;
+}
+
+.mwb-m4wp-admin-panel-back-wrap {
+	margin-bottom: 15px;
+}
+
+.mwb-m4wp-admin-panel-back-wrap a {
+	border-radius: 4px;
+	border: 1px solid #5d6c7c;
+	max-width: 100px;
+	padding: 8px 15px;
+	width: 100%;
+}
+
+.mwb-m4wp-admin-table td {
+	padding: 20px 0px;
+}
+
+.mwb-admin-table p.description {
+	font-size: 11px;
+}
+
+.mwb-admin-table label {
+	margin-right: 8px;
+}
+
+.mwb-admin-table .mwb-m4wp-admin-button-wrap button:hover {
+	background-color: #004EB6;
+	color: #ffffff;
+}
+
+.mwb-m4wp-form-table-head {
+	float: right;
+}
+
+.mwb-btn-secondary:hover{
+	color: #fff;
+}
+
+.mwb-section input[type="password"] {
+	padding-right: 50px;
+}
+
+.mwb-notification-bar {
+	padding: 10px 20px;
+	margin-bottom: 8px;
+	font-size: 14px;
+	border-left: 5px solid #1A3365;;
+}
+
+.dashicons.dashicons-no.mwb-notification-close {
+	float: right;
+	cursor: pointer;
+}
+
+/* integration settings page css end */
+
+@media only screen and (max-width:768px) {
+	.mwb-dashboard-table-wrap .mwb-col-wrap {
+		max-width: 100%;
+	}
+	input[type=radio]:checked:before {
+		margin: .1875rem;
+	}
+	th.mwb-heading-center {
+		padding-left: 0px;
+	}
+	.mwb-m4wp-admin-table td.setting {
+		padding-left: 0px;
+	}
+	.mwb-paste-text-icon {
+		top: 25px;
+	}
+	.mwb-admin-table select#mwb-m4wp-segment-select {
+		display: inline-block;
+		max-width: 250px;
+	}
+}
+
+
+/* my css end */

@@ -6,8 +6,8 @@
  * @link       https://makewebbetter.com/
  * @since      1.0.0
  *
- * @package    Mautic_For_Wordpress
- * @subpackage Mautic_For_Wordpress/includes
+ * @package    Wp_Mautic_Integration
+ * @subpackage Wp_Mautic_Integration/includes
  */
 
 /**
@@ -17,11 +17,11 @@
  * the plugin, and register them with the WordPress API. Call the
  * run function to execute the list of actions and filters.
  *
- * @package    Mautic_For_Wordpress
- * @subpackage Mautic_For_Wordpress/includes
+ * @package    Wp_Mautic_Integration
+ * @subpackage Wp_Mautic_Integration/includes
  * @author     MakeWebBetter <webmaster@makewebbetter.com>
  */
-class Mautic_For_Wordpress_Loader {
+class Wp_Mautic_Integration_Loader {
 
 	/**
 	 * The array of actions registered with WordPress.

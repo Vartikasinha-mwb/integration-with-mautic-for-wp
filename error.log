@@ -1,282 +1,258 @@
-Url : http://localhost/mautic2163/api/contacts/new
+Url : https://crm.makewebbetter.com/v2/api/users/self
+Method : GET
+Code : 200
+Message : OK
+Time: March 18, 2021  4:09 pm
+------------------------------------
+Url : https://crm.makewebbetter.com/v2/api/users/self
+Method : GET
+Code : 200
+Message : OK
+Time: March 18, 2021  4:09 pm
+------------------------------------
+Url : https://crm.makewebbetter.com/v2/api/users/self
+Method : GET
+Code : 200
+Message : OK
+Time: March 18, 2021  4:14 pm
+------------------------------------
+Url : https://crm.makewebbetter.com/v2/api/users/self
+Method : GET
+Code : 200
+Message : OK
+Time: March 18, 2021  4:14 pm
+------------------------------------
+Url : https://crm.makewebbetter.com/v2/api/users/self
+Method : GET
+Code : 200
+Message : OK
+Time: March 18, 2021  4:15 pm
+------------------------------------
+Url : https://crm.makewebbetter.com/v2/api/users/self
+Method : GET
+Code : 200
+Message : OK
+Time: March 18, 2021  4:15 pm
+------------------------------------
+Url : https://crm.makewebbetter.com/v2/api/users/self
+Method : GET
+Code : 200
+Message : OK
+Time: March 18, 2021  4:16 pm
+------------------------------------
+Url : https://crm.makewebbetter.com/v2/api/users/self
+Method : GET
+Code : 200
+Message : OK
+Time: March 18, 2021  4:17 pm
+------------------------------------
+Url : http://localhost/mautic2163/oauth/v2/token
 Method : POST
-Code : 201
-Message : Created
-Time: January 12, 2021  6:20 am
-------------------------------------
-Url : http://localhost/mautic2163/api/contacts/new
-Method : POST
-Code : 201
-Message : Created
-Time: January 12, 2021  7:07 am
-------------------------------------
-Url : http://localhost/mautic2163/api/contacts/new
-Method : POST
 Code : 200
 Message : OK
-Time: January 12, 2021  7:28 am
+Time: March 18, 2021  4:18 pm
 ------------------------------------
-Url : http://localhost/mautic2163/api/contacts/new
-Method : POST
-Code : 200
-Message : OK
-Time: January 12, 2021  9:33 am
-------------------------------------
-Url : http://localhost/mautic2163/api/contacts/new
-Method : POST
-Code : 200
-Message : OK
-Time: January 12, 2021  11:44 am
-------------------------------------
-Url : http://localhost/mautic2163/api/segments
-Method : GET
-Code : 0
-Message : 
-Time: January 18, 2021  6:16 am
-------------------------------------
-Url : http://localhost/mautic2163/api/segments
+Url : http://localhost/mautic2163/api/users/self
 Method : GET
 Code : 200
 Message : OK
-Time: January 18, 2021  6:17 am
+Time: March 18, 2021  4:18 pm
 ------------------------------------
-Url : http://localhost/mautic2163/api/segments/2/contact/9/add
-Method : POST
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2021-01-01&timeUnit=d
+Method : GET
 Code : 200
 Message : OK
-Time: January 18, 2021  6:36 am
+Time: March 18, 2021  4:20 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2021-01-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: March 18, 2021  4:20 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2021-01-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: March 18, 2021  4:20 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2021-01-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: March 18, 2021  4:20 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.creators?dateTo=2021-01-31&dateFrom=2021-01-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: March 18, 2021  4:20 pm
 ------------------------------------
 Url : http://localhost/mautic2163/api/segments
 Method : GET
 Code : 200
 Message : OK
-Time: January 18, 2021  8:02 am
+Time: March 18, 2021  4:38 pm
 ------------------------------------
-Url : http://localhost/mautic2163/api/segments
+Url : http://localhost/mautic2163/api/users/self
 Method : GET
 Code : 200
 Message : OK
-Time: January 18, 2021  8:03 am
-------------------------------------
-Url : http://localhost/mautic2163/api/segments
-Method : GET
-Code : 200
-Message : OK
-Time: January 18, 2021  8:06 am
-------------------------------------
-Url : http://localhost/mautic2163/api/segments
-Method : GET
-Code : 200
-Message : OK
-Time: January 18, 2021  8:07 am
-------------------------------------
-Url : http://localhost/mautic2163/api/segments
-Method : GET
-Code : 200
-Message : OK
-Time: January 18, 2021  8:08 am
-------------------------------------
-Url : http://localhost/mautic2163/api/segments
-Method : GET
-Code : 200
-Message : OK
-Time: January 18, 2021  8:08 am
-------------------------------------
-Url : http://localhost/mautic2163/api/segments
-Method : GET
-Code : 200
-Message : OK
-Time: January 18, 2021  8:15 am
-------------------------------------
-Url : http://localhost/mautic2163/api/segments
-Method : GET
-Code : 200
-Message : OK
-Time: January 18, 2021  8:16 am
-------------------------------------
-Url : http://localhost/mautic2163/api/segments
-Method : GET
-Code : 200
-Message : OK
-Time: January 18, 2021  8:17 am
-------------------------------------
-Url : http://localhost/mautic2163/api/segments
-Method : GET
-Code : 200
-Message : OK
-Time: January 18, 2021  8:24 am
+Time: March 18, 2021  4:39 pm
 ------------------------------------
 Url : http://localhost/mautic2163/api/forms
 Method : GET
 Code : 200
 Message : OK
-Time: January 18, 2021  9:45 am
+Time: March 18, 2021  4:39 pm
 ------------------------------------
-Url : http://localhost/mautic2163/api/segments/2/contact/6/add
-Method : POST
-Code : 200
-Message : OK
-Time: January 18, 2021  9:47 am
-------------------------------------
-Url : http://localhost/mautic2163/api/data
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-31&dateFrom=2021-01-01&timeUnit=d
 Method : GET
 Code : 200
 Message : OK
-Time: January 18, 2021  9:52 am
+Time: March 18, 2021  4:39 pm
 ------------------------------------
-Url : http://localhost/mautic2163/api/data/map.of.leads?dateTo=01/31/2020&dateFrom=01/01/2020
-Method : GET
-Code : 0
-Message : 
-Time: January 18, 2021  9:56 am
-------------------------------------
-Url : http://localhost/mautic2163/api/data/map.of.leads?dateTo=01/31/2020&dateFrom=01/01/2020
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-31&dateFrom=2021-01-01&timeUnit=d
 Method : GET
 Code : 200
 Message : OK
-Time: January 18, 2021  9:58 am
+Time: March 18, 2021  4:40 pm
 ------------------------------------
-Url : http://localhost/mautic2163/api/data/map.of.leads?dateTo=01/31/2020&dateFrom=01/01/2020
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-31&dateFrom=2021-01-01&timeUnit=d
 Method : GET
 Code : 200
 Message : OK
-Time: January 18, 2021  9:59 am
+Time: March 18, 2021  4:40 pm
 ------------------------------------
-Url : http://localhost/mautic2163/api/data/top.lists?dateTo=01/31/2020&dateFrom=01/01/2020
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-31&dateFrom=2021-01-01&timeUnit=d
 Method : GET
 Code : 200
 Message : OK
-Time: January 18, 2021  10:02 am
+Time: March 18, 2021  4:40 pm
 ------------------------------------
-Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=01/31/2020&dateFrom=01/01/2020
+Url : http://localhost/mautic2163/api/data/top.creators?dateTo=2021-01-31&dateFrom=2021-01-01&timeUnit=d
 Method : GET
 Code : 200
 Message : OK
-Time: January 18, 2021  10:03 am
+Time: March 18, 2021  4:40 pm
 ------------------------------------
-Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=01/31/2020&dateFrom=01/01/2020&timeUnit=d
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-24&dateFrom=2021-01-01&timeUnit=d
 Method : GET
 Code : 200
 Message : OK
-Time: January 18, 2021  10:04 am
+Time: March 18, 2021  4:40 pm
 ------------------------------------
-Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=01/31/2021&dateFrom=01/01/2021&timeUnit=d
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-24&dateFrom=2021-01-01&timeUnit=d
 Method : GET
 Code : 200
 Message : OK
-Time: January 18, 2021  10:04 am
+Time: March 18, 2021  4:40 pm
 ------------------------------------
-Url : http://localhost/mautic2163/api/tags
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-24&dateFrom=2021-01-01&timeUnit=d
 Method : GET
 Code : 200
 Message : OK
-Time: January 18, 2021  10:17 am
+Time: March 18, 2021  4:40 pm
 ------------------------------------
-Url : http://localhost/mautic2163/api/contacts/6/points/plus/100
-Method : POST
-Code : 200
-Message : OK
-Time: January 18, 2021  10:37 am
-------------------------------------
-Url : http://localhost/mautic2163/api/contacts/6/points/plus/100
-Method : POST
-Code : 200
-Message : OK
-Time: January 18, 2021  10:37 am
-------------------------------------
-Url : http://localhost/mautic2163/api/contacts/6/points/plus/100
-Method : POST
-Code : 200
-Message : OK
-Time: January 18, 2021  10:58 am
-------------------------------------
-Url : http://localhost/mautic2163/api/contacts/6/points/plus/100
-Method : POST
-Code : 200
-Message : OK
-Time: January 18, 2021  11:07 am
-------------------------------------
-Url : http://localhost/mautic2163/api/tags
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-24&dateFrom=2021-01-01&timeUnit=d
 Method : GET
 Code : 200
 Message : OK
-Time: January 18, 2021  11:07 am
+Time: March 18, 2021  4:40 pm
 ------------------------------------
-Url : http://localhost/mautic2163/api/segments
+Url : http://localhost/mautic2163/api/data/top.creators?dateTo=2021-01-24&dateFrom=2021-01-01&timeUnit=d
 Method : GET
 Code : 200
 Message : OK
-Time: January 18, 2021  11:08 am
+Time: March 18, 2021  4:40 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/created.leads.in.time?dateTo=2021-01-24&dateFrom=2021-01-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: March 18, 2021  4:40 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/page.hits.in.time?dateTo=2021-01-24&dateFrom=2021-01-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: March 18, 2021  4:40 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/submissions.in.time?dateTo=2021-01-24&dateFrom=2021-01-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: March 18, 2021  4:40 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.lists?dateTo=2021-01-24&dateFrom=2021-01-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: March 18, 2021  4:40 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/data/top.creators?dateTo=2021-01-24&dateFrom=2021-01-01&timeUnit=d
+Method : GET
+Code : 200
+Message : OK
+Time: March 18, 2021  4:40 pm
+------------------------------------
+Url : http://localhost/mautic2163/api/users/self
+Method : GET
+Code : 200
+Message : OK
+Time: March 18, 2021  4:40 pm
 ------------------------------------
 Url : http://localhost/mautic2163/api/contacts/new
 Method : POST
 Code : 201
 Message : Created
-Time: January 18, 2021  11:36 am
+Time: March 18, 2021  4:41 pm
 ------------------------------------
-Url : http://localhost/mautic2163/api/contacts/new
+Url : http://localhost/mautic2163/api/segments/4/contact/68/add
 Method : POST
 Code : 200
 Message : OK
-Time: January 18, 2021  11:36 am
+Time: March 18, 2021  4:41 pm
 ------------------------------------
-Url : http://localhost/mautic2163/api/contacts/new
-Method : POST
-Code : 201
-Message : Created
-Time: January 18, 2021  11:40 am
-------------------------------------
-Url : http://localhost/mautic2163/api/segments/2/contact/45/add
-Method : POST
+Url : http://localhost/mautic2163/api/users/self
+Method : GET
 Code : 200
 Message : OK
-Time: January 18, 2021  11:40 am
+Time: March 18, 2021  4:43 pm
 ------------------------------------
-Url : http://localhost/mautic2163/api/contacts/45/points/plus/100
-Method : POST
+Url : http://localhost/mautic2163/api/users/self
+Method : GET
 Code : 200
 Message : OK
-Time: January 18, 2021  11:40 am
+Time: March 18, 2021  4:43 pm
 ------------------------------------
-Url : http://localhost/mautic2163/api/contacts/new
-Method : POST
-Code : 201
-Message : Created
-Time: January 18, 2021  11:41 am
-------------------------------------
-Url : http://localhost/mautic2163/api/contacts/new
-Method : POST
+Url : http://localhost/mautic2163/api/users/self
+Method : GET
 Code : 200
 Message : OK
-Time: January 18, 2021  11:42 am
+Time: March 18, 2021  4:43 pm
 ------------------------------------
-Url : http://localhost/mautic2163/api/contacts/new
-Method : POST
+Url : http://localhost/mautic2163/api/users/self
+Method : GET
 Code : 200
 Message : OK
-Time: January 18, 2021  11:42 am
+Time: March 18, 2021  4:43 pm
 ------------------------------------
-Url : http://localhost/mautic2163/api/contacts/new
-Method : POST
-Code : 201
-Message : Created
-Time: January 18, 2021  12:26 pm
-------------------------------------
-Url : http://localhost/mautic2163/api/contacts/new
-Method : POST
+Url : http://localhost/mautic2163/api/users/self
+Method : GET
 Code : 200
 Message : OK
-Time: January 18, 2021  12:26 pm
+Time: March 18, 2021  4:44 pm
 ------------------------------------
-Url : http://localhost/mautic2163/api/segments/2/contact/47/add
-Method : POST
+Url : http://localhost/mautic2163/api/users/self
+Method : GET
 Code : 200
 Message : OK
-Time: January 18, 2021  12:26 pm
+Time: March 18, 2021  4:45 pm
 ------------------------------------
-Url : http://localhost/mautic2163/api/contacts/new
-Method : POST
+Url : http://localhost/mautic2163/api/users/self
+Method : GET
 Code : 200
 Message : OK
-Time: January 18, 2021  1:09 pm
+Time: March 18, 2021  4:45 pm
 ------------------------------------

@@ -22,7 +22,7 @@
  * @link       https://makewebbetter.com/
  * @since      1.0.0
  *
- * @package    Mautic_For_Wordpress
+ * @package    Wp_Mautic_Integration
  */
 
 // If uninstall not called from WordPress, then exit.
