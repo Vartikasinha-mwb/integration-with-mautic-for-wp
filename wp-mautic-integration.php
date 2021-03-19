@@ -60,7 +60,7 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-wp-mautic-integration.php'
 /**
  * Add settings links in plugin listing.
  */
-add_filter( 'plugin_action_links', 'mwb_wpm_admin_settings', 10, 5 );
+add_filter( 'plugin_action_links', 'mwb_wpm_admin_settings', 10, 2 );
 
 /**
  * Add settings link in plugin listing.
