@@ -40,12 +40,12 @@ class Mwb_Wpm_Api_Base {
 	 * Parse response and get back the data
 	 *
 	 * @param array $response HTTP response.
-	 * @throws Mautic_Api_Exception Mautic_Api_Exception.
+	 * @throws Mwb_Wpm_Api_Exception Mwb_Wpm_Api_Exception.
 	 */
 	private function parse_response( $response ) {
 		if ( $response instanceof WP_Error ) {
 			$message = __( 'Something went wrong, Please check your credentials', 'wp-mautic-integration' );
-			throw new Mautic_Api_Exception( $message, 0 );
+			throw new Mwb_Wpm_Api_Exception( $message, 0 );
 		}
 		// decode response body.
 		$code    = (int) wp_remote_retrieve_response_code( $response );
@@ -56,16 +56,16 @@ class Mwb_Wpm_Api_Base {
 		$this->create_error_log( $code, $message, $data );
 
 		if ( 403 === $code && 'Forbidden' === $message ) {
-			throw new Mautic_Api_Exception( $message, $code );
+			throw new Mwb_Wpm_Api_Exception( $message, $code );
 		}
 
 		if ( 401 === $code ) {
-			throw new Mautic_Api_Exception( $message, $code );
+			throw new Mwb_Wpm_Api_Exception( $message, $code );
 		}
 
 		if ( 0 === $code ) {
 			$message = __( 'Something went wrong, Please check your credentials', 'wp-mautic-integration' );
-			throw new Mautic_Api_Exception( $message, $code );
+			throw new Mwb_Wpm_Api_Exception( $message, $code );
 		}
 
 		return $data;
@@ -79,23 +79,28 @@ class Mwb_Wpm_Api_Base {
 	 * @param array  $data Reponse data.
 	 */
 	public function create_error_log( $code, $message, $data = array() ) {
-		$file = MWB_WP_MAUTIC_PATH . '/error.log';
-		$log  = 'Url : ' . $this->last_request['url'] . PHP_EOL;
-		$log .= 'Method : ' . $this->last_request['method'] . PHP_EOL;
-		$log .= "Code : $code" . PHP_EOL;
-		$log .= "Message : $message" . PHP_EOL;
-		if ( isset( $data['errors'] ) && is_array( $data['errors'] ) ) {
-			foreach ( $data['errors'] as $key => $value ) {
-				$log .= 'Error : ' . $value['message'] . PHP_EOL;
+		
+		$upload_dir = wp_get_upload_dir();
+
+		if( !empty( $upload_dir ) && isset( $upload_dir['basedir'] ) ){
+			$file = $upload_dir['basedir'].'/mwb-wp-mautic-error.log';
+			$log  = 'Url : ' . $this->last_request['url'] . PHP_EOL;
+			$log .= 'Method : ' . $this->last_request['method'] . PHP_EOL;
+			$log .= "Code : $code" . PHP_EOL;
+			$log .= "Message : $message" . PHP_EOL;
+			if ( isset( $data['errors'] ) && is_array( $data['errors'] ) ) {
+				foreach ( $data['errors'] as $key => $value ) {
+					$log .= 'Error : ' . $value['message'] . PHP_EOL;
+				}
+				$log .= 'Response: ' . wp_json_encode( $this->last_response ) . PHP_EOL;
+				$log .= 'Req: ' . wp_json_encode( $this->last_request ) . PHP_EOL;
 			}
-			$log .= 'Response: ' . wp_json_encode( $this->last_response ) . PHP_EOL;
-			$log .= 'Req: ' . wp_json_encode( $this->last_request ) . PHP_EOL;
+			$log .= 'Time: ' . current_time( 'F j, Y  g:i a' ) . PHP_EOL;
+			$log .= '------------------------------------' . PHP_EOL;
+			//phpcs:disable
+			file_put_contents( $file, $log, FILE_APPEND );
+			//phpcs:enable
 		}
-		$log .= 'Time: ' . current_time( 'F j, Y  g:i a' ) . PHP_EOL;
-		$log .= '------------------------------------' . PHP_EOL;
-		//phpcs:disable
-		file_put_contents( $file, $log, FILE_APPEND );
-		//phpcs:enable
 	}
 
 	/**

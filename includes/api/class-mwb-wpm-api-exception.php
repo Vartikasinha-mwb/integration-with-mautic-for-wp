@@ -40,7 +40,7 @@ class Mwb_Wpm_Api_Exception extends Exception {
 	public $response_data = array();
 
 	/**
-	 * Mautic_Api_Exception constructor.
+	 * Mwb_Wpm_Api_Exception constructor.
 	 *
 	 * @param string $message Message.
 	 * @param int    $code Code.

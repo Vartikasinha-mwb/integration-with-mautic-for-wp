@@ -144,7 +144,7 @@ class Mwb_Wpm_Oauth2 extends Mwb_Wpm_Api_Base {
 	}
 
 	/**
-	 * Mautic_Api_Exception constructor.
+	 * Mwb_Wpm_Api_Exception constructor.
 	 *
 	 * @param mixed $data Data.
 	 * @return string Auth token.
@@ -155,17 +155,17 @@ class Mwb_Wpm_Oauth2 extends Mwb_Wpm_Api_Base {
 	}
 
 	/**
-	 * Mautic_Api_Exception constructor.
+	 * Mwb_Wpm_Api_Exception constructor.
 	 *
 	 * @param object $data Data.
-	 * @throws Mautic_Api_Exception Mautic_Api_Exception.
+	 * @throws Mwb_Wpm_Api_Exception Mwb_Wpm_Api_Exception.
 	 */
 	public function renew_access_token( $data ) {
 		$endpoint = 'oauth/v2/token';
 		$response = $this->post( $endpoint, $data );
 		if ( isset( $response['errors'] ) ) {
 			update_option( 'mwb_m4wp_oauth2_success', false );
-			throw new Mautic_Api_Exception( 'Something went wrong', 003 );
+			throw new Mwb_Wpm_Api_Exception( 'Something went wrong', 003 );
 		}
 		$this->save_token_data( $response );
 		update_option( 'mwb_m4wp_oauth2_success', true );
@@ -183,7 +183,7 @@ class Mwb_Wpm_Oauth2 extends Mwb_Wpm_Api_Base {
 		return $headers;
 	}
 	/**
-	 * Mautic_Api_Exception constructor.
+	 * Mwb_Wpm_Api_Exception constructor.
 	 *
 	 * @param object $base_url Base URL.
 	 */
