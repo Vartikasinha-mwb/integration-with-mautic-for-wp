@@ -54,7 +54,7 @@ class MWB_Wpm_Settings_Helper {
 	/**
 	 * Returns form fields html.
 	 *
-	 * @since       3.0.0
+	 * @since       1.0.0
 	 * @param       string $widget               widget is retrieved.
 	 * @param       array  $data         The basic class for the data.
 	 * @param       bool   $refresh         The basic class for the refresh.

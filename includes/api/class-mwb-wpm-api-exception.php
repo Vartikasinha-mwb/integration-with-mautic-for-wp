@@ -3,7 +3,7 @@
  * The all Exceptions list here.
  *
  * @link       https://makewebbetter.com
- * @since      3.0.0
+ * @since      1.0.0
  *
  * @package     Wp_Mautic_Integration
  * @subpackage  Wp_Mautic_Integration/includes

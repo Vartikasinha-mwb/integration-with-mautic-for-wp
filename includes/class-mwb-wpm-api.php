@@ -48,7 +48,7 @@ class MWB_Wpm_Api {
 	/**
 	 * Returns response.
 	 *
-	 * @since       3.0.0
+	 * @since       1.0.0
 	 * @return mixed $response Respose is returned.
 	 */
 	public static function get_self_user() {
@@ -77,7 +77,7 @@ class MWB_Wpm_Api {
 	/**
 	 * Get_mautic_api.
 	 *
-	 * @since       3.0.0
+	 * @since       1.0.0
 	 * @return mixed $response Respose is returned.
 	 * @throws Mwb_Wpm_Api_Exception Mwb_Wpm_Api_Exception .
 	 */
