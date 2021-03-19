@@ -810,11 +810,11 @@ class Makewebbetter_Onboarding_Helper {
 	 */
 	public function add_mwb_additional_validation( $result = true ) {
 
-		if ( ! empty( $_GET['tab'] ) && 'settings' !== $_GET['tab'] ) { // phpcs:ignore WordPress.Security.NonceVerification
+		if ( ! empty( $_GET['tab'] ) && 'settings' !== sanitize_text_field( wp_unslash( $_GET['tab'] ) ) ) { // phpcs:ignore WordPress.Security.NonceVerification
 			$result = false;
 		}
 
-		if ( ! empty( $_GET['page'] ) && 'mwb-wp-mautic' === $_GET['page'] ) { // phpcs:ignore WordPress.Security.NonceVerification
+		if ( ! empty( $_GET['page'] ) && 'mwb-wp-mautic' === sanitize_text_field( wp_unslash( $_GET['page'] ) ) ) { // phpcs:ignore WordPress.Security.NonceVerification
 			return true;
 		}
 

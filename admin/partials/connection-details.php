@@ -19,7 +19,7 @@ if ( wp_cache_get( 'mwb_m4wp_user_data' ) ) {
 $admin_email       = isset( $user_data['user'] ) ? $user_data['user'] : '';
 $connection_status = ( '' === $admin_email ) ? 'Dis Connected' : 'Connected';
 $auth_type         = get_option( 'mwb_m4wp_auth_type', 'basic' );
-$auth_type         = ( 'basic' === $auth_type ) ? __( 'Basic', 'mautic-for-wordress' ) : __( 'OAuth2', 'mautic-for-wordress' );
+$auth_type         = ( 'basic' === $auth_type ) ? __( 'Basic', 'wp-mautic-integration' ) : __( 'OAuth2', 'wp-mautic-integration' );
 
 ?>
 <div class="connection-detail-wrap">

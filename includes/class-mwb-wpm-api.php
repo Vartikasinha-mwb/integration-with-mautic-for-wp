@@ -87,12 +87,10 @@ class MWB_Wpm_Api {
 		if ( ! empty( self::$mautic_api ) ) {
 			return self::$mautic_api;
 		}
-		// Authentication_type = 'oauth2' ; //basic , oauth2 .
 		$authentication_type = get_option( 'mwb_m4wp_auth_type', 'basic' );
 		$base_url            = get_option( 'mwb_m4wp_base_url', '' );
 		if ( '' === $base_url ) {
 			throw new Mwb_Wpm_Api_Exception( 'Missing base url', 001 );
-			// return false .
 		}
 
 		if ( 'oauth2' === $authentication_type ) {
@@ -108,12 +106,10 @@ class MWB_Wpm_Api {
 				if ( ! ( $api_instance->have_valid_api_keys() ) ) {
 					$api_keys = $api_instance->have_valid_api_keys();
 					throw new Mwb_Wpm_Api_Exception( 'Missing api credentials', 002 );
-					// return false .
 				}
 				$refresh_token = $api_instance->get_refresh_token();
 				if ( ! $refresh_token ) {
 					throw new Mwb_Wpm_Api_Exception( 'Missing refresh token', 003 );
-					// return false .
 				}
 				$api_keys['refresh_token'] = $refresh_token;
 				$redirct_url               = admin_url();
@@ -182,9 +178,6 @@ class MWB_Wpm_Api {
 			$headers    = $mautic_api->get_auth_header();
 			return $mautic_api->get( $endpoint, array(), $headers );
 		} catch ( Exception $e ) {
-			// print_r($e->getMessage());
-			// show notification
-			// log exception.
 			return false;
 		}
 	}
@@ -199,12 +192,8 @@ class MWB_Wpm_Api {
 			$headers    = $mautic_api->get_auth_header();
 			return $mautic_api->get( $endpoint, array(), $headers );
 		} catch ( Exception $e ) {
-			// print_r($e->getMessage());
-			// show notification
-			// log exception.
 			return false;
 		}
-
 	}
 
 	/**
@@ -221,9 +210,6 @@ class MWB_Wpm_Api {
 			$headers    = $mautic_api->get_auth_header();
 			return $mautic_api->get( $endpoint, $data, $headers );
 		} catch ( Exception $e ) {
-			// print_r($e->getMessage());
-			// show notification
-			// log exception.
 			return false;
 		}
 	}

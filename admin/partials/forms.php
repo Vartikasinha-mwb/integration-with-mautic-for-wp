@@ -53,7 +53,6 @@ $base_url = Wp_Mautic_Integration_Admin::get_mautic_base_url();
 						<td>
 							<a class="mwb-m4wp-form-view mwb-btn mwb-btn-secondary" form-id="<?php echo esc_attr( $form['id'] ); ?>" form-html="<?php echo esc_attr( htmlspecialchars( $form['cachedHtml'] ) ); ?>">
 			<?php esc_html_e( 'View', 'wp-mautic-integration' ); ?>
-								<!-- <span class="dashicons dashicons-edit"></span> -->
 							</a>
 							<a class="mwb-m4wp-form-edit mwb-btn mwb-btn-secondary" href="<?php echo esc_attr( $form_link ); ?>" target="_blank">
 			<?php esc_html_e( 'Edit', 'wp-mautic-integration' ); ?>

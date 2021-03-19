@@ -223,7 +223,7 @@ abstract class Mwb_Wpm_Integration_Base {
 
 		if ( ! $this->is_implicit() ) {
 			//phpcs:disable
-			if ( isset( $_POST['mwb_m4wp_subscribe'] ) && $_POST['mwb_m4wp_subscribe'] == 'yes' ) {
+			if ( isset( $_POST['mwb_m4wp_subscribe'] ) && 'yes' === sanitize_text_field( wp_unslash( $_POST['mwb_m4wp_subscribe'] ) ) ) {
 				$sync = true;
 			}
 			//phpcs:enable

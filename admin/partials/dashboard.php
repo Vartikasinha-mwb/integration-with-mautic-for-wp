@@ -128,8 +128,8 @@ $base_url              = Wp_Mautic_Integration_Admin::get_mautic_base_url();
 		<?php if ( count( $top_lists['data']['bodyItems'] ) > 0 ) : ?>
 							<table id="top-lists-table" class="widget-table mwb-table"  cellspacing=0>
 								<tr>
-									<th><?php esc_html_e( 'Segments' ); ?></th>
-									<th><?php esc_html_e( 'Contacts' ); ?></th>
+									<th><?php esc_html_e( 'Segments', 'wp-mautic-integration' ); ?></th>
+									<th><?php esc_html_e( 'Contacts', 'wp-mautic-integration' ); ?></th>
 								</tr>
 			<?php foreach ( $top_lists['data']['bodyItems'] as $key => $list ) : ?>
 									<tr>
