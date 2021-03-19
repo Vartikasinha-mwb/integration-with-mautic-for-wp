@@ -58,16 +58,20 @@ Integration with Mautic for WordPress plugin also allows you to access the Mauti
 * Top Segments
 * Top Creators
 
+
 **4) Mautic Forms**
 This WordPress Mautic integration plugin allows you to embed Mautic forms to your website using simple shortcodes and form IDs.
+
 
 **5) WordPress Integrations**
 WordPress is a pool of varied plugins - from different forms to email marketing. With this Mautic WordPress Integration plugin, you can easily sync your forms data to Mautic CRM. by default, WordPress Registration form and WordPress Comment Form are already provided with this integration.
 
+
 Visit [**Integration With Mautic For WordPress Documentation**](https://docs.makewebbetter.com/wp-mautic-integration/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-page&utm_campaign=MWB-wpmautic-org) and learn more about the features and working of the plugin.
 
 
-== WHAT PREMIUM VERSION OF MAUTIC WORDPRESS INTEGRATION OFFERS (COMING SOON) ==
+
+==  PREMIUM ADD-ONS(COMING SOON) ==
 
 * Contact Form 7 Integration
 * Gravity Forms Integration
@@ -78,6 +82,8 @@ Visit [**Integration With Mautic For WordPress Documentation**](https://docs.mak
 * Easy Digital Downloads Integration
 * GiveWP Integration 
 * UltimateMember Integration
+
+
 
 == INTEGRATION WITH MAUTIC FOR WOOCOMMERCE ==
 
@@ -118,7 +124,7 @@ Automatic updates should work like a charm as always though, ensure you backup y
 
 == Frequently Asked Questions ==
 
-=How can we connect the Mautic CRM to Integration with Mautic for WordPress?=
+= How can we connect the Mautic CRM to Integration with Mautic for WordPress? =
 
 In our Integration with Mautic for WordPress plugin, There is a two type of Authentication
 **1-Basic Authentication Process** - Select Basic -> Add Mautic Site URL in Mautic Url column. Add your Mautic Admin user name and Password then click on Save Button. So your connection will establish with Basic Authentication.
@@ -126,22 +132,25 @@ In our Integration with Mautic for WordPress plugin, There is a two type of Auth
 **2-Oauth2** - In this process, you need to create API Credentials from Mautic with Oauth 2 then add Mautic base URL, client id, client secret field click on save. While you select this authentication type, you will get the option to Authorize your keys. Click on the Authorize button and you will be redirected to Mautic and ask for permission to establish the connection. Accept the request and your connection will be established. 
 
 
-=I am not able to create the Oauth 2 API. What is the Redirect URL in Oauth 2 API in Mautic WordPress integration?=
+= I am not able to create the Oauth 2 API. What is the Redirect URL in Oauth 2 API in Mautic WordPress integration? =
 
 Start creating a new APP by filling invalid credentials. Select OAuth2 for an authorization protocol. Enter a new Name for the APP and Redirect URL. 
 Your Redirection URL will be: https://your-site-url/wp-admin/
 
-=Is there any way to add the Mautic Forms in WordPress pages?=
+= Is there any way to add the Mautic Forms in WordPress pages? =
 Yes in our Integration with Mautic for WordPress plugin there is a Setting Mautic Form. Your Form shortcode will list here you can copy this shortcode and add it to your existing post or pages.
 
-=Are there any possibilities to integrate the Registration Form (WordPress default registration form) with your plugin Integration with Mautic for WordPress?=
+= Are there any possibilities to integrate the Registration Form (WordPress default registration form) with your plugin Integration with Mautic for WordPress? =
 Yes, you can integrate the Registration Form (WordPress default registration form) to Mautic CRM, You only need to enable the Registration Form from the Integrations tab, You can also add the setting like tags and segment to sync the Registration Form data.
 
-=Are there any possibilities to integrate Comment Form (WordPress default Comment Forms) with your plugin Integration with Mautic for WordPress?=
+
+= Are there any possibilities to integrate Comment Form (WordPress default Comment Forms) with your plugin Integration with Mautic for WordPress? =
 Yes, you can integrate the Comment Form (WordPress default Comment Forms) data to Mautic CRM, You only need to enable the Comment Form from the Integrations tab, You can also add the setting like tags and segment to sync the form data.
 
 = My question is not listed =
 Please visit the MakeWebBetter [**knowledge base**](https://support.makewebbetter.com/wordpress-plugins-knowledge-base/category/wp-mautic-integration-kb/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-page&utm_campaign=MWB-wpmautic-org) for more detailed [**documentation**](https://docs.makewebbetter.com/wp-mautic-integration/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-page&utm_campaign=MWB-wpmautic-org) and [**support**](https://makewebbetter.com/submit-query/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-page&utm_campaign=MWB-wpmautic-org)
+
+
 
 
 == Screenshots ==
@@ -155,6 +164,9 @@ Please visit the MakeWebBetter [**knowledge base**](https://support.makewebbette
 7. Comment Form setting
 
 
+
+
+
 == Changelog ==
 
 = 1.0.0 - Released on 19 march 2021 =
@@ -163,3 +175,6 @@ Please visit the MakeWebBetter [**knowledge base**](https://support.makewebbette
 == Upgrade Notice ==
 = 1.0.0 - Released on 19 march 2021 =
 * First version
+
+
+
