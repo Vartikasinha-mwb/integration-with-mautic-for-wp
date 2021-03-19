@@ -826,7 +826,7 @@ class Makewebbetter_Onboarding_Helper {
 	 *
 	 * @param array  $submission      The submission of this validation.
 	 * @param string $action_type      The action_type of this validation.
-	 * @since    3.0.1
+	 * @since    1.0.0
 	 */
 	protected function handle_form_submission_for_hubspot( $submission = array(), $action_type = 'onboarding' ) {
 
@@ -860,7 +860,7 @@ class Makewebbetter_Onboarding_Helper {
 	 *
 	 * @param string $endpoint The endpoint of this validation.
 	 * @param string $headers The headers of this validation.
-	 * @since    3.0.1
+	 * @since    1.0.0
 	 */
 	private function hic_get( $endpoint, $headers ) {
 
@@ -892,7 +892,7 @@ class Makewebbetter_Onboarding_Helper {
 	 * @param string $endpoint The endpoint of this validation.
 	 * @param string $post_params The post_params of this validation.
 	 * @param string $headers The headers of this validation.
-	 * @since    3.0.1
+	 * @since    1.0.0
 	 */
 	private function hic_post( $endpoint, $post_params, $headers ) {
 
@@ -923,7 +923,7 @@ class Makewebbetter_Onboarding_Helper {
 	 *
 	 * @param array  $form_data The post_params of this validation.
 	 * @param string $action_type The action_type of this validation.
-	 * @since       3.0.1
+	 * @since       1.0.0
 	 */
 	protected function hubwoo_submit_form( $form_data = array(), $action_type = 'onboarding' ) {
 
@@ -967,7 +967,7 @@ class Makewebbetter_Onboarding_Helper {
 	/**
 	 *  Hubwoo get_client_ip.
 	 *
-	 * @since       3.0.1
+	 * @since       1.0.0
 	 */
 	public function get_client_ip() {
 		$ipaddress = '';
