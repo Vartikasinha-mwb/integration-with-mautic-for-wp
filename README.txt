@@ -10,7 +10,7 @@ License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 
-Mautic WordPress Integration is the most optimum choice for every website to capture leads, form sign-ups, subscribers, etc.
+Integration with Mautic for WP is the most optimum choice for every website to capture leads, form sign-ups, subscribers, etc.
 
 
 
