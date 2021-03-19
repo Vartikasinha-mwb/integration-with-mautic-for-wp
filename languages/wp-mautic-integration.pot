@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Integration with Mautic for WordPress 1.0.0\n"
+"Project-Id-Version: Integration with Mautic for WP 1.0.0\n"
 "POT-Creation-Date: 2021-03-19 14:44+0530\n"
 "PO-Revision-Date: 2021-03-19 14:44+0530\n"
 "Last-Translator: \n"
