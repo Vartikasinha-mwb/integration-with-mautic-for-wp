@@ -28,7 +28,7 @@ You can also integrate multiple WordPress forms with Mautic directly using eithe
 
 == USING THE INTEGRATION WITH MAUTIC FOR WP YOU CAN: ==
 
-* Integrate Mautic with WordPress website
+* Integrate Mautic with WP website
 * Sync your WordPress default registration and comment forms data
 * Have a dedicated Mautic dashboard over your WordPress panel
 * Assign tags and add segments to your captured leads with WordPress         
