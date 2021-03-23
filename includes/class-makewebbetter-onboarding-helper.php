@@ -189,7 +189,7 @@ class Makewebbetter_Onboarding_Helper {
 
 			global $pagenow;
 			$current_slug = ! empty( explode( '/', plugin_basename( __FILE__ ) ) ) ? explode( '/', plugin_basename( __FILE__ ) )[0] : '';
-			$plugin_slug  = 'integration-with-mautic-for-wordpress';
+			$plugin_slug  = 'integration-with-mautic-for-wp';
 			wp_localize_script(
 				'makewebbetter-onboarding-scripts',
 				'mwb_onboarding',
@@ -743,7 +743,7 @@ class Makewebbetter_Onboarding_Helper {
 			}
 		} catch ( Exception $e ) {
 
-			echo json_encode( $e->getMessage() );
+			echo wp_json_encode( $e->getMessage() );
 			wp_die();
 		}
 
@@ -751,7 +751,7 @@ class Makewebbetter_Onboarding_Helper {
 			$get_skipped_timstamp = update_option( 'onboarding-data-sent', 'sent' );
 		}
 
-		echo json_encode( $formatted_data );
+		echo wp_json_encode( $formatted_data );
 		wp_die();
 	}
 
@@ -798,7 +798,7 @@ class Makewebbetter_Onboarding_Helper {
 	public function skip_onboarding_popup() {
 
 		$get_skipped_timstamp = update_option( 'onboarding-data-skipped', time() );
-		echo json_encode( 'true' );
+		echo wp_json_encode( 'true' );
 		wp_die();
 	}
 
@@ -847,75 +847,56 @@ class Makewebbetter_Onboarding_Helper {
 
 		$result = $this->hubwoo_submit_form( $submission, $action_type );
 
-		if ( true === $result['success'] ) {
+		if ( isset( $result['success'] ) && true === $result['success'] ) {
 			return true;
 		} else {
 			return false;
 		}
 	}
 
-
-	/**
-	 * Handle Hubspot GET api calls.
-	 *
-	 * @param string $endpoint The endpoint of this validation.
-	 * @param string $headers The headers of this validation.
-	 * @since    1.0.0
-	 */
-	private function hic_get( $endpoint, $headers ) {
-
-		$url = $this->base_url . $endpoint;
-
-		$ch = @curl_init();
-		@curl_setopt( $ch, CURLOPT_POST, false );
-		@curl_setopt( $ch, CURLOPT_URL, $url );
-		@curl_setopt( $ch, CURLOPT_HTTPHEADER, $headers );
-		@curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-		@curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false );
-		@curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, false );
-		$response    = @curl_exec( $ch );
-		$status_code = @curl_getinfo( $ch, CURLINFO_HTTP_CODE );
-		$curl_errors = curl_error( $ch );
-		@curl_close( $ch );
-
-		return array(
-			'status_code' => $status_code,
-			'response'    => $response,
-			'errors'      => $curl_errors,
-		);
-	}
-
-
 	/**
 	 * Handle Hubspot POST api calls.
 	 *
-	 * @param string $endpoint The endpoint of this validation.
-	 * @param string $post_params The post_params of this validation.
-	 * @param string $headers The headers of this validation.
+	 * @param string $endpoint Endpoint of api.
+	 * @param array  $post_params Data to send.
+	 * @param array  $headers An array of api call headers.
 	 * @since    1.0.0
 	 */
 	private function hic_post( $endpoint, $post_params, $headers ) {
 
 		$url = $this->base_url . $endpoint;
 
-		$ch = @curl_init();
-		@curl_setopt( $ch, CURLOPT_POST, true );
-		@curl_setopt( $ch, CURLOPT_URL, $url );
-		@curl_setopt( $ch, CURLOPT_POSTFIELDS, $post_params );
-		@curl_setopt( $ch, CURLOPT_HTTPHEADER, $headers );
-		@curl_setopt( $ch, CURLOPT_RETURNTRANSFER, true );
-		@curl_setopt( $ch, CURLOPT_SSL_VERIFYPEER, false );
-		@curl_setopt( $ch, CURLOPT_SSL_VERIFYHOST, false );
-		$response    = @curl_exec( $ch );
-		$status_code = @curl_getinfo( $ch, CURLINFO_HTTP_CODE );
-		$curl_errors = curl_error( $ch );
-		@curl_close( $ch );
+		$request = array(
+			'httpversion' => '1.0',
+			'sslverify'   => false,
+			'method'      => 'POST',
+			'timeout'     => 45,
+			'headers'     => $headers,
+			'body'        => $post_params,
+			'cookies'     => array(),
+		);
+
+		$hic_response = wp_remote_post( $url, $request );
+
+		if ( is_wp_error( $hic_response ) ) {
+
+			$status_code = 500;
+			$response    = esc_html__( 'Unexpected Error Occured', 'wp-mautic-integration' );
+			$errors      = $response;
+
+		} else {
+
+			$response    = wp_remote_retrieve_body( $hic_response );
+			$status_code = wp_remote_retrieve_response_code( $hic_response );
+			$errors      = $response;
+		}
 
 		return array(
 			'status_code' => $status_code,
 			'response'    => $response,
-			'errors'      => $curl_errors,
+			'errors'      => $errors,
 		);
+
 	}
 
 	/**
@@ -936,10 +917,10 @@ class Makewebbetter_Onboarding_Helper {
 		$url = 'submissions/v3/integration/submit/' . self::$portal_id . '/' . $form_id;
 
 		$headers = array(
-			'Content-Type: application/json',
+			'Content-Type' => 'application/json',
 		);
 
-		$form_data = json_encode(
+		$form_data = wp_json_encode(
 			array(
 				'fields'  => $form_data,
 				'context' => array(
