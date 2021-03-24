@@ -95,12 +95,9 @@ class Makewebbetter_Onboarding_Helper {
 	 */
 	public function __construct() {
 
-		self::$store_name = get_bloginfo( 'name' );
-		self::$store_url  = home_url();
-
-		if ( defined( 'ONBOARD_PLUGIN_NAME' ) ) {
-			self::$plugin_name = ONBOARD_PLUGIN_NAME;
-		}
+		self::$store_name  = get_bloginfo( 'name' );
+		self::$store_url   = home_url();
+		self::$plugin_name = 'Integration with Mautic for WP';
 
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_styles' ) );
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
@@ -264,14 +261,14 @@ class Makewebbetter_Onboarding_Helper {
 	 */
 	public function can_show_onboarding_popup() {
 
-		$is_already_sent = get_option( 'onboarding-data-sent', false );
+		$is_already_sent = get_option( 'mwb-m4wp-onboarding-data-sent', false );
 
 		// Already submitted the data.
 		if ( ! empty( $is_already_sent ) && 'sent' === $is_already_sent ) {
 			return false;
 		}
 
-		$get_skipped_timstamp = get_option( 'onboarding-data-skipped', false );
+		$get_skipped_timstamp = get_option( 'mwb-m4wp-onboarding-data-skipped', false );
 		if ( ! empty( $get_skipped_timstamp ) ) {
 
 			$next_show = strtotime( '+2 days', $get_skipped_timstamp );
@@ -406,7 +403,7 @@ class Makewebbetter_Onboarding_Helper {
 				'label'       => '',
 				'type'        => 'hidden',
 				'name'        => 'show-counter',
-				'value'       => get_option( 'onboarding-data-sent', 'not-sent' ),
+				'value'       => get_option( 'mwb-m4wp-onboarding-data-sent', 'not-sent' ),
 				'required'    => '',
 				'extra-class' => '',
 			),
@@ -748,7 +745,7 @@ class Makewebbetter_Onboarding_Helper {
 		}
 
 		if ( ! empty( $action_type ) && 'onboarding' === $action_type ) {
-			$get_skipped_timstamp = update_option( 'onboarding-data-sent', 'sent' );
+			$get_skipped_timstamp = update_option( 'mwb-m4wp-onboarding-data-sent', 'sent' );
 		}
 
 		echo wp_json_encode( $formatted_data );
@@ -797,7 +794,7 @@ class Makewebbetter_Onboarding_Helper {
 	 */
 	public function skip_onboarding_popup() {
 
-		$get_skipped_timstamp = update_option( 'onboarding-data-skipped', time() );
+		$get_skipped_timstamp = update_option( 'mwb-m4wp-onboarding-data-skipped', time() );
 		echo wp_json_encode( 'true' );
 		wp_die();
 	}

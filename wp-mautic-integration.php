@@ -117,7 +117,6 @@ function mwb_wp_mautic_define_plugin_constants() {
 		'MWB_WP_MAUTIC_URL'     => plugin_dir_url( __FILE__ ),
 	);
 	array_walk( $constants, 'mwb_wp_mautic_define_constant' );
-	define( 'ONBOARD_PLUGIN_NAME', 'Integration with Mautic for WP' );
 }
 
 /**
