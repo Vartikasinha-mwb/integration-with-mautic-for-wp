@@ -18,10 +18,11 @@
  * Version:           1.0.0
  * Author:            MakeWebBetter
  * Author URI:        https://makewebbetter.com/
+ * Requires at least: 4.4
+ * Tested up to:      5.7
  * License:           GPL-3.0+
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain:       wp-mautic-integration
- * Tested up to:      5.6.2
  * Domain Path:       /languages
  */
 
