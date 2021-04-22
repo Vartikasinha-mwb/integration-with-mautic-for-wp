@@ -14,6 +14,8 @@ The [Integration with Mautic for WP](https://wordpress.org/plugins/integration-w
 
 You can also insert multiple WordPress forms and can connect them with Mautic directly using either **Basic or OAuth2 Mautic API**. Integration with Mautic for WP plugin also supports you to add Mautic content into your web pages through shortcodes. 
 
+[**How to Connect WordPress with Mautic and Convert Leads?**](https://www.youtube.com/watch?v=Rqm9SHbZAnk)
+
 **USING THE INTEGRATION WITH MAUTIC FOR WP YOU CAN:**
 * Integrate Mautic with WP website
 * Sync your non-eCommerce website’s data with Mautic CRM
