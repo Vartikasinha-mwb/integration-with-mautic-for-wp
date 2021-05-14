@@ -50,6 +50,7 @@ $integrations = MWB_Wpm_Integration_Manager::get_integrations();
 					</td>
 				</tr>
 			<?php endforeach; ?>
+			
 		</tbody>
 	</table>
 </div>

@@ -131,6 +131,61 @@ jQuery( document ).ready(
 				$( '.row-implicit' ).toggleClass( 'row-hide' );
 			}
 		)
+		
+		// User Registration Plugin Added
+		$( '.mwb-m4wp-dynamic_tag-cb' ).on(
+			'change',
+			function(e) {
+				$( '.row-dynamic_tag' ).toggleClass( 'row-hide' );
+			}
+		)
+		// User Registration Plugin Ended
+
+		// User Registration Plugin Added
+		$( document ).on(
+			'change',
+			'.mwb-m4wp-form-select',
+			function(e) {
+				$dynamic_attr = $( this ).val();
+				$(this).attr('name','add_form'+$dynamic_attr);
+				$( this ).closest('tr').next().find('input').attr('name','add_tag'+$dynamic_attr);
+			}
+		)
+		// User Registration Plugin Ended
+
+		// User Registration Plugin Added
+		$( '.mwb-m4wp-add-new-row' ).on(
+			'click',
+			function(e) {
+				e.preventDefault();
+				var cb          = $( this );
+				var extra_field = cb.closest( 'tr' );
+				var action      = 'mwb_m4wp_add_new_row';
+				const queryString = window.location.search;
+				const urlParams = new URLSearchParams(queryString);
+				const id = urlParams.get('id');
+				$.post( ajaxUrl, { id, action } ).done(
+					function(response) {
+						extra_field.before(response);
+					}
+				)
+			}
+		)
+		// User Registration Plugin Ended
+
+		// User Registration Plugin Added
+		$( '.mwb-m4wp-delete-row' ).on(
+			'click',
+			function(e) {
+				e.preventDefault();
+				var cb          = $( this );
+				var form_data = cb.closest( 'tr' );
+				var tag_data  = cb.closest('tr').next();
+				form_data.remove();
+				tag_data.remove();
+			}
+		)
+		// User Registration Plugin Ended
 
 		$( '.mwb-m4wp-enable-cb' ).on(
 			'change',
@@ -192,6 +247,10 @@ jQuery( document ).ready(
 				)
 			}
 		)
+
+		// User Registration Plugin Added
+		
+		// User Registration Plugin Ended
 
 		function getSegmentOptionHtml(segmentList, selected) {
 			var html = '';

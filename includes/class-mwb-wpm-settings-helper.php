@@ -253,4 +253,5 @@ class MWB_Wpm_Settings_Helper {
 		}
 		return $version;
 	}
+
 }

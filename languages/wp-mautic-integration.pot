@@ -254,7 +254,7 @@ msgid "Enter tags separated by commas to assign to contact."
 msgstr ""
 
 #: admin/partials/mwb-wpm-admin-display.php:27
-msgid "Mautic WordPress Integration"
+msgid "Integration with Mautic for WP"
 msgstr ""
 
 #: admin/partials/mwb-wpm-admin-display.php:30

@@ -42,7 +42,7 @@ You can also integrate multiple WordPress forms with Mautic directly using eithe
 
 
 **1) Secure Authentication**
-This Mautic WordPress Integration plugin allows you to secure all requests made between WordPress and Mautic CRM through Basic and OAuth2 Mautic API.
+This Integration with Mautic for WP plugin allows you to secure all requests made between WordPress and Mautic CRM through Basic and OAuth2 Mautic API.
 
 
 **2) Real-Time Data Sync**
@@ -64,7 +64,7 @@ This WordPress Mautic integration plugin allows you to embed Mautic forms to you
 
 
 **5) WordPress Integrations**
-WordPress is a pool of varied plugins - from different forms to email marketing. With this Mautic WordPress Integration plugin, you can easily sync your forms data to Mautic CRM. by default, WordPress Registration form and WordPress Comment Form are already provided with this integration.
+WordPress is a pool of varied plugins - from different forms to email marketing. With this Integration with Mautic for WP plugin, you can easily sync your forms data to Mautic CRM. by default, WordPress Registration form and WordPress Comment Form are already provided with this integration.
 
 
 Visit [**Integration With Mautic For WP Documentation**](https://docs.makewebbetter.com/wp-mautic-integration/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-page&utm_campaign=MWB-wpmautic-org) and learn more about the features and working of the plugin.
@@ -132,7 +132,7 @@ In our Integration with Mautic for WP plugin, There is a two type of Authenticat
 **2-Oauth2** - In this process, you need to create API Credentials from Mautic with Oauth 2 then add Mautic base URL, client id, client secret field click on save. While you select this authentication type, you will get the option to Authorize your keys. Click on the Authorize button and you will be redirected to Mautic and ask for permission to establish the connection. Accept the request and your connection will be established. 
 
 
-= I am not able to create the Oauth 2 API. What is the Redirect URL in Oauth 2 API in Mautic WordPress integration? =
+= I am not able to create the Oauth 2 API. What is the Redirect URL in Oauth 2 API in Integration with Mautic for WP? =
 
 Start creating a new APP by filling invalid credentials. Select OAuth2 for an authorization protocol. Enter a new Name for the APP and Redirect URL. 
 Your Redirection URL will be: https://your-site-url/wp-admin/

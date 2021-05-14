@@ -226,6 +226,8 @@ class Wp_Mautic_Integration {
 		// Include plugin for Deactivation pop-up.
 		$this->loader->add_filter( 'mwb_deactivation_supported_slug', $plugin_admin, 'add_mwb_deactivation_screens' );
 
+		$this->loader->add_filter( 'plugin_row_meta', $plugin_admin, 'mwb_docs', 10, 2 );
+
 	}
 
 	/**
@@ -299,6 +301,9 @@ class Wp_Mautic_Integration {
 		$this->loader->add_action( 'wp_ajax_mwb_m4wp_test_api_connection', $plugin_ajax, 'test_api_connection' );
 		$this->loader->add_action( 'wp_ajax_mwb_m4wp_enable_integration', $plugin_ajax, 'enable_integration' );
 		$this->loader->add_action( 'wp_ajax_mwb_m4wp_refresh', $plugin_ajax, 'refresh_data' );
+		// User Registration Plugin Added
+		$this->loader->add_action( 'wp_ajax_mwb_m4wp_add_new_row', $plugin_ajax, 'add_new_row' );
+		// User Registration Plugin Ended
 
 	}
 

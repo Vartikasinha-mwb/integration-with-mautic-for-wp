@@ -24,7 +24,7 @@ if ( wp_cache_get( 'mwb_m4wp_notice' ) ) {
 <header>
 	<div class="mwb-header-container mwb-bg-white mwb-r-8">
 		<h1 class="mwb-header-title">
-			<?php esc_html_e( 'Mautic WordPress Integration', 'wp-mautic-integration' ); ?>
+			<?php esc_html_e( 'Integration with Mautic for WP', 'wp-mautic-integration' ); ?>
 		</h1>
 		<a href="https://makewebbetter.com/contact-us/" target="_blank"
 			class="mwb-link"><?php esc_html_e( 'Support', 'wp-mautic-integration' ); ?></a>

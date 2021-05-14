@@ -17,7 +17,7 @@ $base_url = Wp_Mautic_Integration_Admin::get_mautic_base_url();
 ?>
 
 <div class="mwb-m4wp-form-table-wrap">
-	<?php if ( $forms ) : ?>
+	<?php if ( $forms['total'] > 0 ) : ?>
 		<div class="mwb-m4wp-form-table-head">
 			<a class="mwb-btn mwb-btn-secondary mwb-m4wp-form-refresh">
 		<?php esc_html_e( 'Refresh', 'wp-mautic-integration' ); ?>
@@ -62,6 +62,16 @@ $base_url = Wp_Mautic_Integration_Admin::get_mautic_base_url();
 		<?php endforeach; ?>
 			</tbody>
 		</table>
+	<?php else :?>
+	<div style="height:400px;">
+		<a class="mwb-btn mwb-btn-secondary mwb-m4wp-form-refresh">
+			<?php esc_html_e( 'Refresh', 'wp-mautic-integration' ); ?>
+		</a><br>
+		<center><h3 style="margin-top:40px;">
+		<?php echo esc_html( 'Sorry , there are no forms available on your mautic to show.' ); ?>
+		</h3>
+		</center>
+	</div>
 	<?php endif; ?>
 </div>
 

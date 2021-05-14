@@ -119,5 +119,49 @@ class MWB_Wpm_Ajax {
 		);
 		wp_die();
 	}
+
+	// User Registration Plugin Added
+	public function add_new_row() {
+		$integation_details = MWB_Wpm_Integration_Manager::get_integrations( isset( $_POST['id'] ) ? sanitize_text_field( wp_unslash( $_POST['id'] ) ) : '' ); // phpcs:ignore WordPress.Security.NonceVerification
+		$integation         = MWB_Wpm_Integration_Manager::get_integration( $integation_details );
+		$add_form 			= $integation->get_option( 'add_form' );
+
+		echo '<tr style="border-top:1px solid black;border-left:1px solid black;border-right:1px solid black;" class="row-dynamic_tag">
+				<th><label style="margin-left:30px;" for="add_form">Form</label></th>
+					<td>
+						<select name="add_form" class="mwb-m4wp-form-select">
+						<option selected value="">--Select--</option>';
+		?>
+		<?php $query = new WP_Query( array( 'post_type' => 'user_registration', 'post_status' => 'publish' ) );
+				$posts = $query->posts;
+				foreach( $posts as $post ) {
+				$form_id = $post->ID;
+				$form_name = $post->post_title; ?>
+		<?php
+					echo '<option value="'  . $form_id . '" '  . selected( $form_id, $add_form ) . '>
+							' . $form_name . '
+						  </option>';
+		?>
+		  <?php } ?>
+		<?php
+		echo 			'</select>
+						<p class="description">
+							Select Form for which the contact should be added.
+						</p>
+					</td>
+			 </tr>';
+
+		echo '<tr style="border-bottom:1px solid black;border-left:1px solid black;border-right:1px solid black;" class="row-dynamic_tag">
+				<th><label style="margin-left:30px;" for="add_tag">Tags</label></th>
+				<td>
+					<input type="text" name="add_tag" id="add_tag" value="">
+					<p class="description">
+					Enter tags separated by commas to assign to contact.
+					</p>
+				</td>
+			</tr>';
+		wp_die();
+	}
+	// User Registration Plugin Ended
 }
 
