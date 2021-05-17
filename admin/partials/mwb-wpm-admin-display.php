@@ -26,8 +26,10 @@ if ( wp_cache_get( 'mwb_m4wp_notice' ) ) {
 		<h1 class="mwb-header-title">
 			<?php esc_html_e( 'Integration with Mautic for WP', 'wp-mautic-integration' ); ?>
 		</h1>
-		<a href="https://makewebbetter.com/contact-us/" target="_blank"
-			class="mwb-link"><?php esc_html_e( 'Support', 'wp-mautic-integration' ); ?></a>
+		<a href="https://docs.makewebbetter.com/contact-us/" class="mwb-link2" target="_blank"
+			><?php esc_html_e( 'Documentation', 'wp-mautic-integration' ); ?></a> <span>|</span>
+		<a href="https://makewebbetter.com/contact-us/" class="mwb-link" target="_blank"
+			><?php esc_html_e( 'Support', 'wp-mautic-integration' ); ?></a>
 	</div>
 </header>
 <?php if ( '' !== $notification ) : ?>

@@ -112,7 +112,7 @@ run_wp_mautic_integration();
  */
 function mwb_wp_mautic_define_plugin_constants() {
 	$constants = array(
-		'MWB_WP_MAUTIC_VERSION' => '1.0.0',
+		'MWB_WP_MAUTIC_VERSION' => '1.0.1',
 		'MWB_WP_MAUTIC_PATH'    => plugin_dir_path( __FILE__ ),
 		'MWB_WP_MAUTIC_URL'     => plugin_dir_url( __FILE__ ),
 	);

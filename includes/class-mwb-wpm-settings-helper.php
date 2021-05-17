@@ -182,6 +182,11 @@ class MWB_Wpm_Settings_Helper {
 				'name'       => __( 'Settings', 'wp-mautic-integration' ),
 				'dependency' => '',
 			),
+			array(
+				'id'         => 'overview',
+				'name'       => __( 'Overview', 'wp-mautic-integration' ),
+				'dependency' => '',
+			),
 		);
 		return $tabs;
 	}

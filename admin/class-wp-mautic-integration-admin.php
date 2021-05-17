@@ -68,6 +68,55 @@ class Wp_Mautic_Integration_Admin {
 	}
 
 	/**
+	 * Adding settings menu for mautic-for-wordpress.
+	 *
+	 * @since    1.0.0
+	 */
+	public function m4wp_options_page() {
+		global $submenu;
+		if ( empty( $GLOBALS['admin_page_hooks']['mwb-plugins'] ) ) {
+			add_menu_page( 'MakeWebBetter', 'MakeWebBetter', 'manage_options', 'mwb-plugins', array( $this, 'mwb_plugins_listing_page' ), MWB_WP_MAUTIC_URL . 'admin/src/images/MWB_White-01-01-01.svg', 15 );
+			$gaq_menus = apply_filters( 'mwb_add_plugins_menus_array', array() );
+			if ( is_array( $gaq_menus ) && ! empty( $gaq_menus ) ) {
+				foreach ( $gaq_menus as $gaq_key => $gaq_value ) {
+					add_submenu_page( 'mwb-plugins', $gaq_value['name'], $gaq_value['name'], 'manage_options', $gaq_value['menu_link'], array( $gaq_value['instance'], $gaq_value['function'] ) );
+				}
+			}
+		}
+	}
+
+	/**
+	 * Removing default submenu of parent menu in backend dashboard
+	 *
+	 * @since   1.0.0
+	 */
+	public function mwb_m4wp_remove_default_submenu() {
+		global $submenu;
+		if ( is_array( $submenu ) && array_key_exists( 'mwb-plugins', $submenu ) ) {
+			if ( isset( $submenu['mwb-plugins'][0] ) ) {
+				unset( $submenu['mwb-plugins'][0] );
+			}
+		}
+	}
+
+	/**
+	 * m4wp_admin_submenu_page.
+	 *
+	 * @since 1.0.0
+	 * @param array $menus Marketplace menus.
+	 */
+	public function m4wp_admin_submenu_page( $menus = array() ) {
+		$menus[] = array(
+			'name'      => __( 'Mautic Integration', 'wp-mautic-integration' ),
+			'slug'      => 'manage_options',
+			'menu_link' => 'mwb-wp-mautic',
+			'instance'  => $this,
+			'function'  => 'include_admin_menu_display',
+		);
+		return $menus;
+	}
+
+	/**
 	 * Register the stylesheets for the admin area.
 	 *
 	 * @since    1.0.0
@@ -94,7 +143,7 @@ class Wp_Mautic_Integration_Admin {
 			wp_enqueue_style( 'mwb-wpm-jquery-ui', plugin_dir_url( __FILE__ ) . 'css/jquery-ui.min.css', array(), $this->version, 'all' );
 			wp_enqueue_style( 'mwb-wpm-admin-style', plugin_dir_url( __FILE__ ) . 'css/mwb-wpm-style.css', array(), $this->version, 'all' );
 		}
-		wp_enqueue_style( 'mwb-wpm-custom-admin-icon', plugin_dir_url( __FILE__ ) . 'admin/src/scss/mwb-mautic-for-wordpress-admin-custom.css', array(), $this->version, 'all' );
+		wp_enqueue_style( 'mwb-wpm-custom-admin-icon', plugin_dir_url( __FILE__ ) . 'src/scss/mwb-mautic-for-wordpress-admin-custom.css', array(), $this->version, 'all' );
 	}
 
 	/**
@@ -139,22 +188,23 @@ class Wp_Mautic_Integration_Admin {
 	public function get_plugin_screens() {
 		return array(
 			'toplevel_page_mwb-wp-mautic',
+			'makewebbetter_page_mwb-wp-mautic',
 		);
 	}
 
 	/**
 	 * Add_admin_menu_page function
 	 */
-	public function add_admin_menu_page() {
-		add_menu_page(
-			__( 'Mautic Integration', 'wp-mautic-integration' ),
-			__( 'Mautic Integration', 'wp-mautic-integration' ),
-			'manage_options',
-			'mwb-wp-mautic',
-			array( $this, 'include_admin_menu_display' ),
-			'dashicons-admin-plugins'
-		);
-	}
+	// public function add_admin_menu_page() {
+	// 	add_menu_page(
+	// 		__( 'Mautic Integration', 'wp-mautic-integration' ),
+	// 		__( 'Mautic Integration', 'wp-mautic-integration' ),
+	// 		'manage_options',
+	// 		'mwb-wp-mautic',
+	// 		array( $this, 'include_admin_menu_display' ),
+	// 		'dashicons-admin-plugins'
+	// 	);
+	// }
 
 	/**
 	 * Include_settings_display function
