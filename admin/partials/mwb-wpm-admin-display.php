@@ -23,13 +23,17 @@ if ( wp_cache_get( 'mwb_m4wp_notice' ) ) {
 ?>
 <header>
 	<div class="mwb-header-container mwb-bg-white mwb-r-8">
-		<h1 class="mwb-header-title">
-			<?php esc_html_e( 'Integration with Mautic for WP', 'wp-mautic-integration' ); ?>
-		</h1>
-		<a href="https://docs.makewebbetter.com/contact-us/" class="mwb-link2" target="_blank"
-			><?php esc_html_e( 'Documentation', 'wp-mautic-integration' ); ?></a> <span>|</span>
-		<a href="https://makewebbetter.com/contact-us/" class="mwb-link" target="_blank"
-			><?php esc_html_e( 'Support', 'wp-mautic-integration' ); ?></a>
+			<div class="" style="float:left;font-size:25px;color:#1A3365;font-weight:bold;">
+				<!-- <h1 class="mwb-header-title"> -->
+					<?php esc_html_e( 'Integration with Mautic for WP', 'wp-mautic-integration' ); ?>
+				<!-- </h1> -->
+			</div>
+			<div class="" style="float:right;color:#3F4756;font-size:15px;font-style:normal;font-weight:bold;">
+				<a href="https://docs.makewebbetter.com/wp-mautic-integration/" style="color:#3F4756;" class="" target="_blank"
+					><?php esc_html_e( 'Documentation', 'wp-mautic-integration' ); ?></a> <span>|</span>
+				<a href="https://makewebbetter.com/contact-us/" style="color:#3F4756;" class="" target="_blank"
+					><?php esc_html_e( 'Support', 'wp-mautic-integration' ); ?></a>
+			</div>
 	</div>
 </header>
 <?php if ( '' !== $notification ) : ?>

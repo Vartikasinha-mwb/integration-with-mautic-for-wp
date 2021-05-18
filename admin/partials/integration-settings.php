@@ -1,3 +1,4 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <?php
 /**
  * Provide a admin area view for the plugin
@@ -229,7 +230,7 @@ if ( ! ( $integation->get_name() == 'User Registration Plugin Form' ) ) {
 							continue;
 						}
 					?>
-					<tr style="border-top:1px solid black;border-left:1px solid black;border-right:1px solid black;" class="row-dynamic_tag <?php echo esc_attr( $hide_row_dynmictag1 ); ?>">
+					<tr style="border-top:1px solid #8c8f94;border-left:1px solid #8c8f94;border-right:1px solid #8c8f94;" class="row-dynamic_tag <?php echo esc_attr( $hide_row_dynmictag1 ); ?>">
 						<th><label style="margin-left:30px;" for="add_form"><?php esc_html_e( 'Form', 'wp-mautic-integration' ); ?></label></th>
 						<td>
 							<select name="add_form<?php echo esc_attr( $form_id2 ); ?>" class="mwb-m4wp-form-select" >
@@ -243,13 +244,13 @@ if ( ! ( $integation->get_name() == 'User Registration Plugin Form' ) ) {
 										</option>
 								<?php } ?>
 							</select>
-							<button type="button" class="button button-primary mwb-m4wp-delete-row" style="background-color:#F56161;height:40px;width:100px;margin-left:550px;"><strong style="color:black">Delete Row</strong></button>
+							<button type="button" class="button mwb-m4wp-delete-row" style="border:none;margin-left:600px;"><strong style="color:black;font-size:20px;"><i class="fa fa-trash"></i></strong></button>
 							<p class="description">
 								<?php esc_html_e( 'Select Form for which the contact should be added.', 'wp-mautic-integration' ); ?>
 							</p>
 						</td>
 					</tr>
-					<tr style="border-left:1px solid black;border-right:1px solid black;border-bottom:1px solid black;" class="row-dynamic_tag <?php echo esc_attr( $hide_row_dynmictag1 ); ?>">
+					<tr style="border-left:1px solid #8c8f94;border-right:1px solid #8c8f94;border-bottom:1px solid #8c8f94;" class="row-dynamic_tag <?php echo esc_attr( $hide_row_dynmictag1 ); ?>">
 						<th><label style="margin-left:30px;" for="add_tag<?php echo esc_attr( $add_form2 ); ?>"><?php esc_html_e( 'Tags', 'wp-mautic-integration' ); ?></label></th>
 						<td>
 							<input type="text" name="add_tag<?php echo esc_attr( $add_form2 ); ?>" id="add_tag<?php echo esc_attr( $add_form2 ); ?>" value="<?php echo esc_attr( $add_tag_dynamic ); ?>">
@@ -257,6 +258,8 @@ if ( ! ( $integation->get_name() == 'User Registration Plugin Form' ) ) {
 								<?php esc_html_e( 'Enter tags separated by commas to assign to contact.', 'wp-mautic-integration' ); ?>
 							</p>
 						</td>
+					</tr>
+					<tr class="row-dynamic_tag <?php echo esc_attr( $hide_row_dynmictag1 ); ?>" style="height:20px;">
 					</tr>
 					<?php
 					}
@@ -273,8 +276,8 @@ if ( ! ( $integation->get_name() == 'User Registration Plugin Form' ) ) {
 					<tr class="row-dynamic_tag <?php echo esc_attr( $hide_row_dynmictag1 ); ?>">
 						<th></th>
 						<td>
-							<div class="">
-								<button class="button button-primary mwb-m4wp-add-new-row" style="width:170px;height:40px;" type="button"><?php esc_html_e( 'Add New Row', 'wp-mautic-integration' ); ?></button>
+							<div class="mwb-m4wp-admin-button-wrap">
+								<button class="button mwb-m4wp-admin-button mwb-m4wp-add-new-row" style="" type="button"><?php esc_html_e( 'Add New Row', 'wp-mautic-integration' ); ?></button>
 								<p class="description">
 									<?php esc_html_e( 'Click to add rules for dynamic tag according to forms.', 'wp-mautic-integration' ); ?>
 								</p>
