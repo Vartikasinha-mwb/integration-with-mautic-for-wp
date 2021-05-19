@@ -161,6 +161,12 @@
     align-items: center;
 }
 
+#adminmenu div.wp-menu-image {
+    width: 28px;
+    height: 30px;
+    margin-left:3px;
+}
+
 
 /*.acfw-overview__keywords-item {
     flex:0 0 50%;

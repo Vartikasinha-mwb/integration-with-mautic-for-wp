@@ -20,7 +20,6 @@
 		<div class="m4wp-overview__content-description">
 			<h2><?php echo esc_html_e( 'What is Integration with Mautic for WP?', 'wp-mautic-integration' ); ?></h2>
 			<p>
-
 				<?php
 				esc_html_e(
 					'Integration with Mautic for WP plugin is the simple and easy-to-use plugin that helps you to sync your WordPress website data with your Mautic. It is a hassle-free solution for you, if you are willing to capture leads, signups, and subscribers easily by integrating your website with Mautic.',
@@ -44,7 +43,7 @@
 					<li><?php esc_html_e( 'Embed Mautic forms into your WordPress content using shortcodes.', 'wp-mautic-integration' ); ?></li>
 				</ul>
 				<div class="m4wp-overview__video--url">
-					<iframe width="470" height="295" src="https://www.youtube.com/embed/Rqm9SHbZAnk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+					<iframe style="margin-left:27px;" width="470" height="295" src="https://www.youtube.com/embed/Rqm9SHbZAnk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 				</div>
 			</div>
 		</div>

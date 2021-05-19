@@ -57,8 +57,8 @@ class Wp_Mautic_Integration_Admin {
 
 		if( $file == 'integration-with-mautic-for-wp/wp-mautic-integration.php' ) {
 			$row_meta = array(
-				'docs'    => '<a href="' . esc_url( 'https://docs.makewebbetter.com/wp-mautic-integration/?abc' ) . '" target="_blank" aria-label="' . esc_attr__( 'Plugin Additional Links', 'domain' ) . '" style="color:green;"><img src="'. plugin_dir_url( dirname( __FILE__ ) ) .'admin/src/images/Documentation.svg" class="mwb_m4wp_plugin_extra_custom_tab">' . esc_html__( 'Documentation', 'wp-mautic-integration' ) . '</a>',
-				'support'    => '<a href="' . esc_url( 'https://makewebbetter.com/submit-query/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-page&utm_campaign=MWB-wpmautic-org' ) . '" target="_blank" aria-label="' . esc_attr__( 'Plugin Additional Links', 'domain' ) . '" style="color:green;"><img src="'. plugin_dir_url( dirname( __FILE__ ) ) .'admin/src/images/Support.svg" class="mwb_m4wp_plugin_extra_custom_tab">' . esc_html__( 'Support', 'wp-mautic-integration' ) . '</a>'
+				'docs'    => '<a href="' . esc_url( 'https://docs.makewebbetter.com/wp-mautic-integration/?abc' ) . '" target="_blank" aria-label="' . esc_attr__( 'Plugin Additional Links', 'domain' ) . '"><img src="'. plugin_dir_url( dirname( __FILE__ ) ) .'admin/src/images/Documentation.svg" class="mwb_m4wp_plugin_extra_custom_tab">' . esc_html__( 'Documentation', 'wp-mautic-integration' ) . '</a>',
+				'support'    => '<a href="' . esc_url( 'https://makewebbetter.com/submit-query/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-page&utm_campaign=MWB-wpmautic-org' ) . '" target="_blank" aria-label="' . esc_attr__( 'Plugin Additional Links', 'domain' ) . '"><img src="'. plugin_dir_url( dirname( __FILE__ ) ) .'admin/src/images/Support.svg" class="mwb_m4wp_plugin_extra_custom_tab">' . esc_html__( 'Support', 'wp-mautic-integration' ) . '</a>'
 				);
 		
 				return array_merge( $links, $row_meta );
@@ -107,7 +107,7 @@ class Wp_Mautic_Integration_Admin {
 	 */
 	public function m4wp_admin_submenu_page( $menus = array() ) {
 		$menus[] = array(
-			'name'      => __( 'Mautic Integration', 'wp-mautic-integration' ),
+			'name'      => __( 'Integration with Mautic for WP', 'wp-mautic-integration' ),
 			'slug'      => 'manage_options',
 			'menu_link' => 'mwb-wp-mautic',
 			'instance'  => $this,
