@@ -11,6 +11,7 @@
  * @subpackage Wp_Mautic_Integration/admin/partials
  */
 
+// User Registration Plugin Added.
 ?>
 <div class="mwb-m4wp-admin-panel-main">
 	<div class="m4wp-overview__banner">
@@ -25,8 +26,10 @@
 					'Integration with Mautic for WP plugin is the simple and easy-to-use plugin that helps you to sync your WordPress website data with your Mautic. It is a hassle-free solution for you, if you are willing to capture leads, signups, and subscribers easily by integrating your website with Mautic.',
 					'wp-mautic-integration'
 				);
-                _e('<br>');
-                esc_html_e(
+				?>
+				<br>
+				<?php
+				esc_html_e(
 					'You can also integrate multiple WordPress forms with Mautic directly using either Basic or OAuth2 Mautic API. Integration with Mautic for WordPress plugin also supports you to add Mautic forms into your web pages through shortcodes.',
 					'wp-mautic-integration'
 				);
@@ -81,7 +84,7 @@
 			<div class="m4wp-overview__keywords-item">
 				<div class="m4wp-overview__keywords-card">
 					<div class="m4wp-overview__keywords-image">
-						<img src="<?php echo esc_html( plugin_dir_url( dirname( __FILE__ ) ) . 'src/images/Icons_Data-driven Dashboard.jpg' ) ?>" alt="Data Driven image">
+						<img src="<?php echo esc_html( plugin_dir_url( dirname( __FILE__ ) ) . 'src/images/Icons_Data-driven Dashboard.jpg' ); ?>" alt="Data Driven image">
 					</div>
 					<div class="m4wp-overview__keywords-text">
 						<h3 class="m4wp-overview__keywords-heading"><?php echo esc_html_e( 'Data-driven Dashboard', 'wp-mautic-integration' ); ?></h3>
@@ -142,3 +145,5 @@
 		</div>
 	</div>
 </div>
+<?php
+// User Registration Plugin Added.

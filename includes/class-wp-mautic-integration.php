@@ -216,7 +216,7 @@ class Wp_Mautic_Integration {
 		// add plugins menu page.
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'm4wp_options_page' );
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'mwb_m4wp_remove_default_submenu', 50 );
-		//$this->loader->add_action( 'admin_menu', $plugin_admin, 'add_admin_menu_page' );
+		// $this->loader->add_action( 'admin_menu', $plugin_admin, 'add_admin_menu_page' );
 
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'get_oauth_code', 8 );
 
@@ -305,10 +305,9 @@ class Wp_Mautic_Integration {
 		$this->loader->add_action( 'wp_ajax_mwb_m4wp_test_api_connection', $plugin_ajax, 'test_api_connection' );
 		$this->loader->add_action( 'wp_ajax_mwb_m4wp_enable_integration', $plugin_ajax, 'enable_integration' );
 		$this->loader->add_action( 'wp_ajax_mwb_m4wp_refresh', $plugin_ajax, 'refresh_data' );
-		// User Registration Plugin Added
+		// User Registration Plugin Added.
 		$this->loader->add_action( 'wp_ajax_mwb_m4wp_add_new_row', $plugin_ajax, 'add_new_row' );
-		// User Registration Plugin Ended
-
+		// User Registration Plugin Ended.
 	}
 
 	/**

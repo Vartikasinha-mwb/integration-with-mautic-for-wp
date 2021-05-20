@@ -120,11 +120,14 @@ class MWB_Wpm_Ajax {
 		wp_die();
 	}
 
-	// User Registration Plugin Added
+	// User Registration Plugin Added.
+	/**
+	 * Add New Rule For Dynamic Tags.
+	 */
 	public function add_new_row() {
 		$integation_details = MWB_Wpm_Integration_Manager::get_integrations( isset( $_POST['id'] ) ? sanitize_text_field( wp_unslash( $_POST['id'] ) ) : '' ); // phpcs:ignore WordPress.Security.NonceVerification
 		$integation         = MWB_Wpm_Integration_Manager::get_integration( $integation_details );
-		$add_form 			= $integation->get_option( 'add_form' );
+		$add_form           = $integation->get_option( 'add_form' );
 
 		echo '<tr style="border-top:1px solid black;border-left:1px solid black;border-right:1px solid black;" class="row-dynamic_tag">
 				<th><label style="margin-left:30px;" for="add_form">Form</label></th>
@@ -132,19 +135,25 @@ class MWB_Wpm_Ajax {
 						<select name="add_form" class="mwb-m4wp-form-select">
 						<option selected value="">--Select--</option>';
 		?>
-		<?php $query = new WP_Query( array( 'post_type' => 'user_registration', 'post_status' => 'publish' ) );
-				$posts = $query->posts;
-				foreach( $posts as $post ) {
-				$form_id = $post->ID;
-				$form_name = $post->post_title; ?>
 		<?php
-					echo '<option value="'  . $form_id . '" '  . selected( $form_id, $add_form ) . '>
-							' . $form_name . '
+		$args  = array(
+			'post_type'   => 'user_registration',
+			'post_status' => 'publish',
+		);
+		$query = new WP_Query( $args );
+		$posts = $query->posts;
+		foreach ( $posts as $post ) {
+				$form_id   = $post->ID;
+				$form_name = $post->post_title;
+			?>
+			<?php
+					echo '<option value="' . esc_attr( $form_id ) . '"' . selected( esc_attr( $form_id ), $add_form ) . '>
+							' . esc_attr( $form_name ) . '
 						  </option>';
-		?>
-		  <?php } ?>
+			?>
+<?php } ?>
 		<?php
-		echo 			'</select>
+		echo '</select>
 						<p class="description">
 							Select Form for which the contact should be added.
 						</p>
@@ -162,6 +171,6 @@ class MWB_Wpm_Ajax {
 			</tr>';
 		wp_die();
 	}
-	// User Registration Plugin Ended
+	// User Registration Plugin Ended.
 }
 

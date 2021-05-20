@@ -93,14 +93,14 @@ class MWB_Wpm_Integration_Manager {
 			),
 		);
 
-		if ( in_array( 'user-registration/user-registration.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-			
+		if ( in_array( 'user-registration/user-registration.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ), true ) ) {
+
 			$integrations['mwb_m4wp_user_registration_plugin'] = array(
 				'class' => 'Mwb_Wpm_User_Registration_Plugin_Form',
-				'path'  => 'class-mwb-wpm-user_registration_plugin-form.php',
+				'path'  => 'class-mwb-wpm-user-registration-plugin-form.php',
 				'id'    => 'mwb_m4wp_user_registration_plugin',
 			);
-			
+
 		}
 
 		$integrations = apply_filters( 'mwb_m4wp_available_integrations', $integrations );

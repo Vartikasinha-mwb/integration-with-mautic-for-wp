@@ -43,8 +43,8 @@ class Wp_Mautic_Integration_Admin {
 	 * Initialize the class and set its properties.
 	 *
 	 * @since    1.0.0
-	 * @param      string    $plugin_name       The name of this plugin.
-	 * @param      string    $version    The version of this plugin.
+	 * @param      string $plugin_name       The name of this plugin.
+	 * @param      string $version    The version of this plugin.
 	 */
 	public function __construct( $plugin_name, $version ) {
 
@@ -53,14 +53,20 @@ class Wp_Mautic_Integration_Admin {
 
 	}
 
-	function mwb_docs( $links, $file ) {
+	/**
+	 * Initialize the class and set its properties.
+	 *
+	 * @since    1.0.0
+	 * @param    array  $links       The links of this plugin extra details.
+	 * @param    string $file        The version of this plugin.
+	 */
+	public function mwb_docs( $links, $file ) {
 
-		if( $file == 'integration-with-mautic-for-wp/wp-mautic-integration.php' ) {
+		if ( 'integration-with-mautic-for-wp/wp-mautic-integration.php' === $file ) {
 			$row_meta = array(
-				'docs'    => '<a href="' . esc_url( 'https://docs.makewebbetter.com/wp-mautic-integration/?abc' ) . '" target="_blank" aria-label="' . esc_attr__( 'Plugin Additional Links', 'domain' ) . '"><img src="'. plugin_dir_url( dirname( __FILE__ ) ) .'admin/src/images/Documentation.svg" class="mwb_m4wp_plugin_extra_custom_tab">' . esc_html__( 'Documentation', 'wp-mautic-integration' ) . '</a>',
-				'support'    => '<a href="' . esc_url( 'https://makewebbetter.com/submit-query/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-page&utm_campaign=MWB-wpmautic-org' ) . '" target="_blank" aria-label="' . esc_attr__( 'Plugin Additional Links', 'domain' ) . '"><img src="'. plugin_dir_url( dirname( __FILE__ ) ) .'admin/src/images/Support.svg" class="mwb_m4wp_plugin_extra_custom_tab">' . esc_html__( 'Support', 'wp-mautic-integration' ) . '</a>'
-				);
-		
+				'docs'    => '<a href="' . esc_url( 'https://docs.makewebbetter.com/wp-mautic-integration/?abc' ) . '" target="_blank" aria-label="' . esc_attr__( 'Plugin Additional Links', 'domain' ) . '"><img src="' . plugin_dir_url( dirname( __FILE__ ) ) . 'admin/src/images/Documentation.svg" class="mwb_m4wp_plugin_extra_custom_tab">' . esc_html__( 'Documentation', 'wp-mautic-integration' ) . '</a>',
+				'support' => '<a href="' . esc_url( 'https://makewebbetter.com/submit-query/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-page&utm_campaign=MWB-wpmautic-org' ) . '" target="_blank" aria-label="' . esc_attr__( 'Plugin Additional Links', 'domain' ) . '"><img src="' . plugin_dir_url( dirname( __FILE__ ) ) . 'admin/src/images/Support.svg" class="mwb_m4wp_plugin_extra_custom_tab">' . esc_html__( 'Support', 'wp-mautic-integration' ) . '</a>',
+			);
 				return array_merge( $links, $row_meta );
 		}
 
@@ -100,7 +106,7 @@ class Wp_Mautic_Integration_Admin {
 	}
 
 	/**
-	 * m4wp_admin_submenu_page.
+	 * M4wp_admin_submenu_page.
 	 *
 	 * @since 1.0.0
 	 * @param array $menus Marketplace menus.
@@ -144,6 +150,7 @@ class Wp_Mautic_Integration_Admin {
 			wp_enqueue_style( 'mwb-wpm-admin-style', plugin_dir_url( __FILE__ ) . 'css/mwb-wpm-style.css', array(), $this->version, 'all' );
 		}
 		wp_enqueue_style( 'mwb-wpm-custom-admin-icon', plugin_dir_url( __FILE__ ) . 'src/scss/mwb-mautic-for-wordpress-admin-custom.css', array(), $this->version, 'all' );
+		wp_enqueue_style( 'mwb-a', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css', array(), $this->version, 'all' );
 	}
 
 	/**
@@ -191,20 +198,6 @@ class Wp_Mautic_Integration_Admin {
 			'makewebbetter_page_mwb-wp-mautic',
 		);
 	}
-
-	/**
-	 * Add_admin_menu_page function
-	 */
-	// public function add_admin_menu_page() {
-	// 	add_menu_page(
-	// 		__( 'Mautic Integration', 'wp-mautic-integration' ),
-	// 		__( 'Mautic Integration', 'wp-mautic-integration' ),
-	// 		'manage_options',
-	// 		'mwb-wp-mautic',
-	// 		array( $this, 'include_admin_menu_display' ),
-	// 		'dashicons-admin-plugins'
-	// 	);
-	// }
 
 	/**
 	 * Include_settings_display function
@@ -335,24 +328,27 @@ class Wp_Mautic_Integration_Admin {
 					$precheck                 = isset( $_POST['precheck'] ) ? sanitize_text_field( wp_unslash( $_POST['precheck'] ) ) : 'no';
 					$add_segment              = isset( $_POST['add_segment'] ) ? sanitize_text_field( wp_unslash( $_POST['add_segment'] ) ) : '-1';
 					$add_tag                  = isset( $_POST['add_tag'] ) ? sanitize_text_field( wp_unslash( $_POST['add_tag'] ) ) : '';
-					
 					$settings                 = get_option( 'mwb_m4wp_integration_settings', array() );
 					$settings[ $integration ] = compact( 'enable', 'implicit', 'checkbox_txt', 'precheck', 'add_segment', 'add_tag' );
-					// User Registration Plugin Added
-					$dynamic_tag              = isset( $_POST['dynamic_tag'] ) ? sanitize_text_field( wp_unslash( $_POST['dynamic_tag'] ) ) : 'no';
+					// User Registration Plugin Added.
+					$dynamic_tag                             = isset( $_POST['dynamic_tag'] ) ? sanitize_text_field( wp_unslash( $_POST['dynamic_tag'] ) ) : 'no';
 					$settings[ $integration ]['dynamic_tag'] = $dynamic_tag;
-					$query = new WP_Query( array( 'post_type' => 'user_registration', 'post_status' => 'publish' ) );
-					$posts = $query->posts;
-					foreach( $posts as $post ) {
+					$args                                    = array(
+						'post_type'   => 'user_registration',
+						'post_status' => 'publish',
+					);
+					$query                                   = new WP_Query( $args );
+					$posts                                   = $query->posts;
+					foreach ( $posts as $post ) {
 						$form_id = $post->ID;
-						if( !isset( $_POST['add_form' . $form_id] ) ) {
+						if ( ! isset( $_POST[ 'add_form' . $form_id ] ) ) {
 							continue;
 						}
-						$add_form = isset( $_POST['add_form' . $form_id] ) ? sanitize_text_field( wp_unslash( $_POST['add_form' . $form_id ]) ) : '';
-						$settings[ $integration ]['add_form' . $form_id ] = $add_form;
-						$settings[ $integration ]['add_tag' . $add_form ] = isset( $_POST['add_tag' . $form_id] ) ? sanitize_text_field( wp_unslash( $_POST['add_tag' . $form_id] ) ) : '';
+						$add_form = isset( $_POST[ 'add_form' . $form_id ] ) ? sanitize_text_field( wp_unslash( $_POST[ 'add_form' . $form_id ] ) ) : '';
+						$settings[ $integration ][ 'add_form' . $form_id ] = $add_form;
+						$settings[ $integration ][ 'add_tag' . $add_form ] = isset( $_POST[ 'add_tag' . $form_id ] ) ? sanitize_text_field( wp_unslash( $_POST[ 'add_tag' . $form_id ] ) ) : '';
 					}
-					// User Registration Plugin Ended
+					// User Registration Plugin Ended.
 					update_option( 'mwb_m4wp_integration_settings', $settings );
 					wp_cache_set( 'mwb_m4wp_notice', $settings_notice );
 				}
@@ -365,7 +361,7 @@ class Wp_Mautic_Integration_Admin {
 	 */
 	public function get_oauth_code() {
 
-		if ( isset( $_GET['m4wp_reset'] ) && 1 === (int) $_GET['m4wp_reset'] ) {
+		if ( isset( $_GET['m4wp_reset'] ) && 1 === (int) $_GET['m4wp_reset'] ) { // phpcs:ignore WordPress.Security.NonceVerification
 			if ( ! wp_verify_nonce( isset( $_GET['m4wp_auth_nonce'] ) ? sanitize_text_field( wp_unslash( $_GET['m4wp_auth_nonce'] ) ) : '', 'm4wp_auth_nonce' ) ) {
 				wp_die( 'nonce not verified' );
 			}

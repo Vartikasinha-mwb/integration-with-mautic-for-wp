@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <?php
 /**
  * Provide a admin area view for the plugin
@@ -23,10 +22,10 @@ $precheck           = $integation->is_checkbox_precheck();
 $add_segment        = $integation->get_option( 'add_segment' );
 $add_tag            = $integation->get_option( 'add_tag' );
 $hide_row           = $implicit ? 'row-hide' : '';
-// User Registration Plugin Added
-if ( ! ( $integation->get_name() == 'User Registration Plugin Form' ) ) {
-// User Registration Plugin Ended
-?>
+	// User Registration Plugin Added.
+if ( ! ( $integation->get_name() === 'User Registration Plugin Form' ) ) {
+	// User Registration Plugin Ended.
+	?>
 <div class="wrap">
 	<div class="mwb-m4wp-admin-panel-main mwb-m4wp-admin-integration-panel">
 		<div class="mwb-m4wp-admin-form-wrap-title">
@@ -124,15 +123,15 @@ if ( ! ( $integation->get_name() == 'User Registration Plugin Form' ) ) {
 		</div>
 	</div>
 </div>
-<?php
-// User Registration Plugin Added
+	<?php
+	// User Registration Plugin Added.
 } else {
 
 	$dynamic_tag         = $integation->is_dynamic_tag_enable();
 	$hide_row_dynmictag1 = $dynamic_tag ? '' : 'row-hide';
 	$hide_row_dynmictag2 = $dynamic_tag ? 'row-hide' : '';
 	$add_tag_dynamic     = $integation->get_option( 'add_tag' . $add_form );
-?>
+	?>
 <div class="wrap">
 	<div class="mwb-m4wp-admin-panel-main mwb-m4wp-admin-integration-panel">
 		<div class="mwb-m4wp-admin-form-wrap-title">
@@ -218,27 +217,36 @@ if ( ! ( $integation->get_name() == 'User Registration Plugin Form' ) ) {
 						</td>
 					</tr>
 					<?php
-					$query2 = new WP_Query( array( 'post_type' => 'user_registration', 'post_status' => 'publish' ) );
+					$args   = array(
+						'post_type'   => 'user_registration',
+						'post_status' => 'publish',
+					);
+					$query2 = new WP_Query( $args );
 					$posts2 = $query2->posts;
-					
-					foreach( $posts2 as $post2 ) {
-						//print_r($post2);
-						$form_id2 = $post2->ID;
-						$add_form2 = $integation->get_option( 'add_form' . $form_id2 );
-						$add_tag_dynamic     = $integation->get_option( 'add_tag' . $add_form2 );
-						if( empty( $add_form2 ) || empty( $add_tag_dynamic ) ) {
+
+					foreach ( $posts2 as $post2 ) {
+						$form_id2        = $post2->ID;
+						$add_form2       = $integation->get_option( 'add_form' . $form_id2 );
+						$add_tag_dynamic = $integation->get_option( 'add_tag' . $add_form2 );
+						if ( empty( $add_form2 ) || empty( $add_tag_dynamic ) ) {
 							continue;
 						}
-					?>
+						?>
 					<tr style="border-top:1px solid #8c8f94;border-left:1px solid #8c8f94;border-right:1px solid #8c8f94;" class="row-dynamic_tag <?php echo esc_attr( $hide_row_dynmictag1 ); ?>">
 						<th><label style="margin-left:30px;" for="add_form"><?php esc_html_e( 'Form', 'wp-mautic-integration' ); ?></label></th>
 						<td>
 							<select name="add_form<?php echo esc_attr( $form_id2 ); ?>" class="mwb-m4wp-form-select" >
-								<?php $query = new WP_Query( array( 'post_type' => 'user_registration', 'post_status' => 'publish' ) );
-									  $posts = $query->posts;
-									  foreach( $posts as $post ) {
-										$form_id = $post->ID;
-										$form_name = $post->post_title; ?>
+								<?php
+								$args    = array(
+									'post_type'   => 'user_registration',
+									'post_status' => 'publish',
+								);
+								$query   = new WP_Query( $args );
+								$postsss = $query->posts;
+								foreach ( $postsss as $postss ) {
+										$form_id   = $postss->ID;
+										$form_name = $postss->post_title;
+									?>
 										<option value="<?php echo esc_attr( $form_id ); ?>" <?php esc_attr( selected( $form_id, $add_form2 ) ); ?>>
 										<?php echo esc_attr( $form_name ); ?>
 										</option>
@@ -261,7 +269,7 @@ if ( ! ( $integation->get_name() == 'User Registration Plugin Form' ) ) {
 					</tr>
 					<tr class="row-dynamic_tag <?php echo esc_attr( $hide_row_dynmictag1 ); ?>" style="height:20px;">
 					</tr>
-					<?php
+						<?php
 					}
 					?>
 					<tr class="row-dynamic_tag <?php echo esc_attr( $hide_row_dynmictag2 ); ?>">
@@ -300,6 +308,6 @@ if ( ! ( $integation->get_name() == 'User Registration Plugin Form' ) ) {
 		</div>
 	</div>
 </div>
-<?php
+	<?php
 }
-// User Registration Plugin Ended
+// User Registration Plugin Ended.

@@ -79,11 +79,11 @@ class Mwb_Wpm_Api_Base {
 	 * @param array  $data Reponse data.
 	 */
 	public function create_error_log( $code, $message, $data = array() ) {
-		
+
 		$upload_dir = wp_get_upload_dir();
 
-		if( !empty( $upload_dir ) && isset( $upload_dir['basedir'] ) ){
-			$file = $upload_dir['basedir'].'/mwb-wp-mautic-error.log';
+		if ( ! empty( $upload_dir ) && isset( $upload_dir['basedir'] ) ){
+			$file = $upload_dir['basedir'] . '/mwb-wp-mautic-error.log';
 			$log  = 'Url : ' . $this->last_request['url'] . PHP_EOL;
 			$log .= 'Method : ' . $this->last_request['method'] . PHP_EOL;
 			$log .= "Code : $code" . PHP_EOL;
