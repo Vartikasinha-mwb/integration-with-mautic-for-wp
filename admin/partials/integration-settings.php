@@ -130,7 +130,6 @@ if ( ! ( $integation->get_name() === 'User Registration Plugin Form' ) ) {
 	$dynamic_tag         = $integation->is_dynamic_tag_enable();
 	$hide_row_dynmictag1 = $dynamic_tag ? '' : 'row-hide';
 	$hide_row_dynmictag2 = $dynamic_tag ? 'row-hide' : '';
-	$add_tag_dynamic     = $integation->get_option( 'add_tag' . $add_form );
 	?>
 <div class="wrap">
 	<div class="mwb-m4wp-admin-panel-main mwb-m4wp-admin-integration-panel">

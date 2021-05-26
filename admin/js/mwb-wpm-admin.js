@@ -83,7 +83,8 @@ jQuery( document ).ready(
 
 		$( '.mwb-m4wp-datepicker' ).datepicker(
 			{
-				dateFormat: "yy-mm-dd"
+				dateFormat: "yy-mm-dd",
+				maxDate: 0
 			}
 		);
 
