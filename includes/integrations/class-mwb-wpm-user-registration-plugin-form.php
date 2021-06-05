@@ -44,7 +44,7 @@ class Mwb_Wpm_User_Registration_Plugin_Form extends Mwb_Wpm_Integration_Base {
 	 * @param string $form_data_array Define the form_data_array.
 	 * @param string $form_id Define the form_id.
 	 */
-	public function user_registration_after_form_fields_new( $row_id, $form_data_array, $form_id ) {
+	public function user_registration_after_form_fields_new( $form_data_array, $form_id ) {
 
 		if ( ! $this->is_implicit() ) {
 			$args        = array(
@@ -74,6 +74,26 @@ class Mwb_Wpm_User_Registration_Plugin_Form extends Mwb_Wpm_Integration_Base {
 				 <div class="form-row validate-required user-registration-validated" id="checkbox_field" data-priority=""><label for="checkbox" class="ur-label">' . esc_attr( $this->get_option( 'checkbox_txt' ) ) . '</label><input ' . esc_attr( $checked ) . ' data-rules="" data-id="mwb_m4wp_subscribe" type="checkbox" class="input-checkbox ur-frontend-field user-registration-valid" name="checkbox" id="checkbox" placeholder="" value="yes" data-label="Custom Checkbox" aria-invalid="false"></div>															</div>
 				 </div>
 		    	 </div>';
+		} else {
+			$args        = array(
+				'post_type'   => 'user_registration',
+				'post_status' => 'publish',
+			);
+			$query       = new WP_Query( $args );
+			$posts       = $query->posts;
+			$form_id_new = '';
+			foreach ( $posts as $post ) {
+				if ( $post->ID === (int) $form_id ) {
+					$form_id_new = $post->ID;
+				}
+			}
+
+			echo '<div class="ur-form-row">
+				 <div class="ur-form-grid ur-grid-1" style="width:99%">
+				 <div data-field-id="checkbox" class="ur-field-item field-checkbox ">
+				 <div class="form-row validate-required user-registration-validated" id="checkbox_field" data-priority=""><label for="checkbox" class="ur-label"></label><input data-rules="" data-id="mwb_m4wp_subscribe2" type="hidden" class="input-checkbox ur-frontend-field user-registration-valid" name="checkbox2" id="checkbox2" placeholder="" value="' . esc_attr( $form_id_new ) . '" data-label="Custom Hidden Field" aria-invalid="false"></div>															</div>
+				 </div>
+		    	 </div>';
 		}
 	}
 
@@ -82,7 +102,7 @@ class Mwb_Wpm_User_Registration_Plugin_Form extends Mwb_Wpm_Integration_Base {
 	 */
 	public function add_hooks() {
 		if ( in_array( 'user-registration/user-registration.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ), true ) ) {
-			add_action( 'user_registration_after_field_row', array( $this, 'user_registration_after_form_fields_new' ), 1, 3 );
+			add_action( 'user_registration_after_form_fields', array( $this, 'user_registration_after_form_fields_new' ), 1, 2 );
 			add_action( 'user_register', array( $this, 'sync_registered_user' ), 99, 1 );
 		}
 	}

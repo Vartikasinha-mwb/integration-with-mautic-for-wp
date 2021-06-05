@@ -193,6 +193,24 @@ abstract class Mwb_Wpm_Integration_Base {
 
 	}
 
+	// User Registration Plugin Added.
+	/**
+	 * Get saved setting option for User reg Plugin.
+	 *
+	 * @param string $key Key of the setting option.
+	 * @return string  $value Setting value.
+	 */
+	public function get_option_new( $key = '' ) {
+
+		if ( empty( $this->settings[ $key ] ) ) {
+			return '';
+		}
+		$value = isset( $this->settings[ $key ] ) ? $this->settings[ $key ] : $this->get_default_settings()[ $key ];
+		return $value;
+
+	}
+	// User Registration Plugin Ended.
+
 	/**
 	 * Get Checkbox html.
 	 *
@@ -247,7 +265,7 @@ abstract class Mwb_Wpm_Integration_Base {
 			//phpcs:disable
 			if ( isset( $_POST['mwb_m4wp_subscribe'] ) && 'yes' === sanitize_text_field( wp_unslash( $_POST['mwb_m4wp_subscribe'] ) ) ) {
 				$sync = true;
-			// User Registration Plugin Added
+			// User Registration Plugin Added.
 			} else if ( in_array( 'user-registration/user-registration.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 				$fields = array( 'first_name'=>'first_name', 'last_name'=>'last_name' );
 				$form_data = explode( '{', $_POST['form_data']);
@@ -289,8 +307,44 @@ abstract class Mwb_Wpm_Integration_Base {
 			//phpcs:enable
 		} else {
 			$sync = true;
+			//phpcs:disable
+			// User Registration Plugin Added.
+			if ( in_array( 'user-registration/user-registration.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+				$fields = array( 'first_name'=>'first_name', 'last_name'=>'last_name' );
+				if( isset( $_POST['form_data'] ) ) {
+					$form_data = explode( '{', $_POST['form_data']);
+					$counter = 0;
+					foreach( $form_data as $key=>$value ) {
+						if ( strpos( $value, 'Custom Hidden Field' ) !== false ) {
+							$new_value = explode( '\"', $value );
+							$form_tag_suffix = $new_value[3];
+						} else if( strpos( $value, 'Country' ) !== false || strpos( $value, 'country' ) !== false ) { 
+							if( $counter == 0 ) {
+								$counter++;
+								continue; 
+							}
+							$new_value = explode( '\"', $value );
+							$data['country'] = self::country_code_to_country( $new_value[3] );
+							$counter++;
+						} else {
+							if( $counter == 0 ) {
+								$counter++;
+								continue;
+							}
+							$new_value = explode( '\"', $value );
+							if( array_key_exists( $new_value[15], $fields ) ) {
+								$key_new = $new_value[15];
+								$key_new = str_replace( array( '_' ), '', $key_new);
+								$data[$key_new] = $new_value[3];
+							}
+							$counter++;
+						}
+					}
+				}
+			}
+			//phpcs:enable
+			// User Registration Plugin Ended.
 		}
-
 		if ( ! $sync ) {
 			return;
 		}
@@ -316,7 +370,7 @@ abstract class Mwb_Wpm_Integration_Base {
 							foreach ( $integation_details as $a1 => $a2 ) {
 								if ( 'Mwb_Wpm_User_Registration_Plugin_Form' === $a2['class'] ) {
 									$integation      = MWB_Wpm_Integration_Manager::get_integration( $a2 );
-									$tags_string_new = $integation->get_option( 'add_tag' . $form_id );
+									$tags_string_new = $integation->get_option_new( 'add_tag' . $form_id );
 								}
 							}
 							if ( ! empty( $tags_string_new ) ) {

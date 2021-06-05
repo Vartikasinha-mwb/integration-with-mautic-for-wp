@@ -225,8 +225,8 @@ if ( ! ( $integation->get_name() === 'User Registration Plugin Form' ) ) {
 
 					foreach ( $posts2 as $post2 ) {
 						$form_id2        = $post2->ID;
-						$add_form2       = $integation->get_option( 'add_form' . $form_id2 );
-						$add_tag_dynamic = $integation->get_option( 'add_tag' . $add_form2 );
+						$add_form2       = $integation->get_option_new( 'add_form' . $form_id2 );
+						$add_tag_dynamic = $integation->get_option_new( 'add_tag' . $add_form2 );
 						if ( empty( $add_form2 ) || empty( $add_tag_dynamic ) ) {
 							continue;
 						}
