@@ -240,7 +240,7 @@ class MWB_Wpm_Settings_Helper {
 
 		} else {
 
-			echo __( 'Something went wrong', 'wp-mautic-integration' );
+			esc_html_e( 'Something went wrong', 'wp-mautic-integration' );
 
 		}
 

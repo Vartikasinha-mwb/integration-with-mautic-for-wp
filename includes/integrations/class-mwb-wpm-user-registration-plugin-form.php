@@ -40,7 +40,6 @@ class Mwb_Wpm_User_Registration_Plugin_Form extends Mwb_Wpm_Integration_Base {
 	/**
 	 * Check and include admin view file
 	 *
-	 * @param string $row_id Define the row id.
 	 * @param string $form_data_array Define the form_data_array.
 	 * @param string $form_id Define the form_id.
 	 */

@@ -125,8 +125,6 @@ class MWB_Wpm_Ajax {
 	 * Add New Rule For Dynamic Tags.
 	 */
 	public function add_new_row() {
-		// $integation_details = MWB_Wpm_Integration_Manager::get_integrations( isset( $_POST['id'] ) ? sanitize_text_field( wp_unslash( $_POST['id'] ) ) : '' ); // phpcs:ignore WordPress.Security.NonceVerification
-		// $integation         = MWB_Wpm_Integration_Manager::get_integration( $integation_details );
 
 		echo '<tr style="border-top:1px solid black;border-left:1px solid black;border-right:1px solid black;" class="row-dynamic_tag">
 				<th><label style="margin-left:30px;" for="add_form">Form</label></th>

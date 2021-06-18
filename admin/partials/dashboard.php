@@ -46,7 +46,7 @@ $base_url              = Wp_Mautic_Integration_Admin::get_mautic_base_url();
 				<button type="submit" class="mwb-btn mwb-btn-secondary mwb-save-btn"><?php esc_html_e( 'Apply', 'wp-mautic-integration' ); ?></button>
 				<?php
 				//phpcs:disable
-				echo $helper->get_refresh_button_html( 'dashboard' ); 
+				echo $helper->get_refresh_button_html( 'dashboard' );
 				//phpcs:enable
 				?>
 			</form>

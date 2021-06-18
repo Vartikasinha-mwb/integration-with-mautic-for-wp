@@ -216,7 +216,6 @@ class Wp_Mautic_Integration {
 		// add plugins menu page.
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'm4wp_options_page' );
 		$this->loader->add_action( 'admin_menu', $plugin_admin, 'mwb_m4wp_remove_default_submenu', 50 );
-		// $this->loader->add_action( 'admin_menu', $plugin_admin, 'add_admin_menu_page' );
 
 		$this->loader->add_action( 'admin_init', $plugin_admin, 'get_oauth_code', 8 );
 

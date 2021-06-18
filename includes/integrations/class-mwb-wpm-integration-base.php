@@ -263,43 +263,48 @@ abstract class Mwb_Wpm_Integration_Base {
 		if ( ! $this->is_implicit() ) {
 
 			//phpcs:disable
-			if ( isset( $_POST['mwb_m4wp_subscribe'] ) && 'yes' === sanitize_text_field( wp_unslash( $_POST['mwb_m4wp_subscribe'] ) ) ) {
+			if ( isset( $_POST['mwb_m4wp_subscribe'] ) && 'yes' === sanitize_text_field( wp_unslash( $_POST['mwb_m4wp_subscribe'] ) ) ) { // phpcs:ignore WordPress.Security.NonceVerification
 				$sync = true;
-			// User Registration Plugin Added.
+				// User Registration Plugin Added.
 			} else if ( in_array( 'user-registration/user-registration.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-				$fields = array( 'first_name'=>'first_name', 'last_name'=>'last_name' );
-				$form_data = explode( '{', $_POST['form_data']);
-				$counter = 0;
-				foreach( $form_data as $key=>$value ) {
-					if ( strpos( $value, 'Custom Checkbox' ) !== false ) {
-						$new_value = explode( '\"', $value );
-						if( $new_value[3] == 'yes' ) {
-							$sync = true;
-							break;
-						}
-					} else if ( strpos( $value, 'Custom Hidden Field' ) !== false ) {
-						$new_value = explode( '\"', $value );
-						$form_tag_suffix = $new_value[3];
-					} else if( strpos( $value, 'Country' ) !== false || strpos( $value, 'country' ) !== false ) { 
-						if( $counter == 0 ) {
+				$fields = array(
+					'first_name' => 'first_name',
+					'last_name' => 'last_name',
+				);
+				if ( isset( $_POST['form_data'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
+					$form_data = explode( '{', sanitize_text_field( $_POST['form_data'] ) ); // phpcs:ignore WordPress.Security.NonceVerification
+					$counter = 0;
+					foreach ( $form_data as $key => $value ) {
+						if ( strpos( $value, 'Custom Checkbox' ) !== false ) {
+							$new_value = explode( '\"', $value );
+							if ( 'yes' === $new_value[3] ) {
+								$sync = true;
+								break;
+							}
+						} else if ( strpos( $value, 'Custom Hidden Field' ) !== false ) {
+							$new_value = explode( '\"', $value );
+							$form_tag_suffix = $new_value[3];
+						} else if ( strpos( $value, 'Country' ) !== false || strpos( $value, 'country' ) !== false ) {
+							if ( 0 == $counter ) {
+								$counter++;
+								continue;
+							}
+							$new_value = explode( '\"', $value );
+							$data['country'] = self::country_code_to_country( $new_value[3] );
 							$counter++;
-							continue; 
-						}
-						$new_value = explode( '\"', $value );
-						$data['country'] = self::country_code_to_country( $new_value[3] );
-						$counter++;
-					} else {
-						if( $counter == 0 ) {
+						} else {
+							if ( 0 == $counter ) {
+								$counter++;
+								continue;
+							}
+							$new_value = explode( '\"', $value );
+							if ( array_key_exists( $new_value[15], $fields ) ) {
+								$key_new = $new_value[15];
+								$key_new = str_replace( array( '_' ), '', $key_new );
+								$data[ $key_new ] = $new_value[3];
+							}
 							$counter++;
-							continue;
 						}
-						$new_value = explode( '\"', $value );
-						if( array_key_exists( $new_value[15], $fields ) ) {
-							$key_new = $new_value[15];
-							$key_new = str_replace( array( '_' ), '', $key_new);
-							$data[$key_new] = $new_value[3];
-						}
-						$counter++;
 					}
 				}
 			}
@@ -310,32 +315,35 @@ abstract class Mwb_Wpm_Integration_Base {
 			//phpcs:disable
 			// User Registration Plugin Added.
 			if ( in_array( 'user-registration/user-registration.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
-				$fields = array( 'first_name'=>'first_name', 'last_name'=>'last_name' );
-				if( isset( $_POST['form_data'] ) ) {
-					$form_data = explode( '{', $_POST['form_data']);
+				$fields = array(
+					'first_name' => 'first_name',
+					'last_name' => 'last_name',
+				);
+				if ( isset( $_POST['form_data'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
+					$form_data = explode( '{', sanitize_text_field( $_POST['form_data'] ) ); // phpcs:ignore WordPress.Security.NonceVerification
 					$counter = 0;
-					foreach( $form_data as $key=>$value ) {
+					foreach ( $form_data as $key => $value ) {
 						if ( strpos( $value, 'Custom Hidden Field' ) !== false ) {
 							$new_value = explode( '\"', $value );
 							$form_tag_suffix = $new_value[3];
-						} else if( strpos( $value, 'Country' ) !== false || strpos( $value, 'country' ) !== false ) { 
-							if( $counter == 0 ) {
+						} else if ( strpos( $value, 'Country' ) !== false || strpos( $value, 'country' ) !== false ) {
+							if ( 0 == $counter ) {
 								$counter++;
-								continue; 
+								continue;
 							}
 							$new_value = explode( '\"', $value );
 							$data['country'] = self::country_code_to_country( $new_value[3] );
 							$counter++;
 						} else {
-							if( $counter == 0 ) {
+							if ( 0 == $counter ) {
 								$counter++;
 								continue;
 							}
 							$new_value = explode( '\"', $value );
-							if( array_key_exists( $new_value[15], $fields ) ) {
+							if ( array_key_exists( $new_value[15], $fields ) ) {
 								$key_new = $new_value[15];
-								$key_new = str_replace( array( '_' ), '', $key_new);
-								$data[$key_new] = $new_value[3];
+								$key_new = str_replace( array( '_' ), '', $key_new );
+								$data[ $key_new ] = $new_value[3];
 							}
 							$counter++;
 						}

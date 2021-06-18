@@ -23,8 +23,7 @@
  * @subpackage Wp_Mautic_Integration/includes
  * @author     MakeWebBetter <webmaster@makewebbetter.com>
  */
-class Wp_Mautic_Integration_i18n {
-
+class Wp_Mautic_Integration_i18n { // phpcs:ignore
 
 	/**
 	 * Load the plugin text domain for translation.
