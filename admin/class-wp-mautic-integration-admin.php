@@ -64,10 +64,10 @@ class Wp_Mautic_Integration_Admin {
 
 		if ( 'integration-with-mautic-for-wp/wp-mautic-integration.php' === $file ) {
 			$row_meta = array(
-				'docs'    => '<a href="' . esc_url( 'https://docs.makewebbetter.com/wp-mautic-integration/?abc' ) . '" target="_blank" aria-label="' . esc_attr__( 'Plugin Additional Links', 'domain' ) . '"><img src="' . plugin_dir_url( dirname( __FILE__ ) ) . 'admin/src/images/Documentation.svg" class="mwb_m4wp_plugin_extra_custom_tab">' . esc_html__( 'Documentation', 'wp-mautic-integration' ) . '</a>',
-				'support' => '<a href="' . esc_url( 'https://makewebbetter.com/submit-query/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-page&utm_campaign=MWB-wpmautic-org' ) . '" target="_blank" aria-label="' . esc_attr__( 'Plugin Additional Links', 'wp-mautic-integration' ) . '"><img src="' . plugin_dir_url( dirname( __FILE__ ) ) . 'admin/src/images/Support.svg" class="mwb_m4wp_plugin_extra_custom_tab">' . esc_html__( 'Support', 'wp-mautic-integration' ) . '</a>',
+				'docs'    => '<a href="' . esc_url( 'https://docs.makewebbetter.com/wp-mautic-integration/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-backend&utm_campaign=MWB-wpmautic-doc' ) . '" target="_blank" aria-label="' . esc_attr__( 'Plugin Additional Links', 'wp-mautic-integration' ) . '"><img src="' . plugin_dir_url( dirname( __FILE__ ) ) . 'admin/src/images/Documentation.svg" class="mwb_m4wp_plugin_extra_custom_tab">' . esc_html__( 'Documentation', 'wp-mautic-integration' ) . '</a>',
+				'support' => '<a href="' . esc_url( 'https://makewebbetter.com/submit-query/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-backend&utm_campaign=MWB-wpmautic-suppport' ) . '" target="_blank" aria-label="' . esc_attr__( 'Plugin Additional Links', 'wp-mautic-integration' ) . '"><img src="' . plugin_dir_url( dirname( __FILE__ ) ) . 'admin/src/images/Support.svg" class="mwb_m4wp_plugin_extra_custom_tab">' . esc_html__( 'Support', 'wp-mautic-integration' ) . '</a>',
 			);
-				return array_merge( $links, $row_meta );
+			return array_merge( $links, $row_meta );
 		}
 
 		return (array) $links;

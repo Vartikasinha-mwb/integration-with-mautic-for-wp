@@ -1,4 +1,4 @@
-=== Integration with Mautic for WordPress ===
+=== Integration with Mautic for WP ===
 Contributors: MakeWebBetter
 Donate link:  https://makewebbetter.com/
 Tags: automation, marketing, mautic, mautic integration, form
@@ -18,15 +18,15 @@ Mautic WordPress Integration is the most optimum choice for every website to cap
 
 **WILLINGNESS TO CAPTURE LEADS AND SUBSCRIBERS FOR YOUR WORDPRESS WEBSITE IS AS OBVIOUS AND CRUCIAL AS FOR ECOMMERCE BUSINESS.**
 
-The **Integration with Mautic for WordPress** plugin helps you to track leads, signups, and subscribers easily by integrating your website data with Mautic CRM. 
+The **Integration with Mautic for WP** plugin helps you to track leads, signups, and subscribers easily by integrating your website data with Mautic CRM. 
 The hassle-free and easy setup process makes it convenient for any individual to configure this plugin. 
 
 
-You can also integrate multiple WordPress forms with Mautic directly using either **Basic or OAuth2 Mautic API**.  Integration with Mautic for WordPress plugin also supports you to add Mautic forms into your web pages through shortcodes.  
+You can also integrate multiple WordPress forms with Mautic directly using either **Basic or OAuth2 Mautic API**.  Integration with Mautic for WP plugin also supports you to add Mautic forms into your web pages through shortcodes.  
 
 
 
-== USING THE INTEGRATION WITH MAUTIC FOR WORDPRESS YOU CAN: ==
+== USING THE MAUTIC WORDPRESS INTEGRATION YOU CAN: ==
 
 * Integrate Mautic with WordPress website
 * Sync your WordPress default registration and comment forms data
@@ -37,7 +37,7 @@ You can also integrate multiple WordPress forms with Mautic directly using eithe
 
 
 
-== WHAT’S INCLUDED IN OUR FREE INTEGRATION WITH MAUTIC FOR WORDPRESS PLUGIN: ==
+== WHAT’S INCLUDED IN OUR FREE INTEGRATION WITH MAUTIC FOR WP PLUGIN: ==
 
 
 
@@ -70,7 +70,7 @@ WordPress is a pool of varied plugins - from different forms to email marketing.
 The Integration with Mautic for WP plugin is now compatible with the User Registration form by WPEverest. The admin can, therefore, create custom registration and login forms. And sync its data with Mautic by enabling the form settings via this plugin. 
 
 
-Visit [**Integration With Mautic For WordPress Documentation**](https://docs.makewebbetter.com/wp-mautic-integration/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-page&utm_campaign=MWB-wpmautic-org) and learn more about the features and working of the plugin.
+Visit [**Integration With Mautic For WP Documentation**](https://docs.makewebbetter.com/wp-mautic-integration/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-page&utm_campaign=MWB-wpmautic-org) and learn more about the features and working of the plugin.
 
 Check out our [**Mautic WordPress Integration Plugin Knowledge base**](https://support.makewebbetter.com/wordpress-plugins-knowledge-base/category/wp-mautic-integration-kb/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-page&utm_campaign=MWB-wpmautic-org) for some deep insights and FAQs on the plugin.
 
@@ -113,13 +113,13 @@ If you need support or have questions, kindly use our online chat window [**here
 
 = Automatic Installation =
 
-Automatic installation is the easiest option as WordPress handles the file transfers itself and you don't need to leave your web browser. To do an automatic install of Integration with Mautic for WordPress, log in to your WordPress dashboard, navigate to the Plugins menu, and click Add New.
+Automatic installation is the easiest option as WordPress handles the file transfers itself and you don't need to leave your web browser. To do an automatic install of Integration with Mautic for WP, log in to your WordPress dashboard, navigate to the Plugins menu, and click Add New.
 
-In the search field type **"Integration with Mautic for WordPress"** and click Search Plugins. Once you've found our Integration with Mautic for WordPress plugin you can view details about it such as the point release, rating, and description. Most importantly, of course, you can install it by simply clicking **"Install Now"**.
+In the search field type **"Integration with Mautic for WP"** and click Search Plugins. Once you've found our Integration with Mautic for WP plugin you can view details about it such as the point release, rating, and description. Most importantly, of course, you can install it by simply clicking **"Install Now"**.
 
 = Manual Installation =
 
-The manual installation method involves downloading our Integration with Mautic for WordPress and uploading it to your webserver via your favorite FTP application. The WordPress codex contains [instructions on how to do this here](https://wordpress.org/support/article/managing-plugins/#manual-plugin-installation).
+The manual installation method involves downloading our Integration with Mautic for WP and uploading it to your webserver via your favorite FTP application. The WordPress codex contains [instructions on how to do this here](https://wordpress.org/support/article/managing-plugins/#manual-plugin-installation).
 
 
 
@@ -129,7 +129,7 @@ Automatic updates should work like a charm as always though, ensure you backup y
 
 == Frequently Asked Questions ==
 
-= How can we connect the Mautic CRM to Integration with Mautic for WordPress? =
+= How can we connect the Mautic CRM to Integration with Mautic for WP? =
 
 In our Integration with Mautic for WordPress plugin, There is a two type of Authentication
 **1-Basic Authentication Process** - Select Basic -> Add Mautic Site URL in Mautic Url column. Add your Mautic Admin user name and Password then click on Save Button. So your connection will establish with Basic Authentication.
@@ -143,7 +143,7 @@ Start creating a new APP by filling invalid credentials. Select OAuth2 for an au
 Your Redirection URL will be: https://your-site-url/wp-admin/
 
 = Is there any way to add the Mautic Forms in WordPress pages? =
-Yes, in our Integration with Mautic for WordPress plugin there is a Setting Mautic Form. Your Form shortcode will list here you can copy this shortcode and add it to your existing post or pages.
+Yes, in our Mautic WordPress Integration plugin there is a Setting Mautic Form. Your Form shortcode will list here you can copy this shortcode and add it to your existing post or pages.
 
 = Are there any possibilities to integrate the Registration Form (WordPress default registration form) with your plugin Integration with Mautic for WordPress? =
 Yes, you can integrate the Registration Form (WordPress default registration form) to Mautic CRM, You only need to enable the Registration Form from the Integrations tab, You can also add the setting like tags and segment to sync the Registration Form data.
@@ -168,6 +168,7 @@ Please visit the MakeWebBetter [**knowledge base**](https://support.makewebbette
 7. Comment Form setting
 8. User Registration Form Setting
 9. Dynamic Tags Setting
+10. Enable Mautic Tracking 
 
 
 == Changelog ==
@@ -175,13 +176,13 @@ Please visit the MakeWebBetter [**knowledge base**](https://support.makewebbette
 = 1.0.0 - Released on 29 April 2021 =
 * First version
 
-= 1.0.1 - Released on 19 June 2021 =  
+= 1.0.1 - Released on 21 June 2021 =  
 * Compatible with plugin User Registration form by WPEverest.
 * Other: Issues and Bugs Fixed.
 
 
 == Upgrade Notice == 
-= 1.0.1 - Released on 19 June 2021 =  
+= 1.0.1 - Released on 21 June 2021 =  
 * Compatible with plugin User Registration form by WPEverest.
 * Other: Issues and Bugs Fixed.
 

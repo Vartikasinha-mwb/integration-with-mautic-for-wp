@@ -29,9 +29,9 @@ if ( wp_cache_get( 'mwb_m4wp_notice' ) ) {
 				<!-- </h1> -->
 			</div>
 			<div class="" style="float:right;color:#3F4756;font-size:15px;font-style:normal;font-weight:bold;">
-				<a href="https://docs.makewebbetter.com/wp-mautic-integration/" style="color:#3F4756;" class="" target="_blank"
+				<a href="https://docs.makewebbetter.com/wp-mautic-integration/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-backend&utm_campaign=MWB-wpmautic-doc" style="color:#3F4756;" class="" target="_blank"
 					><?php esc_html_e( 'Documentation', 'wp-mautic-integration' ); ?></a> <span>|</span>
-				<a href="https://makewebbetter.com/contact-us/" style="color:#3F4756;" class="" target="_blank"
+				<a href="https://makewebbetter.com/submit-query/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-backend&utm_campaign=MWB-wpmautic-suppport" style="color:#3F4756;" class="" target="_blank"
 					><?php esc_html_e( 'Support', 'wp-mautic-integration' ); ?></a>
 			</div>
 	</div>
