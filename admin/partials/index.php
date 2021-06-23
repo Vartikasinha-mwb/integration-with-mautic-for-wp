@@ -6,7 +6,7 @@
  * @since      1.0.0
  *
  * @package    Wp_Mautic_Integration
- * @subpackage Wp_Mautic_Integration
+ * @subpackage Wp_Mautic_Integration/admin/partials
  */
 
 // Silence is golden.
