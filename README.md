@@ -1,8 +1,8 @@
-[![BuildStatus](https://img.shields.io/travis/twbs/bootstrap/v4-dev.svg)](https://travis-ci.org/twbs/bootstrap) ![Active installs](https://img.shields.io/badge/Active-10%2B-brightgreen) ![License](https://img.shields.io/badge/License-GPLv3%20or%20later-yellowgreen) ![WP tested](https://img.shields.io/badge/WP%20tested-5.7-brightgreen) ![Requires PHP](https://img.shields.io/badge/Requires%20PHP-5.6-blue)
+[![BuildStatus](https://img.shields.io/travis/twbs/bootstrap/v4-dev.svg)](https://travis-ci.org/twbs/bootstrap) ![Active installs](https://img.shields.io/badge/Active-50%2B-brightgreen) ![License](https://img.shields.io/badge/License-GPLv3%20or%20later-yellowgreen) ![WP tested](https://img.shields.io/badge/WP%20tested-5.7.2-brightgreen) ![Requires PHP](https://img.shields.io/badge/Requires%20PHP-5.6-blue)
 # Integration with Mautic for WP
 ![Integration with Mautic for WP](https://ps.w.org/integration-with-mautic-for-wp/assets/banner-772x250.png)
 * Contributors: MakeWebBetter
-* Author URI: http://makewebbetter.com/
+* Author URI: [http://makewebbetter.com/](http://makewebbetter.com?utm_source=MWB-wpmautic-git&utm_medium=MWB-git-page&utm_campaign=MWB-wpmautic-git)
 * Tags: automation, form, marketing, mautic, mautic integration
 * License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -13,6 +13,8 @@
 The [Integration with Mautic for WP](https://wordpress.org/plugins/integration-with-mautic-for-wp/) plugin helps you to track leads, signups, and subscribers easily by integrating your website data with Mautic CRM. The hassle-free and easy setup process makes it convenient for any individual to configure this plugin. 
 
 You can also insert multiple WordPress forms and can connect them with Mautic directly using either **Basic or OAuth2 Mautic API**. Integration with Mautic for WP plugin also supports you to add Mautic content into your web pages through shortcodes. 
+
+
 
 [**How to Connect WordPress with Mautic and Convert Leads?**](https://www.youtube.com/watch?v=Rqm9SHbZAnk)
 
@@ -47,12 +49,15 @@ Integration with Mautic for WP plugin also allows you to access the Mautic dashb
 This WordPress Mautic integration plugin allows you to embed Mautic forms to your website using simple shortcodes and form IDs.
 
 **5) WordPress Integrations**
-WordPress is a pool of varied plugins - from different forms to email marketing. With this Mautic WordPress Integration plugin, you can easily sync your forms data from these extended plugins to Mautic CRM. by default, WordPress Registration form and WordPress Contact Form are already provided with this integration.
+WordPress is a pool of varied plugins - from different forms to email marketing. With this Mautic WordPress Integration plugin, you can easily sync your forms data from these extended plugins to Mautic CRM. By default, WordPress Registration form and WordPress Contact Form are already provided with this integration.
 
-Visit [**Integration With Mautic for WP Documentation**](https://docs.makewebbetter.com/wp-mautic-integration/?utm_source=MWB-wpmautic-git&utm_medium=MWB-git-page&utm_campaign=MWB-wpmautic-git) and learn more about the features and working of the plugin.
+**6) Compatibility with Popular WordPress Plugins**
+The Integration with Mautic for WP plugin is now compatible with the User Registration form by WPEverest. The admin can, therefore, create custom registration and login forms. And sync its data with Mautic by enabling the form settings via this plugin. 
 
 
+Visit [**Integration With Mautic For WP Documentation**](https://docs.makewebbetter.com/wp-mautic-integration/?utm_source=MWB-wpmautic-git&utm_medium=MWB-git-page&utm_campaign=MWB-wpmautic-git) and learn more about the features and working of the plugin.
 
+Check out our [**Mautic WordPress Integration Plugin Knowledge base**](https://support.makewebbetter.com/wordpress-plugins-knowledge-base/category/wp-mautic-integration-kb/?utm_source=MWB-wpmautic-org&utm_medium=MWB-git-page&utm_campaign=MWB-wpmautic-git) for some deep insights and FAQs on the plugin.
 
 ## PREMIUM ADD-ON(Coming Soon) 
 
@@ -75,7 +80,7 @@ Are you looking for email templates for Mautic that are compatible with the Maut
 * [**Premium Email Templates for Mautic**](https://makewebbetter.com/mautic-email-templates/?utm_source=MWB-wpmautic-git&utm_medium=MWB-git-page&utm_campaign=MWB-mauticemailtemplates-git)
 
 ### **SUPPORT**
-If you need support or have questions, kindly use our online chat window [**here**](https://makewebbetter.com/?utm_source=MWB-wpmautic-git&utm_medium=MWB-git&utm_campaign=git) or connect with us then [**Generate a ticket**](https://makewebbetter.com/submit-query/?utm_source=MWB-wpmautic-git&utm_medium=MWB-git-page&utm_campaign=MWB-wpmautic-git)
+If you need support or have questions, kindly use our online chat window [**here**](https://makewebbetter.com/) or connect with us then [**Generate a ticket**](https://makewebbetter.com/submit-query/?utm_source=MWB-wpmautic-git&utm_medium=MWB-git-page&utm_campaign=MWB-wpmautic-git)
 
 ### **MORE ABOUT MAKEWEBBETTER**
 
@@ -85,6 +90,19 @@ If you need support or have questions, kindly use our online chat window [**here
 - [**Visit our LinkedIn Account**](https://www.linkedin.com/company/makewebbetter)
 - [**Subscribe To Our YouTube Channel**](https://www.youtube.com/channel/UC7nYNf0JETOwW3GOD_EW2Ag)
 - [**Follow Our SlideShare**](https://www.slideshare.net/MakeWebBetter)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
