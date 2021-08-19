@@ -40,8 +40,17 @@ class Mwb_Wpm_Comment_Form extends Mwb_Wpm_Integration_Base {
 	 * Add hooks related to integration.
 	 */
 	public function add_hooks() {
-		add_filter( 'comment_form_fields', array( $this, 'add_checkbox_field' ) );
-		add_action( 'comment_post', array( $this, 'sync_commentor_data' ) );
+		$auth_type = get_option( 'mwb_m4wp_auth_type', 'basic' );
+		if ( 'oauth2' === $auth_type ) {
+			$oauth2_object = new Mwb_Wpm_Oauth2();
+			if ( $oauth2_object->have_active_access_token() ) {
+				add_filter( 'comment_form_fields', array( $this, 'add_checkbox_field' ) );
+				add_action( 'comment_post', array( $this, 'sync_commentor_data' ) );
+			}
+		} else {
+			add_filter( 'comment_form_fields', array( $this, 'add_checkbox_field' ) );
+			add_action( 'comment_post', array( $this, 'sync_commentor_data' ) );
+		}
 	}
 
 	/**

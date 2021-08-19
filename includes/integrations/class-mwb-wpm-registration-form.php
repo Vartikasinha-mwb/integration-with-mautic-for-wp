@@ -51,8 +51,17 @@ class Mwb_Wpm_Registration_Form extends Mwb_Wpm_Integration_Base {
 	 * Add hooks related to integration.
 	 */
 	public function add_hooks() {
-		add_action( 'register_form', array( $this, 'add_checkbox' ) );
-		add_action( 'user_register', array( $this, 'sync_registered_user' ), 99, 1 );
+		$auth_type = get_option( 'mwb_m4wp_auth_type', 'basic' );
+		if ( 'oauth2' === $auth_type ) {
+			$oauth2_object = new Mwb_Wpm_Oauth2();
+			if ( $oauth2_object->have_active_access_token() ) {
+				add_action( 'register_form', array( $this, 'add_checkbox' ) );
+				add_action( 'user_register', array( $this, 'sync_registered_user' ), 99, 1 );
+			}
+		} else {
+			add_action( 'register_form', array( $this, 'add_checkbox' ) );
+			add_action( 'user_register', array( $this, 'sync_registered_user' ), 99, 1 );
+		}
 	}
 
 	/**

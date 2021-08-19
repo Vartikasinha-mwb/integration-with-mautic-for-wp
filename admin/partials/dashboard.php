@@ -131,10 +131,17 @@ $base_url              = Wp_Mautic_Integration_Admin::get_mautic_base_url();
 									<th><?php esc_html_e( 'Segments', 'wp-mautic-integration' ); ?></th>
 									<th><?php esc_html_e( 'Contacts', 'wp-mautic-integration' ); ?></th>
 								</tr>
-			<?php foreach ( $top_lists['data']['bodyItems'] as $key => $list ) : ?>
+			<?php
+			$seg_id     = '';
+			$seg_id_new = '';
+			foreach ( $top_lists['data']['bodyItems'] as $key => $list ) :
+				$seg_id      = explode( 's/segments/edit/', $list[0]['link'] );
+				$seg_id_new  = $seg_id[1];
+				$support_url = 's/segments/edit/';
+				?>
 									<tr>
-										<td><a target="_blank" href="<?php echo esc_attr( $base_url . $list[0]['link'] ); ?>"><?php echo esc_attr( $list[0]['value'] ); ?></a></td>
-										<td><a target="_blank" href="<?php echo esc_attr( $base_url . $list[1]['link'] ); ?>"><?php echo esc_attr( $list[1]['value'] ); ?></a></td>
+										<td><a target="_blank" href="<?php echo esc_attr( $base_url . $support_url . $seg_id_new ); ?>"><?php echo esc_attr( $list[0]['value'] ); ?></a></td>
+										<td><a target="_blank" href="<?php echo esc_attr( $base_url . $seg_id_new ); ?>"><?php echo esc_attr( $list[1]['value'] ); ?></a></td>
 									</tr>
 			<?php endforeach; ?>
 							</table>

@@ -20,6 +20,7 @@ $implicit           = $integation->is_implicit();
 $checkbox_txt       = $integation->get_option( 'checkbox_txt' );
 $precheck           = $integation->is_checkbox_precheck();
 $add_segment        = $integation->get_option( 'add_segment' );
+$add_segment_ur     = $integation->get_option( 'add_segment_ur' );
 $add_tag            = $integation->get_option( 'add_tag' );
 $hide_row           = $implicit ? 'row-hide' : '';
 	// User Registration Plugin Added.
@@ -186,11 +187,11 @@ if ( ! ( $integation->get_name() === 'User Registration Plugin Form' ) ) {
 						</td>
 					</tr>
 					<tr>
-						<th><label for="add_segment"><?php esc_html_e( 'Segment', 'wp-mautic-integration' ); ?></label></th>
+						<th><label for="add_segment_ur"><?php esc_html_e( 'Segment', 'wp-mautic-integration' ); ?></label></th>
 						<td>
-							<select name="add_segment" id="mwb-m4wp-segment-select">
+							<select name="add_segment_ur" id="mwb-m4wp-segment-select">
 								<?php foreach ( $segment_list as $key => $segment ) : ?>
-									<option value="<?php echo esc_attr( $segment['id'] ); ?>" <?php esc_attr( selected( $segment['id'], $add_segment ) ); ?>>
+									<option value="<?php echo esc_attr( $segment['id'] ); ?>" <?php esc_attr( selected( $segment['id'], $add_segment_ur ) ); ?>>
 									<?php echo esc_attr( $segment['name'] ); ?>
 									</option>
 								<?php endforeach; ?>

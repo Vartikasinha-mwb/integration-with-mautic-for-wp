@@ -327,9 +327,10 @@ class Wp_Mautic_Integration_Admin {
 					$checkbox_txt             = isset( $_POST['checkbox_txt'] ) ? sanitize_text_field( wp_unslash( $_POST['checkbox_txt'] ) ) : '';
 					$precheck                 = isset( $_POST['precheck'] ) ? sanitize_text_field( wp_unslash( $_POST['precheck'] ) ) : 'no';
 					$add_segment              = isset( $_POST['add_segment'] ) ? sanitize_text_field( wp_unslash( $_POST['add_segment'] ) ) : '-1';
+					$add_segment_ur           = isset( $_POST['add_segment_ur'] ) ? sanitize_text_field( wp_unslash( $_POST['add_segment_ur'] ) ) : '-1';
 					$add_tag                  = isset( $_POST['add_tag'] ) ? sanitize_text_field( wp_unslash( $_POST['add_tag'] ) ) : '';
 					$settings                 = get_option( 'mwb_m4wp_integration_settings', array() );
-					$settings[ $integration ] = compact( 'enable', 'implicit', 'checkbox_txt', 'precheck', 'add_segment', 'add_tag' );
+					$settings[ $integration ] = compact( 'enable', 'implicit', 'checkbox_txt', 'precheck', 'add_segment', 'add_segment_ur', 'add_tag' );
 					// User Registration Plugin Added.
 					$dynamic_tag                             = isset( $_POST['dynamic_tag'] ) ? sanitize_text_field( wp_unslash( $_POST['dynamic_tag'] ) ) : 'no';
 					$settings[ $integration ]['dynamic_tag'] = $dynamic_tag;
@@ -370,7 +371,7 @@ class Wp_Mautic_Integration_Admin {
 			update_option( 'mwb_m4wp_oauth2_success', false );
 			update_option( 'mwb_m4wp_connection_status', false );
 			update_option( 'mwb_m4wp_auth_type', '' );
-			wp_safe_redirect( admin_url( 'admin.php?page=mwb-wp-mautic' ) );
+			wp_redirect( admin_url( 'admin.php?page=mwb-wp-mautic' ) ); // phpcs:ignore
 		}
 
 		if ( isset( $_GET['m4wp_auth'] ) && 1 === (int) $_GET['m4wp_auth'] ) {
@@ -389,7 +390,7 @@ class Wp_Mautic_Integration_Admin {
 				'state'         => wp_create_nonce( 'm4wp_nonce' ),
 			);
 			$auth_url    = add_query_arg( $data, $mautic_url );
-			wp_safe_redirect( $auth_url );
+			wp_redirect( $auth_url ); // phpcs:ignore
 		}
 
 		if ( isset( $_GET['state'] ) && isset( $_GET['code'] ) ) {
@@ -416,7 +417,7 @@ class Wp_Mautic_Integration_Admin {
 					update_option( 'mwb_m4wp_oauth2_success', false );
 					update_option( 'mwb_m4wp_connection_status', false );
 				}
-				wp_safe_redirect( admin_url( 'admin.php?page=mwb-wp-mautic' ) );
+				wp_redirect( admin_url( 'admin.php?page=mwb-wp-mautic' ) ); // phpcs:ignore
 				exit();
 			}
 		}

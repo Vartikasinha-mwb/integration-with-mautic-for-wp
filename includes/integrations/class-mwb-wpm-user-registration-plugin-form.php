@@ -61,16 +61,16 @@ class Mwb_Wpm_User_Registration_Plugin_Form extends Mwb_Wpm_Integration_Base {
 			$checked = $this->is_checkbox_precheck() ? 'checked ' : '';
 
 			echo '<div class="ur-form-row">
-				 <div class="ur-form-grid ur-grid-1" style="width:99%">
+				 <div class="ur-form-grid ur-grid-1">
 				 <div data-field-id="checkbox" class="ur-field-item field-checkbox ">
-				 <div class="form-row validate-required user-registration-validated" id="checkbox_field" data-priority=""><label for="checkbox" class="ur-label"></label><input data-rules="" data-id="mwb_m4wp_subscribe2" type="hidden" class="input-checkbox ur-frontend-field user-registration-valid" name="checkbox2" id="checkbox2" placeholder="" value="' . esc_attr( $form_id_new ) . '" data-label="Custom Hidden Field" aria-invalid="false"></div>															</div>
+				 <span class="form-row validate-required user-registration-validated" id="checkbox_field" data-priority=""><label for="checkbox" class="ur-label"></label><input data-rules="" data-id="mwb_m4wp_subscribe2" type="hidden" class="input-checkbox ur-frontend-field user-registration-valid" name="checkbox2" id="checkbox2" placeholder="" value="' . esc_attr( $form_id_new ) . '" data-label="Custom Hidden Field" aria-invalid="false"></span>															</div>
 				 </div>
 		    	 </div>';
 
 			echo '<div class="ur-form-row">
 				 <div class="ur-form-grid ur-grid-1" style="width:99%">
 				 <div data-field-id="checkbox" class="ur-field-item field-checkbox ">
-				 <div class="form-row validate-required user-registration-validated" id="checkbox_field" data-priority=""><label for="checkbox" class="ur-label">' . esc_attr( $this->get_option( 'checkbox_txt' ) ) . '</label><input ' . esc_attr( $checked ) . ' data-rules="" data-id="mwb_m4wp_subscribe" type="checkbox" class="input-checkbox ur-frontend-field user-registration-valid" name="checkbox" id="checkbox" placeholder="" value="yes" data-label="Custom Checkbox" aria-invalid="false"></div>															</div>
+				 <span class="form-row validate-required user-registration-validated" id="checkbox_field" data-priority=""><label for="checkbox" class="ur-label">' . esc_attr( $this->get_option( 'checkbox_txt' ) ) . '</label><input ' . esc_attr( $checked ) . ' data-rules="" data-id="mwb_m4wp_subscribe" type="checkbox" class="input-checkbox ur-frontend-field user-registration-valid" name="checkbox" id="checkbox" placeholder="" value="yes" data-label="Custom Checkbox" aria-invalid="false"></span>															</div>
 				 </div>
 		    	 </div>';
 		} else {
@@ -100,9 +100,20 @@ class Mwb_Wpm_User_Registration_Plugin_Form extends Mwb_Wpm_Integration_Base {
 	 * Add hooks related to integration.
 	 */
 	public function add_hooks() {
-		if ( in_array( 'user-registration/user-registration.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ), true ) ) {
-			add_action( 'user_registration_after_form_fields', array( $this, 'user_registration_after_form_fields_new' ), 1, 2 );
-			add_action( 'user_register', array( $this, 'sync_registered_user' ), 99, 1 );
+		$auth_type = get_option( 'mwb_m4wp_auth_type', 'basic' );
+		if ( 'oauth2' === $auth_type ) {
+			$oauth2_object = new Mwb_Wpm_Oauth2();
+			if ( $oauth2_object->have_active_access_token() ) {
+				if ( in_array( 'user-registration/user-registration.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ), true ) ) {
+					add_action( 'user_registration_after_form_fields', array( $this, 'user_registration_after_form_fields_new' ), 1, 2 );
+					add_action( 'user_register', array( $this, 'sync_registered_user' ), 99, 1 );
+				}
+			}
+		} else {
+			if ( in_array( 'user-registration/user-registration.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ), true ) ) {
+				add_action( 'user_registration_after_form_fields', array( $this, 'user_registration_after_form_fields_new' ), 1, 2 );
+				add_action( 'user_register', array( $this, 'sync_registered_user' ), 99, 1 );
+			}
 		}
 	}
 
