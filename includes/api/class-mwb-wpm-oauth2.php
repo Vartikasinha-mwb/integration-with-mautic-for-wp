@@ -6,14 +6,14 @@
  * @since      1.0.0
  *
  * @package     Wp_Mautic_Integration
- * @subpackage  Wp_Mautic_Integration/includes
+ * @subpackage  Wp_Mautic_Integration/includes/api
  */
 
 /**
  * The Onboarding-specific functionality of the plugin admin side.
  *
  * @package     Wp_Mautic_Integration
- * @subpackage  Wp_Mautic_Integration/includes
+ * @subpackage  Wp_Mautic_Integration/includes/api
  * @author      makewebbetter <webmaster@makewebbetter.com>
  */
 class Mwb_Wpm_Oauth2 extends Mwb_Wpm_Api_Base {

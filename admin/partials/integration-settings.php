@@ -232,8 +232,8 @@ if ( ! ( $integation->get_name() === 'User Registration Plugin Form' ) ) {
 							continue;
 						}
 						?>
-					<tr style="border-top:1px solid #8c8f94;border-left:1px solid #8c8f94;border-right:1px solid #8c8f94;" class="row-dynamic_tag <?php echo esc_attr( $hide_row_dynmictag1 ); ?>">
-						<th><label style="margin-left:30px;" for="add_form"><?php esc_html_e( 'Form', 'wp-mautic-integration' ); ?></label></th>
+					<tr id="dynamic_tag_border_styling" class="row-dynamic_tag <?php echo esc_attr( $hide_row_dynmictag1 ); ?>">
+						<th><label id="form_label_dynamic_tag" for="add_form"><?php esc_html_e( 'Form', 'wp-mautic-integration' ); ?></label></th>
 						<td>
 							<select name="add_form<?php echo esc_attr( $form_id2 ); ?>" class="mwb-m4wp-form-select" >
 								<?php
@@ -252,13 +252,13 @@ if ( ! ( $integation->get_name() === 'User Registration Plugin Form' ) ) {
 										</option>
 								<?php } ?>
 							</select>
-							<button type="button" class="button mwb-m4wp-delete-row" style="border:none;margin-left:600px;"><strong style="color:black;font-size:20px;"><i class="fa fa-trash"></i></strong></button>
+							<button type="button" class="button mwb-m4wp-delete-row" id="trash_icon_button"><strong id="trash_icon_display"><i class="fa fa-trash"></i></strong></button>
 							<p class="description">
 								<?php esc_html_e( 'Select Form for which the contact should be added.', 'wp-mautic-integration' ); ?>
 							</p>
 						</td>
 					</tr>
-					<tr style="border-left:1px solid #8c8f94;border-right:1px solid #8c8f94;border-bottom:1px solid #8c8f94;" class="row-dynamic_tag <?php echo esc_attr( $hide_row_dynmictag1 ); ?>">
+					<tr id="static_tag_border_styling" class="row-dynamic_tag <?php echo esc_attr( $hide_row_dynmictag1 ); ?>">
 						<th><label style="margin-left:30px;" for="add_tag<?php echo esc_attr( $add_form2 ); ?>"><?php esc_html_e( 'Tags', 'wp-mautic-integration' ); ?></label></th>
 						<td>
 							<input type="text" name="add_tag<?php echo esc_attr( $add_form2 ); ?>" id="add_tag<?php echo esc_attr( $add_form2 ); ?>" value="<?php echo esc_attr( $add_tag_dynamic ); ?>">
@@ -267,7 +267,7 @@ if ( ! ( $integation->get_name() === 'User Registration Plugin Form' ) ) {
 							</p>
 						</td>
 					</tr>
-					<tr class="row-dynamic_tag <?php echo esc_attr( $hide_row_dynmictag1 ); ?>" style="height:20px;">
+					<tr class="row-dynamic_tag <?php echo esc_attr( $hide_row_dynmictag1 ); ?>" id="dynamic_tag_row_spacing">
 					</tr>
 						<?php
 					}

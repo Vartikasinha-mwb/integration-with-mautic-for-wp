@@ -6,14 +6,14 @@
  * @since      1.0.0
  *
  * @package     Wp_Mautic_Integration
- * @subpackage  Wp_Mautic_Integration/includes
+ * @subpackage  Wp_Mautic_Integration/includes/integrations
  */
 
 /**
  * The class responsible for integration functionality.
  *
  * @package     Wp_Mautic_Integration
- * @subpackage  Wp_Mautic_Integration/includes
+ * @subpackage  Wp_Mautic_Integration/includes/integrations
  * @author      makewebbetter <webmaster@makewebbetter.com>
  */
 abstract class Mwb_Wpm_Integration_Base {

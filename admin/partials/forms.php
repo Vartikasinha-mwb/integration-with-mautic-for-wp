@@ -67,7 +67,7 @@ $base_url = Wp_Mautic_Integration_Admin::get_mautic_base_url();
 		<a class="mwb-btn mwb-btn-secondary mwb-m4wp-form-refresh">
 			<?php esc_html_e( 'Refresh', 'wp-mautic-integration' ); ?>
 		</a><br>
-		<center><h3 style="margin-top:40px;">
+		<center><h3 id="no-forms-heading">
 		<?php echo esc_html( 'Sorry , there are no forms available on your mautic to show.' ); ?>
 		</h3>
 		</center>

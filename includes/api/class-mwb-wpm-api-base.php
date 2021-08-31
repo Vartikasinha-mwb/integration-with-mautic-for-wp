@@ -6,14 +6,14 @@
  * @since      1.0.0
  *
  * @package     Wp_Mautic_Integration
- * @subpackage  Wp_Mautic_Integration/includes
+ * @subpackage  Wp_Mautic_Integration/includes/api
  */
 
 /**
  * The Onboarding-specific functionality of the plugin admin side.
  *
  * @package     Wp_Mautic_Integration
- * @subpackage  Wp_Mautic_Integration/includes
+ * @subpackage  Wp_Mautic_Integration/includes/api
  * @author      makewebbetter <webmaster@makewebbetter.com>
  */
 class Mwb_Wpm_Api_Base {
@@ -41,6 +41,7 @@ class Mwb_Wpm_Api_Base {
 	 *
 	 * @param array $response HTTP response.
 	 * @throws Mwb_Wpm_Api_Exception Mwb_Wpm_Api_Exception.
+	 * @return array - data.
 	 */
 	private function parse_response( $response ) {
 		if ( $response instanceof WP_Error ) {
@@ -117,6 +118,7 @@ class Mwb_Wpm_Api_Base {
 	 * @param string $endpoint Api endpoint of mautic.
 	 * @param array  $data Data to be used in request.
 	 * @param array  $headers header to be used in request.
+	 * @return array - get data req.
 	 */
 	public function get( $endpoint, $data = array(), $headers = array() ) {
 		return $this->request( 'GET', $endpoint, $data, $headers );
@@ -128,6 +130,7 @@ class Mwb_Wpm_Api_Base {
 	 * @param string $endpoint Api endpoint of mautic.
 	 * @param array  $data Data to be used in request.
 	 * @param array  $headers header to be used in request.
+	 * @return array - post data req.
 	 */
 	public function post( $endpoint, $data = array(), $headers = array() ) {
 		return $this->request( 'POST', $endpoint, $data, $headers );
@@ -157,6 +160,7 @@ class Mwb_Wpm_Api_Base {
 	 * @param string $endpoint Api endpoint.
 	 * @param array  $data     Request data.
 	 * @param array  $headers header to be used in request.
+	 * @return array - response data.
 	 */
 	private function request( $method, $endpoint, $data = array(), $headers = array() ) {
 

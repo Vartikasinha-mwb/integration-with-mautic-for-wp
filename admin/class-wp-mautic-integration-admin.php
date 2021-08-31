@@ -59,6 +59,7 @@ class Wp_Mautic_Integration_Admin {
 	 * @since    1.0.0
 	 * @param    array  $links       The links of this plugin extra details.
 	 * @param    string $file        The version of this plugin.
+	 * @return   array - Links.
 	 */
 	public function mwb_docs( $links, $file ) {
 
@@ -110,6 +111,7 @@ class Wp_Mautic_Integration_Admin {
 	 *
 	 * @since 1.0.0
 	 * @param array $menus Marketplace menus.
+	 * @return array - Submenu.
 	 */
 	public function m4wp_admin_submenu_page( $menus = array() ) {
 		$menus[] = array(
@@ -426,8 +428,9 @@ class Wp_Mautic_Integration_Admin {
 	/**
 	 * Include Plugin screen for Onboarding pop-up.
 	 *
-	 * @param array $valid_screens Valid screens written.
 	 * @since    1.0.0
+	 * @param array $valid_screens Valid screens written.
+	 * @return array - Valid Screens.
 	 */
 	public function add_mwb_frontend_screens( $valid_screens = array() ) {
 
@@ -441,8 +444,9 @@ class Wp_Mautic_Integration_Admin {
 	/**
 	 * Include plugin for Deactivation pop-up.
 	 *
-	 * @param array $valid_screens Valid screens written.
 	 * @since    1.0.0
+	 * @param array $valid_screens Valid screens written.
+	 * @return array - Deactivation valid screens.
 	 */
 	public function add_mwb_deactivation_screens( $valid_screens = array() ) {
 
@@ -457,6 +461,7 @@ class Wp_Mautic_Integration_Admin {
 	 * Get base url of your mautic instance.
 	 *
 	 * @since    1.0.0
+	 * @return string - mautic base url.
 	 */
 	public static function get_mautic_base_url() {
 

@@ -263,7 +263,6 @@ tr.row-inactive {
 .mwb-section input[type=checkbox] {
 	border: 1px solid #7e8993;
 	background: #fff;
-	/* color: #555; */
 	clear: none;
 	cursor: pointer;
 	display: inline-block;
@@ -708,5 +707,67 @@ input.mwb-switch-checkbox.mwb-switch-checkbox--move {
 	}
 }
 
+.doc_support_link_color {
+	color:#3F4756;
+}
 
+.admin-display-header {
+	float:left;font-size:25px;color:#1A3365;font-weight:bold;
+}
+
+#no-forms-heading {
+	margin-top:40px;
+}
+
+#dynamic_tag_border_styling {
+	border-top:1px solid #8c8f94;border-left:1px solid #8c8f94;border-right:1px solid #8c8f94;
+}
+
+#static_tag_border_styling {
+	border-left:1px solid #8c8f94;border-right:1px solid #8c8f94;border-bottom:1px solid #8c8f94;
+}
+
+#trash_icon_button {
+	border:none;margin-left:600px;
+}
+
+#trash_icon_display {
+	color:black;font-size:20px;
+}
+
+#form_label_dynamic_tag {
+	margin-left:30px;
+}
+
+#dynamic_tag_row_spacing {
+	height:20px;
+}
+
+#video_display {
+	margin-left:27px;
+}
+
+#dynamic_tag_border_styling_bottom {
+	border-bottom:1px solid black;border-left:1px solid black;border-right:1px solid black;
+}
+
+#dynamic_tag_border_styling_top {
+	border-top:1px solid black;border-left:1px solid black;border-right:1px solid black;
+}
+
+#dynamic_tag_label_top {
+	margin-left:30px;
+}
+
+#dynamic_tag_label_bottom {
+	margin-left:30px;
+}
+
+#checkbox-ur-no-implicit {
+	width:99%;
+}
+
+#checkbox-ur-implicit {
+	width:99%;
+}
 /* my css end */

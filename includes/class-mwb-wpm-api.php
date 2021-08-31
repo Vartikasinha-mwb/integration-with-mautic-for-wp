@@ -137,6 +137,8 @@ class MWB_Wpm_Api {
 
 	/**
 	 * Get segments
+	 *
+	 * @return mixed - get Segments.
 	 */
 	public static function get_segments() {
 
@@ -170,6 +172,8 @@ class MWB_Wpm_Api {
 
 	/**
 	 * Get mautic forms
+	 *
+	 * @return mixed - get Mautic forms.
 	 */
 	public static function get_forms() {
 		$endpoint = 'api/forms';
@@ -184,6 +188,8 @@ class MWB_Wpm_Api {
 
 	/**
 	 * Get all widgets
+	 *
+	 * @return mixed - get Widgets.
 	 */
 	public static function get_widgets() {
 		$endpoint = 'api/data';
@@ -201,7 +207,7 @@ class MWB_Wpm_Api {
 	 *
 	 * @param int $widget_name Widget name.
 	 * @param int $data data.
-	 * @return bool
+	 * @return mixed - get Widget data.
 	 */
 	public static function get_widget_data( $widget_name, $data ) {
 		$endpoint = "api/data/$widget_name";

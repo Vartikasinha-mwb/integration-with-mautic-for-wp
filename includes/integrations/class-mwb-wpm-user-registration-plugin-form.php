@@ -68,7 +68,7 @@ class Mwb_Wpm_User_Registration_Plugin_Form extends Mwb_Wpm_Integration_Base {
 		    	 </div>';
 
 			echo '<div class="ur-form-row">
-				 <div class="ur-form-grid ur-grid-1" style="width:99%">
+				 <div class="ur-form-grid ur-grid-1" id="checkbox-ur-no-implicit">
 				 <div data-field-id="checkbox" class="ur-field-item field-checkbox ">
 				 <span class="form-row validate-required user-registration-validated" id="checkbox_field" data-priority=""><input ' . esc_attr( $checked ) . ' data-rules="" data-id="mwb_m4wp_subscribe" type="checkbox" class="input-checkbox ur-frontend-field user-registration-valid" name="checkbox" id="checkbox" placeholder="" value="yes" data-label="Custom Checkbox" aria-invalid="false"><label for="checkbox" class="ur-label">' . esc_attr( $this->get_option( 'checkbox_txt' ) ) . '</label></span>															</div>
 				 </div>
@@ -88,7 +88,7 @@ class Mwb_Wpm_User_Registration_Plugin_Form extends Mwb_Wpm_Integration_Base {
 			}
 
 			echo '<div class="ur-form-row">
-				 <div class="ur-form-grid ur-grid-1" style="width:99%">
+				 <div class="ur-form-grid ur-grid-1" id="checkbox-ur-implicit">
 				 <div data-field-id="checkbox" class="ur-field-item field-checkbox ">
 				 <div class="form-row validate-required user-registration-validated" id="checkbox_field" data-priority=""><label for="checkbox" class="ur-label"></label><input data-rules="" data-id="mwb_m4wp_subscribe2" type="hidden" class="input-checkbox ur-frontend-field user-registration-valid" name="checkbox2" id="checkbox2" placeholder="" value="' . esc_attr( $form_id_new ) . '" data-label="Custom Hidden Field" aria-invalid="false"></div>															</div>
 				 </div>

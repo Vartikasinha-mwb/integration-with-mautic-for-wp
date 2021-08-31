@@ -7,8 +7,8 @@
  * @link       https://makewebbetter.com
  * @since      1.0.0
  *
- * @package    Makewebbetter_Onboarding
- * @subpackage Makewebbetter_Onboarding/admin/onboarding
+ * @package    Wp_Mautic_Integration
+ * @subpackage Wp_Mautic_Integration/extra-templates
  */
 
 	$screen   = get_current_screen();

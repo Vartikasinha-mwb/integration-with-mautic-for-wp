@@ -3,8 +3,8 @@ Contributors: MakeWebBetter
 Donate link:  https://makewebbetter.com/
 Tags: automation, marketing, mautic, mautic integration, form
 Requires at least: 4.4
-Tested up to: 5.7
-Stable tag: 1.0.1
+Tested up to: 5.8
+Stable tag: 1.0.2
 Requires PHP: 7.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html

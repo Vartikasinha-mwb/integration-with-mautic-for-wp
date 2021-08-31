@@ -6,14 +6,14 @@
  * @since      1.0.0
  *
  * @package     Wp_Mautic_Integration
- * @subpackage  Wp_Mautic_Integration/includes
+ * @subpackage  Wp_Mautic_Integration/includes/integrations
  */
 
 /**
  * The Comment form integration functionality.
  *
  * @package     Wp_Mautic_Integration
- * @subpackage  Wp_Mautic_Integration/includes
+ * @subpackage  Wp_Mautic_Integration/includes/integrations
  * @author      makewebbetter <webmaster@makewebbetter.com>
  */
 class Mwb_Wpm_Comment_Form extends Mwb_Wpm_Integration_Base {
@@ -76,6 +76,7 @@ class Mwb_Wpm_Comment_Form extends Mwb_Wpm_Integration_Base {
 	 * Add optin checkbox field.
 	 *
 	 * @param array $comment_fields Comment fields arary.
+	 * @return array - comment field data.
 	 */
 	public function add_checkbox_field( $comment_fields ) {
 		if ( ! $this->is_implicit() ) {

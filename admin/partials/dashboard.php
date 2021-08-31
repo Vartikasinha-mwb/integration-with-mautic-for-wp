@@ -176,7 +176,7 @@ $base_url              = Wp_Mautic_Integration_Admin::get_mautic_base_url();
 			<?php foreach ( $top_creators['data']['bodyItems'] as $key => $list ) : ?>
 									<tr>
 										<?php //phpcs:disable ?>
-										<td><a target="_blank" href="<?php echo $helper->get_item_link( $list[0]['link'], $base_url ); ?>"><?php echo esc_html( $list[0]['value'] ); ?></a></td>
+										<td><a target="_blank" href="<?php echo $helper->get_item_link( $list[0]['link'], esc_attr( $base_url ) ); ?>"><?php echo esc_html( $list[0]['value'] ); ?></a></td>
 										<?php //phpcs:enable ?>
 										<td><?php echo esc_html( $list[1]['value'] ); ?></td>
 									</tr>

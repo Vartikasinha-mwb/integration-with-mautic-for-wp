@@ -6,14 +6,14 @@
  * @since      1.0.0
  *
  * @package     Wp_Mautic_Integration
- * @subpackage  Wp_Mautic_Integration/includes
+ * @subpackage  Wp_Mautic_Integration/includes/integrations
  */
 
 /**
  * The Registration form integration functionality.
  *
  * @package     Wp_Mautic_Integration
- * @subpackage  Wp_Mautic_Integration/includes
+ * @subpackage  Wp_Mautic_Integration/includes/integrations
  * @author      makewebbetter <webmaster@makewebbetter.com>
  */
 class Mwb_Wpm_Registration_Form extends Mwb_Wpm_Integration_Base {
@@ -88,6 +88,7 @@ class Mwb_Wpm_Registration_Form extends Mwb_Wpm_Integration_Base {
 	 * Get mapped properties.
 	 *
 	 * @param object $user WP user object.
+	 * @return array - user data.
 	 */
 	public function get_mapped_properties( $user ) {
 		// initialize firstname as username.
