@@ -63,7 +63,7 @@ $base_url = Wp_Mautic_Integration_Admin::get_mautic_base_url();
 			</tbody>
 		</table>
 	<?php else : ?>
-	<div style="height:400px;">
+	<div id="forms-refresh-section">
 		<a class="mwb-btn mwb-btn-secondary mwb-m4wp-form-refresh">
 			<?php esc_html_e( 'Refresh', 'wp-mautic-integration' ); ?>
 		</a><br>

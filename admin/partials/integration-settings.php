@@ -259,7 +259,7 @@ if ( ! ( $integation->get_name() === 'User Registration Plugin Form' ) ) {
 						</td>
 					</tr>
 					<tr id="static_tag_border_styling" class="row-dynamic_tag <?php echo esc_attr( $hide_row_dynmictag1 ); ?>">
-						<th><label style="margin-left:30px;" for="add_tag<?php echo esc_attr( $add_form2 ); ?>"><?php esc_html_e( 'Tags', 'wp-mautic-integration' ); ?></label></th>
+						<th><label id="static-tag-label" for="add_tag<?php echo esc_attr( $add_form2 ); ?>"><?php esc_html_e( 'Tags', 'wp-mautic-integration' ); ?></label></th>
 						<td>
 							<input type="text" name="add_tag<?php echo esc_attr( $add_form2 ); ?>" id="add_tag<?php echo esc_attr( $add_form2 ); ?>" value="<?php echo esc_attr( $add_tag_dynamic ); ?>">
 							<p class="description">
@@ -285,7 +285,7 @@ if ( ! ( $integation->get_name() === 'User Registration Plugin Form' ) ) {
 						<th></th>
 						<td>
 							<div class="mwb-m4wp-admin-button-wrap">
-								<button class="button mwb-m4wp-admin-button mwb-m4wp-add-new-row" style="" type="button"><?php esc_html_e( 'Add New Row', 'wp-mautic-integration' ); ?></button>
+								<button class="button mwb-m4wp-admin-button mwb-m4wp-add-new-row" type="button"><?php esc_html_e( 'Add New Row', 'wp-mautic-integration' ); ?></button>
 								<p class="description">
 									<?php esc_html_e( 'Click to add rules for dynamic tag according to forms.', 'wp-mautic-integration' ); ?>
 								</p>

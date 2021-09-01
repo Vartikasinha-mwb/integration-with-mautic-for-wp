@@ -770,4 +770,16 @@ input.mwb-switch-checkbox.mwb-switch-checkbox--move {
 #checkbox-ur-implicit {
 	width:99%;
 }
+
+#doc-sup-style {
+	float:right;color:#3F4756;font-size:15px;font-style:normal;font-weight:bold;
+}
+
+#static-tag-label {
+	margin-left:30px;
+}
+
+#forms-refresh-section {
+	height:400px;
+}
 /* my css end */

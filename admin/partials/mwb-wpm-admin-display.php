@@ -28,7 +28,7 @@ if ( wp_cache_get( 'mwb_m4wp_notice' ) ) {
 					<?php esc_html_e( 'Integration with Mautic for WP', 'wp-mautic-integration' ); ?>
 				<!-- </h1> -->
 			</div>
-			<div class="" style="float:right;color:#3F4756;font-size:15px;font-style:normal;font-weight:bold;">
+			<div class="" id="doc-sup-style">
 				<a href="https://docs.makewebbetter.com/wp-mautic-integration/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-backend&utm_campaign=MWB-wpmautic-doc" class="doc_support_link_color" target="_blank"
 					><?php esc_html_e( 'Documentation', 'wp-mautic-integration' ); ?></a> <span>|</span>
 				<a href="https://makewebbetter.com/submit-query/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-backend&utm_campaign=MWB-wpmautic-suppport" class="doc_support_link_color" target="_blank"

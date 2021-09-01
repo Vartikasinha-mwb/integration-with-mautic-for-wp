@@ -84,7 +84,11 @@ class Mwb_Wpm_Api_Base {
 		$upload_dir = wp_get_upload_dir();
 
 		if ( ! empty( $upload_dir ) && isset( $upload_dir['basedir'] ) ) {
+			global $wp_filesystem;  // Define global object of WordPress filesystem.
+			WP_Filesystem();        // Intialise new file system object.
 			$file = $upload_dir['basedir'] . '/mwb-wp-mautic-error.log';
+			$file_data = '';
+			$file_data = $wp_filesystem->get_contents( $file, '' );
 			$log  = 'Url : ' . $this->last_request['url'] . PHP_EOL;
 			$log .= 'Method : ' . $this->last_request['method'] . PHP_EOL;
 			$log .= "Code : $code" . PHP_EOL;
@@ -99,7 +103,8 @@ class Mwb_Wpm_Api_Base {
 			$log .= 'Time: ' . current_time( 'F j, Y  g:i a' ) . PHP_EOL;
 			$log .= '------------------------------------' . PHP_EOL;
 			//phpcs:disable
-			file_put_contents( $file, $log, FILE_APPEND );
+			$file_data .= $log ; 
+			$wp_filesystem->put_contents( $file, $file_data );
 			//phpcs:enable
 		}
 	}
