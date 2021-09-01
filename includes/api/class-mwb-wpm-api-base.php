@@ -84,9 +84,12 @@ class Mwb_Wpm_Api_Base {
 		$upload_dir = wp_get_upload_dir();
 
 		if ( ! empty( $upload_dir ) && isset( $upload_dir['basedir'] ) ) {
+			if ( ! is_admin() ) {
+				require_once( ABSPATH . 'wp-admin/includes/file.php' );
+			}
 			global $wp_filesystem;  // Define global object of WordPress filesystem.
 			WP_Filesystem();        // Intialise new file system object.
-			$file = $upload_dir['basedir'] . '/mwb-wp-mautic-error.log';
+			$file      = $upload_dir['basedir'] . '/mwb-wp-mautic-error.log';
 			$file_data = '';
 			$file_data = $wp_filesystem->get_contents( $file, '' );
 			$log  = 'Url : ' . $this->last_request['url'] . PHP_EOL;
