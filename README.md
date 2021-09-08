@@ -1,5 +1,5 @@
-[![BuildStatus](https://img.shields.io/travis/twbs/bootstrap/v4-dev.svg)](https://travis-ci.org/twbs/bootstrap) ![Active installs](https://img.shields.io/badge/Active-50%2B-brightgreen) ![License](https://img.shields.io/badge/License-GPLv3%20or%20later-yellowgreen) ![WP tested](https://img.shields.io/badge/WP%20tested-5.7.2-brightgreen) ![Requires PHP](https://img.shields.io/badge/Requires%20PHP-5.6-blue)
-# Integration with Mautic for WP
+[![BuildStatus](https://img.shields.io/travis/twbs/bootstrap/v4-dev.svg)](https://travis-ci.org/twbs/bootstrap) ![Active installs](https://img.shields.io/badge/Active-80%2B-brightgreen) ![License](https://img.shields.io/badge/License-GPLv3%20or%20later-yellowgreen) ![WP tested](https://img.shields.io/badge/WP%20tested-5.8-brightgreen) ![Requires PHP](https://img.shields.io/badge/Requires%20PHP-5.6-blue)
+# Integration with Mautic for WP - Mautic Form, Automation, Marketing
 ![Integration with Mautic for WP](https://ps.w.org/integration-with-mautic-for-wp/assets/banner-772x250.png)
 * Contributors: MakeWebBetter
 * Author URI: [http://makewebbetter.com/](http://makewebbetter.com?utm_source=MWB-wpmautic-git&utm_medium=MWB-git-page&utm_campaign=MWB-wpmautic-git)
@@ -8,7 +8,7 @@
 
 # Description
 
-**WILLINGNESS TO TRACK LEADS AND SUBSCRIBE FOR YOUR NON ECOMMERCE WEBSITE IS AS OBVIOUS AND CRUCIAL AS FOR E-COMMERCE BUSINESS**
+**WILLINGNESS TO CAPTURE LEADS AND SUBSCRIBERS FOR YOUR WORDPRESS WEBSITE IS AS OBVIOUS AND CRUCIAL AS FOR ECOMMERCE BUSINESS & YOU CAN ACHIEVE IT WITH MAUTIC INTEGRATION WITH WORDPRESS**
 
 The [Integration with Mautic for WP](https://wordpress.org/plugins/integration-with-mautic-for-wp/) plugin helps you to track leads, signups, and subscribers easily by integrating your website data with Mautic CRM. The hassle-free and easy setup process makes it convenient for any individual to configure this plugin. 
 
@@ -18,11 +18,11 @@ You can also insert multiple WordPress forms and can connect them with Mautic di
 
 [**How to Connect WordPress with Mautic and Convert Leads?**](https://www.youtube.com/watch?v=Rqm9SHbZAnk)
 
-**USING THE INTEGRATION WITH MAUTIC FOR WP YOU CAN:**
+**USING THE INTEGRATION WITH MAUTIC FOR WP PLUGIN YOU CAN:**
 * Integrate Mautic with WP website
 * Sync your non-eCommerce website’s data with Mautic CRM
 * Have dedicated Mautic dashboard sync over your WordPress panel
-* Assign tags and add segments to your captured leads with WordPress Mautic form           embed
+* Assign tags and add segments to your captured leads with WordPress Mautic form embed
 * The non-eCommerce website’s data can be tracked easily
 * Flexible, user-friendly, and good-looking forms to subscribe people to your
    Mautic Newsletter and email list.
@@ -55,13 +55,12 @@ WordPress is a pool of varied plugins - from different forms to email marketing.
 The Integration with Mautic for WP plugin is now compatible with the User Registration form by WPEverest. The admin can, therefore, create custom registration and login forms. And sync its data with Mautic by enabling the form settings via this plugin. 
 
 
-Visit [**Integration With Mautic For WP Documentation**](https://docs.makewebbetter.com/wp-mautic-integration/?utm_source=MWB-wpmautic-git&utm_medium=MWB-git-page&utm_campaign=MWB-wpmautic-git) and learn more about the features and working of the plugin.
+Visit [**Integration With Mautic for WP Documentation**](https://docs.makewebbetter.com/wp-mautic-integration/?utm_source=MWB-wpmautic-git&utm_medium=MWB-git-page&utm_campaign=MWB-wpmautic-git) and learn more about the features and working of the plugin.
 
-Check out our [**Mautic WordPress Integration Plugin Knowledge base**](https://support.makewebbetter.com/wordpress-plugins-knowledge-base/category/wp-mautic-integration-kb/?utm_source=MWB-wpmautic-org&utm_medium=MWB-git-page&utm_campaign=MWB-wpmautic-git) for some deep insights and FAQs on the plugin.
+Check out our [**Mautic WordPress Integration Plugin Knowledge base**](https://support.makewebbetter.com/wordpress-plugins-knowledge-base/category/wp-mautic-integration-kb/?utm_source=MWB-wpmautic-git&utm_medium=MWB-git-page&utm_campaign=MWB-wpmautic-git) for some deep insights and FAQs on the plugin.
 
 ## PREMIUM ADD-ON(Coming Soon) 
 
-* Contact Form 7 Integration
 * Gravity Forms Integration
 * WPForms Integration
 * BuddyPress Integration
@@ -70,6 +69,12 @@ Check out our [**Mautic WordPress Integration Plugin Knowledge base**](https://s
 * Easy Digital Downloads Integration
 * GiveWP Integration
 * UltimateMember Integration
+
+## INTEGRATION WITH MAUTIC FOR WOOCOMMERCE 
+
+Willing to outreach your subscribers and transform your WordPress website into an online store but scared of managing huge data? 
+
+Don't worry there! We got you covered with our Integration with Mautic for the WooCommerce plugin. Visit [**Integration with Mautic for WooCommerce**](https://makewebbetter.com/product/mautic-woocommerce-integration-pro/?utm_source=MWB-wpmautic-git&utm_medium=MWB-git-page&utm_campaign=MWB-wpmautic-git) and to learn more about the features and working of the plugin.
 
 ## EMAIL TEMPLATES FOR MAUTIC 
 
@@ -80,7 +85,9 @@ Are you looking for email templates for Mautic that are compatible with the Maut
 * [**Premium Email Templates for Mautic**](https://makewebbetter.com/mautic-email-templates/?utm_source=MWB-wpmautic-git&utm_medium=MWB-git-page&utm_campaign=MWB-mauticemailtemplates-git)
 
 ### **SUPPORT**
-If you need support or have questions, kindly use our online chat window [**here**](https://makewebbetter.com/) or connect with us then [**Generate a ticket**](https://makewebbetter.com/submit-query/?utm_source=MWB-wpmautic-git&utm_medium=MWB-git-page&utm_campaign=MWB-wpmautic-git)
+If you need support or have questions, kindly use our online chat window [**here**](https://makewebbetter.com/?utm_source=MWB-wpmautic-git&utm_medium=MWB-git&utm_campaign=git) or connect with us then [**Generate a ticket**](https://makewebbetter.com/submit-query/?utm_source=MWB-wpmautic-git&utm_medium=MWB-git-page&utm_campaign=MWB-wpmautic-git)
+If our documentation doesn’t contain the solution to your problem, you can visit the [**MakeWebBetter Forums**](https://forums.makewebbetter.com/?utm_source=MWB-wpmautic-git&utm_medium=MWB-git-page&utm_campaign=MWB-wpmautic-git) with your question.
+
 
 ### **MORE ABOUT MAKEWEBBETTER**
 
@@ -90,17 +97,6 @@ If you need support or have questions, kindly use our online chat window [**here
 - [**Visit our LinkedIn Account**](https://www.linkedin.com/company/makewebbetter)
 - [**Subscribe To Our YouTube Channel**](https://www.youtube.com/channel/UC7nYNf0JETOwW3GOD_EW2Ag)
 - [**Follow Our SlideShare**](https://www.slideshare.net/MakeWebBetter)
-
-
-
-
-
-
-
-
-
-
-
 
 
 
