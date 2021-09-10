@@ -74,6 +74,7 @@ class MWB_Wpm_Settings_Helper {
 	 * Get instance.
 	 *
 	 * @since 1.0.0
+	 * @return mixed - instance.
 	 */
 	public static function get_instance() {
 		if ( is_null( self::$_instance ) ) {
@@ -86,6 +87,7 @@ class MWB_Wpm_Settings_Helper {
 	 * Returns form fields html.
 	 *
 	 * @param bool $refresh Refresh.
+	 * @return array - get segments options.
 	 */
 	public function get_segment_options( $refresh = false ) {
 
@@ -121,6 +123,7 @@ class MWB_Wpm_Settings_Helper {
 	 *
 	 * @since       1.0.0
 	 * @param       string $page               widget is retrieved.
+	 * @return string - refresh button html.
 	 */
 	public function get_refresh_button_html( $page = '' ) {
 		$html = '<a href="#" class="mwb-m4wp-refresh-btn mwb-refresh-btn" page="' . $page . '">
@@ -136,6 +139,7 @@ class MWB_Wpm_Settings_Helper {
 	 * @since       1.0.0
 	 * @param       string $temp_link              item link.
 	 * @param       string $base_url               base url.
+	 * @return string - item link.
 	 */
 	public function get_item_link( $temp_link, $base_url ) {
 
@@ -154,6 +158,7 @@ class MWB_Wpm_Settings_Helper {
 	 * Get admin panel tabs.
 	 *
 	 * @since 1.0.0
+	 * @return array - tabs.
 	 */
 	public function get_settings_tab() {
 		$tabs = array(
@@ -195,6 +200,7 @@ class MWB_Wpm_Settings_Helper {
 	 * Checks if mautic api is connected.
 	 *
 	 * @since 1.0.0
+	 * @return bool - setup connected.
 	 */
 	public function is_connection_setup() {
 		return get_option( 'mwb_m4wp_connection_status', false );
@@ -205,6 +211,7 @@ class MWB_Wpm_Settings_Helper {
 	 *
 	 * @since 1.0.0
 	 * @param string $selected selected tab.
+	 * @return string - setting tab html.
 	 */
 	public function get_settings_tab_html( $selected = 'connection' ) {
 
@@ -250,6 +257,7 @@ class MWB_Wpm_Settings_Helper {
 	 * Get plugin version text.
 	 *
 	 * @since 1.0.0
+	 * @return string - plugin version in text format.
 	 */
 	public function get_plugin_version_txt() {
 		$version = '';

@@ -50,8 +50,9 @@ class MWB_Wpm_Integration_Manager {
 	/**
 	 * Get_integration.
 	 *
-	 * @param array $details     Detail for integration.
 	 * @since    1.0.0
+	 * @param array $details     Detail for integration.
+	 * @return mixed - integration
 	 */
 	public static function get_integration( $details ) {
 		extract( $details ); //phpcs:ignore WordPress.PHP.DontExtract.extract_extract

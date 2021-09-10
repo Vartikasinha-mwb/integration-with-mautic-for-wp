@@ -46,7 +46,7 @@
 					<li><?php esc_html_e( 'Embed Mautic forms into your WordPress content using shortcodes.', 'wp-mautic-integration' ); ?></li>
 				</ul>
 				<div class="m4wp-overview__video--url">
-					<iframe style="margin-left:27px;" width="470" height="295" src="https://www.youtube.com/embed/Rqm9SHbZAnk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+					<iframe id="video_display" width="470" height="295" src="https://www.youtube.com/embed/Rqm9SHbZAnk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
 				</div>
 			</div>
 		</div>

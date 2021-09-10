@@ -23,15 +23,15 @@ if ( wp_cache_get( 'mwb_m4wp_notice' ) ) {
 ?>
 <header>
 	<div class="mwb-header-container mwb-bg-white mwb-r-8">
-			<div class="" style="float:left;font-size:25px;color:#1A3365;font-weight:bold;">
+			<div class="admin-display-header">
 				<!-- <h1 class="mwb-header-title"> -->
 					<?php esc_html_e( 'Integration with Mautic for WP', 'wp-mautic-integration' ); ?>
 				<!-- </h1> -->
 			</div>
-			<div class="" style="float:right;color:#3F4756;font-size:15px;font-style:normal;font-weight:bold;">
-				<a href="https://docs.makewebbetter.com/wp-mautic-integration/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-backend&utm_campaign=MWB-wpmautic-doc" style="color:#3F4756;" class="" target="_blank"
+			<div class="" id="doc-sup-style">
+				<a href="https://docs.makewebbetter.com/wp-mautic-integration/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-backend&utm_campaign=MWB-wpmautic-doc" class="doc_support_link_color" target="_blank"
 					><?php esc_html_e( 'Documentation', 'wp-mautic-integration' ); ?></a> <span>|</span>
-				<a href="https://makewebbetter.com/submit-query/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-backend&utm_campaign=MWB-wpmautic-suppport" style="color:#3F4756;" class="" target="_blank"
+				<a href="https://makewebbetter.com/submit-query/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-backend&utm_campaign=MWB-wpmautic-suppport" class="doc_support_link_color" target="_blank"
 					><?php esc_html_e( 'Support', 'wp-mautic-integration' ); ?></a>
 			</div>
 	</div>

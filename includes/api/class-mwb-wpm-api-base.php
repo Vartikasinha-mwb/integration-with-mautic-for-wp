@@ -6,14 +6,14 @@
  * @since      1.0.0
  *
  * @package     Wp_Mautic_Integration
- * @subpackage  Wp_Mautic_Integration/includes
+ * @subpackage  Wp_Mautic_Integration/includes/api
  */
 
 /**
  * The Onboarding-specific functionality of the plugin admin side.
  *
  * @package     Wp_Mautic_Integration
- * @subpackage  Wp_Mautic_Integration/includes
+ * @subpackage  Wp_Mautic_Integration/includes/api
  * @author      makewebbetter <webmaster@makewebbetter.com>
  */
 class Mwb_Wpm_Api_Base {
@@ -41,6 +41,7 @@ class Mwb_Wpm_Api_Base {
 	 *
 	 * @param array $response HTTP response.
 	 * @throws Mwb_Wpm_Api_Exception Mwb_Wpm_Api_Exception.
+	 * @return array - data.
 	 */
 	private function parse_response( $response ) {
 		if ( $response instanceof WP_Error ) {
@@ -83,7 +84,14 @@ class Mwb_Wpm_Api_Base {
 		$upload_dir = wp_get_upload_dir();
 
 		if ( ! empty( $upload_dir ) && isset( $upload_dir['basedir'] ) ) {
-			$file = $upload_dir['basedir'] . '/mwb-wp-mautic-error.log';
+			if ( ! is_admin() ) {
+				require_once( ABSPATH . 'wp-admin/includes/file.php' );
+			}
+			global $wp_filesystem;  // Define global object of WordPress filesystem.
+			WP_Filesystem();        // Intialise new file system object.
+			$file      = $upload_dir['basedir'] . '/mwb-wp-mautic-error.log';
+			$file_data = '';
+			$file_data = $wp_filesystem->get_contents( $file, '' );
 			$log  = 'Url : ' . $this->last_request['url'] . PHP_EOL;
 			$log .= 'Method : ' . $this->last_request['method'] . PHP_EOL;
 			$log .= "Code : $code" . PHP_EOL;
@@ -98,7 +106,8 @@ class Mwb_Wpm_Api_Base {
 			$log .= 'Time: ' . current_time( 'F j, Y  g:i a' ) . PHP_EOL;
 			$log .= '------------------------------------' . PHP_EOL;
 			//phpcs:disable
-			file_put_contents( $file, $log, FILE_APPEND );
+			$file_data .= $log ; 
+			$wp_filesystem->put_contents( $file, $file_data );
 			//phpcs:enable
 		}
 	}
@@ -117,6 +126,7 @@ class Mwb_Wpm_Api_Base {
 	 * @param string $endpoint Api endpoint of mautic.
 	 * @param array  $data Data to be used in request.
 	 * @param array  $headers header to be used in request.
+	 * @return array - get data req.
 	 */
 	public function get( $endpoint, $data = array(), $headers = array() ) {
 		return $this->request( 'GET', $endpoint, $data, $headers );
@@ -128,6 +138,7 @@ class Mwb_Wpm_Api_Base {
 	 * @param string $endpoint Api endpoint of mautic.
 	 * @param array  $data Data to be used in request.
 	 * @param array  $headers header to be used in request.
+	 * @return array - post data req.
 	 */
 	public function post( $endpoint, $data = array(), $headers = array() ) {
 		return $this->request( 'POST', $endpoint, $data, $headers );
@@ -157,6 +168,7 @@ class Mwb_Wpm_Api_Base {
 	 * @param string $endpoint Api endpoint.
 	 * @param array  $data     Request data.
 	 * @param array  $headers header to be used in request.
+	 * @return array - response data.
 	 */
 	private function request( $method, $endpoint, $data = array(), $headers = array() ) {
 
