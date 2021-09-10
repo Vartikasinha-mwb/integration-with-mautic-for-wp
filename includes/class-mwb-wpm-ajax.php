@@ -126,8 +126,8 @@ class MWB_Wpm_Ajax {
 	 */
 	public function add_new_row() {
 
-		echo '<tr style="border-top:1px solid black;border-left:1px solid black;border-right:1px solid black;" class="row-dynamic_tag">
-				<th><label style="margin-left:30px;" for="add_form">Form</label></th>
+		echo '<tr id="dynamic_tag_border_styling_top" class="row-dynamic_tag">
+				<th><label id="dynamic_tag_label_top" for="add_form">Form</label></th>
 					<td>
 						<select name="add_form" class="mwb-m4wp-form-select">
 						<option selected value="">--Select--</option>';
@@ -157,8 +157,8 @@ class MWB_Wpm_Ajax {
 					</td>
 			 </tr>';
 
-		echo '<tr style="border-bottom:1px solid black;border-left:1px solid black;border-right:1px solid black;" class="row-dynamic_tag">
-				<th><label style="margin-left:30px;" for="add_tag">Tags</label></th>
+		echo '<tr id="dynamic_tag_border_styling_bottom" class="row-dynamic_tag">
+				<th><label id="dynamic_tag_label_bottom" for="add_tag">Tags</label></th>
 				<td>
 					<input type="text" name="add_tag" id="add_tag" value="">
 					<p class="description">

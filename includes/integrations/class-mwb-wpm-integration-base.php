@@ -6,14 +6,14 @@
  * @since      1.0.0
  *
  * @package     Wp_Mautic_Integration
- * @subpackage  Wp_Mautic_Integration/includes
+ * @subpackage  Wp_Mautic_Integration/includes/integrations
  */
 
 /**
  * The class responsible for integration functionality.
  *
  * @package     Wp_Mautic_Integration
- * @subpackage  Wp_Mautic_Integration/includes
+ * @subpackage  Wp_Mautic_Integration/includes/integrations
  * @author      makewebbetter <webmaster@makewebbetter.com>
  */
 abstract class Mwb_Wpm_Integration_Base {
@@ -159,6 +159,7 @@ abstract class Mwb_Wpm_Integration_Base {
 			'add_segment'  => '-1',
 			// User Registration Plugin Added.
 			'dynamic_tag'  => 'no',
+			'add_segment_ur' => '-1',
 			// User Registration Plugin Ended.
 			'add_tag'      => '',
 		);
@@ -356,9 +357,7 @@ abstract class Mwb_Wpm_Integration_Base {
 		if ( ! $sync ) {
 			return;
 		}
-
 		$tags_string = $this->get_option( 'add_tag' );
-		$segment_id  = $this->get_option( 'add_segment' );
 		$contact_id  = 0;
 		// User Registration Plugin Added.
 		if ( in_array( 'user-registration/user-registration.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ), true ) ) {
@@ -387,11 +386,31 @@ abstract class Mwb_Wpm_Integration_Base {
 							}
 						}
 					}
+					$segment_id  = $this->get_option( 'add_segment_ur' );
+					$contact = Mwb_Wpm_Api::create_contact( $data );
+					if ( '-1' !== $segment_id ) {
+						if ( isset( $contact['contact'] ) ) {
+							$contact_id = $contact['contact']['id'];
+						}
+						if ( $contact_id > 0 ) {
+							Mwb_Wpm_Api::add_contact_to_segment( $contact_id, $segment_id );
+						}
+					}
 				} else {
 					if ( 'User Registration Plugin Form' === $this->get_name() ) {
 						if ( ! empty( $tags_string ) ) {
 							$tags         = explode( ',', $tags_string );
 							$data['tags'] = $tags;
+						}
+					}
+					$segment_id  = $this->get_option( 'add_segment_ur' );
+					$contact = Mwb_Wpm_Api::create_contact( $data );
+					if ( '-1' !== $segment_id ) {
+						if ( isset( $contact['contact'] ) ) {
+							$contact_id = $contact['contact']['id'];
+						}
+						if ( $contact_id > 0 ) {
+							Mwb_Wpm_Api::add_contact_to_segment( $contact_id, $segment_id );
 						}
 					}
 				}
@@ -402,6 +421,16 @@ abstract class Mwb_Wpm_Integration_Base {
 						$data['tags'] = $tags;
 					}
 				}
+				$segment_id  = $this->get_option( 'add_segment' );
+				$contact = Mwb_Wpm_Api::create_contact( $data );
+				if ( '-1' !== $segment_id ) {
+					if ( isset( $contact['contact'] ) ) {
+						$contact_id = $contact['contact']['id'];
+					}
+					if ( $contact_id > 0 ) {
+						Mwb_Wpm_Api::add_contact_to_segment( $contact_id, $segment_id );
+					}
+				}
 			}
 			// User Registration Plugin Ended.
 		} else {
@@ -409,14 +438,15 @@ abstract class Mwb_Wpm_Integration_Base {
 				$tags         = explode( ',', $tags_string );
 				$data['tags'] = $tags;
 			}
-		}
-		$contact = Mwb_Wpm_Api::create_contact( $data );
-		if ( '-1' !== $segment_id ) {
-			if ( isset( $contact['contact'] ) ) {
-				$contact_id = $contact['contact']['id'];
-			}
-			if ( $contact_id > 0 ) {
-				Mwb_Wpm_Api::add_contact_to_segment( $contact_id, $segment_id );
+			$segment_id  = $this->get_option( 'add_segment' );
+			$contact = Mwb_Wpm_Api::create_contact( $data );
+			if ( '-1' !== $segment_id ) {
+				if ( isset( $contact['contact'] ) ) {
+					$contact_id = $contact['contact']['id'];
+				}
+				if ( $contact_id > 0 ) {
+					Mwb_Wpm_Api::add_contact_to_segment( $contact_id, $segment_id );
+				}
 			}
 		}
 	}

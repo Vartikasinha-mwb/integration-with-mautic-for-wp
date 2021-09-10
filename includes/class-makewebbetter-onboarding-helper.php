@@ -258,6 +258,7 @@ class Makewebbetter_Onboarding_Helper {
 	 * Validate the popup to be shown on screen.
 	 *
 	 * @since    1.0.0
+	 * @return boolean - onboarding popup show.
 	 */
 	public function can_show_onboarding_popup() {
 
@@ -290,6 +291,7 @@ class Makewebbetter_Onboarding_Helper {
 	 * Add your onboarding form fields.
 	 *
 	 * @since    1.0.0
+	 * @return array - form fields.
 	 */
 	public function add_on_boarding_form_fields() {
 
@@ -761,7 +763,7 @@ class Makewebbetter_Onboarding_Helper {
 	 */
 	public function render_form_data_into_table( $formatted_data = array() ) {
 
-		$email_body = '<table border="1" style="text-align:center;"><tr><th>Data</th><th>Value</th></tr>';
+		$email_body = '<table border="1" id="render_form_data_onboarding"><tr><th>Data</th><th>Value</th></tr>';
 		foreach ( $formatted_data as $key => $value ) {
 
 			$key = ucwords( str_replace( '_', ' ', $key ) );
@@ -821,9 +823,10 @@ class Makewebbetter_Onboarding_Helper {
 	/**
 	 * Handle Hubspot form submission.
 	 *
+	 * @since    1.0.0
 	 * @param array  $submission      The submission of this validation.
 	 * @param string $action_type      The action_type of this validation.
-	 * @since    1.0.0
+	 * @return boolean - form submission success.
 	 */
 	protected function handle_form_submission_for_hubspot( $submission = array(), $action_type = 'onboarding' ) {
 

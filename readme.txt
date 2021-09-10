@@ -1,29 +1,29 @@
-=== Integration with Mautic for WP ===
+=== Integration with Mautic for WP - Mautic Form, Automation, Marketing ===
 Contributors: MakeWebBetter
 Donate link:  https://makewebbetter.com/
 Tags: automation, marketing, mautic, mautic integration, form
 Requires at least: 4.4
-Tested up to: 5.7
-Stable tag: 1.0.1
-Requires PHP: 7.2
+Tested up to: 5.8
+Stable tag: 1.0.2
+Requires PHP: 5.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-
-Mautic WordPress Integration is the most optimum choice for every website to capture leads, form sign-ups, subscribers, etc.
-
+Mautic WP Integration helps you to capture leads, form sign-ups, subscribers, & implement Mautic tracking code on your website.
 
 
 == Description ==
 
-**WILLINGNESS TO CAPTURE LEADS AND SUBSCRIBERS FOR YOUR WORDPRESS WEBSITE IS AS OBVIOUS AND CRUCIAL AS FOR ECOMMERCE BUSINESS.**
+**WILLINGNESS TO CAPTURE LEADS AND SUBSCRIBERS FOR YOUR WORDPRESS WEBSITE IS AS OBVIOUS AND CRUCIAL AS FOR ECOMMERCE BUSINESS**
 
 The **Integration with Mautic for WP** plugin helps you to track leads, signups, and subscribers easily by integrating your website data with Mautic CRM. 
-The hassle-free and easy setup process makes it convenient for any individual to configure this plugin. 
+The hassle-free and easy setup process makes it convenient for any individual to configure this WordPress Mautic integration plugin. 
 
 
 You can also integrate multiple WordPress forms with Mautic directly using either **Basic or OAuth2 Mautic API**.  Integration with Mautic for WP plugin also supports you to add Mautic forms into your web pages through shortcodes.  
 
+
+[youtube https://www.youtube.com/watch?v=Rqm9SHbZAnk&w=560&h=315&rel=0]
 
 
 == USING THE MAUTIC WORDPRESS INTEGRATION YOU CAN: ==
@@ -35,7 +35,9 @@ You can also integrate multiple WordPress forms with Mautic directly using eithe
 * Implement Mautic tracking code on your website
 * Embed Mautic forms into your WordPress content using shortcodes
 
+== PLUGIN MEETS YOUR REQUIREMENT, SO ==
 
+[**DOWNLOAD NOW!!**](https://downloads.wordpress.org/plugin/integration-with-mautic-for-wp.zip)
 
 == WHAT’S INCLUDED IN OUR FREE INTEGRATION WITH MAUTIC FOR WP PLUGIN: ==
 
@@ -46,7 +48,7 @@ This Mautic WordPress Integration plugin allows you to secure all requests made 
 
 
 **2) Real-Time Data Sync**
-WordPress integration with Mautic helps you sync your website’s data like recently registered users and commenters in real-time.
+WordPress integration with Mautic helps you sync your WP website’s data like recently registered users and commenters in real-time.
 
 
 **3) Data-driven Dashboard**
@@ -64,7 +66,7 @@ This WordPress Mautic integration plugin allows you to embed Mautic forms to you
 
 
 **5) WordPress Integrations**
-WordPress is a pool of varied plugins - from different forms to email marketing. With this Mautic WordPress Integration plugin, you can easily sync your forms data to Mautic CRM. by default, WordPress Registration form and WordPress Comment Form are already provided with this integration.
+WordPress is a pool of varied plugins - from different forms to email marketing. With this Mautic WordPress Integration plugin, you can easily sync your forms data to Mautic CRM. By default, WordPress Registration form and WordPress Comment Form are already provided with this integration.
 
 **6) Compatibility with Popular WordPress Plugins**
 The Integration with Mautic for WP plugin is now compatible with the User Registration form by WPEverest. The admin can, therefore, create custom registration and login forms. And sync its data with Mautic by enabling the form settings via this plugin. 
@@ -92,7 +94,7 @@ Check out our [**Mautic WordPress Integration Plugin Knowledge base**](https://s
 
 Willing to outreach your subscribers and transform your WordPress website into an online store but scared of managing huge data? 
 
-Don’t you worry there! We got you covered with our Integration with Mautic for the WooCommerce plugin. Visit [**Integration with Mautic for WooCommerce**](https://makewebbetter.com/product/mautic-woocommerce-integration-pro/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-page&utm_campaign=MWB-wpmautic-org) and to learn more about the features and working of the plugin. 
+Don't worry there! We got you covered with our Integration with Mautic for the WooCommerce plugin. Visit [**Integration with Mautic for WooCommerce**](https://makewebbetter.com/product/mautic-woocommerce-integration-pro/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-page&utm_campaign=MWB-wpmautic-org) and to learn more about the features and working of the plugin. 
 
 == EMAIL TEMPLATES FOR MAUTIC ==
 
@@ -106,6 +108,7 @@ Are you looking for email templates for Mautic that are compatible with the Maut
 
 If you need support or have questions, kindly use our online chat window [**here**](https://makewebbetter.com/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-page&utm_campaign=MWB-wpmautic-org) or connect with us then [**Generate a ticket**](https://makewebbetter.com/submit-query/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-page&utm_campaign=MWB-wpmautic-org)
 
+If our documentation doesn’t contain the solution to your problem, you can visit the [**MakeWebBetter Forums**](https://forums.makewebbetter.com/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-page&utm_campaign=MWB-wpmautic-org) with your question.
 
 
 
@@ -128,6 +131,13 @@ The manual installation method involves downloading our Integration with Mautic 
 Automatic updates should work like a charm as always though, ensure you backup your site just in case.
 
 == Frequently Asked Questions ==
+
+= What does the WordPress Mautic integration plugin do? =
+The [**Mautic for WordPress**](https://makewebbetter.com/blog/connect-mautic-with-wordpress/?utm_source=MWB-wpmautic-org&utm_medium=MWB-org-page&utm_campaign=MWB-wpmautic-org) plugin is an effort to benefit WordPress websites that are not involved in eCommerce procedures in tracking their visitors and capturing leads in a timely manner. You'll be able to segment clients and manage leads, as well as nurture and track contacts, after you want to integrate Mautic with WordPress websites.
+
+= What is Mautic? =
+
+[**Mautic**](https://www.mautic.org/) is an open-source marketing automation software that helps online businesses automate their repetitive marketing tasks such as lead generation, contact segmentation, marketing campaigns, lead scoring, etc.
 
 = How can we connect the Mautic CRM to Integration with Mautic for WP? =
 
@@ -173,18 +183,24 @@ Please visit the MakeWebBetter [**knowledge base**](https://support.makewebbette
 
 == Changelog ==
 
+= 1.0.2 - Released on 2 September 2021 =  
+* Compatible with WordPress 5.8
+* Other: Bug Fixes
+
+= 1.0.1 - Released on 21 June 2021 =  
+* Compatible with User Registration form by WPEverest.
+* Other: Issues and Bugs Fixed.
+
 = 1.0.0 - Released on 29 April 2021 =
 * First version
 
-= 1.0.1 - Released on 21 June 2021 =  
-* Compatible with plugin User Registration form by WPEverest.
-* Other: Issues and Bugs Fixed.
-
 
 == Upgrade Notice == 
-= 1.0.1 - Released on 21 June 2021 =  
-* Compatible with plugin User Registration form by WPEverest.
-* Other: Issues and Bugs Fixed.
+= 1.0.2 - Released on 2 September 2021 =  
+* Compatible with WordPress 5.8
+* Other: Bug Fixes
+
+
 
 
 

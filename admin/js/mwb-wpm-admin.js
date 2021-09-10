@@ -259,14 +259,10 @@ jQuery( document ).ready(
 				segmentList,
 				function(index, value) {
 					var check = (selected == value.id) ? 'selected' : '';
-					console.log( typeof(value.id) );
-					console.log( value.id );
 					if (value.id == -1) {
 						html += '<option value="' + value.id + '" ' + check + '>' + value.name + '</option>';
-						console.log( html );
 					} else {
 						html += '<option value="' + value.id + '">' + value.name + '</option>';
-						console.log( html );
 					}
 				}
 			);
@@ -352,6 +348,5 @@ function copy_text(element) {
 	element.select();
 	element.setSelectionRange( 0, 99999 )
 	document.execCommand( "copy" );
-	console.log( element.value )
 	alert( "Copied" );
 }
