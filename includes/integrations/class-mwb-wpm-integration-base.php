@@ -273,7 +273,7 @@ abstract class Mwb_Wpm_Integration_Base {
 					'last_name' => 'last_name',
 				);
 				if ( isset( $_POST['form_data'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
-					$form_data = explode( '{', sanitize_text_field( $_POST['form_data'] ) ); // phpcs:ignore WordPress.Security.NonceVerification
+					$form_data = explode( '{', sanitize_text_field( wp_unslash( $_POST['form_data'] ) ) ); // phpcs:ignore WordPress.Security.NonceVerification
 					$counter = 0;
 					foreach ( $form_data as $key => $value ) {
 						if ( strpos( $value, 'Custom Checkbox' ) !== false ) {
@@ -321,7 +321,7 @@ abstract class Mwb_Wpm_Integration_Base {
 					'last_name' => 'last_name',
 				);
 				if ( isset( $_POST['form_data'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification
-					$form_data = explode( '{', sanitize_text_field( $_POST['form_data'] ) ); // phpcs:ignore WordPress.Security.NonceVerification
+					$form_data = explode( '{', sanitize_text_field( wp_unslash( $_POST['form_data'] ) ) ); // phpcs:ignore WordPress.Security.NonceVerification
 					$counter = 0;
 					foreach ( $form_data as $key => $value ) {
 						if ( strpos( $value, 'Custom Hidden Field' ) !== false ) {

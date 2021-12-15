@@ -6,7 +6,7 @@
  * @since      1.0.0
  *
  * @package     Wp_Mautic_Integration
- * @subpackage  Wp_Mautic_Integration/includes
+ * @subpackage  Wp_Mautic_Integration/includes/integrations
  */
 
 // User Registration Plugin Added.
@@ -14,7 +14,7 @@
  * The Registration form integration functionality.
  *
  * @package     Wp_Mautic_Integration
- * @subpackage  Wp_Mautic_Integration/includes
+ * @subpackage  Wp_Mautic_Integration/includes/integrations
  * @author      makewebbetter <webmaster@makewebbetter.com>
  */
 class Mwb_Wpm_User_Registration_Plugin_Form extends Mwb_Wpm_Integration_Base {
