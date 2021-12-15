@@ -437,6 +437,7 @@ class Wp_Mautic_Integration_Admin {
 		if ( is_array( $valid_screens ) ) {
 			// Push your screen here.
 			array_push( $valid_screens, 'toplevel_page_mwb-wp-mautic' );
+			array_push( $valid_screens, 'makewebbetter_page_mwb-wp-mautic' );
 		}
 		return $valid_screens;
 	}
