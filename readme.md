@@ -1,4 +1,4 @@
-[![BuildStatus](https://img.shields.io/travis/twbs/bootstrap/v4-dev.svg)](https://travis-ci.org/twbs/bootstrap) ![Active installs](https://img.shields.io/badge/Active-80%2B-brightgreen) ![License](https://img.shields.io/badge/License-GPLv3%20or%20later-yellowgreen) ![WP tested](https://img.shields.io/badge/WP%20tested-5.8-brightgreen) ![Requires PHP](https://img.shields.io/badge/Requires%20PHP-5.6-blue)
+[![BuildStatus](https://img.shields.io/travis/twbs/bootstrap/v4-dev.svg)](https://travis-ci.org/twbs/bootstrap) ![Active installs](https://img.shields.io/badge/Active-100%2B-brightgreen) ![License](https://img.shields.io/badge/License-GPLv3%20or%20later-yellowgreen) ![WP tested](https://img.shields.io/badge/WP%20tested-5.8-brightgreen) ![Requires PHP](https://img.shields.io/badge/Requires%20PHP-7.4-blue)
 # Integration with Mautic for WP - Mautic Form, Automation, Marketing
 ![Integration with Mautic for WP](https://ps.w.org/integration-with-mautic-for-wp/assets/banner-772x250.png)
 * Contributors: MakeWebBetter
@@ -50,7 +50,6 @@ This WordPress Mautic integration plugin allows you to embed Mautic forms to you
 
 **5) WordPress Integrations**
 WordPress is a pool of varied plugins - from different forms to email marketing. With this Mautic WordPress Integration plugin, you can easily sync your forms data from these extended plugins to Mautic CRM. By default, WordPress Registration form and WordPress Contact Form are already provided with this integration.
-
 **6) Compatibility with Popular WordPress Plugins**
 The Integration with Mautic for WP plugin is now compatible with the User Registration form by WPEverest. The admin can, therefore, create custom registration and login forms. And sync its data with Mautic by enabling the form settings via this plugin. 
 
@@ -97,4 +96,16 @@ If our documentation doesn’t contain the solution to your problem, you can vis
 - [**Visit our LinkedIn Account**](https://www.linkedin.com/company/makewebbetter)
 - [**Subscribe To Our YouTube Channel**](https://www.youtube.com/channel/UC7nYNf0JETOwW3GOD_EW2Ag)
 - [**Follow Our SlideShare**](https://www.slideshare.net/MakeWebBetter)
+
+
+
+
+
+
+
+
+
+
+
+
 
