@@ -15,7 +15,7 @@
  * Plugin Name:       Integration with Mautic for WP
  * Plugin URI:        https://wordpress.org/plugins/wp-mautic-integration/
  * Description:       Simple plugin to integrate your WordPress site with mautic marketing automation. Add tracking script, mautic forms to your site. Integrate your worpdress registration and comment form with mautic.
- * Version:           1.0.3
+ * Version:           1.0.4
  * Author:            MakeWebBetter
  * Author URI:        https://makewebbetter.com/
  * Requires at least: 4.4
@@ -128,7 +128,7 @@ run_wp_mautic_integration();
  */
 function mwb_wp_mautic_define_plugin_constants() {
 	$constants = array(
-		'MWB_WP_MAUTIC_VERSION' => '1.0.3',
+		'MWB_WP_MAUTIC_VERSION' => '1.0.4',
 		'MWB_WP_MAUTIC_PATH'    => plugin_dir_path( __FILE__ ),
 		'MWB_WP_MAUTIC_URL'     => plugin_dir_url( __FILE__ ),
 	);
