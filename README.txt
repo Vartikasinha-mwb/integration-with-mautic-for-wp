@@ -21,6 +21,15 @@ The hassle-free and easy setup process makes it convenient for any individual to
 
 You can also integrate multiple WordPress forms with Mautic directly using either **Basic or OAuth2 Mautic API**.  Integration with Mautic for WP plugin also supports you to add Mautic forms into your web pages through shortcodes.  
 
+***
+
+>**IMPORTANT NOTICE:**
+
+>_**From this version update, we would be discontinuing this plugin and its support. We had a great time serving everyone with the tool and learned a lot. People still interested in the tool functionalities may please check other tool recommendations.**_
+
+>_**Please Visit [**WP Swings**](https://wpswings.com/?utm_source=wpswings-official&utm_medium=org-page&utm_campaign=org-discontinue-plugin) for all your WordPress/WooCommerce solutions.**_
+
+***
 
 [youtube https://www.youtube.com/watch?v=Rqm9SHbZAnk&w=560&h=315&rel=0]
 
@@ -182,6 +191,8 @@ Please visit the MakeWebBetter [**knowledge base**](https://support.makewebbette
 
 
 == Changelog ==
+= 1.0.4 - Released on 5 March 2022 =  
+New: Discontinue Notice display, From this version update, we would be discontinuing this plugin and its support. We had a great time serving everyone with the tool and learned a lot.
 
 = 1.0.3 - Released on 16 December 2021 =  
 * Compatible with Mautic 4.x
@@ -199,10 +210,10 @@ Please visit the MakeWebBetter [**knowledge base**](https://support.makewebbette
 * First version
 
 == Upgrade Notice == 
+= 1.0.4 - Released on 5 March 2022 =  
+New: Discontinue Notice display, From this version update, we would be discontinuing this plugin and its support. We had a great time serving everyone with the tool and learned a lot.
 
-= 1.0.3 - Released on 16 December 2021 =  
-* Compatible with Mautic 4.x
-* Other: Bug Fixes
+
 
 
 
