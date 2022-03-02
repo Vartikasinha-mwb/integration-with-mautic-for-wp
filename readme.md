@@ -18,14 +18,21 @@ You can also insert multiple WordPress forms and can connect them with Mautic di
 
 [**How to Connect WordPress with Mautic and Convert Leads?**](https://www.youtube.com/watch?v=Rqm9SHbZAnk)
 
+
+IMPORTANT NOTICE:
+
+From this version update, we would be discontinuing this plugin and its support. We had a great time serving everyone with the tool and learned a lot. People still interested in the tool functionalities may please check other tool recommendations.
+
+Please Visit [**WP Swings**](https://wpswings.com/?utm_source=wpswings-official&utm_medium=github-page&utm_campaign=discontinue-plugin) for all your WordPress/WooCommerce solutions.
+
+
 **USING THE INTEGRATION WITH MAUTIC FOR WP PLUGIN YOU CAN:**
 * Integrate Mautic with WP website
 * Sync your non-eCommerce website’s data with Mautic CRM
 * Have dedicated Mautic dashboard sync over your WordPress panel
 * Assign tags and add segments to your captured leads with WordPress Mautic form embed
 * The non-eCommerce website’s data can be tracked easily
-* Flexible, user-friendly, and good-looking forms to subscribe people to your
-   Mautic Newsletter and email list.
+* Flexible, user-friendly, and good-looking forms to subscribe people to your Mautic Newsletter and email list.
 * Write better emails by collecting important information about your subscribers.
 
 ## WHAT’S INCLUDED IN OUR FREE INTEGRATION WITH MAUTIC FOR WP PLUGIN 
